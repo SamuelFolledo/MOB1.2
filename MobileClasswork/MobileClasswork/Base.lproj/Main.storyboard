@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,71 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MobileClasswork" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UnC-2e-cu7">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="makeschoolLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Mmu-UC-M4U">
+                                        <rect key="frame" x="0.0" y="8" width="414" height="333"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bR-x7-EAh" userLabel="descLabel">
+                                        <rect key="frame" x="0.0" y="341" width="414" height="877.5"/>
+                                        <string key="text">Scrollview recipe //0m
+	1.	Pin the top, bottom, trailing and leading of the scroll view to the Safe Area.
+	2.	If the content was a stack view you would pin the the the stack’s top, bottom, trailing and leading to the Content Layout Guide.
+	3.	Set the content view’s width to match the Frame Layout Guide’s width.
+	4.	Look for missing constraints inside the content view.
+	5.	If all is correct, the scroll view will set its content size automatically based on the components inside the content view.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g7w-pH-9R8">
+                                        <rect key="frame" x="0.0" y="1082" width="414" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="2bR-x7-EAh" firstAttribute="trailing" secondItem="LZm-Xb-MEs" secondAttribute="trailing" id="4hz-2m-SIy"/>
+                                    <constraint firstItem="2bR-x7-EAh" firstAttribute="width" secondItem="xJp-rg-1Oi" secondAttribute="width" id="Tqg-Vx-EN8"/>
+                                    <constraint firstItem="Mmu-UC-M4U" firstAttribute="trailing" secondItem="LZm-Xb-MEs" secondAttribute="trailing" id="avi-Mz-93o"/>
+                                    <constraint firstItem="2bR-x7-EAh" firstAttribute="leading" secondItem="LZm-Xb-MEs" secondAttribute="leading" id="dJ9-iE-UqM"/>
+                                    <constraint firstItem="Mmu-UC-M4U" firstAttribute="width" secondItem="xJp-rg-1Oi" secondAttribute="width" id="hAL-TH-KeC"/>
+                                    <constraint firstItem="2bR-x7-EAh" firstAttribute="bottom" secondItem="LZm-Xb-MEs" secondAttribute="bottom" id="jiw-6D-vmN"/>
+                                    <constraint firstItem="Mmu-UC-M4U" firstAttribute="leading" secondItem="LZm-Xb-MEs" secondAttribute="leading" id="kAh-FR-5kz"/>
+                                    <constraint firstItem="2bR-x7-EAh" firstAttribute="top" secondItem="Mmu-UC-M4U" secondAttribute="bottom" id="qy1-DR-QwB"/>
+                                    <constraint firstItem="Mmu-UC-M4U" firstAttribute="top" secondItem="LZm-Xb-MEs" secondAttribute="top" constant="8" id="ul5-ES-C9O"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="LZm-Xb-MEs"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="xJp-rg-1Oi"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="UnC-2e-cu7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3Wt-v5-lYD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UnC-2e-cu7" secondAttribute="trailing" id="EkO-tk-itb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UnC-2e-cu7" secondAttribute="bottom" id="Sp1-RW-8DP"/>
+                            <constraint firstItem="UnC-2e-cu7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="jOC-Jk-iUc"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="Mmu-UC-M4U" id="1cX-qt-dqs"/>
+                        <outlet property="label" destination="2bR-x7-EAh" id="15B-n2-65q"/>
+                        <outlet property="scrollView" destination="UnC-2e-cu7" id="fxI-Rh-PcM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="makeschoolLogo" width="1000" height="333"/>
+    </resources>
 </document>

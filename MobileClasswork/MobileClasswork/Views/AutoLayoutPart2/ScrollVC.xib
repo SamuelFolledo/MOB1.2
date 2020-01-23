@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScrollVC" customModule="MobileClasswork" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomView" destination="gee-8q-xhH" id="Hrp-fD-wpf"/>
+                <outlet property="imageView1" destination="N6n-cd-2f4" id="gDf-0n-PHO"/>
+                <outlet property="imageView2" destination="EBg-z2-0zW" id="ayr-KB-8NF"/>
+                <outlet property="label1" destination="Epl-zK-JHX" id="S6F-zD-qx2"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YVg-NN-TUf">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dky-Gp-esf">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1170.5"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="makeschoolLogo" translatesAutoresizingMaskIntoConstraints="NO" id="N6n-cd-2f4">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="409"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Epl-zK-JHX">
+                                    <rect key="frame" x="0.0" y="419" width="414" height="272.5"/>
+                                    <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="makeschoolLogo" translatesAutoresizingMaskIntoConstraints="NO" id="EBg-z2-0zW">
+                                    <rect key="frame" x="0.0" y="701.5" width="414" height="409"/>
+                                </imageView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gee-8q-xhH">
+                                    <rect key="frame" x="0.0" y="1120.5" width="414" height="50"/>
+                                    <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </view>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="dky-Gp-esf" firstAttribute="height" secondItem="sdV-zH-WhU" secondAttribute="height" multiplier="1.43093" id="6ag-BK-yg9"/>
+                        <constraint firstItem="dky-Gp-esf" firstAttribute="trailing" secondItem="V4k-kV-9Fo" secondAttribute="trailing" constant="414" id="HM7-ix-C9N"/>
+                        <constraint firstItem="dky-Gp-esf" firstAttribute="leading" secondItem="V4k-kV-9Fo" secondAttribute="leading" id="RMJ-BL-wh3"/>
+                        <constraint firstItem="dky-Gp-esf" firstAttribute="bottom" secondItem="V4k-kV-9Fo" secondAttribute="bottom" constant="1170.5" id="Wxz-DB-fQ1"/>
+                        <constraint firstItem="dky-Gp-esf" firstAttribute="width" secondItem="sdV-zH-WhU" secondAttribute="width" id="oqA-9J-yuf"/>
+                        <constraint firstItem="dky-Gp-esf" firstAttribute="top" secondItem="V4k-kV-9Fo" secondAttribute="top" id="sel-9c-rhB"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="V4k-kV-9Fo"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="sdV-zH-WhU"/>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="EBg-z2-0zW" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="1:2" id="9PQ-7j-NwG"/>
+                <constraint firstItem="YVg-NN-TUf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="APY-wu-lC0"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="YVg-NN-TUf" secondAttribute="trailing" id="BI7-hC-9MD"/>
+                <constraint firstItem="EBg-z2-0zW" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="EV1-7v-99i"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="YVg-NN-TUf" secondAttribute="bottom" id="JYY-0H-Uzr"/>
+                <constraint firstItem="Epl-zK-JHX" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="1:3" id="PFe-Ej-A0m"/>
+                <constraint firstItem="N6n-cd-2f4" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="RRg-Ae-4Dp"/>
+                <constraint firstItem="YVg-NN-TUf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="bNj-qY-EiK"/>
+                <constraint firstItem="N6n-cd-2f4" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="1:2" id="fqw-cz-gFC"/>
+                <constraint firstItem="Epl-zK-JHX" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="owf-2H-cQF"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="makeschoolLogo" width="1000" height="333"/>
+    </resources>
+</document>

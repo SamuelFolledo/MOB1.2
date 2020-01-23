@@ -13,6 +13,9 @@
 		3300543423DA180400673C81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3300543223DA180400673C81 /* Main.storyboard */; };
 		3300543623DA180700673C81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3300543523DA180700673C81 /* Assets.xcassets */; };
 		3300543923DA180700673C81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3300543723DA180700673C81 /* LaunchScreen.storyboard */; };
+		3300544323DA188F00673C81 /* ScrollVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3300544123DA188F00673C81 /* ScrollVC.swift */; };
+		3300544423DA188F00673C81 /* ScrollVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3300544223DA188F00673C81 /* ScrollVC.xib */; };
+		3300544623DA217300673C81 /* UIViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3300544523DA217300673C81 /* UIViewController+extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		3300543523DA180700673C81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3300543823DA180700673C81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3300543A23DA180700673C81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3300544123DA188F00673C81 /* ScrollVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollVC.swift; sourceTree = "<group>"; };
+		3300544223DA188F00673C81 /* ScrollVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollVC.xib; sourceTree = "<group>"; };
+		3300544523DA217300673C81 /* UIViewController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +64,40 @@
 			children = (
 				3300542C23DA180400673C81 /* AppDelegate.swift */,
 				3300542E23DA180400673C81 /* SceneDelegate.swift */,
-				3300543023DA180400673C81 /* ViewController.swift */,
+				3300544823DA286400673C81 /* Views */,
 				3300543223DA180400673C81 /* Main.storyboard */,
+				3300543023DA180400673C81 /* ViewController.swift */,
+				3300544723DA285500673C81 /* Helper */,
 				3300543523DA180700673C81 /* Assets.xcassets */,
 				3300543723DA180700673C81 /* LaunchScreen.storyboard */,
 				3300543A23DA180700673C81 /* Info.plist */,
 			);
 			path = MobileClasswork;
+			sourceTree = "<group>";
+		};
+		3300544023DA186000673C81 /* AutoLayoutPart2 */ = {
+			isa = PBXGroup;
+			children = (
+				3300544123DA188F00673C81 /* ScrollVC.swift */,
+				3300544223DA188F00673C81 /* ScrollVC.xib */,
+			);
+			path = AutoLayoutPart2;
+			sourceTree = "<group>";
+		};
+		3300544723DA285500673C81 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				3300544523DA217300673C81 /* UIViewController+extensions.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		3300544823DA286400673C81 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3300544023DA186000673C81 /* AutoLayoutPart2 */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3300543923DA180700673C81 /* LaunchScreen.storyboard in Resources */,
+				3300544423DA188F00673C81 /* ScrollVC.xib in Resources */,
 				3300543623DA180700673C81 /* Assets.xcassets in Resources */,
 				3300543423DA180400673C81 /* Main.storyboard in Resources */,
 			);
@@ -138,7 +172,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3300544623DA217300673C81 /* UIViewController+extensions.swift in Sources */,
 				3300543123DA180400673C81 /* ViewController.swift in Sources */,
+				3300544323DA188F00673C81 /* ScrollVC.swift in Sources */,
 				3300542D23DA180400673C81 /* AppDelegate.swift in Sources */,
 				3300542F23DA180400673C81 /* SceneDelegate.swift in Sources */,
 			);
