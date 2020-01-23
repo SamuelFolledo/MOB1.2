@@ -16,18 +16,29 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.view.backgroundColor = .blue
         // Do any additional setup after loading
-        
+        setupScrollView()
     }
     
     fileprivate func setupScrollView() {
         scrollView.delegate = self
-    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
     }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        print("REACHED TOP \(scrollView.isAtTop)")
+        print("REACHED BOTTOM \(scrollView.isAtBottom)")
+        if (scrollView.contentOffset.y >= (scrollView.contentSize.height - scrollView.frame.size.height)) { //reach bottom
+            print("REACH TOP")
+        }
+
+        if (scrollView.contentOffset.y <= 0) { //reach top
+            print("REACH BOTTOM")
+        }
+
+        if (scrollView.contentOffset.y > 0 && scrollView.contentOffset.y < (scrollView.contentSize.height - scrollView.frame.size.height)){ //not top or bottom
+//            print("NOT YET \(scrollView.contentOffset.y)")
+        }
+    }
 }
 
