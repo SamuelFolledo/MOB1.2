@@ -26,7 +26,7 @@
 - Autolayout in storyboard
 
 ### CW: Autolayout and UIStackview in storyboard
-<img src="https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/static/screenshots/day1CW1.png">
+<img src="https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/static/gif/day2CW1.gif">
 
 ---
 
@@ -37,10 +37,10 @@
 - UIScrollView
 
 ### CW: Scrollable in storyboard
-<img src="https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/static/screenshots/day1CW1.png" width="563" height="1000">
+<img src="https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/static/screenshots/day1CW1.png" width="640" height="446">
 
 ### HW: [Size Classes Tutorial](https://github.com/Make-School-Courses/MOB-1.2-Introduction-to-iOS-Development/blob/master/Lessons/02-AutoLayout/assignments/sizeclasses.md) Vary for Traits and adapting UI if landscape or portrait mode
-<img src="https://github.com/SamuelFolledo/SnailMail/blob/master/static/gif/demo1.gif" width="563" height="1000">
+<img src="https://github.com/SamuelFolledo/SnailMail/blob/master/static/gif/demo1.gif" width="640" height="400">
 
 ---
 
