@@ -8,16 +8,18 @@
 
 ---
 
-## Day 1: [Autolayout Pt.1](https://make-school-courses.github.io/MOB-1.2-Introduction-to-iOS-Development/#/Lessons/01-Autolayout/README)<a name="day1"></a>
+<a name="day1"></a>
+## Day 1: [Autolayout Pt.1](https://make-school-courses.github.io/MOB-1.2-Introduction-to-iOS-Development/#/Lessons/01-Autolayout/README)
 ### Topics
 - Autolayout in storyboard
 
 ### CW: Autolayout and UIStackview in storyboard
-<img src="https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/static/screenshots/day1CW1.png" width="563" height="1000">
+<img src="https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/static/screenshots/day1CW1.png">
 
 ---
 
-## Day 2: [Autolayout Pt.2](https://make-school-courses.github.io/MOB-1.2-Introduction-to-iOS-Development/#/Lessons/02-AutoLayout/README)<a name="day2"></a>
+<a name="day2"></a>
+## Day 2: [Autolayout Pt.2](https://make-school-courses.github.io/MOB-1.2-Introduction-to-iOS-Development/#/Lessons/02-AutoLayout/README)
 ### Topics
 - Autolayout Part 2
 - UIScrollView
