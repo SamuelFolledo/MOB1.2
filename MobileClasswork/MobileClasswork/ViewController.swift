@@ -29,11 +29,11 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         print("REACHED TOP \(scrollView.isAtTop)")
         print("REACHED BOTTOM \(scrollView.isAtBottom)")
         if (scrollView.contentOffset.y >= (scrollView.contentSize.height - scrollView.frame.size.height)) { //reach bottom
-            print("REACH TOP")
+//            print("REACH TOP")
         }
 
         if (scrollView.contentOffset.y <= 0) { //reach top
-            print("REACH BOTTOM")
+//            print("REACH BOTTOM")
         }
 
         if (scrollView.contentOffset.y > 0 && scrollView.contentOffset.y < (scrollView.contentSize.height - scrollView.frame.size.height)){ //not top or bottom
