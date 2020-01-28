@@ -132,10 +132,10 @@
             </objects>
             <point key="canvasLocation" x="914" y="138"/>
         </scene>
-        <!--Coding ConstraintVC-->
+        <!--OnboardingVC-->
         <scene sceneID="TuC-VJ-g2c">
             <objects>
-                <viewController id="IlF-av-bOh" customClass="CodingConstraintVC" customModule="MobileClasswork" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="IlF-av-bOh" customClass="OnboardingVC" customModule="MobileClasswork" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2LL-3L-0Vk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
