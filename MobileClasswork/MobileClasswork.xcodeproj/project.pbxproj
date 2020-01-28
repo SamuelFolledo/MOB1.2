@@ -17,6 +17,7 @@
 		3300544423DA188F00673C81 /* ScrollVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3300544223DA188F00673C81 /* ScrollVC.xib */; };
 		3300544623DA217300673C81 /* UIViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3300544523DA217300673C81 /* UIViewController+extensions.swift */; };
 		3300544A23DA314100673C81 /* UIScrollView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3300544923DA314100673C81 /* UIScrollView+extensions.swift */; };
+		3397D76323E0AB62000C59D4 /* CodingConstraintVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3397D76223E0AB62000C59D4 /* CodingConstraintVC.swift */; };
 		D8D8C5B70C10677BD7F811E4 /* Pods_MobileClasswork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA09746C6CD68F4FBA90F065 /* Pods_MobileClasswork.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		3300544223DA188F00673C81 /* ScrollVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollVC.xib; sourceTree = "<group>"; };
 		3300544523DA217300673C81 /* UIViewController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extensions.swift"; sourceTree = "<group>"; };
 		3300544923DA314100673C81 /* UIScrollView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+extensions.swift"; sourceTree = "<group>"; };
+		3397D76223E0AB62000C59D4 /* CodingConstraintVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodingConstraintVC.swift; sourceTree = "<group>"; };
 		C07075359D279D6BE5C21B45 /* Pods-MobileClasswork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileClasswork.release.xcconfig"; path = "Target Support Files/Pods-MobileClasswork/Pods-MobileClasswork.release.xcconfig"; sourceTree = "<group>"; };
 		E62FD77750DA319310924092 /* Pods-MobileClasswork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileClasswork.debug.xcconfig"; path = "Target Support Files/Pods-MobileClasswork/Pods-MobileClasswork.debug.xcconfig"; sourceTree = "<group>"; };
 		FA09746C6CD68F4FBA90F065 /* Pods_MobileClasswork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileClasswork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +85,7 @@
 				3300542E23DA180400673C81 /* SceneDelegate.swift */,
 				3300543223DA180400673C81 /* Main.storyboard */,
 				3300543023DA180400673C81 /* ViewController.swift */,
+				3397D76223E0AB62000C59D4 /* CodingConstraintVC.swift */,
 				3300544823DA286400673C81 /* Views */,
 				3300544723DA285500673C81 /* Helper */,
 				3300543523DA180700673C81 /* Assets.xcassets */,
@@ -225,6 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3397D76323E0AB62000C59D4 /* CodingConstraintVC.swift in Sources */,
 				3300544623DA217300673C81 /* UIViewController+extensions.swift in Sources */,
 				3300544A23DA314100673C81 /* UIScrollView+extensions.swift in Sources */,
 				3300543123DA180400673C81 /* ViewController.swift in Sources */,
