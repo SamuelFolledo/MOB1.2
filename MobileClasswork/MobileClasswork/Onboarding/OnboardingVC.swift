@@ -14,20 +14,37 @@ class OnboardingVC: UIViewController {
     var page1View: UIView!
     var page2View: UIView!
     var page3View: UIView!
+    var pageControl: UIPageControl!
+    var pages:[UIView]!
+    var currentPage: Int { //tell which page is currently being viewed based on the contentOffset of the UIScrollView
+      get {
+        let page = Int((scrollView.contentOffset.x / view.bounds.size.width))
+        print("PAGE = \(page)")
+        return page
+      }
+    }
+    var numberOfPages: Int {
+      get {
+        return self.pages.count
+      }
+    }
     
+//MARK: App Lifecycle
     override func loadView() {
         super.loadView()
         setupScrollView()
+        setupPageControl()
         setupPage1()
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-    func setupScrollView() {
+//MARKA: Private methods
+    fileprivate func setupScrollView() {
         scrollView = UIScrollView(frame: .zero)
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(scrollView)
@@ -37,9 +54,20 @@ class OnboardingVC: UIViewController {
             scrollView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
             scrollView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
         ])
+        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.isPagingEnabled = true
+        scrollView.delegate = self
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        view.insertSubview(scrollView, at: 0)
     }
     
-    func setupPage1() {
+    fileprivate func setupPageControl() {
+        pages = Array()
+        pageControl?.addTarget(self, action: #selector(self.pageControlDidTouch), for: .touchUpInside)
+    }
+    
+    fileprivate func setupPage1() {
         page1View = UIView(frame: .zero)
         page1View.translatesAutoresizingMaskIntoConstraints = false
         scrollView.addSubview(page1View)
@@ -49,10 +77,11 @@ class OnboardingVC: UIViewController {
             page1View.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
             page1View.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
         ])
-        self.page1View.backgroundColor = .orange
+        page1View.backgroundColor = .orange
+        pages.append(page1View)
     }
     
-    func setupPage2() {
+    fileprivate func setupPage2() {
         page2View = UIView(frame: .zero)
         page2View.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(page2View)
@@ -62,10 +91,11 @@ class OnboardingVC: UIViewController {
             page2View.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
             page2View.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
         ])
-        self.page2View.backgroundColor = .systemPink
+        page2View.backgroundColor = .systemPink
+        pages.append(page2View)
     }
     
-    func setupPage3() {
+    fileprivate func setupPage3() {
         page3View = UIView(frame: .zero)
         page3View.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(page3View)
@@ -75,7 +105,16 @@ class OnboardingVC: UIViewController {
             page3View.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
             page3View.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
         ])
-        self.page3View.backgroundColor = .blue
+        page3View.backgroundColor = .blue
+        pages.append(page3View)
     }
 
+//MARK: Helpers
+    @objc func pageControlDidTouch() { //method to change page when user interacts with pageControl
+        
+    }
+}
+
+extension OnboardingVC: UIScrollViewDelegate {
+    
 }
