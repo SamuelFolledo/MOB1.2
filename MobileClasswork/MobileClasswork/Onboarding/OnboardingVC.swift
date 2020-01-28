@@ -47,7 +47,7 @@ class OnboardingVC: UIViewController {
     fileprivate func setupScrollView() {
         scrollView = UIScrollView(frame: .zero)
         scrollView.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(scrollView)
+        view.insertSubview(scrollView, at: 0)
         NSLayoutConstraint.activate([ //isActive = true a group of contraints
             scrollView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1/1),
             scrollView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 1/1),
@@ -59,11 +59,19 @@ class OnboardingVC: UIViewController {
         scrollView.isPagingEnabled = true
         scrollView.delegate = self
         scrollView.translatesAutoresizingMaskIntoConstraints = false
-        view.insertSubview(scrollView, at: 0)
     }
     
     fileprivate func setupPageControl() {
         pages = Array()
+        pageControl = UIPageControl(frame: .zero)
+        pageControl.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.insertSubview(pageControl, at: 100) //put it in the front
+        NSLayoutConstraint.activate([ //isActive = true a group of contraints
+            pageControl.widthAnchor.constraint(equalTo: self.scrollView.widthAnchor, multiplier: 1/4),
+            pageControl.heightAnchor.constraint(equalToConstant: 50),
+            pageControl.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor, constant: 50),
+            pageControl.centerXAnchor.constraint(equalTo: self.scrollView.centerXAnchor),
+        ])
         pageControl?.addTarget(self, action: #selector(self.pageControlDidTouch), for: .touchUpInside)
     }
     
