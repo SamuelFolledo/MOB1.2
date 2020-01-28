@@ -10,24 +10,57 @@ import UIKit
 
 class CodingConstraintVC: UIViewController {
 
-    var exampleView: UIView!
+    var purpleView: UIView!
+    var redView: UIView!
+    var orangeView: UIView!
 
-    override func loadView() {
+    override func loadView() { //AppLifeCycle that comes before viewDidLoad, loads once like viewDidLoad
         super.loadView()
-
-        exampleView = UIView(frame: .zero)
-        exampleView.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(exampleView)
-        NSLayoutConstraint.activate([
-            exampleView.widthAnchor.constraint(equalToConstant: 80),
-            exampleView.heightAnchor.constraint(equalTo: exampleView.widthAnchor, multiplier: 1/1),
-            exampleView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            exampleView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
-        ])
+        setupPurpleView()
+        setupRedView()
+        setupOrangeView()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.exampleView.backgroundColor = .purple
+    }
+    
+    func setupOrangeView() {
+        orangeView = UIView(frame: .zero)
+        orangeView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(orangeView)
+        NSLayoutConstraint.activate([ //isActive = true a group of contraints
+            orangeView.widthAnchor.constraint(equalTo: purpleView.widthAnchor, multiplier: 2/1),
+            orangeView.heightAnchor.constraint(equalTo: orangeView.widthAnchor, multiplier: 1/1),
+            orangeView.topAnchor.constraint(equalTo: purpleView.bottomAnchor, constant: 50),
+            orangeView.centerXAnchor.constraint(equalTo: purpleView.centerXAnchor),
+        ])
+        self.orangeView.backgroundColor = .orange
+    }
+    
+    func setupRedView() {
+        redView = UIView(frame: .zero)
+        redView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(redView)
+        NSLayoutConstraint.activate([ //isActive = true a group of contraints
+            redView.widthAnchor.constraint(equalTo: purpleView.widthAnchor),
+            redView.heightAnchor.constraint(equalTo: redView.widthAnchor, multiplier: 1/1), //make height equal to its width
+            redView.leadingAnchor.constraint(equalTo: purpleView.trailingAnchor, constant: 50),
+            redView.centerYAnchor.constraint(equalTo: purpleView.centerYAnchor),
+        ])
+        self.redView.backgroundColor = .red
+    }
+    
+    func setupPurpleView() {
+        purpleView = UIView(frame: .zero)
+        purpleView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(purpleView)
+        NSLayoutConstraint.activate([ //isActive = true a group of contraints
+            purpleView.widthAnchor.constraint(equalToConstant: 80),
+            purpleView.heightAnchor.constraint(equalTo: purpleView.widthAnchor, multiplier: 1/1),
+            purpleView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            purpleView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+        ])
+        self.purpleView.backgroundColor = .purple
     }
 }
