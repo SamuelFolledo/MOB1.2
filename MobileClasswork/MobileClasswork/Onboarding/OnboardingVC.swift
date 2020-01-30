@@ -33,14 +33,20 @@ class OnboardingVC: UIViewController {
     override func loadView() {
         super.loadView()
         setupScrollView()
-        setupPageControl()
         setupPage1()
+        setupPage2()
+        setupPage3()
+        setupPageControl()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+      super.viewWillAppear(animated)
+      pageControl?.numberOfPages = self.numberOfPages
+      pageControl?.currentPage = 0
     }
     
 //MARKA: Private methods
@@ -59,17 +65,19 @@ class OnboardingVC: UIViewController {
         scrollView.isPagingEnabled = true
         scrollView.delegate = self
         scrollView.translatesAutoresizingMaskIntoConstraints = false
+        pages = Array()
     }
     
     fileprivate func setupPageControl() {
-        pages = Array()
         pageControl = UIPageControl(frame: .zero)
         pageControl.translatesAutoresizingMaskIntoConstraints = false
+        pageControl.tintColor = .black
+//        scrollView.addSubview(pageControl)
         scrollView.insertSubview(pageControl, at: 100) //put it in the front
         NSLayoutConstraint.activate([ //isActive = true a group of contraints
-            pageControl.widthAnchor.constraint(equalTo: self.scrollView.widthAnchor, multiplier: 1/4),
+            pageControl.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 1/4),
             pageControl.heightAnchor.constraint(equalToConstant: 50),
-            pageControl.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor, constant: 50),
+            pageControl.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: self.view.frame.height - 25),
             pageControl.centerXAnchor.constraint(equalTo: self.scrollView.centerXAnchor),
         ])
         pageControl?.addTarget(self, action: #selector(self.pageControlDidTouch), for: .touchUpInside)
@@ -92,7 +100,7 @@ class OnboardingVC: UIViewController {
     fileprivate func setupPage2() {
         page2View = UIView(frame: .zero)
         page2View.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(page2View)
+        scrollView.addSubview(page2View)
         NSLayoutConstraint.activate([ //isActive = true a group of contraints
             page2View.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1/1),
             page2View.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 1/1),
@@ -106,7 +114,7 @@ class OnboardingVC: UIViewController {
     fileprivate func setupPage3() {
         page3View = UIView(frame: .zero)
         page3View.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(page3View)
+        scrollView.addSubview(page3View)
         NSLayoutConstraint.activate([ //isActive = true a group of contraints
             page3View.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1/1),
             page3View.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 1/1),
@@ -116,13 +124,78 @@ class OnboardingVC: UIViewController {
         page3View.backgroundColor = .blue
         pages.append(page3View)
     }
-
-//MARK: Helpers
-    @objc func pageControlDidTouch() { //method to change page when user interacts with pageControl
-        
-    }
 }
 
 extension OnboardingVC: UIScrollViewDelegate {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        pageControl?.currentPage = currentPage
+    }
+    
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        pageControl?.currentPage = currentPage
+    }
+}
+
+//MARK: Helper Methods
+extension OnboardingVC {
+    fileprivate func nextPage() {
+        if currentPage + 1 < self.numberOfPages {
+//            delegate?.nextButtonPressed?()
+            navigateToPage(page: currentPage + 1)
+        }
+    }
+    
+    fileprivate func previousPage() {
+        if currentPage > 0 {
+//            delegate?.previousButtonPressed?()
+            navigateToPage(page: currentPage - 1)
+        }
+    }
+    
+    @objc func pageControlDidTouch() { //method to change page when user interacts with pageControl
+        if let pageControl = pageControl {
+            navigateToPage(page: pageControl.currentPage)
+        }
+    }
+    
+    func addViewController(page: UIView) -> Void {
+//        controllers.append(vc)
+        pages.append(page)
+
+        page.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.addSubview(page)
+
+        let metrics = ["w":vc.view.bounds.size.width,"h":vc.view.bounds.size.height]
+        vc.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[view(h)]", options:[], metrics: metrics, views: ["view":page]))
+        vc.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:[view(w)]", options:[], metrics: metrics, views: ["view":page]))
+        scrollView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[view]|", options:[], metrics: nil, views: ["view":page,]))
+
+        if self.numberOfPages == 1 {
+            scrollView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[view]", options:[], metrics: nil, views: ["view":page,]))
+        } else {
+            let previousVC = controllers[self.numberOfPages - 2]
+            let previousView = previousVC.view;
+
+            scrollView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:[previousView]-0-[view]", options:[], metrics: nil, views: ["previousView":previousView,"view":vc.view]))
+
+            if let cst = lastViewConstraint{
+                scrollView.removeConstraints(cst as! [NSLayoutConstraint])
+            }
+            lastViewConstraint = NSLayoutConstraint.constraintsWithVisualFormat("H:[view]-0-|", options:[], metrics: nil, views: ["view":vc.view])
+            scrollView.addConstraints(lastViewConstraint! as! [NSLayoutConstraint])
+        }
+    }
+    
+    private func updateUI() {
+        pageControl?.currentPage = currentPage
+    }
+    
+    private func navigateToPage(page: Int) {
+        if page < self.numberOfPages {
+            var frame = scrollView.frame
+            frame.origin.x = CGFloat(page) * frame.size.width
+            scrollView.scrollRectToVisible(frame, animated: true)
+        }
+    }
     
 }
