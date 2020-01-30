@@ -28,14 +28,27 @@ class OnboardingVC: UIViewController {
         return self.pages.count
       }
     }
+    let page1ImageView: UIImageView = {
+        let imageView = UIImageView(image: UIImage(named: "makeschoolLogo")!)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    let descriptionLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "EYOOOO"
+        label.font = .boldSystemFont(ofSize: 18)
+        label.textAlignment = .center
+        return label
+    }()
     
 //MARK: App Lifecycle
     override func loadView() {
         super.loadView()
         setupScrollView()
         setupPage1()
-        setupPage2()
-        setupPage3()
+//        setupPage2()
+//        setupPage3()
         setupPageControl()
     }
     
@@ -95,6 +108,26 @@ class OnboardingVC: UIViewController {
         ])
         page1View.backgroundColor = .orange
         pages.append(page1View)
+        setupImageView()
+        setupDescriptionLabel()
+    }
+    
+    fileprivate func setupDescriptionLabel() {
+        page1View.addSubview(descriptionLabel)
+        descriptionLabel.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 4/5).isActive = true
+        descriptionLabel.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        descriptionLabel.topAnchor.constraint(equalTo: page1ImageView.bottomAnchor, constant: 100).isActive = true
+        descriptionLabel.centerXAnchor.constraint(equalTo: page1ImageView.centerXAnchor).isActive = true
+
+    }
+    
+    fileprivate func setupImageView() {
+        page1View.addSubview(page1ImageView)
+        page1ImageView.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        page1ImageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        page1ImageView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 100).isActive = true
+//        (equalTo: self.view.topAnchor, constant: 100)
+        page1ImageView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
     }
     
     fileprivate func setupPage2() {
@@ -158,33 +191,33 @@ extension OnboardingVC {
         }
     }
     
-    func addViewController(page: UIView) -> Void {
-//        controllers.append(vc)
-        pages.append(page)
-
-        page.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.addSubview(page)
-
-        let metrics = ["w":vc.view.bounds.size.width,"h":vc.view.bounds.size.height]
-        vc.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[view(h)]", options:[], metrics: metrics, views: ["view":page]))
-        vc.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:[view(w)]", options:[], metrics: metrics, views: ["view":page]))
-        scrollView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[view]|", options:[], metrics: nil, views: ["view":page,]))
-
-        if self.numberOfPages == 1 {
-            scrollView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[view]", options:[], metrics: nil, views: ["view":page,]))
-        } else {
-            let previousVC = controllers[self.numberOfPages - 2]
-            let previousView = previousVC.view;
-
-            scrollView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:[previousView]-0-[view]", options:[], metrics: nil, views: ["previousView":previousView,"view":vc.view]))
-
-            if let cst = lastViewConstraint{
-                scrollView.removeConstraints(cst as! [NSLayoutConstraint])
-            }
-            lastViewConstraint = NSLayoutConstraint.constraintsWithVisualFormat("H:[view]-0-|", options:[], metrics: nil, views: ["view":vc.view])
-            scrollView.addConstraints(lastViewConstraint! as! [NSLayoutConstraint])
-        }
-    }
+//    func addViewController(page: UIView) -> Void {
+////        controllers.append(vc)
+//        pages.append(page)
+//
+//        page.translatesAutoresizingMaskIntoConstraints = false
+//        scrollView.addSubview(page)
+//
+//        let metrics = ["w":vc.view.bounds.size.width,"h":vc.view.bounds.size.height]
+//        vc.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[view(h)]", options:[], metrics: metrics, views: ["view":page]))
+//        vc.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:[view(w)]", options:[], metrics: metrics, views: ["view":page]))
+//        scrollView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[view]|", options:[], metrics: nil, views: ["view":page,]))
+//
+//        if self.numberOfPages == 1 {
+//            scrollView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[view]", options:[], metrics: nil, views: ["view":page,]))
+//        } else {
+//            let previousVC = controllers[self.numberOfPages - 2]
+//            let previousView = previousVC.view;
+//
+//            scrollView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:[previousView]-0-[view]", options:[], metrics: nil, views: ["previousView":previousView,"view":vc.view]))
+//
+//            if let cst = lastViewConstraint{
+//                scrollView.removeConstraints(cst as! [NSLayoutConstraint])
+//            }
+//            lastViewConstraint = NSLayoutConstraint.constraintsWithVisualFormat("H:[view]-0-|", options:[], metrics: nil, views: ["view":vc.view])
+//            scrollView.addConstraints(lastViewConstraint! as! [NSLayoutConstraint])
+//        }
+//    }
     
     private func updateUI() {
         pageControl?.currentPage = currentPage
