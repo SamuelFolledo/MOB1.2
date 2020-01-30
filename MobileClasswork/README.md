@@ -65,7 +65,10 @@ https://github.com/SamuelFolledo/MOB1.2/tree/master/MobileClasswork/MobileClassw
 - Creating Custom Views
 - Xib files
 
-### HW: 
+### CW: Creating Onboarding Programmatically in a UIScrollView with Gradient Background
+<img src="https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/static/gif/day4cw1.gif" width="640" height="496">
+
+https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/MobileClasswork/Day4-DryOnboarding/OnboardingVC.swift
 
 ---
 
