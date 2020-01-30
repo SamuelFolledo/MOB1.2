@@ -11,7 +11,7 @@ import UIKit
 class OnboardingVC: UIViewController {
     
 //MARK: Non-views Properties
-    var pages:[UIView] = []
+    var pages: [UIView] = []
     var currentPage: Int { //tell which page is currently being viewed based on the contentOffset of the UIScrollView
         get {
             let page = Int((scrollView.contentOffset.x / view.bounds.size.width))
@@ -34,6 +34,12 @@ class OnboardingVC: UIViewController {
         scrollView.isPagingEnabled = true
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         return scrollView
+    }()
+    let contentView: UIView = {
+        let view: UIView = UIView(frame: .zero)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .purple
+        return view
     }()
     let page1View: UIView = {
         let view: UIView = UIView(frame: .zero)
@@ -59,7 +65,6 @@ class OnboardingVC: UIViewController {
         pageControl.tintColor = .black
         return pageControl
     }()
-    
     let page1ImageView: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "makeschoolLogo")!)
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -78,9 +83,7 @@ class OnboardingVC: UIViewController {
     override func loadView() {
         super.loadView()
         setupScrollView()
-        setupPage1()
-//        setupPage2()
-//        setupPage3()
+        updateViews()
         setupPageControl()
     }
     
@@ -95,15 +98,60 @@ class OnboardingVC: UIViewController {
     }
     
 //MARKA: Private methods
-    fileprivate func setupScrollView() {
+    fileprivate func setupScrollView() { //and contentView
         view.insertSubview(scrollView, at: 0)
-        NSLayoutConstraint.activate([ //isActive = true a group of contraints
-            scrollView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1/1),
-            scrollView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 1/1),
-            scrollView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
-            scrollView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-        ])
+        scrollView.insertSubview(contentView, at: 1)
+        NSLayoutConstraint.activate(
+            scrollView.frameLayoutGuide.pinToEdges(view: self.view) //pin scrollView's frameLayoutGuide to edges of self.view
+        )
+        
+        NSLayoutConstraint.activate(
+            scrollView.contentLayoutGuide.pinToEdges(view: contentView)
+        ) //pin scrollView's contentLayoutGuide to edges of self.view
+        scrollView.contentLayoutGuide.heightAnchor.constraint(equalTo: scrollView.frameLayoutGuide.heightAnchor).isActive = true
+        //        NSLayoutConstraint.activate([ //isActive = true a group of contraints
+        //            scrollView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1/1),
+        //            scrollView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 1/1),
+        //            scrollView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+        //            scrollView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+        //        ])
         scrollView.delegate = self
+    }
+    
+    fileprivate func updateViews() {
+        pages.append(contentsOf: [page1View, page2View, page3View])
+        setupConstraints()
+    }
+    
+    fileprivate func setupConstraints() {
+        pages.enumerated().forEach { tuple in //this tuple only have offset and element
+            let index = tuple.offset
+            let page = tuple.element
+
+            contentView.addSubview(page)
+            
+            NSLayoutConstraint.activate([
+                page.topAnchor.constraint(equalTo: scrollView.topAnchor),
+                page.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+                page.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
+            ])
+
+            if index == 0 {
+                NSLayoutConstraint.activate([
+                    page.leftAnchor.constraint(equalTo: contentView.leftAnchor)
+                ])
+            } else {
+                NSLayoutConstraint.activate([
+                    page.leftAnchor.constraint(equalTo: pages[index - 1].rightAnchor)
+                ])
+            }
+
+            if index == pages.count - 1 {
+                NSLayoutConstraint.activate([
+                    page.rightAnchor.constraint(equalTo: contentView.rightAnchor)
+                ])
+            }
+        }
     }
     
     fileprivate func setupPageControl() {
