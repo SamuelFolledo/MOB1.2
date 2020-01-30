@@ -9,17 +9,15 @@
 import UIKit
 
 class OnboardingPageView: UIView {
+    
+//MARK: Properties
     var color: UIColor!
     
+//MARK: Required methods
     required init(color: UIColor) {
         super.init(frame: .zero)
         self.color = color
         self.setup()
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setup()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -27,11 +25,21 @@ class OnboardingPageView: UIView {
         setup()
     }
     
-    func setup() {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+    
+    override func layoutSubviews() { //where you can set
+        setupBackgroundLayer()
+    }
+    
+//MARK: Private methods
+    fileprivate func setup() {
         self.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    override func layoutSubviews() {
+    fileprivate func setupBackgroundLayer() {
         let gradientLayer: CAGradientLayer = CAGradientLayer()
         gradientLayer.frame = self.bounds
         gradientLayer.colors = [color.cgColor, UIColor.black.cgColor] //add colors, first one will be at the top

@@ -41,30 +41,6 @@ class OnboardingVC: UIViewController {
         view.backgroundColor = .purple
         return view
     }()
-//    let page1View: UIView = {
-//        let view: UIView = UIView(frame: .zero)
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        view.backgroundColor = .orange
-//        return view
-//    }()
-//    let page2View: UIView = {
-//        let view: UIView = UIView(frame: .zero)
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        view.backgroundColor = .systemPink
-//        return view
-//    }()
-//    let page3View: UIView = {
-//        let view: UIView = UIView(frame: .zero)
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        view.backgroundColor = .blue
-//        return view
-//    }()
-//    let page4View: UIView = {
-//        let view: UIView = UIView(frame: .zero)
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        view.backgroundColor = .purple
-//        return view
-//    }()
     var page1View: OnboardingPageView!
     var page2View: OnboardingPageView!
     var page3View: OnboardingPageView!
