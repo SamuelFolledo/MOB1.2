@@ -98,7 +98,7 @@
 				3397D76223E0AB62000C59D4 /* CodingConstraintVC.swift */,
 				3397D76623E0C042000C59D4 /* ProgrammaticConstraints */,
 				3329A61A23E365BA00A8FDB5 /* XibView */,
-				3300544823DA286400673C81 /* Views */,
+				3300544023DA186000673C81 /* AutoLayoutPart2 */,
 				3300544723DA285500673C81 /* Helper */,
 				3300543523DA180700673C81 /* Assets.xcassets */,
 				3300543723DA180700673C81 /* LaunchScreen.storyboard */,
@@ -124,14 +124,6 @@
 				3309913423E277E100880CC5 /* UILayoutGuide+extensions.swift */,
 			);
 			path = Helper;
-			sourceTree = "<group>";
-		};
-		3300544823DA286400673C81 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				3300544023DA186000673C81 /* AutoLayoutPart2 */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		3329A61A23E365BA00A8FDB5 /* XibView */ = {
