@@ -146,9 +146,10 @@ class OnboardingVC: UIViewController {
 
     fileprivate func populatePageViews(page: UIView) {
         let pageImageView = UIImageView(image: UIImage(named: "makeschoolLogo")!)
+        pageImageView.contentMode = .scaleAspectFit
         pageImageView.translatesAutoresizingMaskIntoConstraints = false
         page.addSubview(pageImageView)
-        pageImageView.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        pageImageView.widthAnchor.constraint(equalTo: page.widthAnchor, multiplier: 0.9).isActive = true
         pageImageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
         pageImageView.topAnchor.constraint(equalTo: page.topAnchor, constant: 100).isActive = true
         pageImageView.centerXAnchor.constraint(equalTo: page.centerXAnchor).isActive = true
