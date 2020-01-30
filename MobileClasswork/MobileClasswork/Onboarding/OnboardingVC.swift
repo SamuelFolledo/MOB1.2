@@ -59,6 +59,12 @@ class OnboardingVC: UIViewController {
         view.backgroundColor = .blue
         return view
     }()
+    let page4View: UIView = {
+        let view: UIView = UIView(frame: .zero)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .purple
+        return view
+    }()
     let pageControl: UIPageControl = {
         let pageControl: UIPageControl = UIPageControl(frame: .zero)
         pageControl.translatesAutoresizingMaskIntoConstraints = false
@@ -102,7 +108,7 @@ class OnboardingVC: UIViewController {
     }
     
     fileprivate func setupPageViews() {
-        pages.append(contentsOf: [page1View, page2View, page3View])
+        pages.append(contentsOf: [page1View, page2View, page3View, page4View])
         applyPageConstraints()
     }
     
