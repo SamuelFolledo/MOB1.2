@@ -9,13 +9,33 @@
 import UIKit
 
 class OnboardingPageView: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    var color: UIColor!
+    
+    required init(color: UIColor) {
+        super.init(frame: .zero)
+        self.color = color
+        self.setup()
     }
-    */
-
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    func setup() {
+        self.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    override func layoutSubviews() {
+        let gradientLayer: CAGradientLayer = CAGradientLayer()
+        gradientLayer.frame = self.bounds
+        gradientLayer.colors = [color.cgColor, UIColor.black.cgColor] //add colors, first one will be at the top
+        gradientLayer.locations = [0.5, 1]
+        self.layer.insertSublayer(gradientLayer, at: 0)
+    }
 }
