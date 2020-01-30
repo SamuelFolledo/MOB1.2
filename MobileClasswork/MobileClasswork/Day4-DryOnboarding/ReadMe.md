@@ -1,4 +1,6 @@
-# Creating Onboarding Programmatically in a UIScrollView
+# Creating Onboarding Programmatically in a UIScrollView with Gradient Background
 
-<img src="https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/static/gif/day3hw1.gif" width="640" height="496">
-https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/MobileClasswork/Onboarding/OnboardingVC.swift
+<img src="https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/static/gif/day4cw1.gif" width="640" height="496">
+
+
+
