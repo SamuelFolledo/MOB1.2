@@ -45,12 +45,15 @@
 ---
 
 <a name="day3"></a>
-## Day 3. [Coding Constraints]()
+## Day 3. [Coding Constraints](https://make-school-courses.github.io/MOB-1.2-Introduction-to-iOS-Development/#/Lessons/03-CodingConstraints/README)
 ### Topics
-- NSLayout Programmatic way of programming
+- Constraints programmatically
+- Anchors and NSLayoutConstraint class
 
-### HW: Onboarding using UIScrollView programmatically
+### HW: Create an Onboarding Programmatically using UIScrollView
 <img src="https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/static/gif/day3hw1.gif" width="640" height="496">
+https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/MobileClasswork/Onboarding/OnboardingVC.swift
+
 ---
 
 <a name="day4"></a>
