@@ -145,11 +145,11 @@ class OnboardingVC: UIViewController {
     }
     
     fileprivate func setupPageControl() {
-        contentView.insertSubview(pageControl, at: 100) //put it in the front
+        contentView.addSubview(pageControl)
         NSLayoutConstraint.activate([ //isActive = true a group of contraints
-            pageControl.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 1/4),
+            pageControl.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/4),
             pageControl.heightAnchor.constraint(equalToConstant: 50),
-            pageControl.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: self.view.frame.height - 25),
+            pageControl.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -25),
             pageControl.centerXAnchor.constraint(equalTo: self.scrollView.centerXAnchor),
         ])
         pageControl.addTarget(self, action: #selector(self.pageControlDidTouch), for: .touchUpInside)
