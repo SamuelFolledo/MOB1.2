@@ -85,6 +85,7 @@ class OnboardingVC: UIViewController {
         setupScrollView()
         updateViews()
         setupPageControl()
+        setupPage1()
     }
     
     override func viewDidLoad() {
@@ -98,17 +99,17 @@ class OnboardingVC: UIViewController {
     }
     
 //MARKA: Private methods
-    fileprivate func setupScrollView() { //and contentView
+    fileprivate func setupScrollView() { //setup scrollView and contentView
+        scrollView.delegate = self //optional
         view.insertSubview(scrollView, at: 0)
         scrollView.insertSubview(contentView, at: 1)
         NSLayoutConstraint.activate(
-            scrollView.frameLayoutGuide.pinToEdges(view: self.view) //pin scrollView's frameLayoutGuide to edges of self.view
+            scrollView.frameLayoutGuide.pinToEdges(view: self.view) //pin scrollView's frameLayoutGuide to the edges of self.view
         )
         NSLayoutConstraint.activate(
-            scrollView.contentLayoutGuide.pinToEdges(view: contentView)
-        ) //pin scrollView's contentLayoutGuide to edges of self.view
+            scrollView.contentLayoutGuide.pinToEdges(view: contentView) //pin scrollView's contentLayoutGuide to edges of contentView
+        )
         scrollView.contentLayoutGuide.heightAnchor.constraint(equalTo: scrollView.frameLayoutGuide.heightAnchor).isActive = true //NOTE: you can get width and height from scrollView's frameLayoutGuide, and you can pin top, left, right, and bottom to scrollView's contentLayoutGuide //refer to Adriana's ScrollView Recipe
-        scrollView.delegate = self
     }
     
     fileprivate func updateViews() {
@@ -144,7 +145,7 @@ class OnboardingVC: UIViewController {
     }
     
     fileprivate func setupPageControl() {
-        contentView.addSubview(pageControl)
+        self.view.addSubview(pageControl)
         NSLayoutConstraint.activate([ //isActive = true a group of contraints
             pageControl.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/4),
             pageControl.heightAnchor.constraint(equalToConstant: 50),
@@ -155,14 +156,14 @@ class OnboardingVC: UIViewController {
     }
     
     fileprivate func setupPage1() {
-        scrollView.addSubview(page1View)
-        NSLayoutConstraint.activate([ //isActive = true a group of contraints
-            page1View.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1/1),
-            page1View.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 1/1),
-            page1View.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
-            page1View.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-        ])
-        pages.append(page1View)
+//        scrollView.addSubview(page1View)
+//        NSLayoutConstraint.activate([ //isActive = true a group of contraints
+//            page1View.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1/1),
+//            page1View.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 1/1),
+//            page1View.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+//            page1View.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+//        ])
+//        pages.append(page1View)
         setupImageView()
         setupDescriptionLabel()
     }
@@ -179,30 +180,30 @@ class OnboardingVC: UIViewController {
         page1View.addSubview(page1ImageView)
         page1ImageView.widthAnchor.constraint(equalToConstant: 200).isActive = true
         page1ImageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
-        page1ImageView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 100).isActive = true
-        page1ImageView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        page1ImageView.topAnchor.constraint(equalTo: page1View.topAnchor, constant: 100).isActive = true
+        page1ImageView.centerXAnchor.constraint(equalTo: page1View.centerXAnchor).isActive = true
     }
     
     fileprivate func setupPage2() {
-        scrollView.addSubview(page2View)
-        NSLayoutConstraint.activate([ //isActive = true a group of contraints
-            page2View.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1/1),
-            page2View.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 1/1),
-            page2View.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
-            page2View.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-        ])
-        pages.append(page2View)
+//        scrollView.addSubview(page2View)
+//        NSLayoutConstraint.activate([ //isActive = true a group of contraints
+//            page2View.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1/1),
+//            page2View.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 1/1),
+//            page2View.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+//            page2View.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+//        ])
+//        pages.append(page2View)
     }
     
     fileprivate func setupPage3() {
-        scrollView.addSubview(page3View)
-        NSLayoutConstraint.activate([ //isActive = true a group of contraints
-            page3View.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1/1),
-            page3View.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 1/1),
-            page3View.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
-            page3View.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-        ])
-        pages.append(page3View)
+//        scrollView.addSubview(page3View)
+//        NSLayoutConstraint.activate([ //isActive = true a group of contraints
+//            page3View.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1/1),
+//            page3View.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 1/1),
+//            page3View.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+//            page3View.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+//        ])
+//        pages.append(page3View)
     }
 }
 
