@@ -65,27 +65,16 @@ class OnboardingVC: UIViewController {
         pageControl.tintColor = .black
         return pageControl
     }()
-    let page1ImageView: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: "makeschoolLogo")!)
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
-    let descriptionLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "EYOOOO"
-        label.font = .boldSystemFont(ofSize: 18)
-        label.textAlignment = .center
-        return label
-    }()
     
 //MARK: App Lifecycle
     override func loadView() {
         super.loadView()
         setupScrollView()
-        updateViews()
+        setupPageViews()
         setupPageControl()
-        setupPage1()
+        for page in pages { //populate page views
+            populatePageViews(page: page)
+        }
     }
     
     override func viewDidLoad() {
@@ -93,9 +82,9 @@ class OnboardingVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-      super.viewWillAppear(animated)
-      pageControl.numberOfPages = self.numberOfPages
-      pageControl.currentPage = 0
+        super.viewWillAppear(animated)
+        pageControl.numberOfPages = self.numberOfPages
+        pageControl.currentPage = 0
     }
     
 //MARKA: Private methods
@@ -112,12 +101,12 @@ class OnboardingVC: UIViewController {
         scrollView.contentLayoutGuide.heightAnchor.constraint(equalTo: scrollView.frameLayoutGuide.heightAnchor).isActive = true //NOTE: you can get width and height from scrollView's frameLayoutGuide, and you can pin top, left, right, and bottom to scrollView's contentLayoutGuide //refer to Adriana's ScrollView Recipe
     }
     
-    fileprivate func updateViews() {
+    fileprivate func setupPageViews() {
         pages.append(contentsOf: [page1View, page2View, page3View])
-        setupConstraints()
+        applyPageConstraints()
     }
     
-    fileprivate func setupConstraints() {
+    fileprivate func applyPageConstraints() { //apply constraints to all pages
         pages.enumerated().forEach { tuple in //this tuple only have offset and element
             let index = tuple.offset //index of page
             let page = tuple.element //page
@@ -145,7 +134,7 @@ class OnboardingVC: UIViewController {
     }
     
     fileprivate func setupPageControl() {
-        self.view.addSubview(pageControl)
+        self.view.addSubview(pageControl) //must put to self.view so it won't disappear
         NSLayoutConstraint.activate([ //isActive = true a group of contraints
             pageControl.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/4),
             pageControl.heightAnchor.constraint(equalToConstant: 50),
@@ -154,56 +143,27 @@ class OnboardingVC: UIViewController {
         ])
         pageControl.addTarget(self, action: #selector(self.pageControlDidTouch), for: .touchUpInside)
     }
-    
-    fileprivate func setupPage1() {
-//        scrollView.addSubview(page1View)
-//        NSLayoutConstraint.activate([ //isActive = true a group of contraints
-//            page1View.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1/1),
-//            page1View.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 1/1),
-//            page1View.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
-//            page1View.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-//        ])
-//        pages.append(page1View)
-        setupImageView()
-        setupDescriptionLabel()
-    }
-    
-    fileprivate func setupDescriptionLabel() {
-        page1View.addSubview(descriptionLabel)
+
+    fileprivate func populatePageViews(page: UIView) {
+        let pageImageView = UIImageView(image: UIImage(named: "makeschoolLogo")!)
+        pageImageView.translatesAutoresizingMaskIntoConstraints = false
+        page.addSubview(pageImageView)
+        pageImageView.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        pageImageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        pageImageView.topAnchor.constraint(equalTo: page.topAnchor, constant: 100).isActive = true
+        pageImageView.centerXAnchor.constraint(equalTo: page.centerXAnchor).isActive = true
+        let descriptionLabel = UILabel()
+        descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
+        descriptionLabel.text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+        descriptionLabel.font = .boldSystemFont(ofSize: 18)
+        descriptionLabel.numberOfLines = 0
+        descriptionLabel.textColor = .white
+        descriptionLabel.textAlignment = .center
+        page.addSubview(descriptionLabel)
         descriptionLabel.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 4/5).isActive = true
         descriptionLabel.heightAnchor.constraint(equalToConstant: 200).isActive = true
-        descriptionLabel.topAnchor.constraint(equalTo: page1ImageView.bottomAnchor, constant: 100).isActive = true
-        descriptionLabel.centerXAnchor.constraint(equalTo: page1ImageView.centerXAnchor).isActive = true
-    }
-    
-    fileprivate func setupImageView() {
-        page1View.addSubview(page1ImageView)
-        page1ImageView.widthAnchor.constraint(equalToConstant: 200).isActive = true
-        page1ImageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
-        page1ImageView.topAnchor.constraint(equalTo: page1View.topAnchor, constant: 100).isActive = true
-        page1ImageView.centerXAnchor.constraint(equalTo: page1View.centerXAnchor).isActive = true
-    }
-    
-    fileprivate func setupPage2() {
-//        scrollView.addSubview(page2View)
-//        NSLayoutConstraint.activate([ //isActive = true a group of contraints
-//            page2View.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1/1),
-//            page2View.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 1/1),
-//            page2View.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
-//            page2View.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-//        ])
-//        pages.append(page2View)
-    }
-    
-    fileprivate func setupPage3() {
-//        scrollView.addSubview(page3View)
-//        NSLayoutConstraint.activate([ //isActive = true a group of contraints
-//            page3View.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1/1),
-//            page3View.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 1/1),
-//            page3View.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
-//            page3View.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-//        ])
-//        pages.append(page3View)
+        descriptionLabel.topAnchor.constraint(equalTo: pageImageView.bottomAnchor, constant: 50).isActive = true
+        descriptionLabel.centerXAnchor.constraint(equalTo: pageImageView.centerXAnchor).isActive = true
     }
 }
 
@@ -246,5 +206,4 @@ extension OnboardingVC {
             scrollView.scrollRectToVisible(frame, animated: true)
         }
     }
-    
 }
