@@ -10,24 +10,56 @@ import UIKit
 
 class OnboardingVC: UIViewController {
     
-    var scrollView: UIScrollView!
-    var page1View: UIView!
-    var page2View: UIView!
-    var page3View: UIView!
-    var pageControl: UIPageControl!
-    var pages:[UIView]!
+//MARK: Non-views Properties
+    var pages:[UIView] = []
     var currentPage: Int { //tell which page is currently being viewed based on the contentOffset of the UIScrollView
-      get {
-        let page = Int((scrollView.contentOffset.x / view.bounds.size.width))
-        print("PAGE = \(page)")
-        return page
-      }
+        get {
+            let page = Int((scrollView.contentOffset.x / view.bounds.size.width))
+            print("PAGE = \(page)")
+            return page
+        }
     }
     var numberOfPages: Int {
-      get {
-        return self.pages.count
-      }
+        get {
+            return self.pages.count
+        }
     }
+    
+//MARK: Views Properties
+    var scrollView: UIScrollView = {
+        let scrollView: UIScrollView = UIScrollView(frame: .zero)
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.isPagingEnabled = true
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        return scrollView
+    }()
+    var page1View: UIView = {
+        let view: UIView = UIView(frame: .zero)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .orange
+        return view
+    }()
+    var page2View: UIView = {
+        let view: UIView = UIView(frame: .zero)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .systemPink
+        return view
+    }()
+    var page3View: UIView = {
+        let view: UIView = UIView(frame: .zero)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .blue
+        return view
+    }()
+    var pageControl: UIPageControl = {
+        let pageControl: UIPageControl = UIPageControl(frame: .zero)
+        pageControl.translatesAutoresizingMaskIntoConstraints = false
+        pageControl.tintColor = .black
+        return pageControl
+    }()
+    
     let page1ImageView: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "makeschoolLogo")!)
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -45,6 +77,7 @@ class OnboardingVC: UIViewController {
 //MARK: App Lifecycle
     override func loadView() {
         super.loadView()
+        pages = Array()
         setupScrollView()
         setupPage1()
 //        setupPage2()
@@ -58,14 +91,12 @@ class OnboardingVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
       super.viewWillAppear(animated)
-      pageControl?.numberOfPages = self.numberOfPages
-      pageControl?.currentPage = 0
+      pageControl.numberOfPages = self.numberOfPages
+      pageControl.currentPage = 0
     }
     
 //MARKA: Private methods
     fileprivate func setupScrollView() {
-        scrollView = UIScrollView(frame: .zero)
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
         view.insertSubview(scrollView, at: 0)
         NSLayoutConstraint.activate([ //isActive = true a group of contraints
             scrollView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1/1),
@@ -73,18 +104,10 @@ class OnboardingVC: UIViewController {
             scrollView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
             scrollView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
         ])
-        scrollView.showsHorizontalScrollIndicator = false
-        scrollView.showsVerticalScrollIndicator = false
-        scrollView.isPagingEnabled = true
         scrollView.delegate = self
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        pages = Array()
     }
     
     fileprivate func setupPageControl() {
-        pageControl = UIPageControl(frame: .zero)
-        pageControl.translatesAutoresizingMaskIntoConstraints = false
-        pageControl.tintColor = .black
 //        scrollView.addSubview(pageControl)
         scrollView.insertSubview(pageControl, at: 100) //put it in the front
         NSLayoutConstraint.activate([ //isActive = true a group of contraints
@@ -93,12 +116,10 @@ class OnboardingVC: UIViewController {
             pageControl.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: self.view.frame.height - 25),
             pageControl.centerXAnchor.constraint(equalTo: self.scrollView.centerXAnchor),
         ])
-        pageControl?.addTarget(self, action: #selector(self.pageControlDidTouch), for: .touchUpInside)
+        pageControl.addTarget(self, action: #selector(self.pageControlDidTouch), for: .touchUpInside)
     }
     
     fileprivate func setupPage1() {
-        page1View = UIView(frame: .zero)
-        page1View.translatesAutoresizingMaskIntoConstraints = false
         scrollView.addSubview(page1View)
         NSLayoutConstraint.activate([ //isActive = true a group of contraints
             page1View.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1/1),
@@ -106,7 +127,6 @@ class OnboardingVC: UIViewController {
             page1View.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
             page1View.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
         ])
-        page1View.backgroundColor = .orange
         pages.append(page1View)
         setupImageView()
         setupDescriptionLabel()
@@ -118,7 +138,6 @@ class OnboardingVC: UIViewController {
         descriptionLabel.heightAnchor.constraint(equalToConstant: 200).isActive = true
         descriptionLabel.topAnchor.constraint(equalTo: page1ImageView.bottomAnchor, constant: 100).isActive = true
         descriptionLabel.centerXAnchor.constraint(equalTo: page1ImageView.centerXAnchor).isActive = true
-
     }
     
     fileprivate func setupImageView() {
@@ -126,13 +145,10 @@ class OnboardingVC: UIViewController {
         page1ImageView.widthAnchor.constraint(equalToConstant: 200).isActive = true
         page1ImageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
         page1ImageView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 100).isActive = true
-//        (equalTo: self.view.topAnchor, constant: 100)
         page1ImageView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
     }
     
     fileprivate func setupPage2() {
-        page2View = UIView(frame: .zero)
-        page2View.translatesAutoresizingMaskIntoConstraints = false
         scrollView.addSubview(page2View)
         NSLayoutConstraint.activate([ //isActive = true a group of contraints
             page2View.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1/1),
@@ -140,13 +156,10 @@ class OnboardingVC: UIViewController {
             page2View.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
             page2View.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
         ])
-        page2View.backgroundColor = .systemPink
         pages.append(page2View)
     }
     
     fileprivate func setupPage3() {
-        page3View = UIView(frame: .zero)
-        page3View.translatesAutoresizingMaskIntoConstraints = false
         scrollView.addSubview(page3View)
         NSLayoutConstraint.activate([ //isActive = true a group of contraints
             page3View.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1/1),
@@ -154,18 +167,17 @@ class OnboardingVC: UIViewController {
             page3View.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
             page3View.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
         ])
-        page3View.backgroundColor = .blue
         pages.append(page3View)
     }
 }
 
 extension OnboardingVC: UIScrollViewDelegate {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        pageControl?.currentPage = currentPage
+        pageControl.currentPage = currentPage
     }
     
     func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
-        pageControl?.currentPage = currentPage
+        pageControl.currentPage = currentPage
     }
 }
 
@@ -185,10 +197,8 @@ extension OnboardingVC {
         }
     }
     
-    @objc func pageControlDidTouch() { //method to change page when user interacts with pageControl
-        if let pageControl = pageControl {
-            navigateToPage(page: pageControl.currentPage)
-        }
+    @objc func pageControlDidTouch() { //method to change page when user interacts with pageControl {
+        navigateToPage(page: pageControl.currentPage)
     }
     
 //    func addViewController(page: UIView) -> Void {
@@ -220,7 +230,7 @@ extension OnboardingVC {
 //    }
     
     private func updateUI() {
-        pageControl?.currentPage = currentPage
+        pageControl.currentPage = currentPage
     }
     
     private func navigateToPage(page: Int) {
