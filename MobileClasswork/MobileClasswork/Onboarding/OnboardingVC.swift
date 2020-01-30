@@ -11,7 +11,7 @@ import UIKit
 class OnboardingVC: UIViewController {
     
 //MARK: Non-views Properties
-    var pages: [UIView] = []
+    var pages: [OnboardingPageView] = []
     var currentPage: Int { //tell which page is currently being viewed based on the contentOffset of the UIScrollView
         get {
             let page = Int((scrollView.contentOffset.x / view.bounds.size.width))
@@ -41,30 +41,34 @@ class OnboardingVC: UIViewController {
         view.backgroundColor = .purple
         return view
     }()
-    let page1View: UIView = {
-        let view: UIView = UIView(frame: .zero)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .orange
-        return view
-    }()
-    let page2View: UIView = {
-        let view: UIView = UIView(frame: .zero)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .systemPink
-        return view
-    }()
-    let page3View: UIView = {
-        let view: UIView = UIView(frame: .zero)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .blue
-        return view
-    }()
-    let page4View: UIView = {
-        let view: UIView = UIView(frame: .zero)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .purple
-        return view
-    }()
+//    let page1View: UIView = {
+//        let view: UIView = UIView(frame: .zero)
+//        view.translatesAutoresizingMaskIntoConstraints = false
+//        view.backgroundColor = .orange
+//        return view
+//    }()
+//    let page2View: UIView = {
+//        let view: UIView = UIView(frame: .zero)
+//        view.translatesAutoresizingMaskIntoConstraints = false
+//        view.backgroundColor = .systemPink
+//        return view
+//    }()
+//    let page3View: UIView = {
+//        let view: UIView = UIView(frame: .zero)
+//        view.translatesAutoresizingMaskIntoConstraints = false
+//        view.backgroundColor = .blue
+//        return view
+//    }()
+//    let page4View: UIView = {
+//        let view: UIView = UIView(frame: .zero)
+//        view.translatesAutoresizingMaskIntoConstraints = false
+//        view.backgroundColor = .purple
+//        return view
+//    }()
+    var page1View: OnboardingPageView!
+    var page2View: OnboardingPageView!
+    var page3View: OnboardingPageView!
+    var page4View: OnboardingPageView!
     let pageControl: UIPageControl = {
         let pageControl: UIPageControl = UIPageControl(frame: .zero)
         pageControl.translatesAutoresizingMaskIntoConstraints = false
@@ -108,6 +112,10 @@ class OnboardingVC: UIViewController {
     }
     
     fileprivate func setupPageViews() {
+        page1View = OnboardingPageView(color: .orange)
+        page2View = OnboardingPageView(color: .systemPink)
+        page3View = OnboardingPageView(color: .blue)
+        page4View = OnboardingPageView(color: .purple)
         pages.append(contentsOf: [page1View, page2View, page3View, page4View])
         applyPageConstraints()
     }
@@ -136,11 +144,6 @@ class OnboardingVC: UIViewController {
                     page.rightAnchor.constraint(equalTo: contentView.rightAnchor)
                 ])
             }
-            let gradientLayer: CAGradientLayer = CAGradientLayer()
-            gradientLayer.colors = [page.backgroundColor, UIColor.black.cgColor] //add colors, first one will be at the top
-            gradientLayer.locations = [0.5, 1]
-            gradientLayer.frame = view.bounds
-            page.layer.insertSublayer(gradientLayer, at: 0)
         }
     }
     
