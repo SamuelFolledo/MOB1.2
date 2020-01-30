@@ -47,11 +47,10 @@
 <a name="day3"></a>
 ## Day 3. [Coding Constraints]()
 ### Topics
+- NSLayout Programmatic way of programming
 
-### CW:
-
-### HW:
-
+### HW: Onboarding using UIScrollView programmatically
+<img src="https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/static/gif/day3hw1.gif" width="640" height="496">
 ---
 
 <a name="day4"></a>
