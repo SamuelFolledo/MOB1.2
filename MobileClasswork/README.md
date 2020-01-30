@@ -40,6 +40,7 @@
 <img src="https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/static/gif/day2CW1.gif" width="640" height="446">
 
 ### HW: [Size Classes Tutorial](https://github.com/Make-School-Courses/MOB-1.2-Introduction-to-iOS-Development/blob/master/Lessons/02-AutoLayout/assignments/sizeclasses.md) Vary for Traits and adapting UI if landscape or portrait mode
+
 <img src="https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/static/gif/day2HW1.gif" width="640" height="400">
 
 ---
@@ -52,15 +53,17 @@
 
 ### HW: Create an Onboarding Programmatically using UIScrollView
 <img src="https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/static/gif/day3hw1.gif" width="640" height="496">
-https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/MobileClasswork/Onboarding/OnboardingVC.swift
+
+https://github.com/SamuelFolledo/MOB1.2/tree/master/MobileClasswork/MobileClasswork/Day3-Onboarding
 
 ---
 
 <a name="day4"></a>
-## Day 4. [Custom Views]()
+## Day 4. [Custom Views](https://make-school-courses.github.io/MOB-1.2-Introduction-to-iOS-Development/#/Lessons/04-CustomViews/README)
 ### Topics
-
-### CW: 
+- Review Onboarding
+- Creating Custom Views
+- Xib files
 
 ### HW: 
 
