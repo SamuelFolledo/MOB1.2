@@ -109,12 +109,6 @@ class OnboardingVC: UIViewController {
             scrollView.contentLayoutGuide.pinToEdges(view: contentView)
         ) //pin scrollView's contentLayoutGuide to edges of self.view
         scrollView.contentLayoutGuide.heightAnchor.constraint(equalTo: scrollView.frameLayoutGuide.heightAnchor).isActive = true
-        //        NSLayoutConstraint.activate([ //isActive = true a group of contraints
-        //            scrollView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1/1),
-        //            scrollView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 1/1),
-        //            scrollView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
-        //            scrollView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-        //        ])
         scrollView.delegate = self
     }
     
@@ -125,28 +119,24 @@ class OnboardingVC: UIViewController {
     
     fileprivate func setupConstraints() {
         pages.enumerated().forEach { tuple in //this tuple only have offset and element
-            let index = tuple.offset
-            let page = tuple.element
-
-            contentView.addSubview(page)
-            
-            NSLayoutConstraint.activate([
+            let index = tuple.offset //index of page
+            let page = tuple.element //page
+            contentView.addSubview(page) //add page to contentView
+            NSLayoutConstraint.activate([ //set page's top, bottom and width
                 page.topAnchor.constraint(equalTo: scrollView.topAnchor),
                 page.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
                 page.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
             ])
-
-            if index == 0 {
+            if index == 0 { //if first page, then set page's leftAnchor to contentView's leftAnchor
                 NSLayoutConstraint.activate([
                     page.leftAnchor.constraint(equalTo: contentView.leftAnchor)
                 ])
-            } else {
+            } else { //else set current page's leftAnchor to the previous page's rightAnchor
                 NSLayoutConstraint.activate([
                     page.leftAnchor.constraint(equalTo: pages[index - 1].rightAnchor)
                 ])
             }
-
-            if index == pages.count - 1 {
+            if index == pages.count - 1 { //if last page, then set that page's rightAnchor to contentView's rightAnchor
                 NSLayoutConstraint.activate([
                     page.rightAnchor.constraint(equalTo: contentView.rightAnchor)
                 ])
@@ -155,8 +145,7 @@ class OnboardingVC: UIViewController {
     }
     
     fileprivate func setupPageControl() {
-//        scrollView.addSubview(pageControl)
-        scrollView.insertSubview(pageControl, at: 100) //put it in the front
+        contentView.insertSubview(pageControl, at: 100) //put it in the front
         NSLayoutConstraint.activate([ //isActive = true a group of contraints
             pageControl.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 1/4),
             pageControl.heightAnchor.constraint(equalToConstant: 50),
