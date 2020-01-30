@@ -17,6 +17,7 @@
 		3300544423DA188F00673C81 /* ScrollVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3300544223DA188F00673C81 /* ScrollVC.xib */; };
 		3300544623DA217300673C81 /* UIViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3300544523DA217300673C81 /* UIViewController+extensions.swift */; };
 		3300544A23DA314100673C81 /* UIScrollView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3300544923DA314100673C81 /* UIScrollView+extensions.swift */; };
+		3309913523E277E100880CC5 /* UILayoutGuide+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3309913423E277E100880CC5 /* UILayoutGuide+extensions.swift */; };
 		3397D76323E0AB62000C59D4 /* CodingConstraintVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3397D76223E0AB62000C59D4 /* CodingConstraintVC.swift */; };
 		3397D76523E0BA40000C59D4 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3397D76423E0BA40000C59D4 /* OnboardingVC.swift */; };
 		D8D8C5B70C10677BD7F811E4 /* Pods_MobileClasswork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA09746C6CD68F4FBA90F065 /* Pods_MobileClasswork.framework */; };
@@ -35,6 +36,7 @@
 		3300544223DA188F00673C81 /* ScrollVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollVC.xib; sourceTree = "<group>"; };
 		3300544523DA217300673C81 /* UIViewController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extensions.swift"; sourceTree = "<group>"; };
 		3300544923DA314100673C81 /* UIScrollView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+extensions.swift"; sourceTree = "<group>"; };
+		3309913423E277E100880CC5 /* UILayoutGuide+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILayoutGuide+extensions.swift"; sourceTree = "<group>"; };
 		3397D76223E0AB62000C59D4 /* CodingConstraintVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodingConstraintVC.swift; sourceTree = "<group>"; };
 		3397D76423E0BA40000C59D4 /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
 		C07075359D279D6BE5C21B45 /* Pods-MobileClasswork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileClasswork.release.xcconfig"; path = "Target Support Files/Pods-MobileClasswork/Pods-MobileClasswork.release.xcconfig"; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 			children = (
 				3300544523DA217300673C81 /* UIViewController+extensions.swift */,
 				3300544923DA314100673C81 /* UIScrollView+extensions.swift */,
+				3309913423E277E100880CC5 /* UILayoutGuide+extensions.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 			files = (
 				3397D76323E0AB62000C59D4 /* CodingConstraintVC.swift in Sources */,
 				3397D76523E0BA40000C59D4 /* OnboardingVC.swift in Sources */,
+				3309913523E277E100880CC5 /* UILayoutGuide+extensions.swift in Sources */,
 				3300544623DA217300673C81 /* UIViewController+extensions.swift in Sources */,
 				3300544A23DA314100673C81 /* UIScrollView+extensions.swift in Sources */,
 				3300543123DA180400673C81 /* ViewController.swift in Sources */,

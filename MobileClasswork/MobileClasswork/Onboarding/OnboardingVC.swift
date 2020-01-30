@@ -26,7 +26,7 @@ class OnboardingVC: UIViewController {
     }
     
 //MARK: Views Properties
-    var scrollView: UIScrollView = {
+    let scrollView: UIScrollView = {
         let scrollView: UIScrollView = UIScrollView(frame: .zero)
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.showsHorizontalScrollIndicator = false
@@ -35,25 +35,25 @@ class OnboardingVC: UIViewController {
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         return scrollView
     }()
-    var page1View: UIView = {
+    let page1View: UIView = {
         let view: UIView = UIView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .orange
         return view
     }()
-    var page2View: UIView = {
+    let page2View: UIView = {
         let view: UIView = UIView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .systemPink
         return view
     }()
-    var page3View: UIView = {
+    let page3View: UIView = {
         let view: UIView = UIView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .blue
         return view
     }()
-    var pageControl: UIPageControl = {
+    let pageControl: UIPageControl = {
         let pageControl: UIPageControl = UIPageControl(frame: .zero)
         pageControl.translatesAutoresizingMaskIntoConstraints = false
         pageControl.tintColor = .black
@@ -77,7 +77,6 @@ class OnboardingVC: UIViewController {
 //MARK: App Lifecycle
     override func loadView() {
         super.loadView()
-        pages = Array()
         setupScrollView()
         setupPage1()
 //        setupPage2()
