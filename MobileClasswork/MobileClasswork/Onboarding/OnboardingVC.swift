@@ -136,6 +136,11 @@ class OnboardingVC: UIViewController {
                     page.rightAnchor.constraint(equalTo: contentView.rightAnchor)
                 ])
             }
+            let gradientLayer: CAGradientLayer = CAGradientLayer()
+            gradientLayer.colors = [page.backgroundColor, UIColor.black.cgColor] //add colors, first one will be at the top
+            gradientLayer.locations = [0.5, 1]
+            gradientLayer.frame = view.bounds
+            page.layer.insertSublayer(gradientLayer, at: 0)
         }
     }
     
