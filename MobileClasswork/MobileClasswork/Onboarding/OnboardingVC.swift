@@ -104,11 +104,10 @@ class OnboardingVC: UIViewController {
         NSLayoutConstraint.activate(
             scrollView.frameLayoutGuide.pinToEdges(view: self.view) //pin scrollView's frameLayoutGuide to edges of self.view
         )
-        
         NSLayoutConstraint.activate(
             scrollView.contentLayoutGuide.pinToEdges(view: contentView)
         ) //pin scrollView's contentLayoutGuide to edges of self.view
-        scrollView.contentLayoutGuide.heightAnchor.constraint(equalTo: scrollView.frameLayoutGuide.heightAnchor).isActive = true
+        scrollView.contentLayoutGuide.heightAnchor.constraint(equalTo: scrollView.frameLayoutGuide.heightAnchor).isActive = true //NOTE: you can get width and height from scrollView's frameLayoutGuide, and you can pin top, left, right, and bottom to scrollView's contentLayoutGuide //refer to Adriana's ScrollView Recipe
         scrollView.delegate = self
     }
     
@@ -221,14 +220,12 @@ extension OnboardingVC: UIScrollViewDelegate {
 extension OnboardingVC {
     fileprivate func nextPage() {
         if currentPage + 1 < self.numberOfPages {
-//            delegate?.nextButtonPressed?()
             navigateToPage(page: currentPage + 1)
         }
     }
     
     fileprivate func previousPage() {
         if currentPage > 0 {
-//            delegate?.previousButtonPressed?()
             navigateToPage(page: currentPage - 1)
         }
     }
@@ -236,34 +233,6 @@ extension OnboardingVC {
     @objc func pageControlDidTouch() { //method to change page when user interacts with pageControl {
         navigateToPage(page: pageControl.currentPage)
     }
-    
-//    func addViewController(page: UIView) -> Void {
-////        controllers.append(vc)
-//        pages.append(page)
-//
-//        page.translatesAutoresizingMaskIntoConstraints = false
-//        scrollView.addSubview(page)
-//
-//        let metrics = ["w":vc.view.bounds.size.width,"h":vc.view.bounds.size.height]
-//        vc.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[view(h)]", options:[], metrics: metrics, views: ["view":page]))
-//        vc.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:[view(w)]", options:[], metrics: metrics, views: ["view":page]))
-//        scrollView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[view]|", options:[], metrics: nil, views: ["view":page,]))
-//
-//        if self.numberOfPages == 1 {
-//            scrollView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[view]", options:[], metrics: nil, views: ["view":page,]))
-//        } else {
-//            let previousVC = controllers[self.numberOfPages - 2]
-//            let previousView = previousVC.view;
-//
-//            scrollView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:[previousView]-0-[view]", options:[], metrics: nil, views: ["previousView":previousView,"view":vc.view]))
-//
-//            if let cst = lastViewConstraint{
-//                scrollView.removeConstraints(cst as! [NSLayoutConstraint])
-//            }
-//            lastViewConstraint = NSLayoutConstraint.constraintsWithVisualFormat("H:[view]-0-|", options:[], metrics: nil, views: ["view":vc.view])
-//            scrollView.addConstraints(lastViewConstraint! as! [NSLayoutConstraint])
-//        }
-//    }
     
     private func updateUI() {
         pageControl.currentPage = currentPage
