@@ -8,6 +8,7 @@
 
 import UIKit
 
+@IBDesignable
 class OnboardingPageView: UIView {
     
 //MARK: Properties
