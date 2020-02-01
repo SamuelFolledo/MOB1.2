@@ -25,6 +25,9 @@
 		3329A62223E36C8C00A8FDB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3329A62123E36C8C00A8FDB5 /* Main.storyboard */; };
 		3397D76323E0AB62000C59D4 /* CodingConstraintVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3397D76223E0AB62000C59D4 /* CodingConstraintVC.swift */; };
 		3397D76523E0BA40000C59D4 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3397D76423E0BA40000C59D4 /* OnboardingVC.swift */; };
+		33CA319C23E565A8009AA3DF /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CA319A23E565A8009AA3DF /* CollectionViewCell.swift */; };
+		33CA319D23E565A8009AA3DF /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33CA319B23E565A8009AA3DF /* CollectionViewCell.xib */; };
+		33CA31A223E56A6F009AA3DF /* CollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CA31A123E56A6F009AA3DF /* CollectionVC.swift */; };
 		D8D8C5B70C10677BD7F811E4 /* Pods_MobileClasswork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA09746C6CD68F4FBA90F065 /* Pods_MobileClasswork.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +52,9 @@
 		3329A62123E36C8C00A8FDB5 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		3397D76223E0AB62000C59D4 /* CodingConstraintVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodingConstraintVC.swift; sourceTree = "<group>"; };
 		3397D76423E0BA40000C59D4 /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
+		33CA319A23E565A8009AA3DF /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		33CA319B23E565A8009AA3DF /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		33CA31A123E56A6F009AA3DF /* CollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionVC.swift; sourceTree = "<group>"; };
 		C07075359D279D6BE5C21B45 /* Pods-MobileClasswork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileClasswork.release.xcconfig"; path = "Target Support Files/Pods-MobileClasswork/Pods-MobileClasswork.release.xcconfig"; sourceTree = "<group>"; };
 		E62FD77750DA319310924092 /* Pods-MobileClasswork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileClasswork.debug.xcconfig"; path = "Target Support Files/Pods-MobileClasswork/Pods-MobileClasswork.debug.xcconfig"; sourceTree = "<group>"; };
 		FA09746C6CD68F4FBA90F065 /* Pods_MobileClasswork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileClasswork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +104,7 @@
 				3300542C23DA180400673C81 /* AppDelegate.swift */,
 				3300542E23DA180400673C81 /* SceneDelegate.swift */,
 				3329A62123E36C8C00A8FDB5 /* Main.storyboard */,
+				33CA319E23E565AD009AA3DF /* Xib-Cell */,
 				3329A62023E36C7000A8FDB5 /* Day1-StoryboardConstraints */,
 				3329A61B23E36A4800A8FDB5 /* Day2-UIScrollView */,
 				3329A61C23E36A6900A8FDB5 /* Day3-CodingConstraints */,
@@ -182,6 +189,16 @@
 			path = "Day4-DryOnboarding";
 			sourceTree = "<group>";
 		};
+		33CA319E23E565AD009AA3DF /* Xib-Cell */ = {
+			isa = PBXGroup;
+			children = (
+				33CA319A23E565A8009AA3DF /* CollectionViewCell.swift */,
+				33CA319B23E565A8009AA3DF /* CollectionViewCell.xib */,
+				33CA31A123E56A6F009AA3DF /* CollectionVC.swift */,
+			);
+			path = "Xib-Cell";
+			sourceTree = "<group>";
+		};
 		DFA0A6888436AECE8A78421D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3300543923DA180700673C81 /* LaunchScreen.storyboard in Resources */,
+				33CA319D23E565A8009AA3DF /* CollectionViewCell.xib in Resources */,
 				3300544423DA188F00673C81 /* ScrollVC.xib in Resources */,
 				3329A61923E365AB00A8FDB5 /* MyXibView.xib in Resources */,
 				3329A62223E36C8C00A8FDB5 /* Main.storyboard in Resources */,
@@ -295,10 +313,12 @@
 				3329A61723E365A300A8FDB5 /* MyXibView.swift in Sources */,
 				3397D76323E0AB62000C59D4 /* CodingConstraintVC.swift in Sources */,
 				3397D76523E0BA40000C59D4 /* OnboardingVC.swift in Sources */,
+				33CA31A223E56A6F009AA3DF /* CollectionVC.swift in Sources */,
 				3309913523E277E100880CC5 /* UILayoutGuide+extensions.swift in Sources */,
 				3300544623DA217300673C81 /* UIViewController+extensions.swift in Sources */,
 				3329A61E23E36B7D00A8FDB5 /* Onboarding.swift in Sources */,
 				3300544A23DA314100673C81 /* UIScrollView+extensions.swift in Sources */,
+				33CA319C23E565A8009AA3DF /* CollectionViewCell.swift in Sources */,
 				3300543123DA180400673C81 /* ViewController.swift in Sources */,
 				3300544323DA188F00673C81 /* ScrollVC.swift in Sources */,
 				3300542D23DA180400673C81 /* AppDelegate.swift in Sources */,

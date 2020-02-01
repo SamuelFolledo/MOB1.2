@@ -35,5 +35,39 @@
             </objects>
             <point key="canvasLocation" x="-5" y="21"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="OUM-nk-JfX">
+            <objects>
+                <viewController id="yqZ-7W-QF8" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PxI-VN-jCJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cEm-30-eDv">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yRU-XB-mkL">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6cj-mP-yCh" firstAttribute="bottom" secondItem="cEm-30-eDv" secondAttribute="bottom" id="F37-SR-XGq"/>
+                            <constraint firstItem="cEm-30-eDv" firstAttribute="leading" secondItem="6cj-mP-yCh" secondAttribute="leading" id="Lf5-7O-AAb"/>
+                            <constraint firstItem="6cj-mP-yCh" firstAttribute="trailing" secondItem="cEm-30-eDv" secondAttribute="trailing" id="pXX-SX-YbK"/>
+                            <constraint firstItem="cEm-30-eDv" firstAttribute="top" secondItem="6cj-mP-yCh" secondAttribute="top" id="x1R-e7-kFI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6cj-mP-yCh"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YfY-Qa-uq8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="886" y="18"/>
+        </scene>
     </scenes>
 </document>
