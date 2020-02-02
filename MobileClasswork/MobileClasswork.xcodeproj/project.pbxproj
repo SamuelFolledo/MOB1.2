@@ -104,7 +104,7 @@
 				3300542C23DA180400673C81 /* AppDelegate.swift */,
 				3300542E23DA180400673C81 /* SceneDelegate.swift */,
 				3329A62123E36C8C00A8FDB5 /* Main.storyboard */,
-				33CA319E23E565AD009AA3DF /* Xib-Cell */,
+				33CA31B123E75692009AA3DF /* Playground */,
 				3329A62023E36C7000A8FDB5 /* Day1-StoryboardConstraints */,
 				3329A61B23E36A4800A8FDB5 /* Day2-UIScrollView */,
 				3329A61C23E36A6900A8FDB5 /* Day3-CodingConstraints */,
@@ -199,6 +199,14 @@
 			path = "Xib-Cell";
 			sourceTree = "<group>";
 		};
+		33CA31B123E75692009AA3DF /* Playground */ = {
+			isa = PBXGroup;
+			children = (
+				33CA319E23E565AD009AA3DF /* Xib-Cell */,
+			);
+			path = Playground;
+			sourceTree = "<group>";
+		};
 		DFA0A6888436AECE8A78421D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +227,7 @@
 				3300542523DA180400673C81 /* Sources */,
 				3300542623DA180400673C81 /* Frameworks */,
 				3300542723DA180400673C81 /* Resources */,
+				5463A402ABF602D11EA063EE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -300,6 +309,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5463A402ABF602D11EA063EE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MobileClasswork/Pods-MobileClasswork-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MobileClasswork/Pods-MobileClasswork-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MobileClasswork/Pods-MobileClasswork-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
