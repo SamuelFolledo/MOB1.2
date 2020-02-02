@@ -80,19 +80,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yoi-l1-Wfy">
-                                <rect key="frame" x="67" y="269" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yoi-l1-Wfy" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="37.5" y="183.5" width="300" height="300"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Yoi-l1-Wfy" secondAttribute="height" id="Rix-DD-dhd"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Yoi-l1-Wfy" firstAttribute="centerX" secondItem="2HD-Em-dN3" secondAttribute="centerX" id="LR9-8u-zbk"/>
+                            <constraint firstItem="Yoi-l1-Wfy" firstAttribute="width" secondItem="dyj-3D-vza" secondAttribute="width" multiplier="0.8" id="Ll9-JP-cec"/>
+                            <constraint firstItem="Yoi-l1-Wfy" firstAttribute="centerY" secondItem="2HD-Em-dN3" secondAttribute="centerY" id="zRg-6Y-lru"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="2HD-Em-dN3"/>
                     </view>
+                    <connections>
+                        <outlet property="chartView" destination="Yoi-l1-Wfy" id="5L7-5x-IIp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O2z-O8-YEi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1732" y="17"/>
+            <point key="canvasLocation" x="1732" y="16.641679160419791"/>
         </scene>
     </scenes>
 </document>
