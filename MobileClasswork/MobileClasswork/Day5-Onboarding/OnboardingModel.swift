@@ -6,4 +6,17 @@
 //  Copyright © 2020 SamuelFolledo. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class OnboardingModel {
+    
+    let color: UIColor!
+    let image: UIImage!
+    let description: String!
+    
+    init(_color: UIColor, _image: UIImage, _description: String) {
+        self.color = _color
+        self.image = _image
+        self.description = _description
+    }
+}
