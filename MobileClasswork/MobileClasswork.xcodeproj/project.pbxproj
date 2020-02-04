@@ -30,6 +30,8 @@
 		33CA31A223E56A6F009AA3DF /* CollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CA31A123E56A6F009AA3DF /* CollectionVC.swift */; };
 		33CA31B323E75772009AA3DF /* ChartsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CA31B223E75772009AA3DF /* ChartsVC.swift */; };
 		33CA31B623E79FAD009AA3DF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CA31B523E79FAD009AA3DF /* Constants.swift */; };
+		33CA31C423E9F060009AA3DF /* Day5-Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CA31C323E9F060009AA3DF /* Day5-Onboarding.swift */; };
+		33CA31C723E9F090009AA3DF /* OnboardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CA31C623E9F090009AA3DF /* OnboardingModel.swift */; };
 		D8D8C5B70C10677BD7F811E4 /* Pods_MobileClasswork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA09746C6CD68F4FBA90F065 /* Pods_MobileClasswork.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +61,8 @@
 		33CA31A123E56A6F009AA3DF /* CollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionVC.swift; sourceTree = "<group>"; };
 		33CA31B223E75772009AA3DF /* ChartsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsVC.swift; sourceTree = "<group>"; };
 		33CA31B523E79FAD009AA3DF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		33CA31C323E9F060009AA3DF /* Day5-Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Day5-Onboarding.swift"; sourceTree = "<group>"; };
+		33CA31C623E9F090009AA3DF /* OnboardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModel.swift; sourceTree = "<group>"; };
 		C07075359D279D6BE5C21B45 /* Pods-MobileClasswork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileClasswork.release.xcconfig"; path = "Target Support Files/Pods-MobileClasswork/Pods-MobileClasswork.release.xcconfig"; sourceTree = "<group>"; };
 		E62FD77750DA319310924092 /* Pods-MobileClasswork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileClasswork.debug.xcconfig"; path = "Target Support Files/Pods-MobileClasswork/Pods-MobileClasswork.debug.xcconfig"; sourceTree = "<group>"; };
 		FA09746C6CD68F4FBA90F065 /* Pods_MobileClasswork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileClasswork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +119,7 @@
 				3329A61F23E36BA900A8FDB5 /* Day3-Onboarding */,
 				3397D76623E0C042000C59D4 /* Day4-DryOnboarding */,
 				3329A61A23E365BA00A8FDB5 /* Day4-XibView */,
+				33CA31C523E9F068009AA3DF /* Day5-Onboarding */,
 				3300544723DA285500673C81 /* Helper */,
 				3300543523DA180700673C81 /* Assets.xcassets */,
 				3300543723DA180700673C81 /* LaunchScreen.storyboard */,
@@ -219,6 +224,15 @@
 				3309913423E277E100880CC5 /* UILayoutGuide+extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		33CA31C523E9F068009AA3DF /* Day5-Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				33CA31C323E9F060009AA3DF /* Day5-Onboarding.swift */,
+				33CA31C623E9F090009AA3DF /* OnboardingModel.swift */,
+			);
+			path = "Day5-Onboarding";
 			sourceTree = "<group>";
 		};
 		DFA0A6888436AECE8A78421D /* Pods */ = {
@@ -353,6 +367,7 @@
 				33CA31B323E75772009AA3DF /* ChartsVC.swift in Sources */,
 				3329A61723E365A300A8FDB5 /* MyXibView.swift in Sources */,
 				3397D76323E0AB62000C59D4 /* CodingConstraintVC.swift in Sources */,
+				33CA31C423E9F060009AA3DF /* Day5-Onboarding.swift in Sources */,
 				3397D76523E0BA40000C59D4 /* OnboardingVC.swift in Sources */,
 				33CA31A223E56A6F009AA3DF /* CollectionVC.swift in Sources */,
 				3309913523E277E100880CC5 /* UILayoutGuide+extensions.swift in Sources */,
@@ -362,6 +377,7 @@
 				3300544A23DA314100673C81 /* UIScrollView+extensions.swift in Sources */,
 				33CA319C23E565A8009AA3DF /* CollectionViewCell.swift in Sources */,
 				3300543123DA180400673C81 /* ViewController.swift in Sources */,
+				33CA31C723E9F090009AA3DF /* OnboardingModel.swift in Sources */,
 				3300544323DA188F00673C81 /* ScrollVC.swift in Sources */,
 				3300542D23DA180400673C81 /* AppDelegate.swift in Sources */,
 				3300542F23DA180400673C81 /* SceneDelegate.swift in Sources */,
