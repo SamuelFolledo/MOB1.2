@@ -39,6 +39,7 @@ class ChartsVC: UIViewController {
     }
     
     func setChartView(entriesData: [Stock]) { //version 2
+        chartView.xAxis.axisMaximum = Double(timeStamps.count)
         var chartEntries: [ChartDataEntry] = []
         var xStrings: [String] = []
         let sortedentriesData = entriesData.sorted { (s1: Stock, s2: Stock) -> Bool in //sort by timestamp
