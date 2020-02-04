@@ -17,7 +17,7 @@ class OnboardingPageView: UIView {
     required init(color: UIColor) {
         super.init(frame: .zero)
         self.color = color
-        self.setup()
+        setup()
     }
     
     required init?(coder aDecoder: NSCoder) {

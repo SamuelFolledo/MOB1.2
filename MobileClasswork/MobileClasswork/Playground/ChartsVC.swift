@@ -19,8 +19,8 @@ class ChartsVC: UIViewController {
 //MARK: Properties
     var dataEntries: [ChartDataEntry] = []
     var time: [Double] = [9,10,11,12,1,2,3,4,5,6]
-    let timeStamps: [Int] = [9, 10, 11, 12, 1, 2, 3, 4, 5, 6]
-    let timeStamps5: [String] = ["9:00", "9:05", "9:10", "9:15", "9:20", "9:25", "9:30", "9:35", "9:40", "9:45", "9:50", "9:55", "10:00",  "10:05", "10:10", "10:15", "10:20", "10:25", "10:30", "10:35", "10:40", "10:45", "10:50", "10:55", "11:00", "11:05", "11:10", "11:15", "11:20", "11:25", "11:30", "11:35", "11:40", "11:45",  "11:50", "11:55", "12:00", "12:05", "12:10", "12:15", "12:20", "12:25", "12:30", "12:35", "12:40", "12:45", "12:50", "12:55","1:00", "1:05", "1:10", "1:15", "1:20", "1:25", "1:30", "1:35", "1:40", "1:45", "1:50", "1:55", "2:00", "2:05", "2:10", "2:15", "2:20", "2:25", "2:30", "2:35", "2:40", "2:45", "2:50", "2:55", "3:00", "3:05", "3:10", "3:15", "3:20", "3:25", "3:30", "3:35", "3:40", "3:45", "3:50", "3:55", "4:00", "4:05", "4:10", "4:15", "4:20", "4:25", "4:30", "4:35", "4:40", "4:45", "4:50", "4:55", "5:00", "5:05", "5:10", "5:15", "5:20", "5:25", "5:30", "5:35", "5:40", "5:45", "5:50", "5:55", "6:00"]
+//    let timeStamps: [Int] = [9, 10, 11, 12, 1, 2, 3, 4, 5, 6]
+    let timeStamps: [String] = ["9:00", "9:05", "9:10", "9:15", "9:20", "9:25", "9:30", "9:35", "9:40", "9:45", "9:50", "9:55", "10:00",  "10:05", "10:10", "10:15", "10:20", "10:25", "10:30", "10:35", "10:40", "10:45", "10:50", "10:55", "11:00", "11:05", "11:10", "11:15", "11:20", "11:25", "11:30", "11:35", "11:40", "11:45",  "11:50", "11:55", "12:00", "12:05", "12:10", "12:15", "12:20", "12:25", "12:30", "12:35", "12:40", "12:45", "12:50", "12:55","1:00", "1:05", "1:10", "1:15", "1:20", "1:25", "1:30", "1:35", "1:40", "1:45", "1:50", "1:55", "2:00", "2:05", "2:10", "2:15", "2:20", "2:25", "2:30", "2:35", "2:40", "2:45", "2:50", "2:55", "3:00", "3:05", "3:10", "3:15", "3:20", "3:25", "3:30", "3:35", "3:40", "3:45", "3:50", "3:55", "4:00", "4:05", "4:10", "4:15", "4:20", "4:25", "4:30", "4:35", "4:40", "4:45", "4:50", "4:55", "5:00", "5:05", "5:10", "5:15", "5:20", "5:25", "5:30", "5:35", "5:40", "5:45", "5:50", "5:55", "6:00"]
     let prices: [Double] = [24.0, 39, 0.8, -10, -13, -25, -90, 50, 64, 32, 43]
     
 //MARK: IBOutlets
@@ -29,7 +29,7 @@ class ChartsVC: UIViewController {
 //MARK: AppLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupLineChart(values: prices)
+//        setupLineChart(values: prices)
         var stocks: [Stock] = []
         for i in 0..<prices.count {
             let stock = Stock(timestamp: i+9, price: prices[i])
@@ -53,7 +53,7 @@ class ChartsVC: UIViewController {
 //            xStrings.append("\(dateFormatter.string(from: Date.init(timeIntervalSince1970: TimeInterval(entry.timestamp))))") //populate xAxis
             xStrings.append(String(stock.timestamp))
         }
-        let set: LineChartDataSet = LineChartDataSet(entries: chartEntries, label: "°C")
+        let set: LineChartDataSet = LineChartDataSet(entries: chartEntries, label: "$")
         set.setColor(NSUIColor.blue, alpha: CGFloat(1))
         set.circleColors = [NSUIColor.blue]
         set.circleRadius = 3
@@ -61,14 +61,16 @@ class ChartsVC: UIViewController {
 
         let data: LineChartData = LineChartData(dataSet: set)
 //        self.chartView.xAxis.labelRotationAngle = -90 //tilts label
+//        self.chartView.xAxis.valueFormatter = DefaultAxisValueFormatter(block: { (index, axis) -> String in
+//            print("Index = \(index) --- Axis \(axis)")
+//            return String(self.timeStamps[Int(index)])
+//        })
         self.chartView.xAxis.valueFormatter = DefaultAxisValueFormatter(block: { (index, axis) -> String in
-            print("Index = \(index) --- Axis \(axis)")
-            return String(self.timeStamps5[Int(index)])
+//            print("Axis = \(axis?.axisMaxLabels)")
+            return String(self.timeStamps[Int(index)]) //goes out of index if changed
         })
-        self.chartView.xAxis.valueFormatter = DefaultAxisValueFormatter(block: {(index, _) in
-            return String(self.timeStamps5[Int(index)])
-        })
-        self.chartView.xAxis.setLabelCount(timeStamps5.count, force: true)
+        self.chartView.xAxis.axisMaxLabels = timeStamps.count
+        self.chartView.xAxis.setLabelCount(timeStamps.count, force: true)
         self.chartView.xAxis.labelPosition = .bottom //put xAxis labels at the bottom, default at top
         self.chartView.data = data
     }

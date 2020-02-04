@@ -14,7 +14,7 @@ class OnboardingVC: UIViewController {
     var pages: [OnboardingPageView] = []
     var currentPage: Int { //tell which page is currently being viewed based on the contentOffset of the UIScrollView
         get {
-            let page = Int((scrollView.contentOffset.x / view.bounds.size.width))
+            let page = Int(scrollView.contentOffset.x / view.bounds.size.width)
             print("PAGE = \(page)")
             return page
         }
