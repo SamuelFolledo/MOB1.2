@@ -32,13 +32,12 @@ class OnboardingVC: UIViewController {
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.showsVerticalScrollIndicator = false
         scrollView.isPagingEnabled = true
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
         return scrollView
     }()
     let contentView: UIView = {
         let view: UIView = UIView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .purple
+        view.backgroundColor = .black
         return view
     }()
     var page1View: OnboardingPageView!
@@ -56,11 +55,8 @@ class OnboardingVC: UIViewController {
     override func loadView() {
         super.loadView()
         setupScrollView()
-        setupPageViews()
         setupPageControl()
-        for page in pages { //populate page views
-            populatePageViews(page: page)
-        }
+        setupPageViews()
     }
     
     override func viewDidLoad() {
@@ -88,10 +84,10 @@ class OnboardingVC: UIViewController {
     }
     
     fileprivate func setupPageViews() {
-        page1View = OnboardingPageView(color: .orange)
-        page2View = OnboardingPageView(color: .systemPink)
-        page3View = OnboardingPageView(color: .blue)
-        page4View = OnboardingPageView(color: .purple)
+        page1View = OnboardingPageView(color: .orange, pageImage: kMAKESCHOOLIMAGE, description: "PAGE 1!")
+        page2View = OnboardingPageView(color: .systemPink, pageImage: kMAKESCHOOLIMAGE, description: "PAGE 2!!")
+        page3View = OnboardingPageView(color: .blue, pageImage: kMAKESCHOOLIMAGE, description: "PAGE 3!!!")
+        page4View = OnboardingPageView(color: .purple, pageImage: kMAKESCHOOLIMAGE, description: "PAGE 4!!!!", isLastPage: true)
         pages.append(contentsOf: [page1View, page2View, page3View, page4View])
         applyPageConstraints()
     }
@@ -132,29 +128,6 @@ class OnboardingVC: UIViewController {
             pageControl.centerXAnchor.constraint(equalTo: self.scrollView.centerXAnchor),
         ])
         pageControl.addTarget(self, action: #selector(self.pageControlDidTouch), for: .touchUpInside)
-    }
-
-    fileprivate func populatePageViews(page: UIView) {
-        let pageImageView = UIImageView(image: UIImage(named: "makeschoolLogo")!)
-        pageImageView.contentMode = .scaleAspectFit
-        pageImageView.translatesAutoresizingMaskIntoConstraints = false
-        page.addSubview(pageImageView)
-        pageImageView.widthAnchor.constraint(equalTo: page.widthAnchor, multiplier: 0.9).isActive = true
-        pageImageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
-        pageImageView.topAnchor.constraint(equalTo: page.topAnchor, constant: 100).isActive = true
-        pageImageView.centerXAnchor.constraint(equalTo: page.centerXAnchor).isActive = true
-        let descriptionLabel = UILabel()
-        descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
-        descriptionLabel.text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-        descriptionLabel.font = .boldSystemFont(ofSize: 18)
-        descriptionLabel.numberOfLines = 0
-        descriptionLabel.textColor = .white
-        descriptionLabel.textAlignment = .center
-        page.addSubview(descriptionLabel)
-        descriptionLabel.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 4/5).isActive = true
-        descriptionLabel.heightAnchor.constraint(equalToConstant: 200).isActive = true
-        descriptionLabel.topAnchor.constraint(equalTo: pageImageView.bottomAnchor, constant: 50).isActive = true
-        descriptionLabel.centerXAnchor.constraint(equalTo: pageImageView.centerXAnchor).isActive = true
     }
 }
 
