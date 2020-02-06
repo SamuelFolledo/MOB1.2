@@ -115,6 +115,7 @@ class Day5_OnboardingVC: UIViewController {
                 NSLayoutConstraint.activate([
                     page.rightAnchor.constraint(equalTo: contentView.rightAnchor)
                 ])
+                page.continueButton.addTarget(self, action: #selector(continueButtonTapped), for: .touchUpInside)
             }
         }
     }
@@ -128,6 +129,17 @@ class Day5_OnboardingVC: UIViewController {
             pageControl.centerXAnchor.constraint(equalTo: self.scrollView.centerXAnchor),
         ])
         pageControl.addTarget(self, action: #selector(self.pageControlDidTouch), for: .touchUpInside)
+    }
+    
+//MARK: Helpers
+    @objc func continueButtonTapped() {
+        print("EYOOO")
+//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+//        let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("nextView") as NextViewController
+//        self.presentViewController(nextViewController, animated:true, completion:nil)
+        let loginVC: HomeVC = HomeVC()
+//        loginVC.push
+        self.present(loginVC, animated: true, completion: nil)
     }
 }
 
