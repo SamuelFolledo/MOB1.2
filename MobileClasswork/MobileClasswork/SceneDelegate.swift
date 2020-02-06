@@ -11,6 +11,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    var navigationController: UINavigationController?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -19,7 +20,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: UIScreen.main.bounds) //needed to not use storyboard
         let vc: OnboardingVC = OnboardingVC() //needed to not use storyboard
-        window?.rootViewController = vc //needed to not use storyboard
+        navigationController = UINavigationController(rootViewController: vc)
+        window?.rootViewController = navigationController //needed to not use storyboard
         window?.makeKeyAndVisible() //needed to not use storyboard
         window?.windowScene = windowScene //needed to not use storyboard
     }
