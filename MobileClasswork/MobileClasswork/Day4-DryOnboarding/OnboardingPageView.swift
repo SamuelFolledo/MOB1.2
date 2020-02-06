@@ -92,6 +92,7 @@ class OnboardingPageView: UIView {
         continueButton.isHidden = self.isLastPage ? false : true //if it is the last page then dont hide it
         continueButton.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier:  0.8).isActive = true
         continueButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        continueButton.addTarget(self, action: #selector(continueButtonTapped), for: .touchUpInside)
     }
     
     fileprivate func setupBackgroundLayer() {
@@ -100,5 +101,13 @@ class OnboardingPageView: UIView {
         gradientLayer.colors = [color.cgColor, UIColor.black.cgColor] //add colors, first one will be at the top
         gradientLayer.locations = [0.5, 1]
         self.layer.insertSublayer(gradientLayer, at: 0)
+    }
+    
+//MARK: Helpers
+    @objc func continueButtonTapped() {
+        print("EYOOO")
+//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+//        let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("nextView") as NextViewController
+        self.presentViewController(nextViewController, animated:true, completion:nil)
     }
 }
