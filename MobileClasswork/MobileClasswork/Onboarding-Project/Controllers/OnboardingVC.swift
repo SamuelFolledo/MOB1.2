@@ -54,6 +54,7 @@ class OnboardingVC: UIViewController {
 //MARK: App Lifecycle
     override func loadView() {
         super.loadView()
+        self.navigationController?.isNavigationBarHidden = true //hide nav
         setupScrollView()
         setupPageControl()
         setupPageViews()
@@ -69,7 +70,7 @@ class OnboardingVC: UIViewController {
         pageControl.currentPage = 0
     }
     
-//MARKA: Private methods
+//MARK: Private methods
     fileprivate func setupScrollView() { //setup scrollView and contentView
         scrollView.delegate = self //optional
         view.insertSubview(scrollView, at: 0)
@@ -135,7 +136,8 @@ class OnboardingVC: UIViewController {
     @objc func continueButtonTapped() {
         print("EYOOO")
         let loginVC: HomeVC = HomeVC()
-        self.present(loginVC, animated: true, completion: nil)
+        self.navigationController?.pushViewController(loginVC, animated: true) //push
+//        self.present(loginVC, animated: true, completion: nil) //modally
     }
 }
 
@@ -146,6 +148,12 @@ extension OnboardingVC: UIScrollViewDelegate {
     
     func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
         pageControl.currentPage = currentPage
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+       if scrollView.contentOffset.y > 0 || scrollView.contentOffset.y < 0 {
+          scrollView.contentOffset.y = 0 //disable vertical scrolling
+       }
     }
 }
 
