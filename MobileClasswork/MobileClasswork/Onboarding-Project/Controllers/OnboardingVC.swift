@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Day5_OnboardingVC: UIViewController {
+class OnboardingVC: UIViewController {
     
 //MARK: Non-views Properties
     var pages: [OnboardingPageView] = []
@@ -134,16 +134,12 @@ class Day5_OnboardingVC: UIViewController {
 //MARK: Helpers
     @objc func continueButtonTapped() {
         print("EYOOO")
-//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-//        let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("nextView") as NextViewController
-//        self.presentViewController(nextViewController, animated:true, completion:nil)
         let loginVC: HomeVC = HomeVC()
-//        loginVC.push
         self.present(loginVC, animated: true, completion: nil)
     }
 }
 
-extension Day5_OnboardingVC: UIScrollViewDelegate {
+extension OnboardingVC: UIScrollViewDelegate {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         pageControl.currentPage = currentPage
     }
@@ -154,7 +150,7 @@ extension Day5_OnboardingVC: UIScrollViewDelegate {
 }
 
 //MARK: Helper Methods
-extension Day5_OnboardingVC {
+extension OnboardingVC {
     fileprivate func nextPage() {
         if currentPage + 1 < self.numberOfPages {
             navigateToPage(page: currentPage + 1)
