@@ -1,5 +1,5 @@
 //
-//  HomeVC.swift
+//  PastBoxesVC.swift
 //  MobileClasswork
 //
 //  Created by Macbook Pro 15 on 2/6/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeVC: UIViewController {
+class PastBoxesVC: UIViewController {
 //MARK: Properties
     let alienArray = [String](repeating: "👽 invading  🌎", count: 100)
     
@@ -49,13 +49,13 @@ class HomeVC: UIViewController {
 }
 
 //MARK: Extensions
-extension HomeVC: UITableViewDelegate {
+extension PastBoxesVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
     }
 }
 
-extension HomeVC: UITableViewDataSource {
+extension PastBoxesVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return alienArray.count
     }

@@ -23,12 +23,13 @@
 		3329A61923E365AB00A8FDB5 /* MyXibView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3329A61823E365AB00A8FDB5 /* MyXibView.xib */; };
 		3329A61E23E36B7D00A8FDB5 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3329A61D23E36B7D00A8FDB5 /* Onboarding.swift */; };
 		3329A62223E36C8C00A8FDB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3329A62123E36C8C00A8FDB5 /* Main.storyboard */; };
-		334ED2F723EC8BB7002B5FF4 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334ED2F623EC8BB7002B5FF4 /* HomeVC.swift */; };
+		334ED2F723EC8BB7002B5FF4 /* PastBoxesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334ED2F623EC8BB7002B5FF4 /* PastBoxesVC.swift */; };
 		334ED2F923EC8BC1002B5FF4 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334ED2F823EC8BC1002B5FF4 /* LoginVC.swift */; };
 		334ED2FB23EC90A5002B5FF4 /* BoxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334ED2FA23EC90A5002B5FF4 /* BoxCell.swift */; };
 		3397D76323E0AB62000C59D4 /* CodingConstraintVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3397D76223E0AB62000C59D4 /* CodingConstraintVC.swift */; };
 		3397D76523E0BA40000C59D4 /* Day4OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3397D76423E0BA40000C59D4 /* Day4OnboardingVC.swift */; };
 		33A8BFC623ECA0BD00056A0F /* UINavigtaionController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A8BFC523ECA0BD00056A0F /* UINavigtaionController+extensions.swift */; };
+		33A8BFCB23ECAA7500056A0F /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A8BFCA23ECAA7500056A0F /* HomeVC.swift */; };
 		33CA319C23E565A8009AA3DF /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CA319A23E565A8009AA3DF /* CollectionViewCell.swift */; };
 		33CA319D23E565A8009AA3DF /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33CA319B23E565A8009AA3DF /* CollectionViewCell.xib */; };
 		33CA31A223E56A6F009AA3DF /* CollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CA31A123E56A6F009AA3DF /* CollectionVC.swift */; };
@@ -58,12 +59,13 @@
 		3329A61823E365AB00A8FDB5 /* MyXibView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyXibView.xib; sourceTree = "<group>"; };
 		3329A61D23E36B7D00A8FDB5 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		3329A62123E36C8C00A8FDB5 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		334ED2F623EC8BB7002B5FF4 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		334ED2F623EC8BB7002B5FF4 /* PastBoxesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastBoxesVC.swift; sourceTree = "<group>"; };
 		334ED2F823EC8BC1002B5FF4 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		334ED2FA23EC90A5002B5FF4 /* BoxCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxCell.swift; sourceTree = "<group>"; };
 		3397D76223E0AB62000C59D4 /* CodingConstraintVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodingConstraintVC.swift; sourceTree = "<group>"; };
 		3397D76423E0BA40000C59D4 /* Day4OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day4OnboardingVC.swift; sourceTree = "<group>"; };
 		33A8BFC523ECA0BD00056A0F /* UINavigtaionController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigtaionController+extensions.swift"; sourceTree = "<group>"; };
+		33A8BFCA23ECAA7500056A0F /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		33CA319A23E565A8009AA3DF /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		33CA319B23E565A8009AA3DF /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		33CA31A123E56A6F009AA3DF /* CollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionVC.swift; sourceTree = "<group>"; };
@@ -236,7 +238,8 @@
 			children = (
 				33CA31C323E9F060009AA3DF /* OnboardingVC.swift */,
 				334ED2F823EC8BC1002B5FF4 /* LoginVC.swift */,
-				334ED2F623EC8BB7002B5FF4 /* HomeVC.swift */,
+				33A8BFCA23ECAA7500056A0F /* HomeVC.swift */,
+				334ED2F623EC8BB7002B5FF4 /* PastBoxesVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 				3300544623DA217300673C81 /* UIViewController+extensions.swift in Sources */,
 				3329A61E23E36B7D00A8FDB5 /* Onboarding.swift in Sources */,
 				3300544A23DA314100673C81 /* UIScrollView+extensions.swift in Sources */,
+				33A8BFCB23ECAA7500056A0F /* HomeVC.swift in Sources */,
 				334ED2FB23EC90A5002B5FF4 /* BoxCell.swift in Sources */,
 				33CA319C23E565A8009AA3DF /* CollectionViewCell.swift in Sources */,
 				3300543123DA180400673C81 /* ViewController.swift in Sources */,
@@ -427,7 +431,7 @@
 				33CA31C723E9F090009AA3DF /* OnboardingModel.swift in Sources */,
 				3300544323DA188F00673C81 /* ScrollVC.swift in Sources */,
 				3300542D23DA180400673C81 /* AppDelegate.swift in Sources */,
-				334ED2F723EC8BB7002B5FF4 /* HomeVC.swift in Sources */,
+				334ED2F723EC8BB7002B5FF4 /* PastBoxesVC.swift in Sources */,
 				3300542F23DA180400673C81 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
