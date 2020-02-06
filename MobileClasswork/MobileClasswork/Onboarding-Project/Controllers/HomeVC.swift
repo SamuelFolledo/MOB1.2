@@ -41,6 +41,7 @@ class HomeVC: UIViewController {
         table.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor).isActive = true
         table.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor).isActive = true
         table.register(BoxCell.self, forCellReuseIdentifier: "boxCell")
+        table.tableFooterView = UIView()
     }
     
 //MARK: Helpers
@@ -49,7 +50,9 @@ class HomeVC: UIViewController {
 
 //MARK: Extensions
 extension HomeVC: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
+    }
 }
 
 extension HomeVC: UITableViewDataSource {
@@ -60,6 +63,7 @@ extension HomeVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "boxCell", for: indexPath)
         cell.textLabel?.text = "\(indexPath.row) \(alienArray[indexPath.row])"
+        cell.selectionStyle = .none
         return cell
     }
 }

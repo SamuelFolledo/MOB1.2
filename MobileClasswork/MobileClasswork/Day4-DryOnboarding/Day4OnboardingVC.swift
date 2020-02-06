@@ -1,5 +1,5 @@
 //
-//  OnboardingVC.swift
+//  Day4OnboardingVC.swift
 //  MobileClasswork
 //
 //  Created by Macbook Pro 15 on 1/28/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OnboardingVC: UIViewController {
+class Day4OnboardingVC: UIViewController {
     
 //MARK: Non-views Properties
     var pages: [OnboardingPageView] = []
@@ -131,7 +131,7 @@ class OnboardingVC: UIViewController {
     }
 }
 
-extension OnboardingVC: UIScrollViewDelegate {
+extension Day4OnboardingVC: UIScrollViewDelegate {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         pageControl.currentPage = currentPage
     }
@@ -142,7 +142,7 @@ extension OnboardingVC: UIScrollViewDelegate {
 }
 
 //MARK: Helper Methods
-extension OnboardingVC {
+extension Day4OnboardingVC {
     fileprivate func nextPage() {
         if currentPage + 1 < self.numberOfPages {
             navigateToPage(page: currentPage + 1)

@@ -27,7 +27,8 @@
 		334ED2F923EC8BC1002B5FF4 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334ED2F823EC8BC1002B5FF4 /* LoginVC.swift */; };
 		334ED2FB23EC90A5002B5FF4 /* BoxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334ED2FA23EC90A5002B5FF4 /* BoxCell.swift */; };
 		3397D76323E0AB62000C59D4 /* CodingConstraintVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3397D76223E0AB62000C59D4 /* CodingConstraintVC.swift */; };
-		3397D76523E0BA40000C59D4 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3397D76423E0BA40000C59D4 /* OnboardingVC.swift */; };
+		3397D76523E0BA40000C59D4 /* Day4OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3397D76423E0BA40000C59D4 /* Day4OnboardingVC.swift */; };
+		33A8BFC623ECA0BD00056A0F /* UINavigtaionController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A8BFC523ECA0BD00056A0F /* UINavigtaionController+extensions.swift */; };
 		33CA319C23E565A8009AA3DF /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CA319A23E565A8009AA3DF /* CollectionViewCell.swift */; };
 		33CA319D23E565A8009AA3DF /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33CA319B23E565A8009AA3DF /* CollectionViewCell.xib */; };
 		33CA31A223E56A6F009AA3DF /* CollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CA31A123E56A6F009AA3DF /* CollectionVC.swift */; };
@@ -61,7 +62,8 @@
 		334ED2F823EC8BC1002B5FF4 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		334ED2FA23EC90A5002B5FF4 /* BoxCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxCell.swift; sourceTree = "<group>"; };
 		3397D76223E0AB62000C59D4 /* CodingConstraintVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodingConstraintVC.swift; sourceTree = "<group>"; };
-		3397D76423E0BA40000C59D4 /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
+		3397D76423E0BA40000C59D4 /* Day4OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day4OnboardingVC.swift; sourceTree = "<group>"; };
+		33A8BFC523ECA0BD00056A0F /* UINavigtaionController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigtaionController+extensions.swift"; sourceTree = "<group>"; };
 		33CA319A23E565A8009AA3DF /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		33CA319B23E565A8009AA3DF /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		33CA31A123E56A6F009AA3DF /* CollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionVC.swift; sourceTree = "<group>"; };
@@ -126,13 +128,11 @@
 				3397D76623E0C042000C59D4 /* Day4-DryOnboarding */,
 				3329A61A23E365BA00A8FDB5 /* Day4-XibView */,
 				33CA31C523E9F068009AA3DF /* Day5-Onboarding */,
+				33A8BFC723ECA16C00056A0F /* Onboarding-Project */,
 				3300544723DA285500673C81 /* Helper */,
 				3300543523DA180700673C81 /* Assets.xcassets */,
 				3300543723DA180700673C81 /* LaunchScreen.storyboard */,
 				3300543A23DA180700673C81 /* Info.plist */,
-				334ED2F623EC8BB7002B5FF4 /* HomeVC.swift */,
-				334ED2FA23EC90A5002B5FF4 /* BoxCell.swift */,
-				334ED2F823EC8BC1002B5FF4 /* LoginVC.swift */,
 			);
 			path = MobileClasswork;
 			sourceTree = "<group>";
@@ -208,10 +208,37 @@
 		3397D76623E0C042000C59D4 /* Day4-DryOnboarding */ = {
 			isa = PBXGroup;
 			children = (
-				3397D76423E0BA40000C59D4 /* OnboardingVC.swift */,
-				3329A61223E359D800A8FDB5 /* OnboardingPageView.swift */,
+				3397D76423E0BA40000C59D4 /* Day4OnboardingVC.swift */,
 			);
 			path = "Day4-DryOnboarding";
+			sourceTree = "<group>";
+		};
+		33A8BFC723ECA16C00056A0F /* Onboarding-Project */ = {
+			isa = PBXGroup;
+			children = (
+				33A8BFC923ECA22800056A0F /* Controllers */,
+				33A8BFC823ECA18400056A0F /* View */,
+			);
+			path = "Onboarding-Project";
+			sourceTree = "<group>";
+		};
+		33A8BFC823ECA18400056A0F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3329A61223E359D800A8FDB5 /* OnboardingPageView.swift */,
+				334ED2FA23EC90A5002B5FF4 /* BoxCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		33A8BFC923ECA22800056A0F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				33CA31C323E9F060009AA3DF /* Day5-OnboardingVC.swift */,
+				334ED2F823EC8BC1002B5FF4 /* LoginVC.swift */,
+				334ED2F623EC8BB7002B5FF4 /* HomeVC.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		33CA319E23E565AD009AA3DF /* Xib-Cell */ = {
@@ -239,6 +266,7 @@
 				3300544523DA217300673C81 /* UIViewController+extensions.swift */,
 				3300544923DA314100673C81 /* UIScrollView+extensions.swift */,
 				3309913423E277E100880CC5 /* UILayoutGuide+extensions.swift */,
+				33A8BFC523ECA0BD00056A0F /* UINavigtaionController+extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -246,7 +274,6 @@
 		33CA31C523E9F068009AA3DF /* Day5-Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				33CA31C323E9F060009AA3DF /* Day5-OnboardingVC.swift */,
 				334ED2F523EC89A6002B5FF4 /* Model */,
 			);
 			path = "Day5-Onboarding";
@@ -385,10 +412,11 @@
 				3329A61723E365A300A8FDB5 /* MyXibView.swift in Sources */,
 				3397D76323E0AB62000C59D4 /* CodingConstraintVC.swift in Sources */,
 				33CA31C423E9F060009AA3DF /* Day5-OnboardingVC.swift in Sources */,
-				3397D76523E0BA40000C59D4 /* OnboardingVC.swift in Sources */,
+				3397D76523E0BA40000C59D4 /* Day4OnboardingVC.swift in Sources */,
 				33CA31A223E56A6F009AA3DF /* CollectionVC.swift in Sources */,
 				3309913523E277E100880CC5 /* UILayoutGuide+extensions.swift in Sources */,
 				33CA31B623E79FAD009AA3DF /* Constants.swift in Sources */,
+				33A8BFC623ECA0BD00056A0F /* UINavigtaionController+extensions.swift in Sources */,
 				3300544623DA217300673C81 /* UIViewController+extensions.swift in Sources */,
 				3329A61E23E36B7D00A8FDB5 /* Onboarding.swift in Sources */,
 				3300544A23DA314100673C81 /* UIScrollView+extensions.swift in Sources */,
