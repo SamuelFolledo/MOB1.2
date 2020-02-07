@@ -210,7 +210,8 @@
                         <outlet property="billAmountTextField" destination="J2G-kX-QyC" id="5cB-C1-bMM"/>
                         <outlet property="headerView" destination="uae-ci-apE" id="RNq-c6-A96"/>
                         <outlet property="inputCardView" destination="EQg-ql-pFS" id="AcM-Fb-J9y"/>
-                        <outlet property="outputCard" destination="buU-nE-4q0" id="VnI-Ug-pMC"/>
+                        <outlet property="outputCardView" destination="buU-nE-4q0" id="u1E-BC-cgZ"/>
+                        <outlet property="resetButton" destination="0ox-Fh-XH0" id="eKd-HC-QH7"/>
                         <outlet property="themeSwitch" destination="FaX-oE-C6n" id="Ivj-NI-Rgn"/>
                         <outlet property="tipAmountLabel" destination="baf-fG-Zqa" id="hFD-6N-4sM"/>
                         <outlet property="tipAmountTitleLabel" destination="qwj-UM-cAz" id="zhi-ba-EGx"/>
