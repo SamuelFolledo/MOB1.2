@@ -63,7 +63,7 @@
                                                         <color key="textColor" name="tcWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="S0.00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J2G-kX-QyC">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="S0.00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J2G-kX-QyC" customClass="BillAmountTextField" customModule="TipCalculatorStarter" customModuleProvider="target">
                                                         <rect key="frame" x="181" y="0.0" width="118" height="34"/>
                                                         <color key="tintColor" name="tcHotPink"/>
                                                         <constraints>
@@ -207,7 +207,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="billAmountTextField" destination="J2G-kX-QyC" id="h1l-ee-OTK"/>
+                        <outlet property="billAmountTextField" destination="J2G-kX-QyC" id="5cB-C1-bMM"/>
                         <outlet property="headerView" destination="uae-ci-apE" id="RNq-c6-A96"/>
                         <outlet property="inputCardView" destination="EQg-ql-pFS" id="AcM-Fb-J9y"/>
                         <outlet property="outputCard" destination="buU-nE-4q0" id="VnI-Ug-pMC"/>
