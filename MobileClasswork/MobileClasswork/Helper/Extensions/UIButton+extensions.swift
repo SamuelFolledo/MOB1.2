@@ -6,4 +6,13 @@
 //  Copyright © 2020 SamuelFolledo. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+extension UIButton {
+    func isMainButton() { //applied border width and rounded corners
+        self.layer.borderWidth = 2
+        self.layer.borderColor = UIColor.white.cgColor
+        self.layer.cornerRadius = self.frame.height / 5
+        self.clipsToBounds = true
+    }
+}
