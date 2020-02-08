@@ -12,29 +12,6 @@ class HomeVC: UIViewController {
 //MARK: Properties
     
 //MARK: Properties Views
-    let loginButton: UIButton = {
-        let button: UIButton = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = .black
-        button.setTitle("Login", for: .normal)
-        return button
-    }()
-    let imageView: UIImageView = {
-        let imageView: UIImageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = kMAKESCHOOLIMAGE
-        return imageView
-    }()
-    let descriptionLabel: UILabel = {
-        let label: UILabel = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.boldSystemFont(ofSize: 18)
-        label.sizeToFit()
-        label.numberOfLines = 0
-        label.textColor = .white
-        label.textAlignment = .center
-        return label
-    }()
     let stackView: UIStackView = {
         let stackView: UIStackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -43,6 +20,37 @@ class HomeVC: UIViewController {
         stackView.distribution = .fill
         stackView.spacing = 20
         return stackView
+    }()
+    let newBoxButton: UIButton = {
+        let button: UIButton = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .blue
+        button.setTitle("New Box", for: .normal)
+        return button
+    }()
+    let pastBoxesButton: UIButton = {
+        let button: UIButton = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .blue
+        button.setTitle("Past Boxes", for: .normal)
+        return button
+    }()
+    let profileButton: UIButton = {
+        let button: UIButton = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .blue
+        button.setTitle("Profile", for: .normal)
+        return button
+    }()
+    let descriptionLabel: UILabel = {
+        let label: UILabel = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.sizeToFit()
+        label.numberOfLines = 0
+        label.textColor = .black
+        label.textAlignment = .center
+        return label
     }()
     
 //MARK: App Life Cycle
@@ -61,20 +69,29 @@ class HomeVC: UIViewController {
             stackView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 50),
             stackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
         ])
-        stackView.addArrangedSubview(imageView)
-        imageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+//        stackView.addArrangedSubview(imageView)
+//        imageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
         stackView.addArrangedSubview(descriptionLabel)
         descriptionLabel.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier:  0.8).isActive = true
-        stackView.addArrangedSubview(loginButton)
-        loginButton.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier:  0.8).isActive = true
-        loginButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        loginButton.addTarget(self, action: #selector(continueButtonTapped), for: .touchUpInside)
+        descriptionLabel.text = "Buy me!"
+        stackView.addArrangedSubview(newBoxButton)
+        newBoxButton.widthAnchor.constraint(equalTo: stackView.widthAnchor, multiplier:  0.8).isActive = true
+        newBoxButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+//        newBoxButton.addTarget(self, action: #selector(continueButtonTapped), for: .touchUpInside)
+        stackView.addArrangedSubview(pastBoxesButton)
+        pastBoxesButton.widthAnchor.constraint(equalTo: newBoxButton.widthAnchor).isActive = true
+        pastBoxesButton.heightAnchor.constraint(equalTo: newBoxButton.heightAnchor).isActive = true
+//        pastBoxesButton.addTarget(self, action: #selector(continueButtonTapped), for: .touchUpInside)
+        stackView.addArrangedSubview(profileButton)
+        profileButton.widthAnchor.constraint(equalTo: newBoxButton.widthAnchor).isActive = true
+        profileButton.heightAnchor.constraint(equalTo: newBoxButton.heightAnchor).isActive = true
+//        profileButton.addTarget(self, action: #selector(continueButtonTapped), profileButton: .touchUpInside)
     }
     
 //MARK: Helpers
     @objc func continueButtonTapped() {
-        let homeVC: HomeVC = HomeVC()
-        self.navigationController?.pushViewController(homeVC, animated: true) //push
+//        let homeVC: HomeVC = HomeVC()
+//        self.navigationController?.pushViewController(homeVC, animated: true) //push
     }
 }
 
