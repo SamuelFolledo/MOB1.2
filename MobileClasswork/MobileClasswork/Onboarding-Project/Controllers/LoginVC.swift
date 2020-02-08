@@ -68,11 +68,11 @@ class LoginVC: UIViewController {
         stackView.addArrangedSubview(loginButton)
         loginButton.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier:  0.8).isActive = true
         loginButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        loginButton.addTarget(self, action: #selector(continueButtonTapped), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
     }
     
 //MARK: Helpers
-    @objc func continueButtonTapped() {
+    @objc func loginButtonTapped() {
         let homeVC: HomeVC = HomeVC()
         self.navigationController?.pushViewController(homeVC, animated: true) //push
     }
