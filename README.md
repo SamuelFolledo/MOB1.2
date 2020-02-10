@@ -3,6 +3,7 @@ https://make-school-courses.github.io/MOB-1.2-Introduction-to-iOS-Development/#/
 
 ### Contents
 - [Classworks and Homeworks](MobileClasswork)
+- [Projects](Projects)
 
 ### Course Links
 - [Tracker](https://make.sc/mob1.2-tracker)
