@@ -68,27 +68,37 @@ https://github.com/SamuelFolledo/MOB1.2/tree/master/MobileClasswork/MobileClassw
 ### CW: Creating Onboarding Programmatically in a UIScrollView with Gradient Background
 <img src="https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/static/gif/day4cw1.gif" width="640" height="496">
 
-https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/MobileClasswork/Day4-DryOnboarding/OnboardingVC.swift
+https://github.com/SamuelFolledo/MOB1.2/tree/master/MobileClasswork/MobileClasswork/Day4-DryOnboarding
 
 ---
 
 <a name="day5></a>
 ## Day 5. [MVC & Navigation](#day5)
 ### Topics
-
-### CW:
+- Model, View, Controller
+- Navigation via Segue programmatically
+    - [Basic Navigation from MOB1.1](https://make-school-courses.github.io/MOB-1.1-Introduction-to-Swift/#/Lessons/12-Basic-Navigation/README)
+    - Removed storyboard
+    - [UINavigationController extension](https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/MobileClasswork/Helper/Extensions/UINavigtaionController%2Bextensions.swift) with initRootViewController method that reassigns a new VC as the rootVC
 
 ### HW:
+- Programmatically navigate from OnboardingVC to LoginVC then to HomeVC and resetting the initial root view controller via [extension](https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/MobileClasswork/Helper/Extensions/UINavigtaionController%2Bextensions.swift).
+https://github.com/SamuelFolledo/MOB1.2/tree/master/MobileClasswork/MobileClasswork/Onboarding-Project
 
 ---
 
 <a name="day6"></a>
 ## Day 6. [Table Views](#day6)
 ### Topics
-
-### CW: 
+- __Reset Tip__ Go to Xcode's System Preferences, location, and Derived Data and delete everything
+- TableViews Three Ways 🎈🌳👽
+    - [TableView + Storyboard](https://github.com/Make-School-Courses/MOB-1.2-Introduction-to-iOS-Development/blob/master/Lessons/06-TableViews/assignments/tableStoryboard.md)
+    - [TableView + xib file](https://github.com/Make-School-Courses/MOB-1.2-Introduction-to-iOS-Development/blob/master/Lessons/06-TableViews/assignments/tableXib.md)
+    - [TableView programmatically](https://github.com/Make-School-Courses/MOB-1.2-Introduction-to-iOS-Development/blob/master/Lessons/06-TableViews/assignments/tableCode.md)
 
 ### HW: 
+- Push a tableVC from HomeVC which pushes another tableVC on cell tap
+https://github.com/SamuelFolledo/MOB1.2/tree/master/MobileClasswork/MobileClasswork/Onboarding-Project
 
 ---
 <a name="day7"></a>
@@ -170,4 +180,5 @@ https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/MobileClassw
 
 <a name="importantReferences"></a>
 ## Important References
+- [Notes and Recordings](https://github.com/SamuelFolledo/MOB1.2/tree/master/NotesAndRecordings)
 - Day 2's [Size Classes Tutorial](https://github.com/Make-School-Courses/MOB-1.2-Introduction-to-iOS-Development/blob/master/Lessons/02-AutoLayout/assignments/sizeclasses.md)
