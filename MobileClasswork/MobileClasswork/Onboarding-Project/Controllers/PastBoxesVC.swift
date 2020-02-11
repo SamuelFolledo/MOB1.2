@@ -29,6 +29,7 @@ class PastBoxesVC: UIViewController {
 //MARK: Private Methods
     fileprivate func setupViews() {
         view.backgroundColor = .white
+        self.title = "Past Boxes"
         setupTableView()
     }
     
@@ -51,7 +52,9 @@ class PastBoxesVC: UIViewController {
 //MARK: Extensions
 extension PastBoxesVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
+        print("Cell's row = ", indexPath.row)
+        let vc = PastBoxesDetailVC()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -61,8 +64,10 @@ extension PastBoxesVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "boxCell", for: indexPath)
-        cell.textLabel?.text = "\(indexPath.row) \(alienArray[indexPath.row])"
+        let cell: BoxCell = tableView.dequeueReusableCell(withIdentifier: "boxCell", for: indexPath) as! BoxCell
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "boxCell", for: indexPath)
+//        cell.textLabel?.text = "\(indexPath.row) \(alienArray[indexPath.row])"
+        cell.accessoryType = .disclosureIndicator
         cell.selectionStyle = .none
         return cell
     }
