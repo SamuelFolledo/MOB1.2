@@ -14,10 +14,11 @@ class PastBoxesVC: UIViewController {
     
 //MARK: Properties Views
     let table: UITableView = {
-       let table = UITableView()
-       table.translatesAutoresizingMaskIntoConstraints = false
-       table.rowHeight = 75
-       return table
+        let table = UITableView()
+        table.translatesAutoresizingMaskIntoConstraints = false
+        table.rowHeight = 75
+        table.showsVerticalScrollIndicator = false
+        return table
     }()
     
 //MARK: App Life Cycle
@@ -67,7 +68,7 @@ extension PastBoxesVC: UITableViewDataSource {
         let cell: BoxCell = tableView.dequeueReusableCell(withIdentifier: "boxCell", for: indexPath) as! BoxCell
 //        let cell = tableView.dequeueReusableCell(withIdentifier: "boxCell", for: indexPath)
 //        cell.textLabel?.text = "\(indexPath.row) \(alienArray[indexPath.row])"
-        cell.accessoryType = .disclosureIndicator
+//        cell.accessoryType = .disclosureIndicator
         cell.selectionStyle = .none
         return cell
     }
