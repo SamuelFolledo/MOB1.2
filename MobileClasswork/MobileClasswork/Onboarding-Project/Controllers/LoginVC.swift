@@ -53,6 +53,7 @@ class LoginVC: UIViewController {
     
 //MARK: Private Methods
     fileprivate func setupViews() {
+        self.navigationController?.initRootViewController(vc: self)
         self.view.backgroundColor = .white
         self.view.addSubview(stackView)
         NSLayoutConstraint.activate([
