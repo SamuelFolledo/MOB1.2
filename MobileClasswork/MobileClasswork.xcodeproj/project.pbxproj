@@ -18,6 +18,8 @@
 		3300544623DA217300673C81 /* UIViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3300544523DA217300673C81 /* UIViewController+extensions.swift */; };
 		3300544A23DA314100673C81 /* UIScrollView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3300544923DA314100673C81 /* UIScrollView+extensions.swift */; };
 		3309913523E277E100880CC5 /* UILayoutGuide+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3309913423E277E100880CC5 /* UILayoutGuide+extensions.swift */; };
+		33232DBE23F29D5500CF722D /* PastBoxesDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33232DBD23F29D5500CF722D /* PastBoxesDetailVC.swift */; };
+		33232DC023F2A3B900CF722D /* BoxDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33232DBF23F2A3B900CF722D /* BoxDetailCell.swift */; };
 		3329A61323E359D800A8FDB5 /* OnboardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3329A61223E359D800A8FDB5 /* OnboardingPageView.swift */; };
 		3329A61723E365A300A8FDB5 /* MyXibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3329A61623E365A300A8FDB5 /* MyXibView.swift */; };
 		3329A61923E365AB00A8FDB5 /* MyXibView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3329A61823E365AB00A8FDB5 /* MyXibView.xib */; };
@@ -55,6 +57,8 @@
 		3300544523DA217300673C81 /* UIViewController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extensions.swift"; sourceTree = "<group>"; };
 		3300544923DA314100673C81 /* UIScrollView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+extensions.swift"; sourceTree = "<group>"; };
 		3309913423E277E100880CC5 /* UILayoutGuide+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILayoutGuide+extensions.swift"; sourceTree = "<group>"; };
+		33232DBD23F29D5500CF722D /* PastBoxesDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastBoxesDetailVC.swift; sourceTree = "<group>"; };
+		33232DBF23F2A3B900CF722D /* BoxDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxDetailCell.swift; sourceTree = "<group>"; };
 		3329A61223E359D800A8FDB5 /* OnboardingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageView.swift; sourceTree = "<group>"; };
 		3329A61623E365A300A8FDB5 /* MyXibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyXibView.swift; sourceTree = "<group>"; };
 		3329A61823E365AB00A8FDB5 /* MyXibView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyXibView.xib; sourceTree = "<group>"; };
@@ -231,6 +235,7 @@
 			children = (
 				3329A61223E359D800A8FDB5 /* OnboardingPageView.swift */,
 				334ED2FA23EC90A5002B5FF4 /* BoxCell.swift */,
+				33232DBF23F2A3B900CF722D /* BoxDetailCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -242,6 +247,7 @@
 				334ED2F823EC8BC1002B5FF4 /* LoginVC.swift */,
 				33A8BFCA23ECAA7500056A0F /* HomeVC.swift */,
 				334ED2F623EC8BB7002B5FF4 /* PastBoxesVC.swift */,
+				33232DBD23F29D5500CF722D /* PastBoxesDetailVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -418,6 +424,7 @@
 				3329A61723E365A300A8FDB5 /* MyXibView.swift in Sources */,
 				3397D76323E0AB62000C59D4 /* CodingConstraintVC.swift in Sources */,
 				33CA31C423E9F060009AA3DF /* OnboardingVC.swift in Sources */,
+				33232DBE23F29D5500CF722D /* PastBoxesDetailVC.swift in Sources */,
 				3397D76523E0BA40000C59D4 /* Day4OnboardingVC.swift in Sources */,
 				33CA31A223E56A6F009AA3DF /* CollectionVC.swift in Sources */,
 				3309913523E277E100880CC5 /* UILayoutGuide+extensions.swift in Sources */,
@@ -432,6 +439,7 @@
 				33CA319C23E565A8009AA3DF /* CollectionViewCell.swift in Sources */,
 				3300543123DA180400673C81 /* ViewController.swift in Sources */,
 				334ED2F923EC8BC1002B5FF4 /* LoginVC.swift in Sources */,
+				33232DC023F2A3B900CF722D /* BoxDetailCell.swift in Sources */,
 				33CA31C723E9F090009AA3DF /* OnboardingModel.swift in Sources */,
 				3300544323DA188F00673C81 /* ScrollVC.swift in Sources */,
 				3300542D23DA180400673C81 /* AppDelegate.swift in Sources */,
