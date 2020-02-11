@@ -9,3 +9,5 @@
 import UIKit
 
 let kMAKESCHOOLIMAGE: UIImage = UIImage(named: "makeschoolLogo")!
+let kSTARIMAGE: UIImage = UIImage(named: "star")!
+let kSTARFILLEDIMAGE: UIImage = UIImage(named: "starFilled")!
