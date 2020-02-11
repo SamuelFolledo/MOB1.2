@@ -54,13 +54,14 @@ class PastBoxesDetailVC: UIViewController {
 //MARK: Extensions
 extension PastBoxesDetailVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
+        let cell: BoxDetailCell = tableView.cellForRow(at: indexPath) as! BoxDetailCell
+        cell.starImageView.image = cell.starImageView.image == kSTARIMAGE ? kSTARFILLEDIMAGE : kSTARIMAGE //if star is filled, then unfill it
     }
 }
 
 extension PastBoxesDetailVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return alienArray.count
+        return boxes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
