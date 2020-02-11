@@ -77,21 +77,32 @@ class HomeVC: UIViewController {
         stackView.addArrangedSubview(newBoxButton)
         newBoxButton.widthAnchor.constraint(equalTo: stackView.widthAnchor, multiplier:  0.8).isActive = true
         newBoxButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-//        newBoxButton.addTarget(self, action: #selector(continueButtonTapped), for: .touchUpInside)
+        newBoxButton.addTarget(self, action: #selector(newButtonTapped), for: .touchUpInside)
         stackView.addArrangedSubview(pastBoxesButton)
         pastBoxesButton.widthAnchor.constraint(equalTo: newBoxButton.widthAnchor).isActive = true
         pastBoxesButton.heightAnchor.constraint(equalTo: newBoxButton.heightAnchor).isActive = true
-//        pastBoxesButton.addTarget(self, action: #selector(continueButtonTapped), for: .touchUpInside)
+        pastBoxesButton.addTarget(self, action: #selector(pastButtonTapped), for: .touchUpInside)
         stackView.addArrangedSubview(profileButton)
         profileButton.widthAnchor.constraint(equalTo: newBoxButton.widthAnchor).isActive = true
         profileButton.heightAnchor.constraint(equalTo: newBoxButton.heightAnchor).isActive = true
-//        profileButton.addTarget(self, action: #selector(continueButtonTapped), profileButton: .touchUpInside)
+        profileButton.addTarget(self, action: #selector(profileButtonTapped), for: .touchUpInside)
     }
     
 //MARK: Helpers
-    @objc func continueButtonTapped() {
+    @objc func newButtonTapped() {
 //        let homeVC: HomeVC = HomeVC()
-//        self.navigationController?.pushViewController(homeVC, animated: true) //push
+//        self.navigationController?.pushViewController(homeVC, animated: true)
+    }
+    
+    @objc func pastButtonTapped() {
+        let vc: PastBoxesVC = PastBoxesVC()
+        navigationController?.pushViewController(vc, animated: true) //push
+//        present(vc, animated: true, completion: nil) //modally
+    }
+    
+    @objc func profileButtonTapped() {
+//        let homeVC: HomeVC = HomeVC()
+//        self.navigationController?.pushViewController(homeVC, animated: true)
     }
 }
 
