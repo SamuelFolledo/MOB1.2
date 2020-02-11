@@ -10,7 +10,9 @@ import UIKit
 
 class PastBoxesDetailVC: UIViewController {
 //MARK: Properties
-    let alienArray = [String](repeating: "👽 invading  🌎", count: 100)
+    let boxes = [String](repeating: "👽 invading  🌎", count: 100)
+//    let boxes = []
+    var month: String = ""
     
 //MARK: Properties Views
     let table: UITableView = {
@@ -29,6 +31,7 @@ class PastBoxesDetailVC: UIViewController {
 //MARK: Private Methods
     fileprivate func setupViews() {
         view.backgroundColor = .white
+        title = month
         setupTableView()
     }
     
