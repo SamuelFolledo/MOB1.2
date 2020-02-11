@@ -83,6 +83,9 @@ https://github.com/SamuelFolledo/MOB1.2/tree/master/MobileClasswork/MobileClassw
 
 ### HW:
 - Programmatically navigate from OnboardingVC to LoginVC then to HomeVC and resetting the initial root view controller via [extension](https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/MobileClasswork/Helper/Extensions/UINavigtaionController%2Bextensions.swift).
+
+<img src="https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/static/gif/day5demo.gif" width="238" height="480">
+
 https://github.com/SamuelFolledo/MOB1.2/tree/master/MobileClasswork/MobileClasswork/Onboarding-Project
 
 ---
@@ -98,6 +101,9 @@ https://github.com/SamuelFolledo/MOB1.2/tree/master/MobileClasswork/MobileClassw
 
 ### HW: 
 - Push a tableVC from HomeVC which pushes another tableVC on cell tap
+
+<img src="https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/static/gif/day6demo.gif" width="238" height="480">
+
 https://github.com/SamuelFolledo/MOB1.2/tree/master/MobileClasswork/MobileClasswork/Onboarding-Project
 
 ---
