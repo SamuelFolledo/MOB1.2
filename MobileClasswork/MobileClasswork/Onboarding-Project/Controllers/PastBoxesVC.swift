@@ -10,13 +10,14 @@ import UIKit
 
 class PastBoxesVC: UIViewController {
 //MARK: Properties
-    let alienArray = [String](repeating: "👽 invading  🌎", count: 100)
+//    let alienArray = [String](repeating: "👽 invading  🌎", count: 100)
+    let months: [String] = ["February 2020", "January 2020", "December 2019", "November 2019", "October 2019", "September 2019", "August 2019", "July 2019", "June 2019", "May 2019", "April 2019", "March 2019", "February 2019", "January 2019"]
     
 //MARK: Properties Views
     let table: UITableView = {
         let table = UITableView()
         table.translatesAutoresizingMaskIntoConstraints = false
-        table.rowHeight = 75
+        table.rowHeight = 100
         table.showsVerticalScrollIndicator = false
         return table
     }()
@@ -53,19 +54,21 @@ class PastBoxesVC: UIViewController {
 //MARK: Extensions
 extension PastBoxesVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Cell's row = ", indexPath.row)
+//        print("Cell's row = ", indexPath.row)
         let vc = PastBoxesDetailVC()
+        vc.month = months[indexPath.row]
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
 extension PastBoxesVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return alienArray.count
+        return months.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: BoxCell = tableView.dequeueReusableCell(withIdentifier: "boxCell", for: indexPath) as! BoxCell
+        cell.boxLabel.text = months[indexPath.row]
 //        let cell = tableView.dequeueReusableCell(withIdentifier: "boxCell", for: indexPath)
 //        cell.textLabel?.text = "\(indexPath.row) \(alienArray[indexPath.row])"
 //        cell.accessoryType = .disclosureIndicator
