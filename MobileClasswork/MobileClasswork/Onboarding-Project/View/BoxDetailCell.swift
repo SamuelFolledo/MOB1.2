@@ -37,6 +37,14 @@ class BoxDetailCell: UITableViewCell {
         label.text = "Box"
         return label
     }()
+    let starImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.layer.cornerRadius = 5
+        imageView.layer.masksToBounds = true
+        imageView.image = kSTARIMAGE
+        return imageView
+    }()
     
     override func awakeFromNib() {
         super.awakeFromNib()
