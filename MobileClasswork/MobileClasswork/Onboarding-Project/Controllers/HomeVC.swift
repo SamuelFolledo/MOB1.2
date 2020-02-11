@@ -61,6 +61,9 @@ class HomeVC: UIViewController {
     
 //MARK: Private Methods
     fileprivate func setupViews() {
+        self.navigationController?.initRootViewController(vc: self)
+        self.navigationController?.isNavigationBarHidden = false
+        self.title = "Home"
         self.view.backgroundColor = .white
         self.view.addSubview(stackView)
         NSLayoutConstraint.activate([
