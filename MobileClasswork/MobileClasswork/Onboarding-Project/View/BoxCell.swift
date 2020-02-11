@@ -13,7 +13,7 @@ class BoxCell: UITableViewCell {
     let background : UIView = {
         let background = UIView()
         background.translatesAutoresizingMaskIntoConstraints = false
-        background.backgroundColor = #colorLiteral(red: 0.8186396956, green: 0.7955000997, blue: 1, alpha: 1)
+//        background.backgroundColor = #colorLiteral(red: 0.8186396956, green: 0.7955000997, blue: 1, alpha: 1)
         background.layer.cornerRadius = 5
         background.layer.masksToBounds = true
         return background
@@ -29,10 +29,10 @@ class BoxCell: UITableViewCell {
     let boxLabel: UILabel = {
         let label: UILabel = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.font = UIFont.systemFont(ofSize: 18)
         label.sizeToFit()
         label.numberOfLines = 0
-        label.textColor = .white
+        label.textColor = .black
         label.textAlignment = .left
         label.text = "Box"
         return label
@@ -60,11 +60,13 @@ class BoxCell: UITableViewCell {
     }
     
     func setup() {
+        self.accessoryType = .disclosureIndicator
         self.contentView.addSubview(background)
         background.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 10).isActive = true
         background.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor).isActive = true
         background.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor).isActive = true
-        background.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor).isActive = true
+//        background.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor).isActive = true
+        background.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -10).isActive = true
         background.addSubview(boxImageView)
         boxImageView.centerYAnchor.constraint(equalTo: background.centerYAnchor).isActive = true
         boxImageView.leadingAnchor.constraint(equalTo: background.leadingAnchor, constant: 10).isActive = true
@@ -74,6 +76,6 @@ class BoxCell: UITableViewCell {
         boxLabel.centerYAnchor.constraint(equalTo: boxImageView.centerYAnchor).isActive = true
         boxLabel.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor).isActive = true
         boxLabel.leadingAnchor.constraint(equalTo: boxImageView.trailingAnchor, constant: 10).isActive = true
-        boxLabel.trailingAnchor.constraint(equalTo: background.trailingAnchor, constant: 10).isActive = true
+        boxLabel.trailingAnchor.constraint(equalTo: background.trailingAnchor, constant: -10).isActive = true
     }
 }
