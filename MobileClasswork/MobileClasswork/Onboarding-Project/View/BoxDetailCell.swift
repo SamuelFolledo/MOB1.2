@@ -26,15 +26,37 @@ class BoxDetailCell: UITableViewCell {
         imageView.image = kMAKESCHOOLIMAGE
         return imageView
     }()
-    let boxLabel: UILabel = {
+    let labelStackView: UIStackView = {
+        let stackView: UIStackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.alignment = .center
+        stackView.distribution = .fillEqually
+        stackView.spacing = 10
+        return stackView
+    }()
+    let titleLabel: UILabel = {
         let label: UILabel = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.font = UIFont.boldSystemFont(ofSize: 24)
+        label.textColor = .black
         label.sizeToFit()
         label.numberOfLines = 0
-        label.textColor = .white
+        label.textColor = .black
         label.textAlignment = .left
-        label.text = "Box"
+        label.text = "Title"
+        return label
+    }()
+    let descriptionLabel: UILabel = {
+        let label: UILabel = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.textColor = .lightGray
+        label.sizeToFit()
+        label.numberOfLines = 0
+        label.textColor = .gray
+        label.textAlignment = .left
+        label.text = "Description"
         return label
     }()
     let starImageView: UIImageView = {
@@ -78,11 +100,29 @@ class BoxDetailCell: UITableViewCell {
         boxImageView.leadingAnchor.constraint(equalTo: background.leadingAnchor, constant: 10).isActive = true
         boxImageView.heightAnchor.constraint(equalTo: background.heightAnchor, multiplier: 0.8).isActive = true
         boxImageView.widthAnchor.constraint(equalTo: boxImageView.heightAnchor).isActive = true
-        background.addSubview(boxLabel)
-        boxLabel.centerYAnchor.constraint(equalTo: boxImageView.centerYAnchor).isActive = true
-        boxLabel.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor).isActive = true
-        boxLabel.leadingAnchor.constraint(equalTo: boxImageView.trailingAnchor, constant: 10).isActive = true
-        boxLabel.trailingAnchor.constraint(equalTo: background.trailingAnchor, constant: 10).isActive = true
+        
+        background.addSubview(labelStackView)
+        labelStackView.heightAnchor.constraint(equalTo: background.heightAnchor, multiplier: 0.8).isActive = true
+        labelStackView.centerYAnchor.constraint(equalTo: boxImageView.centerYAnchor).isActive = true
+//        labelStackView.bottomAnchor.constraint(equalTo: background.bottomAnchor).isActive = true
+        labelStackView.leadingAnchor.constraint(equalTo: boxImageView.trailingAnchor, constant: 10).isActive = true
+//        labelStackView.trailingAnchor.constraint(equalTo: background.trailingAnchor, constant: 10).isActive = true
+        labelStackView.addArrangedSubview(titleLabel)
+        titleLabel.widthAnchor.constraint(equalTo: labelStackView.widthAnchor).isActive = true
+        labelStackView.addArrangedSubview(descriptionLabel)
+        descriptionLabel.widthAnchor.constraint(equalTo: labelStackView.widthAnchor).isActive = true
+        background.addSubview(starImageView)
+        starImageView.centerYAnchor.constraint(equalTo: boxImageView.centerYAnchor).isActive = true
+//        starImageView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor).isActive = true
+        starImageView.heightAnchor.constraint(equalTo: boxImageView.heightAnchor, multiplier: 0.5).isActive = true
+        starImageView.widthAnchor.constraint(equalTo: boxImageView.widthAnchor, multiplier: 0.5).isActive = true
+        starImageView.leadingAnchor.constraint(equalTo: labelStackView.trailingAnchor, constant: 10).isActive = true
+        starImageView.trailingAnchor.constraint(equalTo: background.trailingAnchor, constant: -10).isActive = true
+//        background.addSubview(titleLabel)
+//        titleLabel.centerYAnchor.constraint(equalTo: boxImageView.centerYAnchor).isActive = true
+//        titleLabel.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor).isActive = true
+//        titleLabel.leadingAnchor.constraint(equalTo: boxImageView.trailingAnchor, constant: 10).isActive = true
+//        titleLabel.trailingAnchor.constraint(equalTo: background.trailingAnchor, constant: 10).isActive = true
     }
 }
 
