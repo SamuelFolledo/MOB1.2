@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+enum Category {
+    case food, office, furnitures, computers
+}

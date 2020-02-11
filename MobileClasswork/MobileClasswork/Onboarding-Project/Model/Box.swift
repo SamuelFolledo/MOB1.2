@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+struct Box {
+    let date: String
+    let items: [Item]
+    let category: Category
+}
