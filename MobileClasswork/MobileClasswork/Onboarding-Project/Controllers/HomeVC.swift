@@ -93,8 +93,8 @@ class HomeVC: UIViewController {
     
 //MARK: Helpers
     @objc func newButtonTapped() {
-//        let homeVC: HomeVC = HomeVC()
-//        self.navigationController?.pushViewController(homeVC, animated: true)
+        let vc: NewBoxVC = NewBoxVC()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func pastButtonTapped() {
