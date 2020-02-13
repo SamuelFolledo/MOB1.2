@@ -32,6 +32,8 @@
 		3329A61923E365AB00A8FDB5 /* MyXibView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3329A61823E365AB00A8FDB5 /* MyXibView.xib */; };
 		3329A61E23E36B7D00A8FDB5 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3329A61D23E36B7D00A8FDB5 /* Onboarding.swift */; };
 		3329A62223E36C8C00A8FDB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3329A62123E36C8C00A8FDB5 /* Main.storyboard */; };
+		333DCC3B23F5C3EE00D76D23 /* Day8VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333DCC3A23F5C3EE00D76D23 /* Day8VC.swift */; };
+		333DCC3E23F5C42500D76D23 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333DCC3D23F5C42500D76D23 /* Section.swift */; };
 		334ED2F723EC8BB7002B5FF4 /* PastBoxesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334ED2F623EC8BB7002B5FF4 /* PastBoxesVC.swift */; };
 		334ED2F923EC8BC1002B5FF4 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334ED2F823EC8BC1002B5FF4 /* LoginVC.swift */; };
 		334ED2FB23EC90A5002B5FF4 /* BoxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334ED2FA23EC90A5002B5FF4 /* BoxCell.swift */; };
@@ -81,6 +83,8 @@
 		3329A61823E365AB00A8FDB5 /* MyXibView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyXibView.xib; sourceTree = "<group>"; };
 		3329A61D23E36B7D00A8FDB5 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		3329A62123E36C8C00A8FDB5 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		333DCC3A23F5C3EE00D76D23 /* Day8VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day8VC.swift; sourceTree = "<group>"; };
+		333DCC3D23F5C42500D76D23 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		334ED2F623EC8BB7002B5FF4 /* PastBoxesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastBoxesVC.swift; sourceTree = "<group>"; };
 		334ED2F823EC8BC1002B5FF4 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		334ED2FA23EC90A5002B5FF4 /* BoxCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxCell.swift; sourceTree = "<group>"; };
@@ -157,6 +161,7 @@
 				3329A61A23E365BA00A8FDB5 /* Day4-XibView */,
 				33CA31C523E9F068009AA3DF /* Day5-Onboarding */,
 				33232DCC23F3272F00CF722D /* Day7-CollectionView */,
+				333DCC3923F5C3C700D76D23 /* Day8-CompositionalLayout */,
 				33A8BFC723ECA16C00056A0F /* Onboarding-Project */,
 				3300544723DA285500673C81 /* Helper */,
 				3300543523DA180700673C81 /* Assets.xcassets */,
@@ -245,6 +250,23 @@
 				3300543223DA180400673C81 /* Day1.storyboard */,
 			);
 			path = "Day1-StoryboardConstraints";
+			sourceTree = "<group>";
+		};
+		333DCC3923F5C3C700D76D23 /* Day8-CompositionalLayout */ = {
+			isa = PBXGroup;
+			children = (
+				333DCC3C23F5C41A00D76D23 /* View */,
+				333DCC3A23F5C3EE00D76D23 /* Day8VC.swift */,
+			);
+			path = "Day8-CompositionalLayout";
+			sourceTree = "<group>";
+		};
+		333DCC3C23F5C41A00D76D23 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				333DCC3D23F5C42500D76D23 /* Section.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		334ED2F523EC89A6002B5FF4 /* Model */ = {
@@ -490,10 +512,12 @@
 				334ED2FB23EC90A5002B5FF4 /* BoxCell.swift in Sources */,
 				33CA319C23E565A8009AA3DF /* CollectionViewCell.swift in Sources */,
 				3300543123DA180400673C81 /* ViewController.swift in Sources */,
+				333DCC3E23F5C42500D76D23 /* Section.swift in Sources */,
 				334ED2F923EC8BC1002B5FF4 /* LoginVC.swift in Sources */,
 				33232DC023F2A3B900CF722D /* BoxDetailCell.swift in Sources */,
 				33CA31C723E9F090009AA3DF /* OnboardingModel.swift in Sources */,
 				3300544323DA188F00673C81 /* ScrollVC.swift in Sources */,
+				333DCC3B23F5C3EE00D76D23 /* Day8VC.swift in Sources */,
 				3300542D23DA180400673C81 /* AppDelegate.swift in Sources */,
 				33232DD223F327BD00CF722D /* MyFlowLayout.swift in Sources */,
 				33B2A18023F52B6300AF03CA /* NewBoxVC.swift in Sources */,
