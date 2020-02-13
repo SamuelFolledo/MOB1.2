@@ -11,4 +11,5 @@ import Foundation
 struct Item {
     let name: String
     let image: String
+    var isFavorite: Bool
 }
