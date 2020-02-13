@@ -10,7 +10,7 @@ import UIKit
 
 class PastBoxesDetailVC: UIViewController {
 //MARK: Properties
-    let boxes = [String](repeating: "👽 invading  🌎", count: 100)
+    var boxes = [(Int, Bool)](repeating: (1,false), count: 100)
 //    let boxes = []
     var month: String = ""
     
@@ -56,6 +56,7 @@ extension PastBoxesDetailVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell: BoxDetailCell = tableView.cellForRow(at: indexPath) as! BoxDetailCell
         cell.starImageView.image = cell.starImageView.image == kSTARIMAGE ? kSTARFILLEDIMAGE : kSTARIMAGE //if star is filled, then unfill it
+        boxes[indexPath.row].1 = !boxes[indexPath.row].1
     }
 }
 
@@ -66,7 +67,14 @@ extension PastBoxesDetailVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: BoxDetailCell = tableView.dequeueReusableCell(withIdentifier: "boxDetailCell", for: indexPath) as! BoxDetailCell
+        //cell.starImageView.image = cell.isFavorite ? kSTARFILLEDIMAGE : kSTARIMAGE
         cell.selectionStyle = .none
+        if boxes[indexPath.row].1 {
+            cell.starImageView.image = kSTARFILLEDIMAGE
+        } else {
+            cell.starImageView.image = kSTARIMAGE
+        }
+//        print(cell.isFavorite)
         return cell
     }
 }
