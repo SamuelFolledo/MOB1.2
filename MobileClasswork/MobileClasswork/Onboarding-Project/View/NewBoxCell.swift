@@ -11,7 +11,12 @@ import UIKit
 class NewBoxCell: UICollectionViewCell {
     
     static var identifier: String = "newBoxCell"
-    
+    let containerView : UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .lightGray
+        return view
+    }()
     let stackView: UIStackView = {
         let stackView: UIStackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -50,19 +55,26 @@ class NewBoxCell: UICollectionViewCell {
 //    }
     
     fileprivate func setup() {
-        self.backgroundColor = UIColor.darkGray
-        self.contentView.layer.cornerRadius = 5
-        self.contentView.layer.masksToBounds = true
-        self.contentView.addSubview(stackView)
+        self.backgroundColor = .clear
+        self.containerView.layer.cornerRadius = 10
+        self.containerView.layer.masksToBounds = true
+        self.contentView.addSubview(containerView)
         NSLayoutConstraint.activate([
-            self.stackView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            self.stackView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            self.stackView.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.8),
-            self.stackView.heightAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.8)
+            self.containerView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            self.containerView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            self.containerView.widthAnchor.constraint(equalTo: contentView.widthAnchor),
+            self.containerView.heightAnchor.constraint(equalTo: contentView.heightAnchor)
+        ])
+        self.containerView.addSubview(stackView)
+        NSLayoutConstraint.activate([
+            self.stackView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+            self.stackView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
+            self.stackView.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.8),
+            self.stackView.heightAnchor.constraint(equalTo: containerView.heightAnchor, multiplier: 0.8)
         ])
         stackView.addArrangedSubview(imageView)
         imageView.widthAnchor.constraint(equalTo: stackView.widthAnchor).isActive = true
-        self.imageView.heightAnchor.constraint(equalTo: stackView.heightAnchor, multiplier: 0.75)
+        self.imageView.heightAnchor.constraint(equalTo: stackView.heightAnchor, multiplier: 0.75).isActive = true
         stackView.addArrangedSubview(textLabel)
         textLabel.widthAnchor.constraint(equalTo: stackView.widthAnchor).isActive = true
     }
