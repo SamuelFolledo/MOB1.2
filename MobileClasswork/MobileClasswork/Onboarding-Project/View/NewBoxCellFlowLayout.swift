@@ -14,12 +14,12 @@ class NewBoxCellFlowLayout: UICollectionViewFlowLayout {
         super.prepare()
         guard let cv = collectionView else { return }
         //self.itemSize = CGSize(width: cv.bounds.inset(by: cv.layoutMargins).size.width, height: 70.0)
-        self.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        self.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         self.sectionInsetReference = .fromSafeArea
         let availableWidth = cv.bounds.inset(by: cv.layoutMargins).size.width
         let minColumnWidth = CGFloat(300)
         let maxNumColumns = Int(availableWidth/minColumnWidth)
-        let cellWidth = (availableWidth / CGFloat(maxNumColumns)).rounded(.down)
+        let cellWidth = (availableWidth / CGFloat(maxNumColumns)).rounded(.down) / 2 - 10 //half - 10 because of insets
         self.itemSize = CGSize(width: cellWidth, height: 200.0)
     }
 }
