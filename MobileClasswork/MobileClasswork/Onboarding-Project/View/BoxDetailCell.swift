@@ -10,6 +10,8 @@ import UIKit
 
 class BoxDetailCell: UITableViewCell {
     
+    var isFavorite: Bool = false
+    
     let background : UIView = {
         let background = UIView()
         background.translatesAutoresizingMaskIntoConstraints = false
@@ -95,6 +97,7 @@ class BoxDetailCell: UITableViewCell {
         background.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor).isActive = true
         background.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor).isActive = true
         background.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor).isActive = true
+        
         background.addSubview(boxImageView)
         boxImageView.centerYAnchor.constraint(equalTo: background.centerYAnchor).isActive = true
         boxImageView.leadingAnchor.constraint(equalTo: background.leadingAnchor, constant: 10).isActive = true
@@ -104,25 +107,25 @@ class BoxDetailCell: UITableViewCell {
         background.addSubview(labelStackView)
         labelStackView.heightAnchor.constraint(equalTo: background.heightAnchor, multiplier: 0.8).isActive = true
         labelStackView.centerYAnchor.constraint(equalTo: boxImageView.centerYAnchor).isActive = true
-//        labelStackView.bottomAnchor.constraint(equalTo: background.bottomAnchor).isActive = true
         labelStackView.leadingAnchor.constraint(equalTo: boxImageView.trailingAnchor, constant: 10).isActive = true
-//        labelStackView.trailingAnchor.constraint(equalTo: background.trailingAnchor, constant: 10).isActive = true
+        
         labelStackView.addArrangedSubview(titleLabel)
         titleLabel.widthAnchor.constraint(equalTo: labelStackView.widthAnchor).isActive = true
+        
         labelStackView.addArrangedSubview(descriptionLabel)
         descriptionLabel.widthAnchor.constraint(equalTo: labelStackView.widthAnchor).isActive = true
+        
         background.addSubview(starImageView)
         starImageView.centerYAnchor.constraint(equalTo: boxImageView.centerYAnchor).isActive = true
-//        starImageView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor).isActive = true
         starImageView.heightAnchor.constraint(equalTo: boxImageView.heightAnchor, multiplier: 0.5).isActive = true
         starImageView.widthAnchor.constraint(equalTo: boxImageView.widthAnchor, multiplier: 0.5).isActive = true
         starImageView.leadingAnchor.constraint(equalTo: labelStackView.trailingAnchor, constant: 10).isActive = true
         starImageView.trailingAnchor.constraint(equalTo: background.trailingAnchor, constant: -10).isActive = true
-//        background.addSubview(titleLabel)
-//        titleLabel.centerYAnchor.constraint(equalTo: boxImageView.centerYAnchor).isActive = true
-//        titleLabel.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor).isActive = true
-//        titleLabel.leadingAnchor.constraint(equalTo: boxImageView.trailingAnchor, constant: 10).isActive = true
-//        titleLabel.trailingAnchor.constraint(equalTo: background.trailingAnchor, constant: 10).isActive = true
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        starImageView.image = kSTARIMAGE
     }
 }
 
