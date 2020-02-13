@@ -40,6 +40,9 @@
 		33A8BFC623ECA0BD00056A0F /* UINavigtaionController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A8BFC523ECA0BD00056A0F /* UINavigtaionController+extensions.swift */; };
 		33A8BFCB23ECAA7500056A0F /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A8BFCA23ECAA7500056A0F /* HomeVC.swift */; };
 		33A8BFCD23ECABBC00056A0F /* UIButton+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A8BFCC23ECABBC00056A0F /* UIButton+extensions.swift */; };
+		33B2A18023F52B6300AF03CA /* NewBoxVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B2A17F23F52B6300AF03CA /* NewBoxVC.swift */; };
+		33B2A18223F52BC300AF03CA /* NewBoxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B2A18123F52BC300AF03CA /* NewBoxCell.swift */; };
+		33B2A18423F52F4400AF03CA /* NewBoxCellFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B2A18323F52F4400AF03CA /* NewBoxCellFlowLayout.swift */; };
 		33CA319C23E565A8009AA3DF /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CA319A23E565A8009AA3DF /* CollectionViewCell.swift */; };
 		33CA319D23E565A8009AA3DF /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33CA319B23E565A8009AA3DF /* CollectionViewCell.xib */; };
 		33CA31A223E56A6F009AA3DF /* CollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CA31A123E56A6F009AA3DF /* CollectionVC.swift */; };
@@ -86,6 +89,9 @@
 		33A8BFC523ECA0BD00056A0F /* UINavigtaionController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigtaionController+extensions.swift"; sourceTree = "<group>"; };
 		33A8BFCA23ECAA7500056A0F /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		33A8BFCC23ECABBC00056A0F /* UIButton+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+extensions.swift"; sourceTree = "<group>"; };
+		33B2A17F23F52B6300AF03CA /* NewBoxVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBoxVC.swift; sourceTree = "<group>"; };
+		33B2A18123F52BC300AF03CA /* NewBoxCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBoxCell.swift; sourceTree = "<group>"; };
+		33B2A18323F52F4400AF03CA /* NewBoxCellFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBoxCellFlowLayout.swift; sourceTree = "<group>"; };
 		33CA319A23E565A8009AA3DF /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		33CA319B23E565A8009AA3DF /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		33CA31A123E56A6F009AA3DF /* CollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionVC.swift; sourceTree = "<group>"; };
@@ -273,6 +279,8 @@
 				3329A61223E359D800A8FDB5 /* OnboardingPageView.swift */,
 				334ED2FA23EC90A5002B5FF4 /* BoxCell.swift */,
 				33232DBF23F2A3B900CF722D /* BoxDetailCell.swift */,
+				33B2A18123F52BC300AF03CA /* NewBoxCell.swift */,
+				33B2A18323F52F4400AF03CA /* NewBoxCellFlowLayout.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -285,6 +293,7 @@
 				33A8BFCA23ECAA7500056A0F /* HomeVC.swift */,
 				334ED2F623EC8BB7002B5FF4 /* PastBoxesVC.swift */,
 				33232DBD23F29D5500CF722D /* PastBoxesDetailVC.swift */,
+				33B2A17F23F52B6300AF03CA /* NewBoxVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -458,6 +467,7 @@
 			files = (
 				33232DC323F3207200CF722D /* Box.swift in Sources */,
 				3329A61323E359D800A8FDB5 /* OnboardingPageView.swift in Sources */,
+				33B2A18223F52BC300AF03CA /* NewBoxCell.swift in Sources */,
 				33232DD023F3279300CF722D /* MyCollectionViewCell.swift in Sources */,
 				33232DCE23F3276600CF722D /* MyCollectionVC.swift in Sources */,
 				33CA31B323E75772009AA3DF /* ChartsVC.swift in Sources */,
@@ -465,6 +475,7 @@
 				3397D76323E0AB62000C59D4 /* CodingConstraintVC.swift in Sources */,
 				33CA31C423E9F060009AA3DF /* OnboardingVC.swift in Sources */,
 				33232DBE23F29D5500CF722D /* PastBoxesDetailVC.swift in Sources */,
+				33B2A18423F52F4400AF03CA /* NewBoxCellFlowLayout.swift in Sources */,
 				3397D76523E0BA40000C59D4 /* Day4OnboardingVC.swift in Sources */,
 				33232DCB23F324DE00CF722D /* User.swift in Sources */,
 				33CA31A223E56A6F009AA3DF /* CollectionVC.swift in Sources */,
@@ -485,6 +496,7 @@
 				3300544323DA188F00673C81 /* ScrollVC.swift in Sources */,
 				3300542D23DA180400673C81 /* AppDelegate.swift in Sources */,
 				33232DD223F327BD00CF722D /* MyFlowLayout.swift in Sources */,
+				33B2A18023F52B6300AF03CA /* NewBoxVC.swift in Sources */,
 				334ED2F723EC8BB7002B5FF4 /* PastBoxesVC.swift in Sources */,
 				3300542F23DA180400673C81 /* SceneDelegate.swift in Sources */,
 				33232DC523F3248B00CF722D /* Category.swift in Sources */,
