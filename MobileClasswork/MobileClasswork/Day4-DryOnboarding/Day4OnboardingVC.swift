@@ -75,10 +75,10 @@ class Day4OnboardingVC: UIViewController {
         view.insertSubview(scrollView, at: 0)
         scrollView.insertSubview(contentView, at: 1)
         NSLayoutConstraint.activate(
-            scrollView.frameLayoutGuide.pinToEdges(view: self.view) //pin scrollView's frameLayoutGuide to the edges of self.view
+            scrollView.frameLayoutGuide.pinToEdgesEqually(view: self.view) //pin scrollView's frameLayoutGuide to the edges of self.view
         )
         NSLayoutConstraint.activate(
-            scrollView.contentLayoutGuide.pinToEdges(view: contentView) //pin scrollView's contentLayoutGuide to edges of contentView
+            scrollView.contentLayoutGuide.pinToEdgesEqually(view: contentView) //pin scrollView's contentLayoutGuide to edges of contentView
         )
         scrollView.contentLayoutGuide.heightAnchor.constraint(equalTo: scrollView.frameLayoutGuide.heightAnchor).isActive = true //NOTE: you can get width and height from scrollView's frameLayoutGuide, and you can pin top, left, right, and bottom to scrollView's contentLayoutGuide //refer to Adriana's ScrollView Recipe
     }
