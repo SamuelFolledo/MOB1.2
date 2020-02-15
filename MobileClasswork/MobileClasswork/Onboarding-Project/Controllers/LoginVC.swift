@@ -78,6 +78,7 @@ class LoginVC: UIViewController {
     
     override func viewDidLayoutSubviews() {
         loginButton.isMainButton() //since isMainButton() extension has corner radius which needs height for customization, need to call it in viewDidLayoutSubviews
+        skipButton.isClearButton()
     }
     
 //MARK: Private Methods
@@ -117,6 +118,10 @@ class LoginVC: UIViewController {
         loginButton.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier:  0.8).isActive = true
         loginButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        stackView.addArrangedSubview(skipButton)
+        skipButton.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier:  0.8).isActive = true
+        skipButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        skipButton.addTarget(self, action: #selector(skipButtonTapped), for: .touchUpInside)
     }
     
     fileprivate func setupDescriptionLabel() {
@@ -131,6 +136,11 @@ class LoginVC: UIViewController {
     
 //MARK: Helpers
     @objc func loginButtonTapped() {
+        let homeVC: HomeVC = HomeVC()
+        self.navigationController?.pushViewController(homeVC, animated: true) //push
+    }
+    
+    @objc func skipButtonTapped() {
         let homeVC: HomeVC = HomeVC()
         self.navigationController?.pushViewController(homeVC, animated: true) //push
     }

@@ -37,6 +37,7 @@
 		334599E823F7B099002C13D5 /* UnderlinedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334599E723F7B099002C13D5 /* UnderlinedTextField.swift */; };
 		334599EF23F7C32F002C13D5 /* UITextField+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334599EE23F7C32F002C13D5 /* UITextField+extensions.swift */; };
 		334599F723F7D615002C13D5 /* UIView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334599F623F7D615002C13D5 /* UIView+extensions.swift */; };
+		334599F923F8AC3B002C13D5 /* UIColor+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334599F823F8AC3B002C13D5 /* UIColor+extensions.swift */; };
 		334ED2F723EC8BB7002B5FF4 /* PastBoxesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334ED2F623EC8BB7002B5FF4 /* PastBoxesVC.swift */; };
 		334ED2F923EC8BC1002B5FF4 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334ED2F823EC8BC1002B5FF4 /* LoginVC.swift */; };
 		334ED2FB23EC90A5002B5FF4 /* BoxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334ED2FA23EC90A5002B5FF4 /* BoxCell.swift */; };
@@ -91,6 +92,7 @@
 		334599E723F7B099002C13D5 /* UnderlinedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlinedTextField.swift; sourceTree = "<group>"; };
 		334599EE23F7C32F002C13D5 /* UITextField+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+extensions.swift"; sourceTree = "<group>"; };
 		334599F623F7D615002C13D5 /* UIView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extensions.swift"; sourceTree = "<group>"; };
+		334599F823F8AC3B002C13D5 /* UIColor+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extensions.swift"; sourceTree = "<group>"; };
 		334ED2F623EC8BB7002B5FF4 /* PastBoxesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastBoxesVC.swift; sourceTree = "<group>"; };
 		334ED2F823EC8BC1002B5FF4 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		334ED2FA23EC90A5002B5FF4 /* BoxCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxCell.swift; sourceTree = "<group>"; };
@@ -396,6 +398,7 @@
 				33A8BFCC23ECABBC00056A0F /* UIButton+extensions.swift */,
 				334599EE23F7C32F002C13D5 /* UITextField+extensions.swift */,
 				334599F623F7D615002C13D5 /* UIView+extensions.swift */,
+				334599F823F8AC3B002C13D5 /* UIColor+extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -571,6 +574,7 @@
 				333DCC3B23F5C3EE00D76D23 /* Day8VC.swift in Sources */,
 				3300542D23DA180400673C81 /* AppDelegate.swift in Sources */,
 				334599EF23F7C32F002C13D5 /* UITextField+extensions.swift in Sources */,
+				334599F923F8AC3B002C13D5 /* UIColor+extensions.swift in Sources */,
 				33232DD223F327BD00CF722D /* MyFlowLayout.swift in Sources */,
 				33B2A18023F52B6300AF03CA /* NewBoxVC.swift in Sources */,
 				334ED2F723EC8BB7002B5FF4 /* PastBoxesVC.swift in Sources */,
