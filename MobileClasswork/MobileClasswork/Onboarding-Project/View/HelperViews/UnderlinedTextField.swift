@@ -9,10 +9,13 @@
 
 import UIKit
 
+///UITextField as just line with no borders. Can change the line color
 class UnderlinedTextField: UITextField {
+//views
     private let defaultUnderlineColor = UIColor.black
     private let bottomLine = UIView()
 
+//setup
     override func awakeFromNib() {
         super.awakeFromNib()
         borderStyle = .none
@@ -28,11 +31,21 @@ class UnderlinedTextField: UITextField {
         bottomLine.heightAnchor.constraint(equalToConstant: 1).isActive = true
     }
 
+//Setters
     public func setUnderlineColor(color: UIColor = .red) {
         bottomLine.backgroundColor = color
     }
 
     public func setDefaultUnderlineColor() {
         bottomLine.backgroundColor = defaultUnderlineColor
+    }
+    
+//Helpers
+    public func hasError() {
+            self.setUnderlineColor(color: .systemRed)
+        }
+    
+    public func hasNoError() {
+        self.setDefaultUnderlineColor()
     }
 }
