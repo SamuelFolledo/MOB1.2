@@ -31,6 +31,14 @@ class LoginVC: UIViewController {
         button.setTitle("Login", for: .normal)
         return button
     }()
+    lazy var skipButton: UIButton = {
+        let button: UIButton = UIButton(frame: .zero)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .clear
+        button.setTitle("Skip To Home", for: .normal)
+        
+        return button
+    }()
     lazy var imageView: UIImageView = {
         let imageView: UIImageView = UIImageView(frame: .zero)
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -43,8 +51,9 @@ class LoginVC: UIViewController {
         label.font = UIFont.boldSystemFont(ofSize: 18)
         label.sizeToFit()
         label.numberOfLines = 0
-        label.textColor = .white
+        label.textColor = .black
         label.textAlignment = .center
+        label.text = "eyoo"
         return label
     }()
     lazy var stackView: UIStackView = {
@@ -67,15 +76,19 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
     }
     
+    override func viewDidLayoutSubviews() {
+        loginButton.isMainButton() //since isMainButton() extension has corner radius which needs height for customization, need to call it in viewDidLayoutSubviews
+    }
+    
 //MARK: Private Methods
     fileprivate func setupViews() {
         self.navigationController?.initRootViewController(vc: self)
         self.view.backgroundColor = .white
         setupStackView()
         setupImageView()
+        setupTextFields()
         setupDescriptionLabel()
         setupLoginButton()
-        setupTextFields()
     }
     
     fileprivate func setupStackView() {
@@ -92,8 +105,10 @@ class LoginVC: UIViewController {
         stackView.addArrangedSubview(emailTextField)
         stackView.addArrangedSubview(passwordTextField)
         NSLayoutConstraint.activate([
-            emailTextField.widthAnchor.constraint(equalTo: stackView.widthAnchor, multiplier: 0.8),
-            passwordTextField.widthAnchor.constraint(equalTo: stackView.widthAnchor, multiplier: 0.8)
+            emailTextField.heightAnchor.constraint(equalToConstant: 50),
+            emailTextField.widthAnchor.constraint(equalTo: stackView.widthAnchor),
+            passwordTextField.heightAnchor.constraint(equalToConstant: 50),
+            passwordTextField.widthAnchor.constraint(equalTo: stackView.widthAnchor)
         ])
     }
     
