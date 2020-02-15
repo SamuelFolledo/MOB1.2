@@ -15,23 +15,16 @@ class MyCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        // Layout views inside the cell
         let textLabel = UILabel(frame: .zero)
         textLabel.translatesAutoresizingMaskIntoConstraints = false
         self.contentView.addSubview(textLabel)
-        
-        // Aplying constraints
         NSLayoutConstraint.activate([
             self.contentView.centerXAnchor.constraint(equalTo: textLabel.centerXAnchor),
             self.contentView.centerYAnchor.constraint(equalTo: textLabel.centerYAnchor),
             ])
-        
-        // Customization
         self.backgroundColor = UIColor.lightGray
         self.textLabel = textLabel
         self.textLabel.font = UIFont(name: "Helvetica", size: 26)
-
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -41,6 +34,5 @@ class MyCollectionViewCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
     }
-
 }
 
