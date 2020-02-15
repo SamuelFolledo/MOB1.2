@@ -9,9 +9,38 @@
 import UIKit
 
 extension UIButton {
-    func isMainButton() { //applied border width and rounded corners
-        self.layer.borderWidth = 2
-        self.layer.borderColor = UIColor.white.cgColor
+/// applied main color and rounded corners
+    func isMainButton() {
+//        self.layer.borderWidth = 2
+//        self.layer.borderColor = UIColor.white.cgColor
+        self.backgroundColor = kMAINCOLOR
+        self.titleLabel?.font = .systemFont(ofSize: 24, weight: .semibold)
+        self.setTitleColor(.white, for: .normal)
+        self.layer.cornerRadius = self.frame.height / 5
+        self.clipsToBounds = true
+//        self.layer.masksToBounds = true
+    }
+    
+    func isWhiteButton() {
+        self.backgroundColor = kOFFWHITECOLOR
+        self.titleLabel?.font = .systemFont(ofSize: 24, weight: .medium)
+        self.setTitleColor(kOFFBLACKCOLOR, for: .normal)
+        self.layer.cornerRadius = self.frame.height / 5
+        self.clipsToBounds = true
+    }
+    
+    func isBlackButton() {
+        self.backgroundColor = kOFFBLACKCOLOR
+        self.titleLabel?.font = .systemFont(ofSize: 24, weight: .medium)
+        self.setTitleColor(kOFFWHITECOLOR, for: .normal)
+        self.layer.cornerRadius = self.frame.height / 5
+        self.clipsToBounds = true
+    }
+    
+    func isClearButton(titleColor: UIColor = kOFFBLACKCOLOR) {
+        self.backgroundColor = .clear
+        self.setTitleColor(titleColor, for: .normal)
+        self.titleLabel?.font = .systemFont(ofSize: 24, weight: .medium)
         self.layer.cornerRadius = self.frame.height / 5
         self.clipsToBounds = true
     }
