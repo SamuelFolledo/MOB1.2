@@ -12,6 +12,8 @@ extension UITextField {
     
     func isEmailTextField() {
         self.keyboardType = .emailAddress
+        self.placeholder = "Email"
+        self.clearButtonMode = .whileEditing
     }
     
     func isPasswordTextField() {
@@ -20,6 +22,7 @@ extension UITextField {
         self.keyboardType = .default
         self.text = ""
         self.placeholder = "Password"
+        self.clearButtonMode = .whileEditing
     }
     
     func isPhoneTextField() {
