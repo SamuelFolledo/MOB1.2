@@ -36,7 +36,6 @@ class OnboardingPageView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .black
         button.setTitle("Continue", for: .normal)
-        button.isMainButton()
         return button
     }()
     let stackView: UIStackView = {
@@ -70,6 +69,7 @@ class OnboardingPageView: UIView {
     }
     
     override func layoutSubviews() { //where you can set
+        continueButton.isMainButton() //since isMainButton extension has border and needs height for customization, need to call it in layoutSubviews
         setupBackgroundLayer()
     }
     
