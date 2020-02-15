@@ -13,12 +13,14 @@ class LoginVC: UIViewController {
     lazy var emailTextField: UnderlinedTextField = {
         let textField = UnderlinedTextField(frame: .zero)
         textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.setUnderlineColor(color: kOFFBLACKCOLOR)
         textField.isEmailTextField()
         return textField
     }()
     lazy var passwordTextField: UnderlinedTextField = {
         let textField = UnderlinedTextField(frame: .zero)
         textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.setUnderlineColor(color: kOFFBLACKCOLOR)
         textField.isPasswordTextField()
         return textField
     }()
@@ -27,14 +29,12 @@ class LoginVC: UIViewController {
     lazy var loginButton: UIButton = {
         let button: UIButton = UIButton(frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = .black
         button.setTitle("Login", for: .normal)
         return button
     }()
     lazy var skipButton: UIButton = {
         let button: UIButton = UIButton(frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = .clear
         button.setTitle("Skip To Home", for: .normal)
         
         return button
@@ -45,15 +45,14 @@ class LoginVC: UIViewController {
         imageView.image = kMAKESCHOOLIMAGE
         return imageView
     }()
-    lazy var descriptionLabel: UILabel = {
+    lazy var titleLabel: UILabel = {
         let label: UILabel = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.font = UIFont.systemFont(ofSize: 32, weight: .black)
         label.sizeToFit()
         label.numberOfLines = 0
-        label.textColor = .black
+        label.textColor = kOFFBLACKCOLOR
         label.textAlignment = .center
-        label.text = "eyoo"
         return label
     }()
     lazy var stackView: UIStackView = {
@@ -79,16 +78,18 @@ class LoginVC: UIViewController {
     override func viewDidLayoutSubviews() {
         loginButton.isMainButton() //since isMainButton() extension has corner radius which needs height for customization, need to call it in viewDidLayoutSubviews
         skipButton.isClearButton()
+        titleLabel.text = "Health Subscription"
     }
     
 //MARK: Private Methods
     fileprivate func setupViews() {
         self.navigationController?.initRootViewController(vc: self)
+        self.navigationController?.isNavigationBarHidden = true
         self.view.backgroundColor = .white
         setupStackView()
+        setupTitleLabel()
         setupImageView()
         setupTextFields()
-        setupDescriptionLabel()
         setupLoginButton()
     }
     
@@ -96,8 +97,8 @@ class LoginVC: UIViewController {
         self.view.addSubview(stackView)
         NSLayoutConstraint.activate([
             stackView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.8),
-            stackView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.8),
-            stackView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 50),
+            stackView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.9),
+            stackView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -20),
             stackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
         ])
     }
@@ -124,9 +125,9 @@ class LoginVC: UIViewController {
         skipButton.addTarget(self, action: #selector(skipButtonTapped), for: .touchUpInside)
     }
     
-    fileprivate func setupDescriptionLabel() {
-        stackView.addArrangedSubview(descriptionLabel)
-        descriptionLabel.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier:  0.8).isActive = true
+    fileprivate func setupTitleLabel() {
+        stackView.addArrangedSubview(titleLabel)
+        titleLabel.widthAnchor.constraint(equalTo: stackView.widthAnchor, multiplier: 1.0).isActive = true
     }
     
     fileprivate func setupImageView() {
