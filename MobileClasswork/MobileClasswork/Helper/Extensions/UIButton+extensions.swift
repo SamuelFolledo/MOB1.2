@@ -10,13 +10,14 @@ import UIKit
 
 extension UIButton {
 /// applied main color and rounded corners
-    func isMainButton() {
+    func isMainButton(color: UIColor = kMAINCOLOR) {
 //        self.layer.borderWidth = 2
 //        self.layer.borderColor = UIColor.white.cgColor
-        self.backgroundColor = kMAINCOLOR
+        self.backgroundColor = color
         self.titleLabel?.font = .systemFont(ofSize: 24, weight: .semibold)
         self.setTitleColor(.white, for: .normal)
-        self.layer.cornerRadius = self.frame.height / 5
+//        self.layer.cornerRadius = self.frame.height / 5
+        self.layer.cornerRadius = 10
         self.clipsToBounds = true
 //        self.layer.masksToBounds = true
     }
@@ -25,7 +26,7 @@ extension UIButton {
         self.backgroundColor = kOFFWHITECOLOR
         self.titleLabel?.font = .systemFont(ofSize: 24, weight: .medium)
         self.setTitleColor(kOFFBLACKCOLOR, for: .normal)
-        self.layer.cornerRadius = self.frame.height / 5
+        self.layer.cornerRadius = 10
         self.clipsToBounds = true
     }
     
@@ -41,7 +42,7 @@ extension UIButton {
         self.backgroundColor = .clear
         self.setTitleColor(titleColor, for: .normal)
         self.titleLabel?.font = .systemFont(ofSize: 24, weight: .medium)
-        self.layer.cornerRadius = self.frame.height / 5
+        self.layer.cornerRadius = 10
         self.clipsToBounds = true
     }
 }
