@@ -22,6 +22,8 @@ class PopupVC: UIViewController {
         view.backgroundColor = kOFFWHITECOLOR
         view.layer.cornerRadius = 10
         view.clipsToBounds = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(popupViewTap(_:)))
+        view.addGestureRecognizer(tap)
         return view
     }()
     lazy var stackView: UIStackView = {
@@ -112,6 +114,7 @@ class PopupVC: UIViewController {
         darkSwitch.thumbTintColor = .red
         darkSwitch.backgroundColor = .yellow
         darkSwitch.tintColor = .green
+        darkSwitch.addTarget(self, action: #selector(switchChanged), for: .touchUpInside)
         return darkSwitch
     }()
     
@@ -238,6 +241,10 @@ class PopupVC: UIViewController {
     @objc func popupViewTap(_ gesture: UITapGestureRecognizer) { //go to imageDetailVC
 //        navigationController?.popViewController(animated: false)
         print("Do nothing")
+    }
+    @objc func switchChanged() {
+        print(darkSwitch.isOn ? "Dark mode on" : "Dark mode off")
+        Service.isDarkMode = darkSwitch.isOn ? true : false
     }
 }
 
