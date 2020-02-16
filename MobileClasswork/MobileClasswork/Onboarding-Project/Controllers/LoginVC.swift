@@ -150,7 +150,6 @@ class LoginVC: UIViewController {
     @objc func loginButtonTapped() {
         let homeVC: HomeVC = HomeVC()
         self.navigationController?.initRootViewController(vc: homeVC)
-//        self.navigationController?.pushViewController(homeVC, animated: true) //push
     }
     
     @objc func skipButtonTapped() {
@@ -179,7 +178,7 @@ extension LoginVC {
         hasKeyboard = true
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             if view.frame.origin.y == 0 {
-                view.frame.origin.y -= keyboardSize.height
+                view.frame.origin.y -= keyboardSize.height * 0.6
             }
         }
     }
