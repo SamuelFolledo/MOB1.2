@@ -9,7 +9,8 @@
 import Foundation
 
 struct Box {
-    let date: String
-    let items: [Item]
-    let category: Category
+    let name: String
+    let date: String = "unknown date"
+    let items: [BoxItem]
+    let category: BoxCategory
 }

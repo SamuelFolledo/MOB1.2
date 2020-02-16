@@ -8,8 +8,10 @@
 
 import Foundation
 
-struct Item {
+struct BoxItem {
     let name: String
     let image: String
-    var isFavorite: Bool
+//    var isFavorite: Bool
+    let category: BoxCategory
+    let products: [Product]
 }
