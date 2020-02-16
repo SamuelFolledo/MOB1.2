@@ -40,14 +40,19 @@ class HomeVC: UIViewController {
         return button
     }()
     lazy var descriptionLabel: UILabel = {
-        let label: UILabel = UILabel()
+        let label: UILabel = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.boldSystemFont(ofSize: 18)
         label.sizeToFit()
         label.numberOfLines = 0
-        label.textColor = .black
+        label.textColor = kOFFBLACKCOLOR
         label.textAlignment = .center
         return label
+    }()
+    lazy var settingsButton: UIBarButtonItem = {
+        let barButton: UIBarButtonItem = UIBarButtonItem()
+//        barButton.setBackgroundImage(kSETTINGSIMAGE.withTintColor(kOFFWHITECOLOR), for: .normal, barMetrics: .default)
+        return barButton
     }()
     
 //MARK: App Life Cycle
@@ -70,11 +75,24 @@ class HomeVC: UIViewController {
         newBoxButton.isMainButton()
         pastBoxesButton.isMainButton()
         profileButton.isMainButton()
+        settingsButton = UIBarButtonItem.navButton(self, action: #selector(settingsButtonTapped), image: kSETTINGSIMAGE)
+        navigationItem.rightBarButtonItem = settingsButton
+        
     }
     
 //MARK: Private Methods
     fileprivate func setupViews() {
         self.view.backgroundColor = kOFFWHITECOLOR
+//        navigationItem.rightBarButtonItem = settingsButton
+        self.view.addSubview(stackView)
+        NSLayoutConstraint.activate([
+            stackView.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.8),
+            stackView.heightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.8),
+            stackView.centerYAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerYAnchor),
+            stackView.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor)
+        ])
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Update", style: .done, target: self, action: nil)
+        
         setupStackView()
 //        stackView.addArrangedSubview(descriptionLabel)
 //        descriptionLabel.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier:  0.8).isActive = true
@@ -110,6 +128,7 @@ class HomeVC: UIViewController {
         navigationController?.navigationBar.tintColor = kOFFWHITECOLOR //button color
         self.title = "Home"
         navigationController?.setStatusBarColor(backgroundColor: kMAINCOLOR)
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Update", style: .done, target: self, action: #selector(showOptions(controller:)))
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -121,14 +140,16 @@ class HomeVC: UIViewController {
         let vc: NewBoxVC = NewBoxVC()
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
     @objc func pastButtonTapped() {
         let vc: PastBoxesVC = PastBoxesVC()
         navigationController?.pushViewController(vc, animated: true) //push
     }
-    
     @objc func profileButtonTapped() {
         let vc: Day8VC = Day8VC()
+        navigationController?.pushViewController(vc, animated: true) //push
+    }
+    @objc func settingsButtonTapped() {
+        let vc: PopupVC = PopupVC()
         navigationController?.pushViewController(vc, animated: true) //push
     }
 }
