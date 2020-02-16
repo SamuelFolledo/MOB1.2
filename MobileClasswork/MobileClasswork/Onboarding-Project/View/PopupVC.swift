@@ -10,16 +10,12 @@ import UIKit
 
 class PopupVC: UIViewController {
 //MARK: Properties
-//    var hasKeyboard: Bool = false
-//    var delegate: ScannerMailProtocol!
-//    var mail: Mail!
-//    var mailImage: UIImage!
     
 //MARK: IBOutlets
     lazy var popUpView: UIView = {
         let view: UIView = UIView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = kOFFWHITECOLOR
+//        view.backgroundColor = SettingsService.whiteColor
         view.layer.cornerRadius = 10
         view.clipsToBounds = true
         let tap = UITapGestureRecognizer(target: self, action: #selector(popupViewTap(_:)))
@@ -42,8 +38,8 @@ class PopupVC: UIViewController {
         label.sizeToFit()
         label.numberOfLines = 1
         label.text = "Settings"
-        label.backgroundColor = kMAINCOLOR
-        label.textColor = kOFFWHITECOLOR
+        label.backgroundColor = SettingsService.mainColor
+//        label.textColor = SettingsService.whiteColor
         label.textAlignment = .center
         return label
     }()
@@ -101,7 +97,7 @@ class PopupVC: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 18, weight: .regular)
         label.numberOfLines = 1
-        label.textColor = kOFFBLACKCOLOR
+//        label.textColor = SettingsService.blackColor
         label.text = "Dark Mode: "
         label.textAlignment = .left
         return label
@@ -110,10 +106,10 @@ class PopupVC: UIViewController {
         let darkSwitch: UISwitch = UISwitch(frame: .zero)
         darkSwitch.translatesAutoresizingMaskIntoConstraints = false
         darkSwitch.isOn = false
-        darkSwitch.onTintColor = kOFFBLACKCOLOR
-        darkSwitch.thumbTintColor = .red
-        darkSwitch.backgroundColor = .yellow
-        darkSwitch.tintColor = .green
+//        darkSwitch.onTintColor = SettingsService.mainColor //default to green
+        darkSwitch.thumbTintColor = SettingsService.mainColor
+//        darkSwitch.backgroundColor = .yellow
+//        darkSwitch.tintColor = .red
         darkSwitch.addTarget(self, action: #selector(switchChanged), for: .touchUpInside)
         return darkSwitch
     }()
@@ -139,13 +135,20 @@ class PopupVC: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
-        logoutButton.isMainButton(color: kOFFBLACKCOLOR)
-        cancelButton.isClearButton(titleColor: kMAINCOLOR)
-//        cancelButton.isBlackButton()
-        saveButton.isMainButton()
+        updateColors()
     }
     
 //MARK: Private Methods
+    fileprivate func updateColors() {
+        popUpView.backgroundColor = SettingsService.whiteColor
+        titleLabel.textColor = SettingsService.grayColor
+        darkModeLabel.textColor = SettingsService.darkGrayColor
+        settingLabel.textColor = SettingsService.darkGrayColor
+        logoutButton.isBlackButton()
+        cancelButton.isClearButton()
+        saveButton.isMainButton()
+    }
+    
     fileprivate func setupViews() {
         view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
 //        view.isUserInteractionEnabled = true
@@ -244,7 +247,8 @@ class PopupVC: UIViewController {
     }
     @objc func switchChanged() {
         print(darkSwitch.isOn ? "Dark mode on" : "Dark mode off")
-        Service.isDarkMode = darkSwitch.isOn ? true : false
+        SettingsService.isDarkMode = darkSwitch.isOn ? true : false
+        updateColors()
     }
 }
 
