@@ -24,27 +24,18 @@ class HomeVC: UIViewController {
     lazy var newBoxButton: UIButton = {
         let button: UIButton = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-//        button.backgroundColor = .blue
-//        button.layer.cornerRadius = button.frame.height / 5
-//        button.clipsToBounds = true
         button.setTitle("New Box", for: .normal)
         return button
     }()
     lazy var pastBoxesButton: UIButton = {
         let button: UIButton = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-//        button.backgroundColor = .blue
-//        button.layer.cornerRadius = button.frame.height / 5
-//        button.clipsToBounds = true
         button.setTitle("Past Boxes", for: .normal)
         return button
     }()
     lazy var profileButton: UIButton = {
         let button: UIButton = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-//        button.backgroundColor = .blue
-//        button.layer.cornerRadius = button.frame.height / 5
-//        button.clipsToBounds = true
         button.setTitle("Profile", for: .normal)
         return button
     }()
@@ -71,7 +62,7 @@ class HomeVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.isNavigationBarHidden = false
+        setupNavigationBar()
     }
     
     override func viewDidLayoutSubviews() {
@@ -83,7 +74,6 @@ class HomeVC: UIViewController {
     
 //MARK: Private Methods
     fileprivate func setupViews() {
-        self.title = "Home"
         self.view.backgroundColor = kOFFWHITECOLOR
         setupStackView()
 //        stackView.addArrangedSubview(descriptionLabel)
@@ -105,16 +95,25 @@ class HomeVC: UIViewController {
     fileprivate func setupButtons() {
         stackView.addArrangedSubview(newBoxButton)
         newBoxButton.widthAnchor.constraint(equalTo: stackView.widthAnchor, multiplier:  0.8).isActive = true
-//        newBoxButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         newBoxButton.addTarget(self, action: #selector(newButtonTapped), for: .touchUpInside)
         stackView.addArrangedSubview(pastBoxesButton)
         pastBoxesButton.widthAnchor.constraint(equalTo: newBoxButton.widthAnchor).isActive = true
-//        pastBoxesButton.heightAnchor.constraint(equalTo: newBoxButton.heightAnchor).isActive = true
         pastBoxesButton.addTarget(self, action: #selector(pastButtonTapped), for: .touchUpInside)
         stackView.addArrangedSubview(profileButton)
         profileButton.widthAnchor.constraint(equalTo: newBoxButton.widthAnchor).isActive = true
-//        profileButton.heightAnchor.constraint(equalTo: newBoxButton.heightAnchor).isActive = true
         profileButton.addTarget(self, action: #selector(profileButtonTapped), for: .touchUpInside)
+    }
+    
+    fileprivate func setupNavigationBar() {
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.tintColor = kOFFWHITECOLOR //button color
+        self.title = "Home"
+        navigationController?.setStatusBarColor(backgroundColor: kMAINCOLOR)
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
 //MARK: Helpers
@@ -126,12 +125,11 @@ class HomeVC: UIViewController {
     @objc func pastButtonTapped() {
         let vc: PastBoxesVC = PastBoxesVC()
         navigationController?.pushViewController(vc, animated: true) //push
-//        present(vc, animated: true, completion: nil) //modally
     }
     
     @objc func profileButtonTapped() {
-//        let homeVC: HomeVC = HomeVC()
-//        self.navigationController?.pushViewController(homeVC, animated: true)
+        let vc: Day8VC = Day8VC()
+        navigationController?.pushViewController(vc, animated: true) //push
     }
 }
 
