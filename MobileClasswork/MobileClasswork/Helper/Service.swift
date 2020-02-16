@@ -8,16 +8,7 @@
 
 import UIKit
 
-class Service {
-    static var isDarkMode: Bool = false
-    static var mainColor: UIColor = kMAINCOLOR
-    static var blackColor: UIColor  { //get only property
-        return isDarkMode ? kOFFWHITECOLOR : kOFFBLACKCOLOR
-    }
-    static var whiteColor: UIColor  {
-        return isDarkMode ? kOFFBLACKCOLOR : kOFFWHITECOLOR
-    }
-    
+class Service {    
 //presentAlert
     static func presentAlert(on: UIViewController, title: String, message: String) {
         let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
