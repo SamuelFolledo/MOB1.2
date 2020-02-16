@@ -17,10 +17,11 @@ class PopupVC: UIViewController {
     
 //MARK: IBOutlets
     lazy var popUpView: UIView = {
-        let view: UIImageView = UIImageView(frame: .zero)
+        let view: UIView = UIView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.isUserInteractionEnabled = true
         view.backgroundColor = kOFFWHITECOLOR
+        view.layer.cornerRadius = 10
+        view.clipsToBounds = true
         return view
     }()
     lazy var stackView: UIStackView = {
@@ -29,16 +30,28 @@ class PopupVC: UIViewController {
         stackView.axis = .vertical
         stackView.alignment = .center
         stackView.distribution = .fill
-        stackView.spacing = 20
+        stackView.spacing = 10
         return stackView
     }()
     lazy var titleLabel: UILabel = {
         let label: UILabel = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 24, weight: .black)
+        label.font = UIFont.systemFont(ofSize: 24, weight: .bold)
         label.sizeToFit()
         label.numberOfLines = 1
-        label.textColor = kOFFBLACKCOLOR
+        label.text = "Settings"
+        label.backgroundColor = kMAINCOLOR
+        label.textColor = kOFFWHITECOLOR
+        label.textAlignment = .center
+        return label
+    }()
+    lazy var settingLabel: UILabel = {
+        let label: UILabel = UILabel(frame: .zero)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 18, weight: .regular)
+        label.numberOfLines = 0
+        label.textColor = .gray
+        label.text = "Developed by Samuel P. Folledo"
         label.textAlignment = .center
         return label
     }()
@@ -46,27 +59,30 @@ class PopupVC: UIViewController {
         let button: UIButton = UIButton(frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Cancel", for: .normal)
+        button.addTarget(self, action: #selector(handleDismissTap(_:)), for: .touchUpInside)
         return button
     }()
     lazy var buttonsStackView: UIStackView = {
         let stackView: UIStackView = UIStackView(frame: .zero)
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .vertical
+        stackView.axis = .horizontal
         stackView.alignment = .center
-        stackView.distribution = .fill
-        stackView.spacing = 20
+        stackView.distribution = .fillEqually
+        stackView.spacing = 10
         return stackView
     }()
     lazy var logoutButton: UIButton = {
         let button: UIButton = UIButton(frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Logout", for: .normal)
+        button.addTarget(self, action: #selector(logoutButtonTap(_:)), for: .touchUpInside)
         return button
     }()
     lazy var saveButton: UIButton = {
         let button: UIButton = UIButton(frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Save", for: .normal)
+        button.addTarget(self, action: #selector(saveButtonTap(_:)), for: .touchUpInside)
         return button
     }()
     lazy var darkStackView: UIStackView = {
@@ -74,8 +90,8 @@ class PopupVC: UIViewController {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .horizontal
         stackView.alignment = .center
-        stackView.distribution = .fillEqually
-        stackView.spacing = 20
+        stackView.distribution = .fill
+        stackView.spacing = 10
         return stackView
     }()
     lazy var darkModeLabel: UILabel = {
@@ -84,6 +100,7 @@ class PopupVC: UIViewController {
         label.font = UIFont.systemFont(ofSize: 18, weight: .regular)
         label.numberOfLines = 1
         label.textColor = kOFFBLACKCOLOR
+        label.text = "Dark Mode: "
         label.textAlignment = .left
         return label
     }()
@@ -118,13 +135,22 @@ class PopupVC: UIViewController {
         self.navigationController?.isNavigationBarHidden = false
     }
     
+    override func viewDidLayoutSubviews() {
+        logoutButton.isMainButton(color: kOFFBLACKCOLOR)
+        cancelButton.isClearButton(titleColor: kMAINCOLOR)
+//        cancelButton.isBlackButton()
+        saveButton.isMainButton()
+    }
+    
 //MARK: Private Methods
     fileprivate func setupViews() {
-        showAnimate()
         view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+//        view.isUserInteractionEnabled = true
+//        view.backgroundColor = .clear
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleDismissTap(_:)))
         self.view.addGestureRecognizer(tap)
-        view.addSubview(popUpView)
+        view.insertSubview(popUpView, aboveSubview: self.view)
+//        popUpView.isUserInteractionEnabled = true
         NSLayoutConstraint.activate([
             popUpView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.75),
             popUpView.heightAnchor.constraint(equalTo: popUpView.widthAnchor),
@@ -134,30 +160,45 @@ class PopupVC: UIViewController {
         popUpView.addSubview(titleLabel)
         NSLayoutConstraint.activate([
             titleLabel.widthAnchor.constraint(equalTo: self.popUpView.widthAnchor),
-            titleLabel.heightAnchor.constraint(equalToConstant: 30),
+            titleLabel.heightAnchor.constraint(equalToConstant: 50),
             titleLabel.topAnchor.constraint(equalTo: self.popUpView.topAnchor),
             titleLabel.centerXAnchor.constraint(equalTo: self.popUpView.centerXAnchor)
         ])
         popUpView.addSubview(stackView)
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5),
-            stackView.leadingAnchor.constraint(equalTo: popUpView.leadingAnchor),
-            stackView.bottomAnchor.constraint(equalTo: popUpView.bottomAnchor, constant: -5),
-            stackView.trailingAnchor.constraint(equalTo: popUpView.trailingAnchor)
+            stackView.leadingAnchor.constraint(equalTo: popUpView.leadingAnchor, constant: 10),
+            stackView.bottomAnchor.constraint(equalTo: popUpView.bottomAnchor, constant: -10),
+            stackView.trailingAnchor.constraint(equalTo: popUpView.trailingAnchor, constant: -10)
         ])
-//        setupDarkViews()
-        
+        showAnimate()
+        setupDarkViews()
+        stackView.addArrangedSubview(settingLabel)
+        settingLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        setupButtons()
+    }
+    
+    fileprivate func setupButtons() {
+        stackView.addArrangedSubview(logoutButton)
+        stackView.addArrangedSubview(buttonsStackView)
+        NSLayoutConstraint.activate([
+            logoutButton.widthAnchor.constraint(equalTo: stackView.widthAnchor),
+            logoutButton.heightAnchor.constraint(equalToConstant: 50),
+            buttonsStackView.widthAnchor.constraint(equalTo: stackView.widthAnchor),
+            buttonsStackView.heightAnchor.constraint(equalToConstant: 50)
+        ])
+        buttonsStackView.addArrangedSubview(cancelButton)
+        buttonsStackView.addArrangedSubview(saveButton)
     }
     
     fileprivate func setupDarkViews() {
         stackView.addArrangedSubview(darkStackView)
         NSLayoutConstraint.activate([
             darkStackView.widthAnchor.constraint(equalTo: stackView.widthAnchor),
-            popUpView.heightAnchor.constraint(equalToConstant: 50),
+            darkStackView.heightAnchor.constraint(equalToConstant: 50),
         ])
         darkStackView.addArrangedSubview(darkModeLabel)
         NSLayoutConstraint.activate([
-            darkModeLabel.widthAnchor.constraint(equalToConstant: 40),
         ])
         darkStackView.addArrangedSubview(darkSwitch)
     }
@@ -178,16 +219,26 @@ class PopupVC: UIViewController {
         }, completion:{(finished : Bool)  in
             if (finished) {
                 self.view.removeFromSuperview()
+                self.navigationController?.popViewController(animated: false)
             }
         });
     }
     
 //MARK: Helpers
     @objc func handleDismissTap(_ gesture: UITapGestureRecognizer) { //go to imageDetailVC
-        navigationController?.popViewController(animated: false)
+        dismissPopup()
     }
-    
-
+    @objc func logoutButtonTap(_ gesture: UITapGestureRecognizer) { //go to imageDetailVC
+        let vc: LoginVC = LoginVC()
+        self.navigationController?.initRootViewController(vc: vc)
+    }
+    @objc func saveButtonTap(_ gesture: UITapGestureRecognizer) { //go to imageDetailVC
+        dismissPopup()
+    }
+    @objc func popupViewTap(_ gesture: UITapGestureRecognizer) { //go to imageDetailVC
+//        navigationController?.popViewController(animated: false)
+        print("Do nothing")
+    }
 }
 
 //MARK: Extensions
