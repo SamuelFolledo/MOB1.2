@@ -29,6 +29,7 @@ class NewBoxVC: UIViewController {
     
     override func loadView() {
         super.loadView()
+        title = "New Box"
         view.addSubview(collectionView)
     }
     
