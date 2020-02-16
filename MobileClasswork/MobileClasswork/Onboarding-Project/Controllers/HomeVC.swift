@@ -12,37 +12,43 @@ class HomeVC: UIViewController {
 //MARK: Properties
     
 //MARK: Properties Views
-    let stackView: UIStackView = {
+    lazy var stackView: UIStackView = {
         let stackView: UIStackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.alignment = .center
-        stackView.distribution = .fill
+        stackView.distribution = .fillEqually
         stackView.spacing = 20
         return stackView
     }()
-    let newBoxButton: UIButton = {
+    lazy var newBoxButton: UIButton = {
         let button: UIButton = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = .blue
+//        button.backgroundColor = .blue
+//        button.layer.cornerRadius = button.frame.height / 5
+//        button.clipsToBounds = true
         button.setTitle("New Box", for: .normal)
         return button
     }()
-    let pastBoxesButton: UIButton = {
+    lazy var pastBoxesButton: UIButton = {
         let button: UIButton = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = .blue
+//        button.backgroundColor = .blue
+//        button.layer.cornerRadius = button.frame.height / 5
+//        button.clipsToBounds = true
         button.setTitle("Past Boxes", for: .normal)
         return button
     }()
-    let profileButton: UIButton = {
+    lazy var profileButton: UIButton = {
         let button: UIButton = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = .blue
+//        button.backgroundColor = .blue
+//        button.layer.cornerRadius = button.frame.height / 5
+//        button.clipsToBounds = true
         button.setTitle("Profile", for: .normal)
         return button
     }()
-    let descriptionLabel: UILabel = {
+    lazy var descriptionLabel: UILabel = {
         let label: UILabel = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.boldSystemFont(ofSize: 18)
@@ -54,40 +60,60 @@ class HomeVC: UIViewController {
     }()
     
 //MARK: App Life Cycle
+    override func loadView() {
+        super.loadView()
+        setupViews()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupViews()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        newBoxButton.isMainButton()
+        pastBoxesButton.isMainButton()
+        profileButton.isMainButton()
     }
     
 //MARK: Private Methods
     fileprivate func setupViews() {
-        self.navigationController?.initRootViewController(vc: self)
-        self.navigationController?.isNavigationBarHidden = false
         self.title = "Home"
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = kOFFWHITECOLOR
+        setupStackView()
+//        stackView.addArrangedSubview(descriptionLabel)
+//        descriptionLabel.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier:  0.8).isActive = true
+//        descriptionLabel.text = "Buy me!"
+        setupButtons()
+    }
+    
+    fileprivate func setupStackView() {
         self.view.addSubview(stackView)
         NSLayoutConstraint.activate([
             stackView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.8),
             stackView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.8),
-            stackView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 50),
+            stackView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 20),
             stackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
         ])
-//        stackView.addArrangedSubview(imageView)
-//        imageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
-        stackView.addArrangedSubview(descriptionLabel)
-        descriptionLabel.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier:  0.8).isActive = true
-        descriptionLabel.text = "Buy me!"
+    }
+    
+    fileprivate func setupButtons() {
         stackView.addArrangedSubview(newBoxButton)
         newBoxButton.widthAnchor.constraint(equalTo: stackView.widthAnchor, multiplier:  0.8).isActive = true
-        newBoxButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+//        newBoxButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         newBoxButton.addTarget(self, action: #selector(newButtonTapped), for: .touchUpInside)
         stackView.addArrangedSubview(pastBoxesButton)
         pastBoxesButton.widthAnchor.constraint(equalTo: newBoxButton.widthAnchor).isActive = true
-        pastBoxesButton.heightAnchor.constraint(equalTo: newBoxButton.heightAnchor).isActive = true
+//        pastBoxesButton.heightAnchor.constraint(equalTo: newBoxButton.heightAnchor).isActive = true
         pastBoxesButton.addTarget(self, action: #selector(pastButtonTapped), for: .touchUpInside)
         stackView.addArrangedSubview(profileButton)
         profileButton.widthAnchor.constraint(equalTo: newBoxButton.widthAnchor).isActive = true
-        profileButton.heightAnchor.constraint(equalTo: newBoxButton.heightAnchor).isActive = true
+//        profileButton.heightAnchor.constraint(equalTo: newBoxButton.heightAnchor).isActive = true
         profileButton.addTarget(self, action: #selector(profileButtonTapped), for: .touchUpInside)
     }
     
