@@ -13,6 +13,9 @@ let kMAKESCHOOLIMAGE: UIImage = UIImage(named: "makeschoolLogo")!
 let kSTARIMAGE: UIImage = UIImage(named: "star")!
 let kSTARFILLEDIMAGE: UIImage = UIImage(named: "starFilled")!
 let kMIGRAINEIMAGE: UIImage = UIImage(named: "migraine")!
+let kSETTINGSIMAGE: UIImage = UIImage(named: "settings")!
+
+//Box Categories
 let kMEDICATIONSIMAGE: UIImage = UIImage(named: "medications")!
 let kOINTMENTSIMAGE: UIImage = UIImage(named: "ointments")!
 let kSPECIALBOXESIMAGE: UIImage = UIImage(named: "specialBoxes")!
