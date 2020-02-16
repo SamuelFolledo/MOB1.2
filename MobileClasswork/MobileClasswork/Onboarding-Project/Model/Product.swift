@@ -12,6 +12,4 @@ struct Product {
     let name: String
     let description: String
     let image: UIImage
-//    let boxCategory: BoxCategory
-//    let productCategory
 }

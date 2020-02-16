@@ -11,7 +11,5 @@ import Foundation
 struct BoxItem {
     let name: String
     let image: String
-//    var isFavorite: Bool
-    let category: BoxCategory
     let products: [Product]
 }
