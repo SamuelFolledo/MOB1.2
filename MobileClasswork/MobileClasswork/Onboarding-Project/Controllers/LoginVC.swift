@@ -42,7 +42,8 @@ class LoginVC: UIViewController {
     lazy var imageView: UIImageView = {
         let imageView: UIImageView = UIImageView(frame: .zero)
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = kMAKESCHOOLIMAGE
+        imageView.contentMode = .scaleAspectFill
+        imageView.image = kMIGRAINEIMAGE
         return imageView
     }()
     lazy var titleLabel: UILabel = {
