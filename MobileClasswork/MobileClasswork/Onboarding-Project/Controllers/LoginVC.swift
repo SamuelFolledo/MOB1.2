@@ -76,6 +76,7 @@ class LoginVC: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         loginButton.isMainButton() //since isMainButton() extension has corner radius which needs height for customization, need to call it in viewDidLayoutSubviews
         skipButton.isClearButton()
         titleLabel.text = "Health Subscription"
@@ -85,7 +86,7 @@ class LoginVC: UIViewController {
     fileprivate func setupViews() {
         self.navigationController?.initRootViewController(vc: self)
         self.navigationController?.isNavigationBarHidden = true
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = kOFFWHITECOLOR
         setupStackView()
         setupTitleLabel()
         setupImageView()
@@ -138,12 +139,13 @@ class LoginVC: UIViewController {
 //MARK: Helpers
     @objc func loginButtonTapped() {
         let homeVC: HomeVC = HomeVC()
-        self.navigationController?.pushViewController(homeVC, animated: true) //push
+        self.navigationController?.initRootViewController(vc: homeVC)
+//        self.navigationController?.pushViewController(homeVC, animated: true) //push
     }
     
     @objc func skipButtonTapped() {
         let homeVC: HomeVC = HomeVC()
-        self.navigationController?.pushViewController(homeVC, animated: true) //push
+        self.navigationController?.initRootViewController(vc: homeVC)
     }
 }
 
