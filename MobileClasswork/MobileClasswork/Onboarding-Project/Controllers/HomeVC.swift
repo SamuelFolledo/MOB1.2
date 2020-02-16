@@ -85,10 +85,10 @@ class HomeVC: UIViewController {
     fileprivate func setupStackView() {
         self.view.addSubview(stackView)
         NSLayoutConstraint.activate([
-            stackView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.8),
-            stackView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.8),
-            stackView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 20),
-            stackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
+            stackView.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.8),
+            stackView.heightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.8),
+            stackView.centerYAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerYAnchor),
+            stackView.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor)
         ])
     }
     
