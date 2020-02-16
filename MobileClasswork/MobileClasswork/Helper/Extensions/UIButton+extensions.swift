@@ -15,7 +15,7 @@ extension UIButton {
 //        self.layer.borderColor = UIColor.white.cgColor
         self.backgroundColor = color
         self.titleLabel?.font = .systemFont(ofSize: 24, weight: .semibold)
-        self.setTitleColor(.white, for: .normal)
+        self.setTitleColor(kOFFWHITECOLOR, for: .normal)
 //        self.layer.cornerRadius = self.frame.height / 5
         self.layer.cornerRadius = 10
         self.clipsToBounds = true
