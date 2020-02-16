@@ -51,7 +51,6 @@ class HomeVC: UIViewController {
     }()
     lazy var settingsButton: UIBarButtonItem = {
         let barButton: UIBarButtonItem = UIBarButtonItem()
-//        barButton.setBackgroundImage(kSETTINGSIMAGE.withTintColor(kOFFWHITECOLOR), for: .normal, barMetrics: .default)
         return barButton
     }()
     
@@ -77,13 +76,11 @@ class HomeVC: UIViewController {
         profileButton.isMainButton()
         settingsButton = UIBarButtonItem.navButton(self, action: #selector(settingsButtonTapped), image: kSETTINGSIMAGE)
         navigationItem.rightBarButtonItem = settingsButton
-        
     }
     
 //MARK: Private Methods
     fileprivate func setupViews() {
         self.view.backgroundColor = kOFFWHITECOLOR
-//        navigationItem.rightBarButtonItem = settingsButton
         self.view.addSubview(stackView)
         NSLayoutConstraint.activate([
             stackView.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.8),
@@ -91,8 +88,6 @@ class HomeVC: UIViewController {
             stackView.centerYAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerYAnchor),
             stackView.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor)
         ])
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Update", style: .done, target: self, action: nil)
-        
         setupStackView()
 //        stackView.addArrangedSubview(descriptionLabel)
 //        descriptionLabel.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier:  0.8).isActive = true
@@ -128,7 +123,6 @@ class HomeVC: UIViewController {
         navigationController?.navigationBar.tintColor = kOFFWHITECOLOR //button color
         self.title = "Home"
         navigationController?.setStatusBarColor(backgroundColor: kMAINCOLOR)
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Update", style: .done, target: self, action: #selector(showOptions(controller:)))
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -150,7 +144,7 @@ class HomeVC: UIViewController {
     }
     @objc func settingsButtonTapped() {
         let vc: PopupVC = PopupVC()
-        navigationController?.pushViewController(vc, animated: true) //push
+        navigationController?.pushViewController(vc, animated: false) //push
     }
 }
 
