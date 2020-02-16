@@ -24,7 +24,7 @@
 		33232DC523F3248B00CF722D /* BoxCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33232DC423F3248B00CF722D /* BoxCategory.swift */; };
 		33232DC923F324D900CF722D /* BoxItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33232DC823F324D900CF722D /* BoxItem.swift */; };
 		33232DCB23F324DE00CF722D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33232DCA23F324DE00CF722D /* User.swift */; };
-		33232DCE23F3276600CF722D /* MyCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33232DCD23F3276600CF722D /* MyCollectionVC.swift */; };
+		33232DCE23F3276600CF722D /* AnimatedCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33232DCD23F3276600CF722D /* AnimatedCollectionVC.swift */; };
 		33232DD023F3279300CF722D /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33232DCF23F3279300CF722D /* MyCollectionViewCell.swift */; };
 		33232DD223F327BD00CF722D /* MyFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33232DD123F327BD00CF722D /* MyFlowLayout.swift */; };
 		3329A61323E359D800A8FDB5 /* OnboardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3329A61223E359D800A8FDB5 /* OnboardingPageView.swift */; };
@@ -32,7 +32,6 @@
 		3329A61923E365AB00A8FDB5 /* MyXibView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3329A61823E365AB00A8FDB5 /* MyXibView.xib */; };
 		3329A61E23E36B7D00A8FDB5 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3329A61D23E36B7D00A8FDB5 /* Onboarding.swift */; };
 		3329A62223E36C8C00A8FDB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3329A62123E36C8C00A8FDB5 /* Main.storyboard */; };
-		333DCC3B23F5C3EE00D76D23 /* Day8VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333DCC3A23F5C3EE00D76D23 /* Day8VC.swift */; };
 		334599E823F7B099002C13D5 /* UnderlinedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334599E723F7B099002C13D5 /* UnderlinedTextField.swift */; };
 		334599EF23F7C32F002C13D5 /* UITextField+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334599EE23F7C32F002C13D5 /* UITextField+extensions.swift */; };
 		334599F723F7D615002C13D5 /* UIView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334599F623F7D615002C13D5 /* UIView+extensions.swift */; };
@@ -51,6 +50,7 @@
 		33459A1723F8D4A3002C13D5 /* GridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33459A0823F8D4A2002C13D5 /* GridCell.swift */; };
 		33459A1823F8D4A3002C13D5 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33459A0923F8D4A2002C13D5 /* Section.swift */; };
 		33459A1C23F8F55E002C13D5 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33459A1B23F8F55E002C13D5 /* Product.swift */; };
+		33459A1F23F8FA74002C13D5 /* Day8VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33459A1E23F8FA74002C13D5 /* Day8VC.swift */; };
 		334ED2F723EC8BB7002B5FF4 /* PastBoxesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334ED2F623EC8BB7002B5FF4 /* PastBoxesVC.swift */; };
 		334ED2F923EC8BC1002B5FF4 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334ED2F823EC8BC1002B5FF4 /* LoginVC.swift */; };
 		334ED2FB23EC90A5002B5FF4 /* BoxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334ED2FA23EC90A5002B5FF4 /* BoxCell.swift */; };
@@ -92,7 +92,7 @@
 		33232DC423F3248B00CF722D /* BoxCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxCategory.swift; sourceTree = "<group>"; };
 		33232DC823F324D900CF722D /* BoxItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxItem.swift; sourceTree = "<group>"; };
 		33232DCA23F324DE00CF722D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		33232DCD23F3276600CF722D /* MyCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionVC.swift; sourceTree = "<group>"; };
+		33232DCD23F3276600CF722D /* AnimatedCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedCollectionVC.swift; sourceTree = "<group>"; };
 		33232DCF23F3279300CF722D /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
 		33232DD123F327BD00CF722D /* MyFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFlowLayout.swift; sourceTree = "<group>"; };
 		3329A61223E359D800A8FDB5 /* OnboardingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageView.swift; sourceTree = "<group>"; };
@@ -100,7 +100,6 @@
 		3329A61823E365AB00A8FDB5 /* MyXibView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyXibView.xib; sourceTree = "<group>"; };
 		3329A61D23E36B7D00A8FDB5 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		3329A62123E36C8C00A8FDB5 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		333DCC3A23F5C3EE00D76D23 /* Day8VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day8VC.swift; sourceTree = "<group>"; };
 		334599E723F7B099002C13D5 /* UnderlinedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlinedTextField.swift; sourceTree = "<group>"; };
 		334599EE23F7C32F002C13D5 /* UITextField+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+extensions.swift"; sourceTree = "<group>"; };
 		334599F623F7D615002C13D5 /* UIView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extensions.swift"; sourceTree = "<group>"; };
@@ -118,8 +117,8 @@
 		33459A0723F8D4A2002C13D5 /* FeaturedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturedCell.swift; sourceTree = "<group>"; };
 		33459A0823F8D4A2002C13D5 /* GridCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridCell.swift; sourceTree = "<group>"; };
 		33459A0923F8D4A2002C13D5 /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
-		33459A1A23F8D617002C13D5 /* Day8VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day8VC.swift; sourceTree = "<group>"; };
 		33459A1B23F8F55E002C13D5 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		33459A1E23F8FA74002C13D5 /* Day8VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day8VC.swift; sourceTree = "<group>"; };
 		334ED2F623EC8BB7002B5FF4 /* PastBoxesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastBoxesVC.swift; sourceTree = "<group>"; };
 		334ED2F823EC8BC1002B5FF4 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		334ED2FA23EC90A5002B5FF4 /* BoxCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxCell.swift; sourceTree = "<group>"; };
@@ -239,7 +238,7 @@
 		33232DCC23F3272F00CF722D /* Day7-CollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				33232DCD23F3276600CF722D /* MyCollectionVC.swift */,
+				33232DCD23F3276600CF722D /* AnimatedCollectionVC.swift */,
 				33232DCF23F3279300CF722D /* MyCollectionViewCell.swift */,
 				33232DD123F327BD00CF722D /* MyFlowLayout.swift */,
 			);
@@ -291,8 +290,7 @@
 		333DCC3923F5C3C700D76D23 /* Day8-CompositionalCollection */ = {
 			isa = PBXGroup;
 			children = (
-				333DCC3A23F5C3EE00D76D23 /* Day8VC.swift */,
-				33459A0A23F8D4A2002C13D5 /* Controller */,
+				33459A1E23F8FA74002C13D5 /* Day8VC.swift */,
 				334599FA23F8D4A2002C13D5 /* Sections */,
 				334599FF23F8D4A2002C13D5 /* Views */,
 			);
@@ -375,15 +373,6 @@
 				33459A0823F8D4A2002C13D5 /* GridCell.swift */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		33459A0A23F8D4A2002C13D5 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				33459A1A23F8D617002C13D5 /* Day8VC.swift */,
-			);
-			name = Controller;
-			path = "../../../../../../../Downloads/CompositionalLayout-master/CompositionalCollection/Controller";
 			sourceTree = "<group>";
 		};
 		334ED2F523EC89A6002B5FF4 /* Model */ = {
@@ -618,7 +607,7 @@
 				33459A0C23F8D4A3002C13D5 /* FeaturedSection.swift in Sources */,
 				33459A1C23F8F55E002C13D5 /* Product.swift in Sources */,
 				33232DD023F3279300CF722D /* MyCollectionViewCell.swift in Sources */,
-				33232DCE23F3276600CF722D /* MyCollectionVC.swift in Sources */,
+				33232DCE23F3276600CF722D /* AnimatedCollectionVC.swift in Sources */,
 				334599F723F7D615002C13D5 /* UIView+extensions.swift in Sources */,
 				33CA31B323E75772009AA3DF /* ChartsVC.swift in Sources */,
 				3329A61723E365A300A8FDB5 /* MyXibView.swift in Sources */,
@@ -634,6 +623,7 @@
 				33459A1123F8D4A3002C13D5 /* FavoritesCell.swift in Sources */,
 				33459A1623F8D4A3002C13D5 /* FeaturedCell.swift in Sources */,
 				33459A1023F8D4A3002C13D5 /* TitleCell.swift in Sources */,
+				33459A1F23F8FA74002C13D5 /* Day8VC.swift in Sources */,
 				33232DCB23F324DE00CF722D /* User.swift in Sources */,
 				33CA31A223E56A6F009AA3DF /* CollectionVC.swift in Sources */,
 				33459A0F23F8D4A3002C13D5 /* FavoritesSection.swift in Sources */,
@@ -652,7 +642,6 @@
 				33232DC023F2A3B900CF722D /* BoxDetailCell.swift in Sources */,
 				33CA31C723E9F090009AA3DF /* OnboardingModel.swift in Sources */,
 				3300544323DA188F00673C81 /* ScrollVC.swift in Sources */,
-				333DCC3B23F5C3EE00D76D23 /* Day8VC.swift in Sources */,
 				3300542D23DA180400673C81 /* AppDelegate.swift in Sources */,
 				334599EF23F7C32F002C13D5 /* UITextField+extensions.swift in Sources */,
 				334599F923F8AC3B002C13D5 /* UIColor+extensions.swift in Sources */,

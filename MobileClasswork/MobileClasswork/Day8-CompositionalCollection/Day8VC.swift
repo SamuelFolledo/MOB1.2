@@ -2,13 +2,13 @@
 //  Day8VC.swift
 //  MobileClasswork
 //
-//  Created by Macbook Pro 15 on 2/13/20.
+//  Created by Macbook Pro 15 on 2/15/20.
 //  Copyright © 2020 SamuelFolledo. All rights reserved.
 //
 
 import UIKit
 
-class Day8VC: UIViewController  {
+class Day8VC: UIViewController {
     
     var collectionView: UICollectionView!
     
@@ -77,3 +77,4 @@ extension Day8VC: UICollectionViewDataSource {
 }
 
 extension Day8VC: UICollectionViewDelegate {}
+
