@@ -120,13 +120,14 @@ class PopupVC: UIViewController {
     
 //MARK: Private Methods
     fileprivate func setupViews() {
-        view.backgroundColor = UIColor.black.withAlphaComponent(0.8)
+        showAnimate()
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleDismissTap(_:)))
         self.view.addGestureRecognizer(tap)
         view.addSubview(popUpView)
         NSLayoutConstraint.activate([
-            popUpView.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.75),
-            popUpView.heightAnchor.constraint(equalTo: self.popUpView.widthAnchor),
+            popUpView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.75),
+            popUpView.heightAnchor.constraint(equalTo: popUpView.widthAnchor),
             popUpView.centerYAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerYAnchor),
             popUpView.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor)
         ])
@@ -144,7 +145,7 @@ class PopupVC: UIViewController {
             stackView.bottomAnchor.constraint(equalTo: popUpView.bottomAnchor, constant: -5),
             stackView.trailingAnchor.constraint(equalTo: popUpView.trailingAnchor)
         ])
-        setupDarkViews()
+//        setupDarkViews()
         
     }
     
@@ -183,7 +184,7 @@ class PopupVC: UIViewController {
     
 //MARK: Helpers
     @objc func handleDismissTap(_ gesture: UITapGestureRecognizer) { //go to imageDetailVC
-        navigationController?.popViewController(animated: true)
+        navigationController?.popViewController(animated: false)
     }
     
 
