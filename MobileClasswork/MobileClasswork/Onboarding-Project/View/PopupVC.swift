@@ -105,7 +105,8 @@ class PopupVC: UIViewController {
     lazy var darkSwitch: UISwitch = {
         let darkSwitch: UISwitch = UISwitch(frame: .zero)
         darkSwitch.translatesAutoresizingMaskIntoConstraints = false
-        darkSwitch.isOn = false
+        let isDarkMode = UserDefaults.standard.bool(forKey: "isDarkMode")
+        darkSwitch.isOn = isDarkMode
 //        darkSwitch.onTintColor = SettingsService.mainColor //default to green
         darkSwitch.thumbTintColor = SettingsService.mainColor
 //        darkSwitch.backgroundColor = .yellow
