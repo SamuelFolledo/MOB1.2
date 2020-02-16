@@ -30,10 +30,10 @@ extension UIButton {
         self.clipsToBounds = true
     }
     
-    func isBlackButton() {
+    func isBlackButton(titleColor: UIColor = kOFFWHITECOLOR) {
         self.backgroundColor = kOFFBLACKCOLOR
         self.titleLabel?.font = .systemFont(ofSize: 24, weight: .medium)
-        self.setTitleColor(kOFFWHITECOLOR, for: .normal)
+        self.setTitleColor(titleColor, for: .normal)
         self.layer.cornerRadius = self.frame.height / 5
         self.clipsToBounds = true
     }
