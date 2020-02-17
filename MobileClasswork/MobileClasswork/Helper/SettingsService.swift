@@ -9,12 +9,7 @@
 import UIKit
 
 class SettingsService {
-    static var isDarkMode: Bool = false {
-        didSet {
-            UserDefaults.standard.set(isDarkMode, forKey: "isDarkMode")
-            UserDefaults.standard.synchronize()
-        }
-    }
+    static var isDarkMode: Bool = false
     static var mainColor: UIColor = kMAINCOLOR
     static var blackColor: UIColor { //get only property
         return isDarkMode ? kOFFWHITECOLOR : kOFFBLACKCOLOR
