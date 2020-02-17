@@ -10,7 +10,7 @@ import UIKit
 
 class PopupVC: UIViewController {
 //MARK: Properties
-    
+    let isDarkMode: Bool = UserDefaults.standard.bool(forKey: "isDarkMode")
 //MARK: IBOutlets
     lazy var popUpView: UIView = {
         let view: UIView = UIView(frame: .zero)
@@ -57,7 +57,7 @@ class PopupVC: UIViewController {
         let button: UIButton = UIButton(frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Cancel", for: .normal)
-        button.addTarget(self, action: #selector(handleDismissTap(_:)), for: .touchUpInside)
+        button.addTarget(self, action: #selector(cancelButtonTap(_:)), for: .touchUpInside)
         return button
     }()
     lazy var buttonsStackView: UIStackView = {
@@ -152,12 +152,9 @@ class PopupVC: UIViewController {
     
     fileprivate func setupViews() {
         view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
-//        view.isUserInteractionEnabled = true
-//        view.backgroundColor = .clear
-        let tap = UITapGestureRecognizer(target: self, action: #selector(handleDismissTap(_:)))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(cancelButtonTap(_:)))
         self.view.addGestureRecognizer(tap)
         view.insertSubview(popUpView, aboveSubview: self.view)
-//        popUpView.isUserInteractionEnabled = true
         NSLayoutConstraint.activate([
             popUpView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.75),
             popUpView.heightAnchor.constraint(equalTo: popUpView.widthAnchor),
@@ -231,23 +228,33 @@ class PopupVC: UIViewController {
         });
     }
     
-//MARK: Helpers
-    @objc func handleDismissTap(_ gesture: UITapGestureRecognizer) { //go to imageDetailVC
-        dismissPopup()
+    fileprivate func saveSettingDarkMode(didSave: Bool) {
+        if isDarkMode != darkSwitch.isOn && didSave { //if first dark mode didnt change and user saved
+            UserDefaults.standard.set(darkSwitch.isOn ? true : false, forKey: "isDarkMode")
+            UserDefaults.standard.synchronize()
+        } else { //reset isDarkMode
+            SettingsService.isDarkMode = isDarkMode
+        }
     }
+    
+//MARK: Helpers
     @objc func logoutButtonTap(_ gesture: UITapGestureRecognizer) { //go to imageDetailVC
+        saveSettingDarkMode(didSave: true)
         let vc: LoginVC = LoginVC()
         self.navigationController?.initRootViewController(vc: vc)
     }
+    @objc func cancelButtonTap(_ gesture: UITapGestureRecognizer) { //go to imageDetailVC
+        saveSettingDarkMode(didSave: false)
+        dismissPopup()
+    }
     @objc func saveButtonTap(_ gesture: UITapGestureRecognizer) { //go to imageDetailVC
+        saveSettingDarkMode(didSave: true)
         dismissPopup()
     }
     @objc func popupViewTap(_ gesture: UITapGestureRecognizer) { //go to imageDetailVC
-//        navigationController?.popViewController(animated: false)
         print("Do nothing")
     }
     @objc func switchChanged() {
-        print(darkSwitch.isOn ? "Dark mode on" : "Dark mode off")
         SettingsService.isDarkMode = darkSwitch.isOn ? true : false
         updateColors()
     }
