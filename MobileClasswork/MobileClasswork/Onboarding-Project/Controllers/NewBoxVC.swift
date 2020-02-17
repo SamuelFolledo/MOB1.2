@@ -24,19 +24,21 @@ class NewBoxVC: UIViewController {
         collectionView.collectionViewLayout = flow
         return collectionView
     }()
-    
-    var data: [String] = Array(repeating: "🦕", count: 10)
+        
+//    var data: [String] = Array(repeating: "🦕", count: 10)
+    var data: [Product] = []
     
 //MARK: App Life Cycle
     override func loadView() {
         super.loadView()
         title = "New Box"
         view.addSubview(collectionView)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Update", style: .done, target: self, action: #selector(showOptions(controller:)))
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Update", style: .done, target: self, action: #selector(showOptions(controller:)))
+        populateData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,40 +52,43 @@ class NewBoxVC: UIViewController {
         collectionView.backgroundColor = SettingsService.whiteColor
     }
     
+    fileprivate func populateData() {
+        data.removeAll()
+        data = kSAMPLEPRODUCTS
+        data.shuffle()
+    }
+    
 //MARK: Helpers
     @objc func showOptions(controller: UIViewController) {
+        let advil = kSAMPLEPRODUCT
         let alert = UIAlertController(title: "Options", message: "Choose an update", preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Example", style: .default, handler: { (_) in
             self.collectionView.performBatchUpdates({ //Animates multiple insert, delete, reload, and move operations as a group.
-                self.data[3] = "😦" //change the item at 3
+                self.data[3] = advil //change the item at 3
                 let updated = self.data[3] //store it
                 self.data.remove(at: 3) //remove then insert
                 self.data.insert(updated, at: 0)
-                
                 self.collectionView.deleteItems(at: [IndexPath(item: 3, section: 0)])
                 self.collectionView.insertItems(at: [IndexPath(item: 0, section: 0)])
-                
             }, completion: nil)
             
         }))
         
         alert.addAction(UIAlertAction(title: "Insert 3 emojis at the beginning", style: .default, handler: { (_) in
-            self.data.insert(contentsOf: ["😦","😦","😦"], at: 0)
+            self.data.insert(contentsOf: [advil, advil, advil], at: 0)
             self.collectionView.insertItems(at: [IndexPath(item: 0, section: 0), IndexPath(item: 1, section: 0), IndexPath(item: 2, section: 0)]) //insertItem one at a time
         }))
         
         alert.addAction(UIAlertAction(title: "Update item at 5 with an emoji", style: .default, handler: { (_) in
-            self.data[5] = "😦"
+            self.data[5] = advil
             let updated = self.data[5]
             self.data.remove(at: 5)
             self.data.insert(updated, at: 5)
-            
             self.collectionView.deleteItems(at: [IndexPath(item: 5, section: 0)])
             self.collectionView.insertItems(at: [IndexPath(item: 5, section: 0)])
         }))
         
         alert.addAction(UIAlertAction(title: "Delete first 2 items, insert 3 items at the end", style: .default, handler: { (_) in
-            
         }))
         
         alert.addAction(UIAlertAction(title: "Delete first 3, insert 1 item at the beginning", style: .default, handler: { (_) in
@@ -93,7 +98,8 @@ class NewBoxVC: UIViewController {
         }))
         
         alert.addAction(UIAlertAction(title: "Reset", style: .default, handler: { (_) in
-            self.data = Array(repeating: "🦕", count: 10)
+//            self.data = Array(repeating: "🦕", count: 10)
+            self.populateData()
             self.collectionView.reloadData()
         }))
         
@@ -117,11 +123,10 @@ extension NewBoxVC: UICollectionViewDataSource {
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NewBoxCell.identifier, for: indexPath) as! NewBoxCell
         let data = self.data[indexPath.item]
-        cell.imageView.image = kMAKESCHOOLIMAGE
-        cell.textLabel.text = "\(data) : \(indexPath.row)"
-        cell.textLabel.textColor = SettingsService.whiteColor
-//        cell.backgroundColor = SettingsService.darkGrayColor
-        cell.containerView.backgroundColor = SettingsService.darkGrayColor
+        cell.imageView.image = data.image.withTintColor(SettingsService.grayColor)
+        cell.textLabel.text = data.name
+        cell.textLabel.textColor = SettingsService.grayColor
+        cell.containerView.backgroundColor = .darkGray
         return cell
     }
 }
