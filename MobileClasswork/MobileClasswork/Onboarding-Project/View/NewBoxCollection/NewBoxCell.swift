@@ -37,11 +37,16 @@ class NewBoxCell: UICollectionViewCell {
     let textLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont(name: "Helvetica", size: 26)
-        label.textColor = .white
-        label.numberOfLines = 0
+        label.font = UIFont(name: "Helvetica", size: 20)
+        label.numberOfLines = 2
+        label.textAlignment = .center
         return label
     }()
+    
+    required init() {
+        super.init(frame: .zero)
+        setup()
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -79,5 +84,6 @@ class NewBoxCell: UICollectionViewCell {
         self.imageView.heightAnchor.constraint(equalTo: stackView.heightAnchor, multiplier: 0.75).isActive = true
         stackView.addArrangedSubview(textLabel)
         textLabel.widthAnchor.constraint(equalTo: stackView.widthAnchor).isActive = true
+        textLabel.heightAnchor.constraint(equalToConstant: 60).isActive = true
     }
 }
