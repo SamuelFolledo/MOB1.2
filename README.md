@@ -8,7 +8,7 @@ https://make-school-courses.github.io/MOB-1.2-Introduction-to-iOS-Development/#/
 ### Day 8 Progress on Onboarding Project
 __Regular/Light Mode__             |  __Migraine/Dark Mode__
 :-------------------------:|:-------------------------:
-<img src="https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/static/gif/day8DemoLight.gif" width="357" height="720">  |  <img src="https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/static/gif/day8DemoDark.gif" width="357" height="720">
+<img src="https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/static/gif/day8DemoLight.gif" width="428" height="864">  |  <img src="https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/static/gif/day8DemoDark.gif" width="428" height="864">
 
 
 ### Course Links

@@ -143,7 +143,7 @@ https://github.com/SamuelFolledo/MOB1.2/tree/master/MobileClasswork/MobileClassw
 ## Day 8 Onboarding Progress
 __Regular/Light Mode__             |  __Migraine/Dark Mode__
 :-------------------------:|:-------------------------:
-<img src="https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/static/gif/day8DemoLight.gif" width="357" height="720">  |  <img src="https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/static/gif/day8DemoDark.gif" width="357" height="720">
+<img src="https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/static/gif/day8DemoLight.gif" width="238" height="480">  |  <img src="https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/static/gif/day8DemoDark.gif" width="238" height="480">
 
 <a name="day9"></a>
 ## Day 9. [UITabBarController](#day9)
