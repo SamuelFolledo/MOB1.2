@@ -14,14 +14,14 @@ class LoginVC: UIViewController {
     lazy var emailTextField: UnderlinedTextField = {
         let textField = UnderlinedTextField(frame: .zero)
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.setUnderlineColor(color: kOFFBLACKCOLOR)
+//        textField.setUnderlineColor(color: kOFFBLACKCOLOR)
         textField.isEmailTextField()
         return textField
     }()
     lazy var passwordTextField: UnderlinedTextField = {
         let textField = UnderlinedTextField(frame: .zero)
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.setUnderlineColor(color: kOFFBLACKCOLOR)
+//        textField.setUnderlineColor(color: kOFFBLACKCOLOR)
         textField.isPasswordTextField()
         return textField
     }()
@@ -45,6 +45,7 @@ class LoginVC: UIViewController {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         imageView.image = kMIGRAINEIMAGE
+//        imageView.image = imageView.image?.withRenderingMode(.alwaysTemplate)
         return imageView
     }()
     lazy var titleLabel: UILabel = {
@@ -53,8 +54,9 @@ class LoginVC: UIViewController {
         label.font = UIFont.systemFont(ofSize: 32, weight: .black)
         label.sizeToFit()
         label.numberOfLines = 0
-        label.textColor = kOFFBLACKCOLOR
+//        label.textColor = kOFFBLACKCOLOR
         label.textAlignment = .center
+        label.text = "Health Subscription"
         return label
     }()
     lazy var stackView: UIStackView = {
@@ -75,6 +77,11 @@ class LoginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateColors()
         setupKeyboardNotifications()
     }
     
@@ -85,12 +92,24 @@ class LoginVC: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        loginButton.isMainButton() //since isMainButton() extension has corner radius which needs height for customization, need to call it in viewDidLayoutSubviews
-        skipButton.isClearButton()
-        titleLabel.text = "Health Subscription"
+        updateColors()
     }
     
 //MARK: Private Methods
+    fileprivate func updateColors() {
+        loginButton.isMainButton() //since isMainButton() extension has corner radius which needs height for customization, need to call it in viewDidLayoutSubviews
+        skipButton.isClearButton()
+        titleLabel.textColor = SettingsService.darkGrayColor
+        view.backgroundColor = SettingsService.whiteColor
+        emailTextField.setUnderlineColor(color: SettingsService.darkGrayColor)
+        emailTextField.tintColor = SettingsService.darkGrayColor
+        emailTextField.textColor = SettingsService.darkGrayColor
+        passwordTextField.setUnderlineColor(color: SettingsService.darkGrayColor)
+        passwordTextField.tintColor = SettingsService.darkGrayColor
+        passwordTextField.textColor = SettingsService.darkGrayColor
+        imageView.image = kMIGRAINEIMAGE.tint(with: SettingsService.darkGrayColor)
+    }
+    
     fileprivate func setupViews() {
         self.navigationController?.initRootViewController(vc: self)
         self.navigationController?.isNavigationBarHidden = true
