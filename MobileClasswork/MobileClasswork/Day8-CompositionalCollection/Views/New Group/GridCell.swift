@@ -15,7 +15,6 @@ class GridCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setup()
-        
     }
     func setup() {
         mainView.layer.cornerRadius = 10.0
