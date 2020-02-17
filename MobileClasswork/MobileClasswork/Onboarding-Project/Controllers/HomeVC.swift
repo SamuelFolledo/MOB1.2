@@ -136,8 +136,6 @@ class HomeVC: UIViewController {
     }
     @objc func settingsButtonTapped() {
         let vc: PopupVC = PopupVC()
-//        vc.modalPresentationStyle = .custom
-//        vc.modalPresentationStyle = .overCurrentContext
         navigationController?.pushViewController(vc, animated: false) //push
     }
 }
