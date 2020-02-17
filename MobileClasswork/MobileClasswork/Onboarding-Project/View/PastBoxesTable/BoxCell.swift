@@ -23,7 +23,7 @@ class BoxCell: UITableViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.layer.cornerRadius = 5
         imageView.layer.masksToBounds = true
-        imageView.image = kMIGRAINEIMAGE.tint(with: SettingsService.grayColor)
+        imageView.image = kMIGRAINEIMAGE.tint(with: SettingsService.darkGrayColor)
         return imageView
     }()
     let boxLabel: UILabel = {
