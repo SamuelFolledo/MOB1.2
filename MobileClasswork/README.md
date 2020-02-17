@@ -139,6 +139,11 @@ https://github.com/SamuelFolledo/MOB1.2/tree/master/MobileClasswork/MobileClassw
 <img src="https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/static/gif/day8hw.gif" width="238" height="480">
 
 ---
+
+## Day 8 Onboarding Progress
+<img src="https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/static/gif/day8DemoLight.gif" width="238" height="480">
+<img src="https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/static/gif/day8DemoDark.gif" width="238" height="480">
+
 <a name="day9"></a>
 ## Day 9. [UITabBarController](#day9)
 ### Topics
