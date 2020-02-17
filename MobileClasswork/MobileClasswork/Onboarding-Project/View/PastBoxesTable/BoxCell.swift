@@ -9,7 +9,7 @@
 import UIKit
 
 class BoxCell: UITableViewCell {
-    
+    static let identifier: String = "BoxCell"
     let background : UIView = {
         let background = UIView()
         background.translatesAutoresizingMaskIntoConstraints = false
@@ -23,13 +23,13 @@ class BoxCell: UITableViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.layer.cornerRadius = 5
         imageView.layer.masksToBounds = true
-        imageView.image = kMAKESCHOOLIMAGE
+        imageView.image = kMIGRAINEIMAGE.tint(with: SettingsService.grayColor)
         return imageView
     }()
     let boxLabel: UILabel = {
         let label: UILabel = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 18)
+        label.font = UIFont.systemFont(ofSize: 20)
         label.sizeToFit()
         label.numberOfLines = 0
         label.textColor = .black
