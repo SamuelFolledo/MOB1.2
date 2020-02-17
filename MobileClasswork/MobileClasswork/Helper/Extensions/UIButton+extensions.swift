@@ -10,7 +10,7 @@ import UIKit
 
 extension UIButton {
 /// applied main color and rounded corners
-    func isMainButton(color: UIColor = SettingsService.mainColor, titleColor: UIColor = SettingsService.whiteColor) {
+    func isMainButton(color: UIColor = SettingsService.mainColor, titleColor: UIColor = SettingsService.grayColor) {
 //        self.layer.borderWidth = 2
 //        self.layer.borderColor = UIColor.white.cgColor
         self.backgroundColor = color
