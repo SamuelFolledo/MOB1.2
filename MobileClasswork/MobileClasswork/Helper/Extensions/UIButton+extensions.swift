@@ -34,7 +34,7 @@ extension UIButton {
         self.backgroundColor = kOFFBLACKCOLOR
         self.titleLabel?.font = .systemFont(ofSize: 24, weight: .medium)
         self.setTitleColor(titleColor, for: .normal)
-        self.layer.cornerRadius = self.frame.height / 5
+        self.layer.cornerRadius = 10
         self.clipsToBounds = true
         self.layer.borderWidth = 2 //add a border
         self.layer.borderColor = SettingsService.isDarkMode ? titleColor.cgColor : UIColor.clear.cgColor
