@@ -39,16 +39,6 @@ class HomeVC: UIViewController {
         button.setTitle("Profile", for: .normal)
         return button
     }()
-    lazy var descriptionLabel: UILabel = {
-        let label: UILabel = UILabel(frame: .zero)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.boldSystemFont(ofSize: 18)
-        label.sizeToFit()
-        label.numberOfLines = 0
-        label.textColor = kOFFBLACKCOLOR
-        label.textAlignment = .center
-        return label
-    }()
     lazy var settingsButton: UIBarButtonItem = {
         let barButton: UIBarButtonItem = UIBarButtonItem()
         return barButton
@@ -67,20 +57,23 @@ class HomeVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupNavigationBar()
+        updateColors()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        newBoxButton.isMainButton()
-        pastBoxesButton.isMainButton()
-        profileButton.isMainButton()
-        settingsButton = UIBarButtonItem.navButton(self, action: #selector(settingsButtonTapped), image: kSETTINGSIMAGE)
-        navigationItem.rightBarButtonItem = settingsButton
+        updateColors()
     }
     
 //MARK: Private Methods
+    fileprivate func updateColors() {
+        view.backgroundColor = SettingsService.whiteColor
+        newBoxButton.isMainButton()
+        pastBoxesButton.isMainButton()
+        profileButton.isMainButton()
+    }
+    
     fileprivate func setupViews() {
-        self.view.backgroundColor = kOFFWHITECOLOR
         self.view.addSubview(stackView)
         NSLayoutConstraint.activate([
             stackView.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.8),
@@ -89,9 +82,6 @@ class HomeVC: UIViewController {
             stackView.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor)
         ])
         setupStackView()
-//        stackView.addArrangedSubview(descriptionLabel)
-//        descriptionLabel.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier:  0.8).isActive = true
-//        descriptionLabel.text = "Buy me!"
         setupButtons()
     }
     
@@ -120,9 +110,11 @@ class HomeVC: UIViewController {
     fileprivate func setupNavigationBar() {
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.tintColor = kOFFWHITECOLOR //button color
+        navigationController?.navigationBar.tintColor = SettingsService.grayColor //button color
         self.title = "Home"
         navigationController?.setStatusBarColor(backgroundColor: kMAINCOLOR)
+        settingsButton = UIBarButtonItem.navButton(self, action: #selector(settingsButtonTapped), image: kSETTINGSIMAGE)
+        navigationItem.rightBarButtonItem = settingsButton
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
