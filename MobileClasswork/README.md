@@ -110,11 +110,11 @@ https://github.com/SamuelFolledo/MOB1.2/tree/master/MobileClasswork/MobileClassw
 <a name="day7"></a>
 ## Day 7. [Collection Views](https://make-school-courses.github.io/MOB-1.2-Introduction-to-iOS-Development/#/Lessons/07-CollectionViews/README)
 ### Topics
-•    Implement UICollectionViews in code
-•    Handle UICollectionView’s datasource and delegate
-•    Manage update animations
-•    __UICollectionViewFlowLayout__ - look of collection view and its cells
-•    __performBatchUpdates__ - performs cell animation with insert and delete cells
+- Implement UICollectionViews in code
+- Handle UICollectionView’s datasource and delegate
+- Manage update animations
+- __UICollectionViewFlowLayout__ - look of collection view and its cells
+- __performBatchUpdates__ - performs cell animation with insert and delete cells
 
 ### CW:
 - [Activity](https://github.com/Make-School-Courses/MOB-1.2-Introduction-to-iOS-Development/blob/master/Lessons/07-CollectionViews/assignments/assignment.md): Building a collection view
@@ -129,8 +129,8 @@ https://github.com/SamuelFolledo/MOB1.2/tree/master/MobileClasswork/MobileClassw
 <a name="day8"></a>
 ## Day 8. [Compositional Layouts](https://make-school-courses.github.io/MOB-1.2-Introduction-to-iOS-Development/#/Lessons/08-CompositionalLayouts/README)
 ### Topics
-•    Understand the different elements of the new layout
-•    Implement Compositional Layouts using different sections
+- Understand the different elements of the new layout
+- Implement Compositional Layouts using different sections
 
 ### CW:
 - [Compositional Layout Activity](https://github.com/amelinagzz/CompositionalLayout)
