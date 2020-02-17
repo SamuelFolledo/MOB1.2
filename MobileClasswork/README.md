@@ -7,10 +7,10 @@
 4. [Custom Views](#day4)
 5. [MVC & Navigation](#day5)
 6. [Table Views](#day6)
-7. [Custom Views](#day7)
-8. [Collection Views](#day8)
-9. [Compositional Layouts](#day9)
-10. [UITabBarController](#day10)
+7. [Collection Views](#day7)
+8. [Compositional Layouts](#day8)
+9. [UITabBarController](#day9)
+10. [Generics](#day10)
 11. [Lab](#day11)
 12. [Exploring SwiftUI](#day12)
 13. [Final Exam](#day13)
@@ -73,7 +73,7 @@ https://github.com/SamuelFolledo/MOB1.2/tree/master/MobileClasswork/MobileClassw
 ---
 
 <a name="day5></a>
-## Day 5. [MVC & Navigation](#day5)
+## Day 5. [MVC & Navigation](https://make-school-courses.github.io/MOB-1.2-Introduction-to-iOS-Development/#/Lessons/05-Intro-to-MVC/README)
 ### Topics
 - Model, View, Controller
 - Navigation via Segue programmatically
@@ -91,7 +91,7 @@ https://github.com/SamuelFolledo/MOB1.2/tree/master/MobileClasswork/MobileClassw
 ---
 
 <a name="day6"></a>
-## Day 6. [Table Views](#day6)
+## Day 6. [Table Views](https://make-school-courses.github.io/MOB-1.2-Introduction-to-iOS-Development/#/Lessons/06-TableViews/README)
 ### Topics
 - __Reset Tip__ Go to Xcode's System Preferences, location, and Derived Data and delete everything
 - TableViews Three Ways 🎈🌳👽
@@ -108,26 +108,39 @@ https://github.com/SamuelFolledo/MOB1.2/tree/master/MobileClasswork/MobileClassw
 
 ---
 <a name="day7"></a>
-## Day 7. [Custom Views](#day7)
+## Day 7. [Collection Views](https://make-school-courses.github.io/MOB-1.2-Introduction-to-iOS-Development/#/Lessons/07-CollectionViews/README)
 ### Topics
+•    Implement UICollectionViews in code
+•    Handle UICollectionView’s datasource and delegate
+•    Manage update animations
+•    __UICollectionViewFlowLayout__ - look of collection view and its cells
+•    __performBatchUpdates__ - performs cell animation with insert and delete cells
 
 ### CW:
+- [Activity](https://github.com/Make-School-Courses/MOB-1.2-Introduction-to-iOS-Development/blob/master/Lessons/07-CollectionViews/assignments/assignment.md): Building a collection view
 
 ### HW:
+<img src="https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/static/gif/day7hw.gif" width="238" height="480">
+
+https://github.com/SamuelFolledo/MOB1.2/tree/master/MobileClasswork/MobileClasswork/Day7-CollectionView
 
 ---
 
 <a name="day8"></a>
-## Day 8. [Collection Views](#day8)
+## Day 8. [Compositional Layouts](https://make-school-courses.github.io/MOB-1.2-Introduction-to-iOS-Development/#/Lessons/08-CompositionalLayouts/README)
 ### Topics
+•    Understand the different elements of the new layout
+•    Implement Compositional Layouts using different sections
 
-### CW: 
+### CW:
+- [Compositional Layout Activity](https://github.com/amelinagzz/CompositionalLayout)
 
 ### HW: 
+<img src="https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/static/gif/day8hw.gif" width="238" height="480">
 
 ---
 <a name="day9"></a>
-## Day 9. [Compositional Layouts](#day9)
+## Day 9. [UITabBarController](#day9)
 ### Topics
 
 ### CW:
@@ -137,7 +150,7 @@ https://github.com/SamuelFolledo/MOB1.2/tree/master/MobileClasswork/MobileClassw
 ---
 
 <a name="day10"></a>
-## Day 10. [UITabBarController](#day10)
+## Day 10. [](#day10)
 ### Topics
 
 ### CW: 
@@ -188,3 +201,6 @@ https://github.com/SamuelFolledo/MOB1.2/tree/master/MobileClasswork/MobileClassw
 ## Important References
 - [Notes and Recordings](https://github.com/SamuelFolledo/MOB1.2/tree/master/NotesAndRecordings)
 - Day 2's [Size Classes Tutorial](https://github.com/Make-School-Courses/MOB-1.2-Introduction-to-iOS-Development/blob/master/Lessons/02-AutoLayout/assignments/sizeclasses.md)
+- Day 6's [TableView + XIB](https://github.com/Make-School-Courses/MOB-1.2-Introduction-to-iOS-Development/blob/master/Lessons/06-TableViews/assignments/tableXib.md)
+- Day 6's [TableView + programmatically](https://github.com/Make-School-Courses/MOB-1.2-Introduction-to-iOS-Development/blob/master/Lessons/06-TableViews/assignments/tableCode.md)
+- Day 8's [Compositional Layout Activity](https://github.com/amelinagzz/CompositionalLayout)
