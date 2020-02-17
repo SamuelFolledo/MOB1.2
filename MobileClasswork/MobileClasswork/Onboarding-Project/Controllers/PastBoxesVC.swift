@@ -53,7 +53,7 @@ class PastBoxesVC: UIViewController {
         table.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor).isActive = true
         table.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor).isActive = true
         table.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor).isActive = true
-        table.register(BoxCell.self, forCellReuseIdentifier: "boxCell")
+        table.register(BoxCell.self, forCellReuseIdentifier: BoxCell.identifier)
         table.tableFooterView = UIView()
     }
     
@@ -64,7 +64,6 @@ class PastBoxesVC: UIViewController {
 //MARK: Extensions
 extension PastBoxesVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        print("Cell's row = ", indexPath.row)
         let vc = PastBoxesDetailVC()
         vc.month = months[indexPath.row]
         self.navigationController?.pushViewController(vc, animated: true)
@@ -77,13 +76,10 @@ extension PastBoxesVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: BoxCell = tableView.dequeueReusableCell(withIdentifier: "boxCell", for: indexPath) as! BoxCell
+        let cell: BoxCell = tableView.dequeueReusableCell(withIdentifier: BoxCell.identifier, for: indexPath) as! BoxCell
         cell.boxLabel.text = months[indexPath.row]
         cell.backgroundColor = SettingsService.whiteColor
         cell.boxLabel.textColor = SettingsService.darkGrayColor
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "boxCell", for: indexPath)
-//        cell.textLabel?.text = "\(indexPath.row) \(alienArray[indexPath.row])"
-//        cell.accessoryType = .disclosureIndicator
         cell.selectionStyle = .none
         return cell
     }
