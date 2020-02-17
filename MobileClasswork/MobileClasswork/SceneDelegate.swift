@@ -24,6 +24,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = navigationController //needed to not use storyboard
         window?.makeKeyAndVisible() //needed to not use storyboard
         window?.windowScene = windowScene //needed to not use storyboard
+        let isDarkMode = UserDefaults.standard.bool(forKey: "isDarkMode")
+        SettingsService.isDarkMode = isDarkMode
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
