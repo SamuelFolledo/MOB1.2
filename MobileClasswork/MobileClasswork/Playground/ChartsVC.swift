@@ -133,3 +133,30 @@ class ChartsVC: UIViewController {
     }
     
 }
+
+/*
+ 
+ //MARK: Customize Tab Bar Controller size
+ 
+     fileprivate func setupTabBar() {
+         guard let tabBar = self.tabBarController?.tabBar else { return }
+         tabBar.layer.masksToBounds = true
+         tabBar.isTranslucent = true
+         tabBar.backgroundColor = .clear
+ //        tabBar.barStyle = .black
+         tabBar.layer.cornerRadius = 20
+ //        tabBar.itemWidth = self.view.frame.width / 9
+         tabBar.barTintColor = kMAINCOLOR //bar color
+         tabBar.tintColor = .white //selected tab
+         tabBar.unselectedItemTintColor = .black
+         
+         let width = self.view.frame.width - 100
+         var newFrame = tabBar.frame
+ //        newFrame.size.height = 100
+ //        newFrame.origin.y = view.frame.size.height - 100
+         newFrame.size.width = width
+         newFrame.origin.x = (view.frame.width - width) / 2 //centers it
+         tabBar.frame = newFrame
+     }
+ 
+*/
