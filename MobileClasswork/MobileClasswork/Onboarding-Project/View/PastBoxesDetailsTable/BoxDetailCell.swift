@@ -9,7 +9,7 @@
 import UIKit
 
 class BoxDetailCell: UITableViewCell {
-    
+    static let identifier: String = "BoxDetailCell"
     var isFavorite: Bool = false
     
     let background : UIView = {
