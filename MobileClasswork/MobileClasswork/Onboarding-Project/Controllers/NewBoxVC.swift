@@ -27,6 +27,7 @@ class NewBoxVC: UIViewController {
     
     var data: [String] = Array(repeating: "🦕", count: 10)
     
+//MARK: App Life Cycle
     override func loadView() {
         super.loadView()
         title = "New Box"
@@ -38,6 +39,18 @@ class NewBoxVC: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Update", style: .done, target: self, action: #selector(showOptions(controller:)))
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateColors()
+    }
+    
+//MARK: Private Methods
+    fileprivate func updateColors() {
+        view.backgroundColor = SettingsService.whiteColor
+        collectionView.backgroundColor = SettingsService.whiteColor
+    }
+    
+//MARK: Helpers
     @objc func showOptions(controller: UIViewController) {
         let alert = UIAlertController(title: "Options", message: "Choose an update", preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Example", style: .default, handler: { (_) in
@@ -106,7 +119,9 @@ extension NewBoxVC: UICollectionViewDataSource {
         let data = self.data[indexPath.item]
         cell.imageView.image = kMAKESCHOOLIMAGE
         cell.textLabel.text = "\(data) : \(indexPath.row)"
-        cell.textLabel.textColor = UIColor.white
+        cell.textLabel.textColor = SettingsService.whiteColor
+//        cell.backgroundColor = SettingsService.darkGrayColor
+        cell.containerView.backgroundColor = SettingsService.darkGrayColor
         return cell
     }
 }
