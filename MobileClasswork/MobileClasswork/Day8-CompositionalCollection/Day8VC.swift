@@ -77,4 +77,3 @@ extension Day8VC: UICollectionViewDataSource {
 }
 
 extension Day8VC: UICollectionViewDelegate {}
-
