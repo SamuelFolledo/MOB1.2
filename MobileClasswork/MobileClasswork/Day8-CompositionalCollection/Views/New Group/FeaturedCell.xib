@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FeaturedCell" customModule="CompositionalCollection" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FeaturedCell" id="gTV-IL-0wX" customClass="FeaturedCell" customModule="CompositionalCollection" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="105" height="92"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="105" height="92"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1sn-wP-dNQ">
+                        <rect key="frame" x="5" y="5" width="95" height="82"/>
+                        <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="1sn-wP-dNQ" secondAttribute="bottom" constant="5" id="4IX-A5-bDj"/>
+                <constraint firstItem="1sn-wP-dNQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="80X-ga-12F"/>
+                <constraint firstItem="1sn-wP-dNQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="U8o-0D-aSQ"/>
+                <constraint firstAttribute="trailing" secondItem="1sn-wP-dNQ" secondAttribute="trailing" constant="5" id="geF-jJ-dG1"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="105" height="92"/>
+            <connections>
+                <outlet property="imgView" destination="1sn-wP-dNQ" id="Doc-4K-hNs"/>
+            </connections>
+            <point key="canvasLocation" x="164.49275362318841" y="102.45535714285714"/>
+        </collectionViewCell>
+    </objects>
+</document>
