@@ -28,7 +28,17 @@ class PastBoxesDetailVC: UIViewController {
         setupViews()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateColors()
+    }
+    
 //MARK: Private Methods
+    fileprivate func updateColors() {
+        view.backgroundColor = SettingsService.whiteColor
+        table.backgroundColor = SettingsService.whiteColor
+    }
+    
     fileprivate func setupViews() {
         view.backgroundColor = .white
         title = month
@@ -69,12 +79,14 @@ extension PastBoxesDetailVC: UITableViewDataSource {
         let cell: BoxDetailCell = tableView.dequeueReusableCell(withIdentifier: "boxDetailCell", for: indexPath) as! BoxDetailCell
         //cell.starImageView.image = cell.isFavorite ? kSTARFILLEDIMAGE : kSTARIMAGE
         cell.selectionStyle = .none
-        if boxes[indexPath.row].1 {
+        if boxes[indexPath.row].1 { //if true
             cell.starImageView.image = kSTARFILLEDIMAGE
         } else {
             cell.starImageView.image = kSTARIMAGE
         }
-//        print(cell.isFavorite)
+        cell.backgroundColor = SettingsService.whiteColor
+        cell.titleLabel.textColor = SettingsService.darkGrayColor
+        cell.descriptionLabel.textColor = SettingsService.darkGrayColor
         return cell
     }
 }

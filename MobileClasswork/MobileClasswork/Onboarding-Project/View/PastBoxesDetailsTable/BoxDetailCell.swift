@@ -15,7 +15,7 @@ class BoxDetailCell: UITableViewCell {
     let background : UIView = {
         let background = UIView()
         background.translatesAutoresizingMaskIntoConstraints = false
-        background.backgroundColor = #colorLiteral(red: 0.8186396956, green: 0.7955000997, blue: 1, alpha: 1)
+        background.backgroundColor = kMAINCOLOR
         background.layer.cornerRadius = 5
         background.layer.masksToBounds = true
         return background
@@ -66,7 +66,7 @@ class BoxDetailCell: UITableViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.layer.cornerRadius = 5
         imageView.layer.masksToBounds = true
-        imageView.image = kSTARIMAGE
+//        imageView.image = kSTARIMAGE.tint(with: SettingsService.mainColor)
         return imageView
     }()
     
@@ -125,7 +125,7 @@ class BoxDetailCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        starImageView.image = kSTARIMAGE
+//        starImageView.image = kSTARIMAGE.tint(with: SettingsService.mainColor)
     }
 }
 

@@ -28,14 +28,24 @@ class PastBoxesVC: UIViewController {
         setupViews()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateColors()
+    }
+    
 //MARK: Private Methods
+    fileprivate func updateColors() {
+        view.backgroundColor = SettingsService.whiteColor
+        table.backgroundColor = SettingsService.whiteColor
+    }
+    
     fileprivate func setupViews() {
         view.backgroundColor = .white
         self.title = "Past Boxes"
         setupTableView()
     }
     
-    func setupTableView(){
+    fileprivate func setupTableView(){
         table.delegate = self
         table.dataSource = self
         self.view.addSubview(table)
@@ -69,6 +79,8 @@ extension PastBoxesVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: BoxCell = tableView.dequeueReusableCell(withIdentifier: "boxCell", for: indexPath) as! BoxCell
         cell.boxLabel.text = months[indexPath.row]
+        cell.backgroundColor = SettingsService.whiteColor
+        cell.boxLabel.textColor = SettingsService.darkGrayColor
 //        let cell = tableView.dequeueReusableCell(withIdentifier: "boxCell", for: indexPath)
 //        cell.textLabel?.text = "\(indexPath.row) \(alienArray[indexPath.row])"
 //        cell.accessoryType = .disclosureIndicator

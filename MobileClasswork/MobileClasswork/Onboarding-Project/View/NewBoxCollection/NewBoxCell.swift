@@ -14,7 +14,7 @@ class NewBoxCell: UICollectionViewCell {
     let containerView : UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .lightGray
+        view.backgroundColor = SettingsService.grayColor
         return view
     }()
     let stackView: UIStackView = {
@@ -30,6 +30,8 @@ class NewBoxCell: UICollectionViewCell {
         let imageView: UIImageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = kMAKESCHOOLIMAGE
+        imageView.layer.cornerRadius = 10
+        imageView.clipsToBounds = true
         return imageView
     }()
     let textLabel: UILabel = {
