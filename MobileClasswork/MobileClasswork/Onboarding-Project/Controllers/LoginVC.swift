@@ -14,14 +14,16 @@ class LoginVC: UIViewController {
     lazy var emailTextField: UnderlinedTextField = {
         let textField = UnderlinedTextField(frame: .zero)
         textField.translatesAutoresizingMaskIntoConstraints = false
-//        textField.setUnderlineColor(color: kOFFBLACKCOLOR)
+        let attributedPlaceHolder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]) //create a string with font color for placeholder
+        textField.attributedPlaceholder = attributedPlaceHolder
         textField.isEmailTextField()
         return textField
     }()
     lazy var passwordTextField: UnderlinedTextField = {
         let textField = UnderlinedTextField(frame: .zero)
         textField.translatesAutoresizingMaskIntoConstraints = false
-//        textField.setUnderlineColor(color: kOFFBLACKCOLOR)
+        let attributedPlaceHolder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]) //create a string with font color for placeholder
+        textField.attributedPlaceholder = attributedPlaceHolder
         textField.isPasswordTextField()
         return textField
     }()
