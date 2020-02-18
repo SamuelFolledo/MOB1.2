@@ -18,13 +18,12 @@ class OnboardingPageView: UIView {
     let imageView: UIImageView = {
         let imageView: UIImageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = kMAKESCHOOLIMAGE
         return imageView
     }()
     let descriptionLabel: UILabel = {
         let label: UILabel = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.font = .systemFont(ofSize: 28, weight: .bold)
         label.sizeToFit()
         label.numberOfLines = 0
         label.textColor = .white
@@ -69,7 +68,8 @@ class OnboardingPageView: UIView {
     }
     
     override func layoutSubviews() { //where you can set
-        continueButton.isMainButton() //since isMainButton extension has border and needs height for customization, need to call it in layoutSubviews
+//        continueButton.isMainButton() //since isMainButton extension has border and needs height for customization, need to call it in layoutSubviews
+        continueButton.isWhiteButton()
         setupBackgroundLayer()
     }
     
