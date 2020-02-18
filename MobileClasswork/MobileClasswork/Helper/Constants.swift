@@ -8,6 +8,8 @@
 
 import UIKit
 
+let kAPPNAME: String = "Medicine Subscription"
+
 let ibuprofen = Product(name: "Ibuprofen", description: "OTC Pills", image: kPILLIMAGE)
 let aspirin = Product(name: "Aspirin", description: "OTC Pills", image: kPILLIMAGE)
 let excedrin = Product(name: "Excedrin", description: "OTC Pills", image: kPILLIMAGE)
