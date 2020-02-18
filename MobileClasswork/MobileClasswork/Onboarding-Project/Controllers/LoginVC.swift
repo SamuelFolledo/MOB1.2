@@ -56,7 +56,7 @@ class LoginVC: UIViewController {
         label.numberOfLines = 0
 //        label.textColor = kOFFBLACKCOLOR
         label.textAlignment = .center
-        label.text = "Health Subscription"
+        label.text = kAPPNAME
         return label
     }()
     lazy var stackView: UIStackView = {
@@ -67,6 +67,33 @@ class LoginVC: UIViewController {
         stackView.distribution = .fill
         stackView.spacing = 20
         return stackView
+    }()
+    lazy var darkStackView: UIStackView = {
+        let stackView: UIStackView = UIStackView(frame: .zero)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .horizontal
+        stackView.alignment = .trailing
+        stackView.distribution = .fill
+        stackView.spacing = 10
+        return stackView
+    }()
+    lazy var darkModeLabel: UILabel = {
+        let label: UILabel = UILabel(frame: .zero)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 18, weight: .regular)
+        label.numberOfLines = 1
+        label.text = "Dark Mode: "
+        label.textAlignment = .left
+        return label
+    }()
+    lazy var darkSwitch: UISwitch = {
+        let darkSwitch: UISwitch = UISwitch(frame: .zero)
+        darkSwitch.translatesAutoresizingMaskIntoConstraints = false
+        let isDarkMode = UserDefaults.standard.bool(forKey: "isDarkMode")
+        darkSwitch.isOn = isDarkMode
+        darkSwitch.thumbTintColor = SettingsService.mainColor
+        darkSwitch.addTarget(self, action: #selector(self.switchChanged), for: .touchUpInside)
+        return darkSwitch
     }()
     
 //MARK: App Life Cycle
@@ -99,6 +126,7 @@ class LoginVC: UIViewController {
     fileprivate func updateColors() {
         loginButton.isMainButton() //since isMainButton() extension has corner radius which needs height for customization, need to call it in viewDidLayoutSubviews
         skipButton.isClearButton()
+        darkModeLabel.textColor = SettingsService.darkGrayColor
         titleLabel.textColor = SettingsService.darkGrayColor
         view.backgroundColor = SettingsService.whiteColor
         emailTextField.setUnderlineColor(color: SettingsService.darkGrayColor)
@@ -116,6 +144,7 @@ class LoginVC: UIViewController {
         self.view.backgroundColor = kOFFWHITECOLOR
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleDismissTap(_:)))
         self.view.addGestureRecognizer(tap)
+        setupDarkViews()
         setupStackView()
         setupTitleLabel()
         setupImageView()
@@ -127,8 +156,8 @@ class LoginVC: UIViewController {
         self.view.addSubview(stackView)
         NSLayoutConstraint.activate([
             stackView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.8),
-            stackView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.9),
-            stackView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -20),
+            stackView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.85),
+            stackView.topAnchor.constraint(equalTo: self.darkStackView.bottomAnchor, constant: 10),
             stackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
         ])
     }
@@ -158,11 +187,27 @@ class LoginVC: UIViewController {
     fileprivate func setupTitleLabel() {
         stackView.addArrangedSubview(titleLabel)
         titleLabel.widthAnchor.constraint(equalTo: stackView.widthAnchor, multiplier: 1.0).isActive = true
+        titleLabel.heightAnchor.constraint(equalToConstant: 80).isActive = true
     }
     
     fileprivate func setupImageView() {
         stackView.addArrangedSubview(imageView)
         imageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+    }
+    
+    fileprivate func setupDarkViews() {
+        self.view.addSubview(darkStackView)
+        NSLayoutConstraint.activate([
+//            darkStackView.widthAnchor.constraint(equalTo: stackView.widthAnchor),
+            darkStackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 10),
+            darkStackView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10),
+            darkStackView.heightAnchor.constraint(equalToConstant: 50),
+//            darkStackView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6)
+        ])
+        darkStackView.addArrangedSubview(darkModeLabel)
+        NSLayoutConstraint.activate([
+        ])
+        darkStackView.addArrangedSubview(darkSwitch)
     }
     
 //MARK: Helpers
@@ -178,6 +223,11 @@ class LoginVC: UIViewController {
     
     @objc func handleDismissTap(_ gesture: UITapGestureRecognizer) { //if keyboard is up, dismiss keyboard, else dismiss popup
         self.view.endEditing(true)
+    }
+    
+    @objc func switchChanged() {
+        SettingsService.isDarkMode = darkSwitch.isOn ? true : false
+        updateColors()
     }
 }
 
