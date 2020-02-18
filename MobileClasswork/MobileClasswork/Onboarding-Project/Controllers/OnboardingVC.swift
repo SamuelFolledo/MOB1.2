@@ -85,9 +85,9 @@ class OnboardingVC: UIViewController {
     }
     
     fileprivate func setupPageViews() {
-        page1View = OnboardingPageView(color: .orange, pageImage: kMIGRAINEIMAGE.tint(with: .white), description: "PAGE 1!")
-        page2View = OnboardingPageView(color: .systemPink, pageImage: kMIGRAINEIMAGE.tint(with: .white), description: "PAGE 2!!")
-        page3View = OnboardingPageView(color: .purple, pageImage: kMIGRAINEIMAGE.tint(with: .white), description: "PAGE 3!!!!", isLastPage: true)
+        page1View = OnboardingPageView(color: .orange, pageImage: kMIGRAINEIMAGE.tint(with: .white), description: "Welcome to \(kAPPNAME)")
+        page2View = OnboardingPageView(color: .systemPink, pageImage: kPILLIMAGE.tint(with: .white), description: "Subscribe to your daily, weekly, or monthly medications and more")
+        page3View = OnboardingPageView(color: .purple, pageImage: kMIGRAINEIMAGE.tint(with: .white), description: "Let's get started", isLastPage: true)
         pages.append(contentsOf: [page1View, page2View, page3View])
         applyPageConstraints()
     }
