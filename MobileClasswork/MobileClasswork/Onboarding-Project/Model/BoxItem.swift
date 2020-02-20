@@ -12,4 +12,5 @@ struct BoxItem {
     let name: String
     let image: String
     let products: [Product]
+    var category: BoxCategoryIdentifier!
 }

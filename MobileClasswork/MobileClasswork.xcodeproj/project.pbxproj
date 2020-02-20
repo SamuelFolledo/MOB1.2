@@ -46,6 +46,7 @@
 		334ED2F723EC8BB7002B5FF4 /* PastBoxesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334ED2F623EC8BB7002B5FF4 /* PastBoxesVC.swift */; };
 		334ED2F923EC8BC1002B5FF4 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334ED2F823EC8BC1002B5FF4 /* LoginVC.swift */; };
 		334ED2FB23EC90A5002B5FF4 /* BoxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334ED2FA23EC90A5002B5FF4 /* BoxCell.swift */; };
+		3385A04623FE622500879E19 /* FlipAnimationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3385A04523FE622500879E19 /* FlipAnimationVC.swift */; };
 		338CF12B23FA772A0074A6FE /* FeaturedSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338CF12723FA77290074A6FE /* FeaturedSection.swift */; };
 		338CF12C23FA772A0074A6FE /* BasicGridSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338CF12823FA772A0074A6FE /* BasicGridSection.swift */; };
 		338CF12D23FA772A0074A6FE /* FavoritesSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338CF12923FA772A0074A6FE /* FavoritesSection.swift */; };
@@ -119,6 +120,7 @@
 		334ED2F623EC8BB7002B5FF4 /* PastBoxesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastBoxesVC.swift; sourceTree = "<group>"; };
 		334ED2F823EC8BC1002B5FF4 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		334ED2FA23EC90A5002B5FF4 /* BoxCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxCell.swift; sourceTree = "<group>"; };
+		3385A04523FE622500879E19 /* FlipAnimationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipAnimationVC.swift; sourceTree = "<group>"; };
 		338CF12723FA77290074A6FE /* FeaturedSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeaturedSection.swift; path = ../FeaturedSection.swift; sourceTree = "<group>"; };
 		338CF12823FA772A0074A6FE /* BasicGridSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BasicGridSection.swift; path = ../BasicGridSection.swift; sourceTree = "<group>"; };
 		338CF12923FA772A0074A6FE /* FavoritesSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoritesSection.swift; path = ../FavoritesSection.swift; sourceTree = "<group>"; };
@@ -450,6 +452,7 @@
 		33CA31B123E75692009AA3DF /* Playground */ = {
 			isa = PBXGroup;
 			children = (
+				3385A04523FE622500879E19 /* FlipAnimationVC.swift */,
 				33CA319E23E565AD009AA3DF /* Xib-Cell */,
 				33CA31B223E75772009AA3DF /* ChartsVC.swift */,
 			);
@@ -635,6 +638,7 @@
 				3397D76523E0BA40000C59D4 /* Day4OnboardingVC.swift in Sources */,
 				33459A2123F8FEFE002C13D5 /* PopupVC.swift in Sources */,
 				338CF12D23FA772A0074A6FE /* FavoritesSection.swift in Sources */,
+				3385A04623FE622500879E19 /* FlipAnimationVC.swift in Sources */,
 				33459A1F23F8FA74002C13D5 /* Day8VC.swift in Sources */,
 				33232DCB23F324DE00CF722D /* User.swift in Sources */,
 				33CA31A223E56A6F009AA3DF /* CollectionVC.swift in Sources */,

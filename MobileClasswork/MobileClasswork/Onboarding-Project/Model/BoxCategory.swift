@@ -8,9 +8,14 @@
 
 import UIKit
 
-enum BoxCategory: CaseIterable {
+struct BoxCategory {
+    var boxItems: [BoxItem]
+    var category: BoxCategoryIdentifier!
+}
+
+
+enum BoxCategoryIdentifier: CaseIterable {
     case medication, ointment, supplies, specialBox
-    
     var image: UIImage {
         switch self {
         case .medication:

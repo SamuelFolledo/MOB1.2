@@ -11,6 +11,6 @@ import Foundation
 struct Box {
     let name: String
     let date: String = "unknown date"
-    let items: [BoxItem]
     let category: BoxCategory
+//    let items: [BoxItem]
 }
