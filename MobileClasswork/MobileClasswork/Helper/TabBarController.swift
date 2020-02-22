@@ -9,22 +9,32 @@
 import UIKit
 
 class TabBarController: UITabBarController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupViewControllers()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setupViewControllers(){
+        let homeVC: HomeVC = HomeVC()
+        let newVC: NewBoxVC = NewBoxVC()
+        let historyVC: PastBoxesVC = PastBoxesVC()
+        let profileVC: ProfileVC = ProfileVC()
+        let navArray: [UINavigationController] = [
+            UINavigationController(rootViewController: homeVC),
+            UINavigationController(rootViewController: newVC),
+            UINavigationController(rootViewController: historyVC),
+            UINavigationController(rootViewController: profileVC),
+            
+        ]
+//        for continent in continents {
+//            let vc = ContinentVC()
+//            let navController = UINavigationController(rootViewController: vc)
+//            vc.continent = continent
+//            navArray.append(navController)
+//            vc.tabBarItem.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: -3, right: 0)
+////            viewControllers?.append(navController)
+//        }
+        viewControllers = navArray
     }
-    */
-
 }

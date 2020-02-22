@@ -77,6 +77,8 @@
 		33EF582A2400E3BD007803D1 /* Date+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EF58292400E3BD007803D1 /* Date+extensions.swift */; };
 		33EF582C2400E43B007803D1 /* PersistenceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EF582B2400E43B007803D1 /* PersistenceLayer.swift */; };
 		33EF582F2400F200007803D1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EF582E2400F200007803D1 /* TabBarController.swift */; };
+		33EF58312400F2EF007803D1 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EF58302400F2EF007803D1 /* ProfileVC.swift */; };
+		33EF58332400F4F0007803D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EF58322400F4F0007803D1 /* AppDelegate.swift */; };
 		D8D8C5B70C10677BD7F811E4 /* Pods_MobileClasswork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA09746C6CD68F4FBA90F065 /* Pods_MobileClasswork.framework */; };
 /* End PBXBuildFile section */
 
@@ -153,6 +155,8 @@
 		33EF58292400E3BD007803D1 /* Date+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+extensions.swift"; sourceTree = "<group>"; };
 		33EF582B2400E43B007803D1 /* PersistenceLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceLayer.swift; sourceTree = "<group>"; };
 		33EF582E2400F200007803D1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabBarController.swift; path = MobileClasswork/Helper/TabBarController.swift; sourceTree = SOURCE_ROOT; };
+		33EF58302400F2EF007803D1 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		33EF58322400F4F0007803D1 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C07075359D279D6BE5C21B45 /* Pods-MobileClasswork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileClasswork.release.xcconfig"; path = "Target Support Files/Pods-MobileClasswork/Pods-MobileClasswork.release.xcconfig"; sourceTree = "<group>"; };
 		E62FD77750DA319310924092 /* Pods-MobileClasswork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileClasswork.debug.xcconfig"; path = "Target Support Files/Pods-MobileClasswork/Pods-MobileClasswork.debug.xcconfig"; sourceTree = "<group>"; };
 		FA09746C6CD68F4FBA90F065 /* Pods_MobileClasswork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileClasswork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -199,6 +203,7 @@
 		3300542B23DA180400673C81 /* MobileClasswork */ = {
 			isa = PBXGroup;
 			children = (
+				33EF58322400F4F0007803D1 /* AppDelegate.swift */,
 				3300542E23DA180400673C81 /* SceneDelegate.swift */,
 				3329A62123E36C8C00A8FDB5 /* Main.storyboard */,
 				33CA31B123E75692009AA3DF /* Playground */,
@@ -232,11 +237,11 @@
 		3300544723DA285500673C81 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				33EF582B2400E43B007803D1 /* PersistenceLayer.swift */,
 				33459A2423F9C81A002C13D5 /* Service.swift */,
 				33459A2623F9F703002C13D5 /* SettingsService.swift */,
 				33CA31B523E79FAD009AA3DF /* Constants.swift */,
 				33CA31B423E79F9E009AA3DF /* Extensions */,
-				33EF582B2400E43B007803D1 /* PersistenceLayer.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -440,6 +445,7 @@
 				334ED2F623EC8BB7002B5FF4 /* PastBoxesVC.swift */,
 				33232DBD23F29D5500CF722D /* PastBoxesDetailVC.swift */,
 				33B2A17F23F52B6300AF03CA /* NewBoxVC.swift */,
+				33EF58302400F2EF007803D1 /* ProfileVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -630,6 +636,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33EF58312400F2EF007803D1 /* ProfileVC.swift in Sources */,
 				33232DC323F3207200CF722D /* Box.swift in Sources */,
 				338CF14323FA79210074A6FE /* FavoritesCell.swift in Sources */,
 				33EF582F2400F200007803D1 /* TabBarController.swift in Sources */,
@@ -641,6 +648,7 @@
 				33232DD023F3279300CF722D /* MyCollectionViewCell.swift in Sources */,
 				33232DCE23F3276600CF722D /* AnimatedCollectionVC.swift in Sources */,
 				334599F723F7D615002C13D5 /* UIView+extensions.swift in Sources */,
+				33EF58332400F4F0007803D1 /* AppDelegate.swift in Sources */,
 				33CA31B323E75772009AA3DF /* ChartsVC.swift in Sources */,
 				3329A61723E365A300A8FDB5 /* MyXibView.swift in Sources */,
 				33459A2923FA0BFF002C13D5 /* UIImageView+extensions.swift in Sources */,
