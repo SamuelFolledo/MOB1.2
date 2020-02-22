@@ -33,13 +33,14 @@ class LoginVC: UIViewController {
         let button: UIButton = UIButton(frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Login", for: .normal)
+        button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         return button
     }()
     lazy var skipButton: UIButton = {
         let button: UIButton = UIButton(frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Skip To Home", for: .normal)
-        
+        button.addTarget(self, action: #selector(skipButtonTapped), for: .touchUpInside)
         return button
     }()
     lazy var imageView: UIImageView = {
@@ -69,6 +70,21 @@ class LoginVC: UIViewController {
         stackView.distribution = .fill
         stackView.spacing = 20
         return stackView
+    }()
+    lazy var backButton: UIButton = {
+        let button: UIButton = UIButton(type: .custom)
+        button.translatesAutoresizingMaskIntoConstraints = false
+//        button.backgroundColor = .black
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .regular)
+        button.setTitleColor(SettingsService.darkGrayColor, for: .normal)
+//        button.setTitle("Back", for: .normal)
+        button.setImage(kBACKBUTTONIMAGE.withTintColor(SettingsService.darkGrayColor), for: .normal)
+        button.imageView?.contentMode = .scaleAspectFill //contentMode for buttons
+        button.contentMode = .left
+//        button.contentEdgeInsets = UIEdgeInsets(top: 0, left: -20, bottom: 0, right: 0)
+        button.contentHorizontalAlignment = .left //push contents to the left
+        button.addTarget(self, action: #selector(self.backButtonTapped), for: .touchUpInside)
+        return button
     }()
     lazy var darkStackView: UIStackView = {
         let stackView: UIStackView = UIStackView(frame: .zero)
@@ -150,6 +166,7 @@ class LoginVC: UIViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleDismissTap(_:)))
         self.view.addGestureRecognizer(tap)
         setupDarkViews()
+        setupBackButton()
         setupStackView()
         setupTitleLabel()
         setupImageView()
@@ -182,11 +199,9 @@ class LoginVC: UIViewController {
         stackView.addArrangedSubview(loginButton)
         loginButton.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier:  0.8).isActive = true
         loginButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         stackView.addArrangedSubview(skipButton)
         skipButton.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier:  0.8).isActive = true
         skipButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        skipButton.addTarget(self, action: #selector(skipButtonTapped), for: .touchUpInside)
     }
     
     fileprivate func setupTitleLabel() {
@@ -198,6 +213,16 @@ class LoginVC: UIViewController {
     fileprivate func setupImageView() {
         stackView.addArrangedSubview(imageView)
         imageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+    }
+    
+    fileprivate func setupBackButton() {
+        view.addSubview(backButton)
+        NSLayoutConstraint.activate([
+            backButton.centerYAnchor.constraint(equalTo: darkSwitch.centerYAnchor),
+            backButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 5),
+            backButton.heightAnchor.constraint(equalToConstant: 25),
+            backButton.widthAnchor.constraint(equalToConstant: 100),
+        ])
     }
     
     fileprivate func setupDarkViews() {
@@ -214,6 +239,10 @@ class LoginVC: UIViewController {
     }
     
 //MARK: Helpers
+    @objc func backButtonTapped() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     @objc func loginButtonTapped() {
         SettingsService.saveIsDarkMode()
         let vc: TabBarController = TabBarController()
