@@ -38,8 +38,8 @@ class TabBarController: UITabBarController {
         let historyNav = UINavigationController(rootViewController: PastBoxesVC())
         historyNav.tabBarItem = UITabBarItem(title: "History", image: kHISTORYIMAGE, tag: 2)
         let profileNav = UINavigationController(rootViewController: ProfileVC())
-        let navArray: [UINavigationController] = [ homeNav, newNav, historyNav, profileNav]
         profileNav.tabBarItem = UITabBarItem(title: "Profile", image: kPROFILEIMAGE, tag: 3)
+        let navArray: [UINavigationController] = [homeNav, newNav, historyNav, profileNav]
         viewControllers = navArray
     }
     
