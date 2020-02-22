@@ -10,8 +10,10 @@ import UIKit
 
 class ProfileVC: UIViewController {
 //MARK: Properties
-    
-//MARK: IBOutlets
+    lazy var settingsButton: UIBarButtonItem = {
+        let barButton: UIBarButtonItem = UIBarButtonItem()
+        return barButton
+    }()
     
 //MARK: App Life Cycle
     override func viewDidLoad() {
@@ -19,18 +21,33 @@ class ProfileVC: UIViewController {
         setupViews()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupNavigationBar()
+    }
+    
 //MARK: Navigation
     
 //MARK: Private Methods
     fileprivate func setupViews() {
         self.title = "My Profile"
-//        self.navigationController!.navigationBar.isTranslucent = false
     }
     
-//MARK: IBActions
+    fileprivate func setupNavigationBar() {
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.tintColor = SettingsService.grayColor //button color
+        self.title = "Past Boxes"
+        navigationController?.setStatusBarColor(backgroundColor: kMAINCOLOR)
+        settingsButton = UIBarButtonItem.navButton(self, action: #selector(settingsButtonTapped), image: kSETTINGSIMAGE)
+        navigationItem.rightBarButtonItem = settingsButton
+    }
     
 //MARK: Helpers
-    
+    @objc func settingsButtonTapped() {
+        let vc: PopupVC = PopupVC()
+        navigationController?.pushViewController(vc, animated: false) //push
+    }
 }
 
 //MARK: Extensions

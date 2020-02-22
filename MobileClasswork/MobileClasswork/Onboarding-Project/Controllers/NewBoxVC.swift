@@ -24,6 +24,11 @@ class NewBoxVC: UIViewController {
         collectionView.collectionViewLayout = flow
         return collectionView
     }()
+    
+    lazy var settingsButton: UIBarButtonItem = {
+        let barButton: UIBarButtonItem = UIBarButtonItem()
+        return barButton
+    }()
         
 //    var data: [String] = Array(repeating: "🦕", count: 10)
     var data: [Product] = []
@@ -33,7 +38,8 @@ class NewBoxVC: UIViewController {
         super.loadView()
         title = "New Box"
         view.addSubview(collectionView)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Update", style: .done, target: self, action: #selector(showOptions(controller:)))
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Update", style: .done, target: self, action: #selector(showOptions(controller:)))
+        setupNavigationBar()
     }
     
     override func viewDidLoad() {
@@ -43,6 +49,7 @@ class NewBoxVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setupNavigationBar()
         updateColors()
     }
     
@@ -56,6 +63,16 @@ class NewBoxVC: UIViewController {
         data.removeAll()
         data = kSAMPLEPRODUCTS
         data.shuffle()
+    }
+    
+    fileprivate func setupNavigationBar() {
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.tintColor = SettingsService.grayColor //button color
+        self.title = "Past Boxes"
+        navigationController?.setStatusBarColor(backgroundColor: kMAINCOLOR)
+        settingsButton = UIBarButtonItem.navButton(self, action: #selector(settingsButtonTapped), image: kSETTINGSIMAGE)
+        navigationItem.rightBarButtonItem = settingsButton
     }
     
 //MARK: Helpers
@@ -109,6 +126,10 @@ class NewBoxVC: UIViewController {
         self.present(alert, animated: true, completion:nil)
     }
     
+    @objc func settingsButtonTapped() {
+        let vc: PopupVC = PopupVC()
+        navigationController?.pushViewController(vc, animated: false) //push
+    }
 }
 
 
