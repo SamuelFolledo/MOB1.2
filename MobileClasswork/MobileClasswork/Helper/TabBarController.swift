@@ -20,10 +20,15 @@ class TabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTabBar()
+    }
+    
+    fileprivate func setupTabBar() {
+        self.delegate = self
         setupViewControllers()
     }
     
-    func setupViewControllers(){
+    fileprivate func setupViewControllers(){
         let homeNav = UINavigationController(rootViewController: HomeVC())
 //        homeNav.tabBarItem
         let newNav = UINavigationController(rootViewController: NewBoxVC())
@@ -34,6 +39,33 @@ class TabBarController: UITabBarController {
     }
     
     /// didSelect that can trigger animation
+//    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+//        // find index if the selected tab bar item, then find the corresponding view and get its image, the view position is offset by 1 because the first item is the background (at least in this case)
+//        guard let idx = tabBar.items?.firstIndex(of: item), tabBar.subviews.count > idx + 1, let imageView = tabBar.subviews[idx + 1].subviews.compactMap ({ $0 as? UIImageView }).first else {
+//            return
+//        }
+//        // animate the imageView
+//        imageView.layer.add(bounceAnimation, forKey: nil)
+//    }
+    
+//MARK: Helpers
+    
+}
+
+extension TabBarController: UITabBarControllerDelegate {
+///Adds a left or right sliding VC animation on tabbar tap
+    func tabBarController(_ tabBarController: UITabBarController, animationControllerForTransitionFrom fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        var fromIndex = 0
+        for vc in viewControllers! { //get the index of current index before transitioning
+            if vc == fromVC {
+                break
+            }
+            fromIndex += 1
+        }
+        return TransitioningObject(tabBarController: tabBarController, fromIndex: fromIndex)
+    }
+    
+/// didSelect that can bar item trigger animation
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         // find index if the selected tab bar item, then find the corresponding view and get its image, the view position is offset by 1 because the first item is the background (at least in this case)
         guard let idx = tabBar.items?.firstIndex(of: item), tabBar.subviews.count > idx + 1, let imageView = tabBar.subviews[idx + 1].subviews.compactMap ({ $0 as? UIImageView }).first else {
@@ -42,7 +74,4 @@ class TabBarController: UITabBarController {
         // animate the imageView
         imageView.layer.add(bounceAnimation, forKey: nil)
     }
-    
-//MARK: Helpers
-    
 }

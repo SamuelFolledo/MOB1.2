@@ -79,6 +79,7 @@
 		33EF582F2400F200007803D1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EF582E2400F200007803D1 /* TabBarController.swift */; };
 		33EF58312400F2EF007803D1 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EF58302400F2EF007803D1 /* ProfileVC.swift */; };
 		33EF58332400F4F0007803D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EF58322400F4F0007803D1 /* AppDelegate.swift */; };
+		33EF5835240125B6007803D1 /* TransitioningObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EF5834240125B6007803D1 /* TransitioningObject.swift */; };
 		D8D8C5B70C10677BD7F811E4 /* Pods_MobileClasswork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA09746C6CD68F4FBA90F065 /* Pods_MobileClasswork.framework */; };
 /* End PBXBuildFile section */
 
@@ -157,6 +158,7 @@
 		33EF582E2400F200007803D1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabBarController.swift; path = MobileClasswork/Helper/TabBarController.swift; sourceTree = SOURCE_ROOT; };
 		33EF58302400F2EF007803D1 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		33EF58322400F4F0007803D1 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		33EF5834240125B6007803D1 /* TransitioningObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TransitioningObject.swift; path = "MobileClasswork/Onboarding-Project/Controllers/TransitioningObject.swift"; sourceTree = SOURCE_ROOT; };
 		C07075359D279D6BE5C21B45 /* Pods-MobileClasswork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileClasswork.release.xcconfig"; path = "Target Support Files/Pods-MobileClasswork/Pods-MobileClasswork.release.xcconfig"; sourceTree = "<group>"; };
 		E62FD77750DA319310924092 /* Pods-MobileClasswork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileClasswork.debug.xcconfig"; path = "Target Support Files/Pods-MobileClasswork/Pods-MobileClasswork.debug.xcconfig"; sourceTree = "<group>"; };
 		FA09746C6CD68F4FBA90F065 /* Pods_MobileClasswork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileClasswork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -500,6 +502,7 @@
 			isa = PBXGroup;
 			children = (
 				33EF582E2400F200007803D1 /* TabBarController.swift */,
+				33EF5834240125B6007803D1 /* TransitioningObject.swift */,
 			);
 			path = "New Group";
 			sourceTree = "<group>";
@@ -652,6 +655,7 @@
 				33CA31B323E75772009AA3DF /* ChartsVC.swift in Sources */,
 				3329A61723E365A300A8FDB5 /* MyXibView.swift in Sources */,
 				33459A2923FA0BFF002C13D5 /* UIImageView+extensions.swift in Sources */,
+				33EF5835240125B6007803D1 /* TransitioningObject.swift in Sources */,
 				338CF14123FA79210074A6FE /* TitleCell.swift in Sources */,
 				334599E823F7B099002C13D5 /* UnderlinedTextField.swift in Sources */,
 				3397D76323E0AB62000C59D4 /* CodingConstraintVC.swift in Sources */,
