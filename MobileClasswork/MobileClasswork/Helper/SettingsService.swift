@@ -25,4 +25,8 @@ class SettingsService {
     static var darkGrayColor: UIColor {
         return isDarkMode ? .lightGray : kOFFBLACKCOLOR
     }
+    static func saveIsDarkMode() {
+        UserDefaults.standard.set(isDarkMode, forKey: "isDarkMode")
+        UserDefaults.standard.synchronize()
+    }
 }
