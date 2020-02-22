@@ -110,12 +110,16 @@ class LoginVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true
+        let isDarkMode = UserDefaults.standard.bool(forKey: "isDarkMode")
+        darkSwitch.isOn = isDarkMode
         updateColors()
         setupKeyboardNotifications()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
+        self.tabBarController?.tabBar.isHidden = false
         removeKeyboardObervers()
     }
     
@@ -214,13 +218,15 @@ class LoginVC: UIViewController {
     
 //MARK: Helpers
     @objc func loginButtonTapped() {
-        let homeVC: HomeVC = HomeVC()
-        self.navigationController?.initRootViewController(vc: homeVC)
+        SettingsService.saveIsDarkMode()
+        let vc: TabBarController = TabBarController()
+        self.navigationController?.initRootViewController(vc: vc)
     }
     
     @objc func skipButtonTapped() {
-        let homeVC: HomeVC = HomeVC()
-        self.navigationController?.initRootViewController(vc: homeVC)
+        SettingsService.saveIsDarkMode()
+        let vc: TabBarController = TabBarController()
+        self.navigationController?.initRootViewController(vc: vc)
     }
     
     @objc func handleDismissTap(_ gesture: UITapGestureRecognizer) { //if keyboard is up, dismiss keyboard, else dismiss popup
