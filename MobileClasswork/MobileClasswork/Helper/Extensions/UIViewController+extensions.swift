@@ -9,10 +9,16 @@
 import UIKit
 
 extension UIViewController {
+    /// method that instantiate a xib file given a string name using Generic
     static func loadFromNib() -> Self {
         func instantiateFromNib<T: UIViewController>() -> T {
             return T.init(nibName: String(describing: T.self), bundle: nil)
         }
         return instantiateFromNib()
+    }
+    
+    /// method that instantiate a xib file given a string name
+    static func instantiate() -> Self {
+      return self.init(nibName: String(describing: self), bundle: nil)
     }
 }

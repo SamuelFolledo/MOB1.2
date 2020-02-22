@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3300542D23DA180400673C81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3300542C23DA180400673C81 /* AppDelegate.swift */; };
 		3300542F23DA180400673C81 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3300542E23DA180400673C81 /* SceneDelegate.swift */; };
 		3300543123DA180400673C81 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3300543023DA180400673C81 /* ViewController.swift */; };
 		3300543423DA180400673C81 /* Day1.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3300543223DA180400673C81 /* Day1.storyboard */; };
@@ -75,12 +74,13 @@
 		33CA31B623E79FAD009AA3DF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CA31B523E79FAD009AA3DF /* Constants.swift */; };
 		33CA31C423E9F060009AA3DF /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CA31C323E9F060009AA3DF /* OnboardingVC.swift */; };
 		33CA31C723E9F090009AA3DF /* OnboardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CA31C623E9F090009AA3DF /* OnboardingModel.swift */; };
+		33EF582A2400E3BD007803D1 /* Date+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EF58292400E3BD007803D1 /* Date+extensions.swift */; };
+		33EF582C2400E43B007803D1 /* PersistenceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EF582B2400E43B007803D1 /* PersistenceLayer.swift */; };
 		D8D8C5B70C10677BD7F811E4 /* Pods_MobileClasswork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA09746C6CD68F4FBA90F065 /* Pods_MobileClasswork.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3300542923DA180400673C81 /* MobileClasswork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileClasswork.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3300542C23DA180400673C81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3300542E23DA180400673C81 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3300543023DA180400673C81 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3300543323DA180400673C81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Day1.storyboard; sourceTree = "<group>"; };
@@ -149,6 +149,8 @@
 		33CA31B523E79FAD009AA3DF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		33CA31C323E9F060009AA3DF /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
 		33CA31C623E9F090009AA3DF /* OnboardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModel.swift; sourceTree = "<group>"; };
+		33EF58292400E3BD007803D1 /* Date+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+extensions.swift"; sourceTree = "<group>"; };
+		33EF582B2400E43B007803D1 /* PersistenceLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceLayer.swift; sourceTree = "<group>"; };
 		C07075359D279D6BE5C21B45 /* Pods-MobileClasswork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileClasswork.release.xcconfig"; path = "Target Support Files/Pods-MobileClasswork/Pods-MobileClasswork.release.xcconfig"; sourceTree = "<group>"; };
 		E62FD77750DA319310924092 /* Pods-MobileClasswork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileClasswork.debug.xcconfig"; path = "Target Support Files/Pods-MobileClasswork/Pods-MobileClasswork.debug.xcconfig"; sourceTree = "<group>"; };
 		FA09746C6CD68F4FBA90F065 /* Pods_MobileClasswork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileClasswork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -195,7 +197,7 @@
 		3300542B23DA180400673C81 /* MobileClasswork */ = {
 			isa = PBXGroup;
 			children = (
-				3300542C23DA180400673C81 /* AppDelegate.swift */,
+				33EF58282400E2F0007803D1 /* New Group */,
 				3300542E23DA180400673C81 /* SceneDelegate.swift */,
 				3329A62123E36C8C00A8FDB5 /* Main.storyboard */,
 				33CA31B123E75692009AA3DF /* Playground */,
@@ -233,6 +235,7 @@
 				33459A2623F9F703002C13D5 /* SettingsService.swift */,
 				33CA31B523E79FAD009AA3DF /* Constants.swift */,
 				33CA31B423E79F9E009AA3DF /* Extensions */,
+				33EF582B2400E43B007803D1 /* PersistenceLayer.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -472,6 +475,7 @@
 				334599F823F8AC3B002C13D5 /* UIColor+extensions.swift */,
 				33459A2223F920CD002C13D5 /* UIBarButton+extensions.swift */,
 				33459A2823FA0BFF002C13D5 /* UIImageView+extensions.swift */,
+				33EF58292400E3BD007803D1 /* Date+extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -482,6 +486,13 @@
 				334ED2F523EC89A6002B5FF4 /* Model */,
 			);
 			path = "Day5-Onboarding";
+			sourceTree = "<group>";
+		};
+		33EF58282400E2F0007803D1 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		DFA0A6888436AECE8A78421D /* Pods */ = {
@@ -635,6 +646,7 @@
 				33CA31C423E9F060009AA3DF /* OnboardingVC.swift in Sources */,
 				33232DBE23F29D5500CF722D /* PastBoxesDetailVC.swift in Sources */,
 				33B2A18423F52F4400AF03CA /* NewBoxCellFlowLayout.swift in Sources */,
+				33EF582C2400E43B007803D1 /* PersistenceLayer.swift in Sources */,
 				3397D76523E0BA40000C59D4 /* Day4OnboardingVC.swift in Sources */,
 				33459A2123F8FEFE002C13D5 /* PopupVC.swift in Sources */,
 				338CF12D23FA772A0074A6FE /* FavoritesSection.swift in Sources */,
@@ -646,6 +658,7 @@
 				33CA31B623E79FAD009AA3DF /* Constants.swift in Sources */,
 				33A8BFCD23ECABBC00056A0F /* UIButton+extensions.swift in Sources */,
 				33A8BFC623ECA0BD00056A0F /* UINavigtaionController+extensions.swift in Sources */,
+				33EF582A2400E3BD007803D1 /* Date+extensions.swift in Sources */,
 				3300544623DA217300673C81 /* UIViewController+extensions.swift in Sources */,
 				3329A61E23E36B7D00A8FDB5 /* Onboarding.swift in Sources */,
 				3300544A23DA314100673C81 /* UIScrollView+extensions.swift in Sources */,
@@ -662,7 +675,6 @@
 				338CF12B23FA772A0074A6FE /* FeaturedSection.swift in Sources */,
 				338CF13E23FA79210074A6FE /* GridCell.swift in Sources */,
 				3300544323DA188F00673C81 /* ScrollVC.swift in Sources */,
-				3300542D23DA180400673C81 /* AppDelegate.swift in Sources */,
 				334599EF23F7C32F002C13D5 /* UITextField+extensions.swift in Sources */,
 				334599F923F8AC3B002C13D5 /* UIColor+extensions.swift in Sources */,
 				33232DD223F327BD00CF722D /* MyFlowLayout.swift in Sources */,
