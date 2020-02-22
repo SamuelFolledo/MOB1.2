@@ -230,8 +230,7 @@ class PopupVC: UIViewController {
     
     fileprivate func saveSettingDarkMode(didSave: Bool) {
         if isDarkMode != darkSwitch.isOn && didSave { //if first dark mode didnt change and user saved
-            UserDefaults.standard.set(darkSwitch.isOn ? true : false, forKey: "isDarkMode")
-            UserDefaults.standard.synchronize()
+            SettingsService.saveIsDarkMode()
         } else { //reset isDarkMode
             SettingsService.isDarkMode = isDarkMode
         }
