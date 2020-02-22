@@ -9,6 +9,29 @@
 import UIKit
 
 extension UINavigationController {
+/// MARK: Samuel's initRootVC and addTransition implementation
+    func initRootViewController(vc: UIViewController, fromRight: Bool = true, duration: CFTimeInterval = 0.3) {
+        self.addPushTransition(fromRight: fromRight, duration: duration)
+        self.viewControllers.removeAll()
+        self.pushViewController(vc, animated: false)
+        self.popToRootViewController(animated: false)
+    }
+    
+    /**
+     It adds the animation of navigation flow.
+     - parameter type: Bool, either fromRight or fromLeft transition
+     - parameter duration: CFTimeInterval, duration of animation
+     */
+    private func addPushTransition(fromRight: Bool = true, duration: CFTimeInterval = 0.3) { //kCATransitionPush, kCATransitionFade, kCATransitionFromLeft,  kCATransitionFromRight
+        let transition = CATransition()
+        transition.duration = duration
+        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        transition.type = CATransitionType.push
+        transition.subtype = fromRight ? .fromRight : .fromLeft //left or right transition
+        self.view.layer.add(transition, forKey: nil)
+    }
+
+/// MARK: Adriana's initRootVC and addTransition implementation
     /**
      It removes all view controllers from navigation controller then set the new root view controller and it pops.
 
@@ -27,11 +50,14 @@ extension UINavigationController {
      - parameter type: kCATransitionType, it means style of animation
      - parameter duration: CFTimeInterval, duration of animation
      */
-    private func addTransition(transitionType type: String = "kCATransitionFade", duration: CFTimeInterval = 0.3) {
+    private func addTransition(transitionType type: String = "kCATransitionFade", duration: CFTimeInterval = 0.3) { //kCATransitionPush, kCATransitionFade, kCATransitionFromLeft,  kCATransitionFromRight
         let transition = CATransition()
         transition.duration = duration
         transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
-        transition.type = CATransitionType(rawValue: type)
+        transition.type = CATransitionType(rawValue: type) //MARK: Uncomment this if you want to specify the transitionType
+        //Set transition's type to push and from right subType
+//        transition.type = CATransitionType.push
+//        transition.subtype = .fromRight
         self.view.layer.add(transition, forKey: nil)
     }
     
