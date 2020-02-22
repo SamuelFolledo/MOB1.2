@@ -15,12 +15,12 @@ class OnboardingPageView: UIView {
     var isLastPage: Bool!
     
 //MARK: Properties Views
-    let imageView: UIImageView = {
+    lazy var imageView: UIImageView = {
         let imageView: UIImageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
-    let descriptionLabel: UILabel = {
+    lazy var descriptionLabel: UILabel = {
         let label: UILabel = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 28, weight: .bold)
@@ -30,13 +30,23 @@ class OnboardingPageView: UIView {
         label.textAlignment = .center
         return label
     }()
-    let continueButton: UIButton = {
+    lazy var continueButton: UIButton = {
         let button: UIButton = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Continue", for: .normal)
         return button
     }()
-    let stackView: UIStackView = {
+    lazy var titleLabel: UILabel = {
+        let label: UILabel = UILabel(frame: .zero)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 32, weight: .black)
+        label.sizeToFit()
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        label.text = kAPPNAME
+        return label
+    }()
+    lazy var stackView: UIStackView = {
         let stackView: UIStackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
@@ -78,12 +88,13 @@ class OnboardingPageView: UIView {
         self.addSubview(stackView)
         NSLayoutConstraint.activate([
             stackView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.8),
-            stackView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.7),
+//            stackView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.7),
             stackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 100),
             stackView.centerXAnchor.constraint(equalTo: self.centerXAnchor)
 //            stackView.contentHuggingPriority(for: <#T##NSLayoutConstraint.Axis#>)
 //            stackView.contentCompressionResistancePriority(for: <#T##NSLayoutConstraint.Axis#>)
         ])
+        setupTitleLabel()
         stackView.addArrangedSubview(imageView)
         imageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
         stackView.addArrangedSubview(descriptionLabel)
@@ -92,6 +103,12 @@ class OnboardingPageView: UIView {
         continueButton.isHidden = self.isLastPage ? false : true //if it is the last page then dont hide it
         continueButton.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier:  0.8).isActive = true
         continueButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+    }
+    
+    fileprivate func setupTitleLabel() {
+        stackView.addArrangedSubview(titleLabel) //just to make it the same size and look as the loginVC
+        titleLabel.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        titleLabel.alpha = 0.0
     }
     
     fileprivate func setupBackgroundLayer() {
