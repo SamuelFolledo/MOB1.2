@@ -222,10 +222,9 @@ class PopupVC: UIViewController {
             self.view.alpha = 0.0;
         }, completion:{(finished : Bool)  in
             if (finished) {
-                self.view.removeFromSuperview()
-                self.navigationController?.popToRootViewController(animated: true)
-//                self.navigationController?.popViewController(animated: false)
-//                self.dismiss(animated: true, completion: nil)
+//                self.view.removeFromSuperview() //was causing bug before
+//                self.navigationController?.popToRootViewController(animated: false)
+                self.navigationController?.popViewController(animated: false)
             }
         });
     }

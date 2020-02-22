@@ -145,7 +145,6 @@ class LoginVC: UIViewController {
     }
     
     fileprivate func setupViews() {
-        self.navigationController?.initRootViewController(vc: self)
         self.navigationController?.isNavigationBarHidden = true
         self.view.backgroundColor = kOFFWHITECOLOR
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleDismissTap(_:)))
