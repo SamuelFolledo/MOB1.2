@@ -23,7 +23,7 @@ extension UIButton {
     }
     
     func isWhiteButton() {
-        self.backgroundColor = SettingsService.whiteColor
+        self.backgroundColor = kOFFWHITECOLOR
         self.titleLabel?.font = .systemFont(ofSize: 24, weight: .medium)
         self.setTitleColor(kOFFBLACKCOLOR, for: .normal)
         self.layer.cornerRadius = 10
