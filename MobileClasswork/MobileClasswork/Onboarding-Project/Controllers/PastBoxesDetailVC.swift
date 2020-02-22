@@ -44,7 +44,7 @@ class PastBoxesDetailVC: UIViewController {
         setupTableView()
     }
     
-    func setupTableView(){
+    fileprivate func setupTableView(){
         table.delegate = self
         table.dataSource = self
         self.view.addSubview(table)
