@@ -49,6 +49,7 @@ class PastBoxesVC: UIViewController {
     fileprivate func updateColors() {
         view.backgroundColor = SettingsService.whiteColor
         table.backgroundColor = SettingsService.whiteColor
+        table.reloadData() //update cell colors
         self.tabBarController?.isMainTabBar()
     }
     
@@ -73,7 +74,6 @@ class PastBoxesVC: UIViewController {
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.tintColor = SettingsService.grayColor //button color
-//        self.navigationController?.title = "Past Boxes"
         self.navigationItem.largeTitleDisplayMode = .always
         navigationController?.setStatusBarColor(backgroundColor: kMAINCOLOR)
         settingsButton = UIBarButtonItem.navButton(self, action: #selector(settingsButtonTapped), image: kSETTINGSIMAGE)
@@ -106,6 +106,7 @@ extension PastBoxesVC: UITableViewDataSource {
         cell.boxLabel.text = months[indexPath.row]
         cell.backgroundColor = SettingsService.whiteColor
         cell.boxLabel.textColor = SettingsService.darkGrayColor
+        cell.boxImageView.image = kMIGRAINEIMAGE.tint(with: SettingsService.darkGrayColor)
         cell.selectionStyle = .none
         return cell
     }
