@@ -148,6 +148,7 @@ class PopupVC: UIViewController {
         logoutButton.isBlackButton()
         cancelButton.isClearButton()
         saveButton.isMainButton()
+        self.tabBarController?.isMainTabBar()
     }
     
     fileprivate func setupViews() {
