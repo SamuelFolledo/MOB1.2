@@ -9,20 +9,15 @@
 import UIKit
 
 extension UINavigationController {
-/// MARK: Samuel's initRootVC and addTransition implementation
+/// reset rootVC with left or right push transition
     func initRootViewController(vc: UIViewController, fromRight: Bool = true, duration: CFTimeInterval = 0.3) {
         self.addPushTransition(fromRight: fromRight, duration: duration)
         self.viewControllers.removeAll()
         self.pushViewController(vc, animated: false)
         self.popToRootViewController(animated: false)
     }
-    
-    /**
-     It adds the animation of navigation flow.
-     - parameter type: Bool, either fromRight or fromLeft transition
-     - parameter duration: CFTimeInterval, duration of animation
-     */
-    private func addPushTransition(fromRight: Bool = true, duration: CFTimeInterval = 0.3) { //kCATransitionPush, kCATransitionFade, kCATransitionFromLeft,  kCATransitionFromRight
+/// add a left or right push transition
+    private func addPushTransition(fromRight: Bool = true, duration: CFTimeInterval = 0.3) {
         let transition = CATransition()
         transition.duration = duration
         transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
