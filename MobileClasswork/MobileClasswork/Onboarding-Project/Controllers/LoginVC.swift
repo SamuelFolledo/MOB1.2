@@ -74,7 +74,6 @@ class LoginVC: UIViewController {
     lazy var backButton: UIButton = {
         let button: UIButton = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
-//        button.backgroundColor = .black
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .regular)
         button.setTitleColor(SettingsService.darkGrayColor, for: .normal)
 //        button.setTitle("Back", for: .normal)
@@ -126,6 +125,10 @@ class LoginVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.prefersLargeTitles = false
+        if self == self.navigationController?.viewControllers[0] { //if loginVC is the rootVC, hide the backButton
+            backButton.isHidden = true
+        }
         self.tabBarController?.tabBar.isHidden = true
         let isDarkMode = UserDefaults.standard.bool(forKey: "isDarkMode")
         darkSwitch.isOn = isDarkMode
@@ -158,6 +161,7 @@ class LoginVC: UIViewController {
         passwordTextField.tintColor = SettingsService.darkGrayColor
         passwordTextField.textColor = SettingsService.darkGrayColor
         imageView.image = kMIGRAINEIMAGE.tint(with: SettingsService.darkGrayColor)
+        backButton.setImage(kBACKBUTTONIMAGE.withTintColor(SettingsService.darkGrayColor), for: .normal)
     }
     
     fileprivate func setupViews() {
@@ -179,7 +183,7 @@ class LoginVC: UIViewController {
         NSLayoutConstraint.activate([
             stackView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.8),
             stackView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 100),
-            stackView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -50),
+            stackView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -100),
             stackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
         ])
     }
@@ -246,13 +250,13 @@ class LoginVC: UIViewController {
     @objc func loginButtonTapped() {
         SettingsService.saveIsDarkMode()
         let vc: TabBarController = TabBarController()
-        self.navigationController?.initRootViewController(vc: vc, fromRight: true)
+        self.navigationController?.initRootVC(vc: vc, fromRight: true)
     }
     
     @objc func skipButtonTapped() {
         SettingsService.saveIsDarkMode()
         let vc: TabBarController = TabBarController()
-        self.navigationController?.initRootViewController(vc: vc, fromRight: true)
+        self.navigationController?.initRootVC(vc: vc, fromRight: true)
     }
     
     @objc func handleDismissTap(_ gesture: UITapGestureRecognizer) { //if keyboard is up, dismiss keyboard, else dismiss popup

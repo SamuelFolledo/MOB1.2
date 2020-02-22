@@ -15,7 +15,6 @@ class OnboardingVC: UIViewController {
     var currentPage: Int { //tell which page is currently being viewed based on the contentOffset of the UIScrollView
         get {
             let page = Int(scrollView.contentOffset.x / view.bounds.size.width)
-            print("PAGE = \(page)")
             return page
         }
     }
@@ -67,7 +66,7 @@ class OnboardingVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         pageControl.numberOfPages = self.numberOfPages
-        pageControl.currentPage = 0
+        pageControl.currentPage = currentPage
     }
     
 //MARK: Private methods
@@ -133,9 +132,9 @@ class OnboardingVC: UIViewController {
     
 //MARK: Helpers
     @objc func continueButtonTapped() {
-        let loginVC: LoginVC = LoginVC()
-        self.navigationController?.initRootViewController(vc: loginVC, fromRight: true)
-//        self.navigationController?.initRootViewController(vc: loginVC, transitionType: "kCATransitionFromLeft")
+        let vc: LoginVC = LoginVC()
+        navigationController?.pushViewController(vc, animated: true)
+//        self.navigationController?.initRootVC(vc: vc, fromRight: true)
     }
 }
 
