@@ -36,6 +36,10 @@ let kSTARIMAGE: UIImage = UIImage(named: "star")!
 let kSTARFILLEDIMAGE: UIImage = UIImage(named: "starFilled")!
 let kMIGRAINEIMAGE: UIImage = UIImage(named: "migraine")!
 let kSETTINGSIMAGE: UIImage = UIImage(named: "settings")!
+let kHOMEIMAGE: UIImage = UIImage(named: "home")!
+let kNEWIMAGE: UIImage = UIImage(named: "new")!
+let kHISTORYIMAGE: UIImage = UIImage(named: "history")!
+let kPROFILEIMAGE: UIImage = UIImage(named: "profile")!
 
 //Box Categories
 let kMEDICATIONSIMAGE: UIImage = UIImage(named: "medications")!
