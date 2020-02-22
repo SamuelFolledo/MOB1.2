@@ -40,6 +40,7 @@ let kHOMEIMAGE: UIImage = UIImage(named: "home")!
 let kNEWIMAGE: UIImage = UIImage(named: "new")!
 let kHISTORYIMAGE: UIImage = UIImage(named: "history")!
 let kPROFILEIMAGE: UIImage = UIImage(named: "profile")!
+let kBACKBUTTONIMAGE: UIImage = UIImage(named: "backButton")!
 
 //Box Categories
 let kMEDICATIONSIMAGE: UIImage = UIImage(named: "medications")!
