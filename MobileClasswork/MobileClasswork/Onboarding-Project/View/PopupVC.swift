@@ -223,7 +223,9 @@ class PopupVC: UIViewController {
         }, completion:{(finished : Bool)  in
             if (finished) {
                 self.view.removeFromSuperview()
-                self.navigationController?.popViewController(animated: false)
+                self.navigationController?.popToRootViewController(animated: true)
+//                self.navigationController?.popViewController(animated: false)
+//                self.dismiss(animated: true, completion: nil)
             }
         });
     }
