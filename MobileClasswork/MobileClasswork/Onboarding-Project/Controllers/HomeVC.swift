@@ -10,34 +10,31 @@ import UIKit
 
 class HomeVC: UIViewController {
 //MARK: Properties
-    
+    lazy var sections: [Section] = [
+        TitleSection(title: "Featured Categories"),
+        FeaturedSection(),
+        TitleSection(title: "Last Month's Favorites"),
+        FavoritesSection()
+    ]
 //MARK: Properties Views
-    lazy var stackView: UIStackView = {
-        let stackView: UIStackView = UIStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .vertical
-        stackView.alignment = .center
-        stackView.distribution = .fillEqually
-        stackView.spacing = 20
-        return stackView
+    lazy var collectionView: UICollectionView = {
+        let collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: collectionViewLayout)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.backgroundColor = UIColor.white
+        collectionView.register(UINib(nibName: "TitleCell", bundle: .main), forCellWithReuseIdentifier: TitleCell.identifier)
+        collectionView.register(UINib(nibName: "FeaturedCell", bundle: .main), forCellWithReuseIdentifier: FeaturedCell.identifier)
+        collectionView.register(UINib(nibName: "FavoritesCell", bundle: .main), forCellWithReuseIdentifier: FavoritesCell.identifier)
+        collectionView.register(UINib(nibName: "GridCell", bundle: .main), forCellWithReuseIdentifier: GridCell.identifier)
+        return collectionView
     }()
-    lazy var newBoxButton: UIButton = {
-        let button: UIButton = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("New Box", for: .normal)
-        return button
-    }()
-    lazy var pastBoxesButton: UIButton = {
-        let button: UIButton = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Past Boxes", for: .normal)
-        return button
-    }()
-    lazy var profileButton: UIButton = {
-        let button: UIButton = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Profile", for: .normal)
-        return button
+    lazy var collectionViewLayout: UICollectionViewLayout = {
+        var sections = self.sections
+        let layout = UICollectionViewCompositionalLayout { (sectionIndex, environment) -> NSCollectionLayoutSection? in
+            return sections[sectionIndex].layoutSection()
+        }
+        return layout
     }()
     lazy var settingsButton: UIBarButtonItem = {
         let barButton: UIBarButtonItem = UIBarButtonItem()
@@ -69,44 +66,21 @@ class HomeVC: UIViewController {
 //MARK: Private Methods
     fileprivate func updateColors() {
         view.backgroundColor = SettingsService.whiteColor
-        newBoxButton.isMainButton()
-        pastBoxesButton.isMainButton()
-        profileButton.isMainButton()
         self.tabBarController?.isMainTabBar()
     }
     
     fileprivate func setupViews() {
-        self.view.addSubview(stackView)
-        NSLayoutConstraint.activate([
-            stackView.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.8),
-            stackView.heightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.8),
-            stackView.centerYAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerYAnchor),
-            stackView.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor)
-        ])
-        setupStackView()
-        setupButtons()
+        setupCollectionView()
     }
     
-    fileprivate func setupStackView() {
-        self.view.addSubview(stackView)
+    fileprivate func setupCollectionView() {
+        self.view.addSubview(collectionView)
         NSLayoutConstraint.activate([
-            stackView.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.8),
-            stackView.heightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.8),
-            stackView.centerYAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerYAnchor),
-            stackView.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor)
+            collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor)
         ])
-    }
-    
-    fileprivate func setupButtons() {
-        stackView.addArrangedSubview(newBoxButton)
-        newBoxButton.widthAnchor.constraint(equalTo: stackView.widthAnchor, multiplier:  0.8).isActive = true
-        newBoxButton.addTarget(self, action: #selector(newButtonTapped), for: .touchUpInside)
-        stackView.addArrangedSubview(pastBoxesButton)
-        pastBoxesButton.widthAnchor.constraint(equalTo: newBoxButton.widthAnchor).isActive = true
-        pastBoxesButton.addTarget(self, action: #selector(pastButtonTapped), for: .touchUpInside)
-        stackView.addArrangedSubview(profileButton)
-        profileButton.widthAnchor.constraint(equalTo: newBoxButton.widthAnchor).isActive = true
-        profileButton.addTarget(self, action: #selector(profileButtonTapped), for: .touchUpInside)
     }
     
     fileprivate func setupNavigationBar() {
@@ -142,3 +116,18 @@ class HomeVC: UIViewController {
 }
 
 //MARK: Extensions
+extension HomeVC: UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        sections.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        sections[section].numberOfItems
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        sections[indexPath.section].configureCell(collectionView: collectionView, indexPath: indexPath)
+    }
+}
+
+extension HomeVC: UICollectionViewDelegate {}
