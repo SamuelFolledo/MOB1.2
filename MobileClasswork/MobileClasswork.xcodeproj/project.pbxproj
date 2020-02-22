@@ -80,6 +80,7 @@
 		33EF58312400F2EF007803D1 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EF58302400F2EF007803D1 /* ProfileVC.swift */; };
 		33EF58332400F4F0007803D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EF58322400F4F0007803D1 /* AppDelegate.swift */; };
 		33EF5835240125B6007803D1 /* TransitioningObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EF5834240125B6007803D1 /* TransitioningObject.swift */; };
+		33EF58372401BE2A007803D1 /* UITabBarController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EF58362401BE2A007803D1 /* UITabBarController+extensions.swift */; };
 		D8D8C5B70C10677BD7F811E4 /* Pods_MobileClasswork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA09746C6CD68F4FBA90F065 /* Pods_MobileClasswork.framework */; };
 /* End PBXBuildFile section */
 
@@ -159,6 +160,7 @@
 		33EF58302400F2EF007803D1 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		33EF58322400F4F0007803D1 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33EF5834240125B6007803D1 /* TransitioningObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TransitioningObject.swift; path = "MobileClasswork/Onboarding-Project/Controllers/TransitioningObject.swift"; sourceTree = SOURCE_ROOT; };
+		33EF58362401BE2A007803D1 /* UITabBarController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarController+extensions.swift"; sourceTree = "<group>"; };
 		C07075359D279D6BE5C21B45 /* Pods-MobileClasswork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileClasswork.release.xcconfig"; path = "Target Support Files/Pods-MobileClasswork/Pods-MobileClasswork.release.xcconfig"; sourceTree = "<group>"; };
 		E62FD77750DA319310924092 /* Pods-MobileClasswork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileClasswork.debug.xcconfig"; path = "Target Support Files/Pods-MobileClasswork/Pods-MobileClasswork.debug.xcconfig"; sourceTree = "<group>"; };
 		FA09746C6CD68F4FBA90F065 /* Pods_MobileClasswork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileClasswork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -486,6 +488,7 @@
 				33459A2223F920CD002C13D5 /* UIBarButton+extensions.swift */,
 				33459A2823FA0BFF002C13D5 /* UIImageView+extensions.swift */,
 				33EF58292400E3BD007803D1 /* Date+extensions.swift */,
+				33EF58362401BE2A007803D1 /* UITabBarController+extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -686,6 +689,7 @@
 				33459A2723F9F703002C13D5 /* SettingsService.swift in Sources */,
 				3300543123DA180400673C81 /* ViewController.swift in Sources */,
 				334ED2F923EC8BC1002B5FF4 /* LoginVC.swift in Sources */,
+				33EF58372401BE2A007803D1 /* UITabBarController+extensions.swift in Sources */,
 				33232DC023F2A3B900CF722D /* BoxDetailCell.swift in Sources */,
 				33CA31C723E9F090009AA3DF /* OnboardingModel.swift in Sources */,
 				338CF12B23FA772A0074A6FE /* FeaturedSection.swift in Sources */,
