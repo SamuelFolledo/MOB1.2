@@ -76,6 +76,7 @@
 		33CA31C723E9F090009AA3DF /* OnboardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CA31C623E9F090009AA3DF /* OnboardingModel.swift */; };
 		33EF582A2400E3BD007803D1 /* Date+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EF58292400E3BD007803D1 /* Date+extensions.swift */; };
 		33EF582C2400E43B007803D1 /* PersistenceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EF582B2400E43B007803D1 /* PersistenceLayer.swift */; };
+		33EF582F2400F200007803D1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EF582E2400F200007803D1 /* TabBarController.swift */; };
 		D8D8C5B70C10677BD7F811E4 /* Pods_MobileClasswork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA09746C6CD68F4FBA90F065 /* Pods_MobileClasswork.framework */; };
 /* End PBXBuildFile section */
 
@@ -151,6 +152,7 @@
 		33CA31C623E9F090009AA3DF /* OnboardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModel.swift; sourceTree = "<group>"; };
 		33EF58292400E3BD007803D1 /* Date+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+extensions.swift"; sourceTree = "<group>"; };
 		33EF582B2400E43B007803D1 /* PersistenceLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceLayer.swift; sourceTree = "<group>"; };
+		33EF582E2400F200007803D1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabBarController.swift; path = MobileClasswork/Helper/TabBarController.swift; sourceTree = SOURCE_ROOT; };
 		C07075359D279D6BE5C21B45 /* Pods-MobileClasswork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileClasswork.release.xcconfig"; path = "Target Support Files/Pods-MobileClasswork/Pods-MobileClasswork.release.xcconfig"; sourceTree = "<group>"; };
 		E62FD77750DA319310924092 /* Pods-MobileClasswork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileClasswork.debug.xcconfig"; path = "Target Support Files/Pods-MobileClasswork/Pods-MobileClasswork.debug.xcconfig"; sourceTree = "<group>"; };
 		FA09746C6CD68F4FBA90F065 /* Pods_MobileClasswork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileClasswork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -197,7 +199,6 @@
 		3300542B23DA180400673C81 /* MobileClasswork */ = {
 			isa = PBXGroup;
 			children = (
-				33EF58282400E2F0007803D1 /* New Group */,
 				3300542E23DA180400673C81 /* SceneDelegate.swift */,
 				3329A62123E36C8C00A8FDB5 /* Main.storyboard */,
 				33CA31B123E75692009AA3DF /* Playground */,
@@ -432,6 +433,7 @@
 		33A8BFC923ECA22800056A0F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				33EF582D2400F1D3007803D1 /* New Group */,
 				33CA31C323E9F060009AA3DF /* OnboardingVC.swift */,
 				334ED2F823EC8BC1002B5FF4 /* LoginVC.swift */,
 				33A8BFCA23ECAA7500056A0F /* HomeVC.swift */,
@@ -488,9 +490,10 @@
 			path = "Day5-Onboarding";
 			sourceTree = "<group>";
 		};
-		33EF58282400E2F0007803D1 /* New Group */ = {
+		33EF582D2400F1D3007803D1 /* New Group */ = {
 			isa = PBXGroup;
 			children = (
+				33EF582E2400F200007803D1 /* TabBarController.swift */,
 			);
 			path = "New Group";
 			sourceTree = "<group>";
@@ -629,6 +632,7 @@
 			files = (
 				33232DC323F3207200CF722D /* Box.swift in Sources */,
 				338CF14323FA79210074A6FE /* FavoritesCell.swift in Sources */,
+				33EF582F2400F200007803D1 /* TabBarController.swift in Sources */,
 				3329A61323E359D800A8FDB5 /* OnboardingPageView.swift in Sources */,
 				33B2A18223F52BC300AF03CA /* NewBoxCell.swift in Sources */,
 				33459A2523F9C81A002C13D5 /* Service.swift in Sources */,
