@@ -17,6 +17,7 @@ class OnboardingPageView: UIView {
 //MARK: Properties Views
     lazy var imageView: UIImageView = {
         let imageView: UIImageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
