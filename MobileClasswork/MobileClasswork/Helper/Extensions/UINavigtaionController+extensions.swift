@@ -10,7 +10,7 @@ import UIKit
 
 extension UINavigationController {
 /// reset rootVC with left or right push transition
-    func initRootViewController(vc: UIViewController, fromRight: Bool = true, duration: CFTimeInterval = 0.3) {
+    func initRootVC(vc: UIViewController, fromRight: Bool = true, duration: CFTimeInterval = 0.3) {
         self.addPushTransition(fromRight: fromRight, duration: duration)
         self.viewControllers.removeAll()
         self.pushViewController(vc, animated: false)
