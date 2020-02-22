@@ -203,11 +203,9 @@ class LoginVC: UIViewController {
     fileprivate func setupDarkViews() {
         self.view.addSubview(darkStackView)
         NSLayoutConstraint.activate([
-//            darkStackView.widthAnchor.constraint(equalTo: stackView.widthAnchor),
             darkStackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 10),
             darkStackView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10),
             darkStackView.heightAnchor.constraint(equalToConstant: 50),
-//            darkStackView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6)
         ])
         darkStackView.addArrangedSubview(darkModeLabel)
         NSLayoutConstraint.activate([
