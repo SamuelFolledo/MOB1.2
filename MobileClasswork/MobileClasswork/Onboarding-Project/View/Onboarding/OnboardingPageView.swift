@@ -33,7 +33,6 @@ class OnboardingPageView: UIView {
     let continueButton: UIButton = {
         let button: UIButton = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = .black
         button.setTitle("Continue", for: .normal)
         return button
     }()
