@@ -57,6 +57,7 @@ class NewBoxVC: UIViewController {
     fileprivate func updateColors() {
         view.backgroundColor = SettingsService.whiteColor
         collectionView.backgroundColor = SettingsService.whiteColor
+        self.tabBarController?.isMainTabBar()
     }
     
     fileprivate func populateData() {
@@ -69,7 +70,6 @@ class NewBoxVC: UIViewController {
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.tintColor = SettingsService.grayColor //button color
-        self.title = "Past Boxes"
         navigationController?.setStatusBarColor(backgroundColor: kMAINCOLOR)
         settingsButton = UIBarButtonItem.navButton(self, action: #selector(settingsButtonTapped), image: kSETTINGSIMAGE)
         navigationItem.rightBarButtonItem = settingsButton

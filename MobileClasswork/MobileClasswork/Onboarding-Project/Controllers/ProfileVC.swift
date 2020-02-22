@@ -21,23 +21,34 @@ class ProfileVC: UIViewController {
         setupViews()
     }
     
+    override func loadView() {
+        super.loadView()
+        title = "Profile"
+        setupNavigationBar()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupNavigationBar()
+        updateColors()
     }
     
 //MARK: Navigation
     
 //MARK: Private Methods
     fileprivate func setupViews() {
-        self.title = "My Profile"
+        
+    }
+    
+    fileprivate func updateColors() {
+        view.backgroundColor = SettingsService.whiteColor
+        self.tabBarController?.isMainTabBar()
     }
     
     fileprivate func setupNavigationBar() {
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.tintColor = SettingsService.grayColor //button color
-        self.title = "Past Boxes"
         navigationController?.setStatusBarColor(backgroundColor: kMAINCOLOR)
         settingsButton = UIBarButtonItem.navButton(self, action: #selector(settingsButtonTapped), image: kSETTINGSIMAGE)
         navigationItem.rightBarButtonItem = settingsButton

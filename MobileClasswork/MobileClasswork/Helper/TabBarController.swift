@@ -34,7 +34,7 @@ class TabBarController: UITabBarController {
         let homeNav = UINavigationController(rootViewController: HomeVC())
         homeNav.tabBarItem = UITabBarItem(title: "Home", image: kHOMEIMAGE, tag: 0)
         let newNav = UINavigationController(rootViewController: NewBoxVC())
-        newNav.tabBarItem = UITabBarItem(title: "Home", image: kNEWIMAGE, tag: 1)
+        newNav.tabBarItem = UITabBarItem(title: "New Box", image: kNEWIMAGE, tag: 1)
         let historyNav = UINavigationController(rootViewController: PastBoxesVC())
         historyNav.tabBarItem = UITabBarItem(title: "History", image: kHISTORYIMAGE, tag: 2)
         let profileNav = UINavigationController(rootViewController: ProfileVC())

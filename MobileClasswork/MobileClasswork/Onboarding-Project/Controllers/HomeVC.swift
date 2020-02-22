@@ -47,6 +47,7 @@ class HomeVC: UIViewController {
 //MARK: App Life Cycle
     override func loadView() {
         super.loadView()
+        title = "Home"
         setupViews()
     }
     
@@ -71,6 +72,7 @@ class HomeVC: UIViewController {
         newBoxButton.isMainButton()
         pastBoxesButton.isMainButton()
         profileButton.isMainButton()
+        self.tabBarController?.isMainTabBar()
     }
     
     fileprivate func setupViews() {
@@ -111,7 +113,6 @@ class HomeVC: UIViewController {
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.tintColor = SettingsService.grayColor //button color
-        self.title = "Home"
         navigationController?.setStatusBarColor(backgroundColor: kMAINCOLOR)
         settingsButton = UIBarButtonItem.navButton(self, action: #selector(settingsButtonTapped), image: kSETTINGSIMAGE)
         navigationItem.rightBarButtonItem = settingsButton
