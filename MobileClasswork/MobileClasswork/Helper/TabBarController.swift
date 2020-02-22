@@ -15,7 +15,7 @@ class TabBarController: UITabBarController {
         setupViewControllers()
     }
     
-    func setupViewControllers(){
+    func setupViewControllers(){        
         let homeVC: HomeVC = HomeVC()
         let newVC: NewBoxVC = NewBoxVC()
         let historyVC: PastBoxesVC = PastBoxesVC()
@@ -27,14 +27,9 @@ class TabBarController: UITabBarController {
             UINavigationController(rootViewController: profileVC),
             
         ]
-//        for continent in continents {
-//            let vc = ContinentVC()
-//            let navController = UINavigationController(rootViewController: vc)
-//            vc.continent = continent
-//            navArray.append(navController)
-//            vc.tabBarItem.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: -3, right: 0)
-////            viewControllers?.append(navController)
-//        }
         viewControllers = navArray
     }
+    
+//MARK: Helpers
+    
 }
