@@ -78,8 +78,8 @@ class OnboardingPageView: UIView {
         self.addSubview(stackView)
         NSLayoutConstraint.activate([
             stackView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.8),
-            stackView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.8),
-            stackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 50),
+            stackView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.7),
+            stackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 100),
             stackView.centerXAnchor.constraint(equalTo: self.centerXAnchor)
 //            stackView.contentHuggingPriority(for: <#T##NSLayoutConstraint.Axis#>)
 //            stackView.contentCompressionResistancePriority(for: <#T##NSLayoutConstraint.Axis#>)
