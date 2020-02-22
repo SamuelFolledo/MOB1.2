@@ -161,8 +161,8 @@ class LoginVC: UIViewController {
         self.view.addSubview(stackView)
         NSLayoutConstraint.activate([
             stackView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.8),
-            stackView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.85),
-            stackView.topAnchor.constraint(equalTo: self.darkStackView.bottomAnchor, constant: 10),
+            stackView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 100),
+            stackView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -50),
             stackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
         ])
     }
@@ -219,13 +219,13 @@ class LoginVC: UIViewController {
     @objc func loginButtonTapped() {
         SettingsService.saveIsDarkMode()
         let vc: TabBarController = TabBarController()
-        self.navigationController?.initRootViewController(vc: vc)
+        self.navigationController?.initRootViewController(vc: vc, fromRight: true)
     }
     
     @objc func skipButtonTapped() {
         SettingsService.saveIsDarkMode()
         let vc: TabBarController = TabBarController()
-        self.navigationController?.initRootViewController(vc: vc)
+        self.navigationController?.initRootViewController(vc: vc, fromRight: true)
     }
     
     @objc func handleDismissTap(_ gesture: UITapGestureRecognizer) { //if keyboard is up, dismiss keyboard, else dismiss popup

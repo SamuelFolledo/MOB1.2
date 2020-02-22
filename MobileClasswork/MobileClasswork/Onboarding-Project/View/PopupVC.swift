@@ -241,7 +241,7 @@ class PopupVC: UIViewController {
     @objc func logoutButtonTap(_ gesture: UITapGestureRecognizer) { //go to imageDetailVC
         saveSettingDarkMode(didSave: true)
         let vc: LoginVC = LoginVC()
-        self.navigationController?.initRootViewController(vc: vc)
+        self.navigationController?.initRootViewController(vc: vc, fromRight: false)
     }
     @objc func cancelButtonTap(_ gesture: UITapGestureRecognizer) { //go to imageDetailVC
         saveSettingDarkMode(didSave: false)
