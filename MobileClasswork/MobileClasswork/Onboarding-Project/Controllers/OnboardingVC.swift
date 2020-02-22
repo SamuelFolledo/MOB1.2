@@ -134,7 +134,8 @@ class OnboardingVC: UIViewController {
 //MARK: Helpers
     @objc func continueButtonTapped() {
         let loginVC: LoginVC = LoginVC()
-        self.navigationController?.pushViewController(loginVC, animated: true) //push
+        self.navigationController?.initRootViewController(vc: loginVC)
+//        self.navigationController?.pushViewController(loginVC, animated: true) //push
 //        self.present(loginVC, animated: true, completion: nil) //modally
     }
 }
