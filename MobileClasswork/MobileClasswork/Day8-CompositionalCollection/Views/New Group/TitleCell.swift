@@ -15,11 +15,10 @@ class TitleCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
     
     func set(title: String) {
         lblTitle.text = title
+        lblTitle.textColor = SettingsService.darkGrayColor
     }
-
 }
