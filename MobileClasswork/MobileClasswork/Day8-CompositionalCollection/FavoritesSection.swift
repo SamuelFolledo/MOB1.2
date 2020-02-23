@@ -33,6 +33,11 @@ struct FavoritesSection: Section {
     }
     
     func configureCell(collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
-        collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: FavoritesCell.self), for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: FavoritesCell.self), for: indexPath) as! FavoritesCell
+        cell.image = kPILLIMAGE.tint(with: SettingsService.darkGrayColor)
+        cell.nameLabel.textColor = SettingsService.darkGrayColor
+        cell.name = "Advil"
+        //        cell.boxLabel.textColor = SettingsService.darkGrayColor
+        return cell
     }
 }
