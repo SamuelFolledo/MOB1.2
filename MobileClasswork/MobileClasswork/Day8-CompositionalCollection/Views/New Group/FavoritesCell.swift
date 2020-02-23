@@ -9,8 +9,19 @@
 import UIKit
 
 class FavoritesCell: UICollectionViewCell {
+    var image: UIImage = kMIGRAINEIMAGE {
+        didSet {
+            imgView.image = image
+        }
+    }
+    var name: String = "" {
+        didSet {
+            nameLabel.text = name
+        }
+    }
     static var identifier: String = "FavoritesCell"
     @IBOutlet weak var imgView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,4 +32,9 @@ class FavoritesCell: UICollectionViewCell {
         imgView.layer.cornerRadius = 10
     }
     
+//    override func prepareForReuse() {
+//        self.backgroundColor = SettingsService.grayColor
+//        self.imgView.image?.withTintColor(SettingsService.darkGrayColor)
+//        self.nameLabel.textColor = SettingsService.darkGrayColor
+//    }
 }
