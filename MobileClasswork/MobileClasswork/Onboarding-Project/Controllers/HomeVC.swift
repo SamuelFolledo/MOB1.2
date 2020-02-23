@@ -11,14 +11,14 @@ import UIKit
 class HomeVC: UIViewController {
 //MARK: Properties
     lazy var sections: [Section] = [
-        TitleSection(title: "Featured Categories"),
+        TitleSection(title: "Featured Boxes"),
         FeaturedSection(),
-        TitleSection(title: "Last Month's Favorites"),
+        TitleSection(title: "Favorite Boxes"),
         FavoritesSection()
     ]
 //MARK: Properties Views
     lazy var collectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: collectionViewLayout)
+        let collectionView = UICollectionView.init(frame: .zero, collectionViewLayout: collectionViewLayout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -26,7 +26,6 @@ class HomeVC: UIViewController {
         collectionView.register(UINib(nibName: "TitleCell", bundle: .main), forCellWithReuseIdentifier: TitleCell.identifier)
         collectionView.register(UINib(nibName: "FeaturedCell", bundle: .main), forCellWithReuseIdentifier: FeaturedCell.identifier)
         collectionView.register(UINib(nibName: "FavoritesCell", bundle: .main), forCellWithReuseIdentifier: FavoritesCell.identifier)
-        collectionView.register(UINib(nibName: "GridCell", bundle: .main), forCellWithReuseIdentifier: GridCell.identifier)
         return collectionView
     }()
     lazy var collectionViewLayout: UICollectionViewLayout = {
@@ -67,6 +66,8 @@ class HomeVC: UIViewController {
     fileprivate func updateColors() {
         view.backgroundColor = SettingsService.whiteColor
         self.tabBarController?.isMainTabBar()
+        collectionView.backgroundColor = SettingsService.whiteColor
+        collectionView.reloadData()
     }
     
     fileprivate func setupViews() {
@@ -75,6 +76,7 @@ class HomeVC: UIViewController {
     
     fileprivate func setupCollectionView() {
         self.view.addSubview(collectionView)
+        collectionView.backgroundColor =  SettingsService.whiteColor
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
