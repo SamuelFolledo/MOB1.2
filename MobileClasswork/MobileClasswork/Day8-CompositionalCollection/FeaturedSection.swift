@@ -9,7 +9,7 @@
 import UIKit
 
 struct FeaturedSection: Section {
-    let numberOfItems = 6
+    let numberOfItems = 8
     
     func layoutSection() -> NSCollectionLayoutSection? {
         // TODO: Step 1

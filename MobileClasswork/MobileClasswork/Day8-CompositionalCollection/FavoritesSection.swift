@@ -9,7 +9,7 @@
 import UIKit
 
 struct FavoritesSection: Section {
-    let numberOfItems = 8
+    let numberOfItems = 14
     
     func layoutSection() -> NSCollectionLayoutSection? {
         
