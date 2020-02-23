@@ -14,7 +14,7 @@ struct FavoritesSection: Section {
     func layoutSection() -> NSCollectionLayoutSection? {
         
         // TODO: Step 1
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.3)) //size of item
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.95), heightDimension: .fractionalHeight(0.3)) //size of item
         
         // TODO: Step 2
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
@@ -28,7 +28,7 @@ struct FavoritesSection: Section {
         // TODO: Step 5
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .groupPaging
-        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 10, trailing: 10)
         return section
     }
     
@@ -37,7 +37,10 @@ struct FavoritesSection: Section {
         cell.image = kPILLIMAGE.tint(with: SettingsService.darkGrayColor)
         cell.nameLabel.textColor = SettingsService.darkGrayColor
         cell.name = "Advil"
+        cell.imgView.backgroundColor = SettingsService.whiteColor
+        cell.imgView.layer.borderColor = SettingsService.darkGrayColor.cgColor
         //        cell.boxLabel.textColor = SettingsService.darkGrayColor
+        cell.contentView.layer.borderColor = SettingsService.darkGrayColor.cgColor
         return cell
     }
 }

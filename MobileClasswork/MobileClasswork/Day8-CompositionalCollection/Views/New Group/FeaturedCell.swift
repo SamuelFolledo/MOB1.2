@@ -28,9 +28,11 @@ class FeaturedCell: UICollectionViewCell {
         setup()
     }
 
-    func setup(){
-        imgView.backgroundColor = .red
+    func setup(){ //featured has layer on image
+//        self.contentView.layer.cornerRadius = 10
+//        self.contentView.layer.borderWidth = 1
         imgView.layer.cornerRadius = 10
+        imgView.layer.borderWidth = 1.5
         imgView.image = image
     }
 }
