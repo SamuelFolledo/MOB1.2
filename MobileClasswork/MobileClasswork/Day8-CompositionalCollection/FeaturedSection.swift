@@ -32,11 +32,7 @@ struct FeaturedSection: Section {
     
     func configureCell(collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: FeaturedCell.self), for: indexPath) as! FeaturedCell
-//        cell.backgroundColor = SettingsService.whiteColor
         cell.image = kMIGRAINEIMAGE.tint(with: SettingsService.darkGrayColor)
-//        cell.boxLabel.textColor = SettingsService.darkGrayColor
         return cell
     }
-    
-    
 }
