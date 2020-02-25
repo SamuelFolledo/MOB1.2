@@ -27,6 +27,8 @@ class LoginVC: UIViewController {
         textField.isPasswordTextField()
         return textField
     }()
+    var titleConstraintStart: NSLayoutConstraint!
+    var titleConstraintEnd: NSLayoutConstraint!
     
 //MARK: Properties Views
     lazy var loginButton: UIButton = {
@@ -57,26 +59,15 @@ class LoginVC: UIViewController {
         label.font = UIFont.systemFont(ofSize: 32, weight: .black)
         label.sizeToFit()
         label.numberOfLines = 0
-//        label.textColor = kOFFBLACKCOLOR
         label.textAlignment = .center
         label.text = kAPPNAME
         return label
-    }()
-    lazy var stackView: UIStackView = {
-        let stackView: UIStackView = UIStackView(frame: .zero)
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .vertical
-        stackView.alignment = .center
-        stackView.distribution = .fill
-        stackView.spacing = 20
-        return stackView
     }()
     lazy var backButton: UIButton = {
         let button: UIButton = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .regular)
         button.setTitleColor(SettingsService.darkGrayColor, for: .normal)
-//        button.setTitle("Back", for: .normal)
         button.setImage(kBACKBUTTONIMAGE.withTintColor(SettingsService.darkGrayColor), for: .normal)
         button.imageView?.contentMode = .scaleAspectFill //contentMode for buttons
         button.contentMode = .left
@@ -136,6 +127,24 @@ class LoginVC: UIViewController {
         setupKeyboardNotifications()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        animateTitleAndButton()
+    }
+    
+    fileprivate func animateTitleAndButton() {
+        titleConstraintStart.isActive = false
+        titleConstraintEnd.isActive = true //makes a going up animation
+        UIView.animate(withDuration: 1.5, delay: 0.0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0, options: [.curveEaseOut], animations: { //create a bounce effect as we are setting titleLabel's original size
+            self.titleLabel.transform = CGAffineTransform(scaleX: 1, y: 1)
+            self.view.layoutIfNeeded()
+        }) { (_) in
+            UIView.animate(withDuration: 0.25, delay: 0.0, options: [.curveEaseOut], animations: {
+                self.loginButton.alpha = 1.0
+            },completion: nil)
+        }
+    }
+    
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         self.tabBarController?.tabBar.isHidden = false
@@ -171,52 +180,10 @@ class LoginVC: UIViewController {
         self.view.addGestureRecognizer(tap)
         setupDarkViews()
         setupBackButton()
-        setupStackView()
-        setupTitleLabel()
         setupImageView()
+        setupTitleLabel()
         setupTextFields()
         setupLoginButton()
-    }
-    
-    fileprivate func setupStackView() {
-        self.view.addSubview(stackView)
-        NSLayoutConstraint.activate([
-            stackView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.8),
-            stackView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 100),
-            stackView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -100),
-            stackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
-        ])
-    }
-    
-    fileprivate func setupTextFields() {
-        stackView.addArrangedSubview(emailTextField)
-        stackView.addArrangedSubview(passwordTextField)
-        NSLayoutConstraint.activate([
-            emailTextField.heightAnchor.constraint(equalToConstant: 50),
-            emailTextField.widthAnchor.constraint(equalTo: stackView.widthAnchor),
-            passwordTextField.heightAnchor.constraint(equalToConstant: 50),
-            passwordTextField.widthAnchor.constraint(equalTo: stackView.widthAnchor)
-        ])
-    }
-    
-    fileprivate func setupLoginButton() {
-        stackView.addArrangedSubview(loginButton)
-        loginButton.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier:  0.8).isActive = true
-        loginButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        stackView.addArrangedSubview(skipButton)
-        skipButton.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier:  0.8).isActive = true
-        skipButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-    }
-    
-    fileprivate func setupTitleLabel() {
-        stackView.addArrangedSubview(titleLabel)
-        titleLabel.widthAnchor.constraint(equalTo: stackView.widthAnchor, multiplier: 1.0).isActive = true
-        titleLabel.heightAnchor.constraint(equalToConstant: 80).isActive = true
-    }
-    
-    fileprivate func setupImageView() {
-        stackView.addArrangedSubview(imageView)
-        imageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
     }
     
     fileprivate func setupBackButton() {
@@ -240,6 +207,59 @@ class LoginVC: UIViewController {
         NSLayoutConstraint.activate([
         ])
         darkStackView.addArrangedSubview(darkSwitch)
+    }
+    
+    fileprivate func setupImageView() {
+        view.addSubview(imageView)
+        NSLayoutConstraint.activate([
+            imageView.heightAnchor.constraint(equalToConstant: 200),
+            imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor, multiplier: 1.0),
+            imageView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            imageView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -50)
+        ])
+    }
+    
+    fileprivate func setupTitleLabel() {
+        titleConstraintStart = titleLabel.centerYAnchor.constraint(equalTo: imageView.centerYAnchor, constant: 5) //assign the start constraint
+        titleConstraintEnd = titleLabel.centerYAnchor.constraint(equalTo: imageView.topAnchor, constant: -60)
+        view.addSubview(titleLabel)
+        titleLabel.transform = CGAffineTransform(scaleX: 0, y: 0) //intialize as 0 scale
+        titleLabel.centerXAnchor.constraint(equalTo: imageView.centerXAnchor).isActive = true
+        titleLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8).isActive = true
+        titleLabel.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        titleConstraintStart.isActive = true //activate start constraint
+    }
+    
+    fileprivate func setupTextFields() {
+        view.addSubview(emailTextField)
+        view.addSubview(passwordTextField)
+        NSLayoutConstraint.activate([
+            emailTextField.heightAnchor.constraint(equalToConstant: 50),
+            emailTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
+            emailTextField.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 20),
+            emailTextField.centerXAnchor.constraint(equalTo: imageView.centerXAnchor),
+            passwordTextField.heightAnchor.constraint(equalToConstant: 50),
+            passwordTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
+            passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 20),
+            passwordTextField.centerXAnchor.constraint(equalTo: emailTextField.centerXAnchor),
+        ])
+    }
+    
+    fileprivate func setupLoginButton() {
+        view.addSubview(loginButton)
+        loginButton.alpha = 0.0
+        view.addSubview(skipButton)
+        NSLayoutConstraint.activate([
+            loginButton.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier:  0.8),
+            loginButton.heightAnchor.constraint(equalToConstant: 50),
+            loginButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 20),
+            loginButton.centerXAnchor.constraint(equalTo: emailTextField.centerXAnchor),
+            skipButton.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier:  0.8),
+            skipButton.heightAnchor.constraint(equalToConstant: 50),
+            skipButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 20),
+            skipButton.centerXAnchor.constraint(equalTo: emailTextField.centerXAnchor),
+            skipButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -25)
+        ])
     }
     
 //MARK: Helpers
