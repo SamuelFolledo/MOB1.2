@@ -45,6 +45,7 @@
 		334ED2F723EC8BB7002B5FF4 /* PastBoxesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334ED2F623EC8BB7002B5FF4 /* PastBoxesVC.swift */; };
 		334ED2F923EC8BC1002B5FF4 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334ED2F823EC8BC1002B5FF4 /* LoginVC.swift */; };
 		334ED2FB23EC90A5002B5FF4 /* BoxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334ED2FA23EC90A5002B5FF4 /* BoxCell.swift */; };
+		33704B0E240839A1001C6F1C /* UserProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33704B0D240839A1001C6F1C /* UserProfileVC.swift */; };
 		3385A04623FE622500879E19 /* FlipAnimationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3385A04523FE622500879E19 /* FlipAnimationVC.swift */; };
 		338CF12B23FA772A0074A6FE /* FeaturedSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338CF12723FA77290074A6FE /* FeaturedSection.swift */; };
 		338CF12C23FA772A0074A6FE /* BasicGridSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338CF12823FA772A0074A6FE /* BasicGridSection.swift */; };
@@ -125,6 +126,7 @@
 		334ED2F623EC8BB7002B5FF4 /* PastBoxesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastBoxesVC.swift; sourceTree = "<group>"; };
 		334ED2F823EC8BC1002B5FF4 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		334ED2FA23EC90A5002B5FF4 /* BoxCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxCell.swift; sourceTree = "<group>"; };
+		33704B0D240839A1001C6F1C /* UserProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileVC.swift; sourceTree = "<group>"; };
 		3385A04523FE622500879E19 /* FlipAnimationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipAnimationVC.swift; sourceTree = "<group>"; };
 		338CF12723FA77290074A6FE /* FeaturedSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeaturedSection.swift; path = ../FeaturedSection.swift; sourceTree = "<group>"; };
 		338CF12823FA772A0074A6FE /* BasicGridSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BasicGridSection.swift; path = ../BasicGridSection.swift; sourceTree = "<group>"; };
@@ -450,6 +452,7 @@
 				33232DBD23F29D5500CF722D /* PastBoxesDetailVC.swift */,
 				33B2A17F23F52B6300AF03CA /* NewBoxVC.swift */,
 				33EF58302400F2EF007803D1 /* ProfileVC.swift */,
+				33704B0D240839A1001C6F1C /* UserProfileVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -697,6 +700,7 @@
 				3300544323DA188F00673C81 /* ScrollVC.swift in Sources */,
 				334599EF23F7C32F002C13D5 /* UITextField+extensions.swift in Sources */,
 				334599F923F8AC3B002C13D5 /* UIColor+extensions.swift in Sources */,
+				33704B0E240839A1001C6F1C /* UserProfileVC.swift in Sources */,
 				33232DD223F327BD00CF722D /* MyFlowLayout.swift in Sources */,
 				338CF12C23FA772A0074A6FE /* BasicGridSection.swift in Sources */,
 				338CF13C23FA79210074A6FE /* FeaturedCell.swift in Sources */,

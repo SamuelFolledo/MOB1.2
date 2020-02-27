@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class TabBarController: UITabBarController {
     
@@ -37,7 +38,8 @@ class TabBarController: UITabBarController {
         newNav.tabBarItem = UITabBarItem(title: "New Box", image: kNEWIMAGE, tag: 1)
         let historyNav = UINavigationController(rootViewController: PastBoxesVC())
         historyNav.tabBarItem = UITabBarItem(title: "History", image: kHISTORYIMAGE, tag: 2)
-        let profileNav = UINavigationController(rootViewController: ProfileVC())
+        let profileVC = UIHostingController(rootView: ContentView()) //SwiftUI VC
+        let profileNav = UINavigationController(rootViewController: profileVC)
         profileNav.tabBarItem = UITabBarItem(title: "Profile", image: kPROFILEIMAGE, tag: 3)
         let navArray: [UINavigationController] = [homeNav, newNav, historyNav, profileNav]
         viewControllers = navArray
