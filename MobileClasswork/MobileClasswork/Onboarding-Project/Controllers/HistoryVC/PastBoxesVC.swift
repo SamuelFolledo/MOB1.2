@@ -83,7 +83,8 @@ class PastBoxesVC: UIViewController {
 //MARK: Helpers
     @objc func settingsButtonTapped() {
         let vc: PopupVC = PopupVC()
-        navigationController?.pushViewController(vc, animated: false) //push
+        vc.modalPresentationStyle = .overFullScreen
+        navigationController?.present(vc, animated: false, completion: nil)
     }
 }
 

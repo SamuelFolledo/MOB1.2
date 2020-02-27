@@ -128,7 +128,9 @@ class NewBoxVC: UIViewController {
     
     @objc func settingsButtonTapped() {
         let vc: PopupVC = PopupVC()
-        navigationController?.pushViewController(vc, animated: false) //push
+        vc.modalPresentationStyle = .overFullScreen //fullscreen will have a black background, overFullScreen can have a clear
+        //        navigationController?.pushViewController(vc, animated: false) //push
+        navigationController?.present(vc, animated: false, completion: nil)
     }
 }
 

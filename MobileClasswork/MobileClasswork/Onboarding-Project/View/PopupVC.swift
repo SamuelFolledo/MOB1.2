@@ -210,7 +210,7 @@ class PopupVC: UIViewController {
     
     fileprivate func showAnimate() { //show popup with animation
         view.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
-        view.alpha = 0.0;
+//        view.alpha = 0.0;
         UIView.animate(withDuration: 0.25, animations: {
             self.view.alpha = 1.0
             self.view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
@@ -223,9 +223,9 @@ class PopupVC: UIViewController {
             self.view.alpha = 0.0;
         }, completion:{(finished : Bool)  in
             if (finished) {
-//                self.view.removeFromSuperview() //was causing bug before
-//                self.navigationController?.popToRootViewController(animated: false)
-                self.navigationController?.popViewController(animated: false)
+                self.view.removeFromSuperview() //was causing bug before
+//                self.navigationController?.popViewController(animated: false)
+                self.dismiss(animated: false, completion: nil)
             }
         });
     }

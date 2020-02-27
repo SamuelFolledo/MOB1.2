@@ -135,7 +135,7 @@ class LoginVC: UIViewController {
     fileprivate func animateTitleAndButton() {
         titleConstraintStart.isActive = false
         titleConstraintEnd.isActive = true //makes a going up animation
-        UIView.animate(withDuration: 1.5, delay: 0.0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0, options: [.curveEaseOut], animations: { //create a bounce effect as we are setting titleLabel's original size
+        UIView.animate(withDuration: 1.0, delay: 0.0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0, options: [.curveEaseOut], animations: { //create a bounce effect as we are setting titleLabel's original size
             self.titleLabel.transform = CGAffineTransform(scaleX: 1, y: 1)
             self.view.layoutIfNeeded()
         }) { (_) in

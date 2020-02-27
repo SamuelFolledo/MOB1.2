@@ -68,6 +68,8 @@
 		33C87E2F2408460900DB04CF /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C87E2E2408460900DB04CF /* ProfileVC.swift */; };
 		33C87E322408462A00DB04CF /* PastBoxesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C87E302408462A00DB04CF /* PastBoxesVC.swift */; };
 		33C87E332408462A00DB04CF /* PastBoxesDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C87E312408462A00DB04CF /* PastBoxesDetailVC.swift */; };
+		33C87E372408488D00DB04CF /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C87E362408488D00DB04CF /* CircleImage.swift */; };
+		33C87E3924084CED00DB04CF /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C87E3824084CED00DB04CF /* MapView.swift */; };
 		33CA319C23E565A8009AA3DF /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CA319A23E565A8009AA3DF /* CollectionViewCell.swift */; };
 		33CA319D23E565A8009AA3DF /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33CA319B23E565A8009AA3DF /* CollectionViewCell.xib */; };
 		33CA31A223E56A6F009AA3DF /* CollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CA31A123E56A6F009AA3DF /* CollectionVC.swift */; };
@@ -148,6 +150,8 @@
 		33C87E2E2408460900DB04CF /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		33C87E302408462A00DB04CF /* PastBoxesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PastBoxesVC.swift; path = "MobileClasswork/Onboarding-Project/Controllers/HistoryVC/PastBoxesVC.swift"; sourceTree = SOURCE_ROOT; };
 		33C87E312408462A00DB04CF /* PastBoxesDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PastBoxesDetailVC.swift; path = "MobileClasswork/Onboarding-Project/Controllers/HistoryVC/PastBoxesDetailVC.swift"; sourceTree = SOURCE_ROOT; };
+		33C87E362408488D00DB04CF /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
+		33C87E3824084CED00DB04CF /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		33CA319A23E565A8009AA3DF /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		33CA319B23E565A8009AA3DF /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		33CA31A123E56A6F009AA3DF /* CollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionVC.swift; sourceTree = "<group>"; };
@@ -436,6 +440,8 @@
 				334599EB23F7B111002C13D5 /* PastBoxesDetailsTable */,
 				334599E923F7B0DF002C13D5 /* NewBoxCollection */,
 				334599EC23F7B154002C13D5 /* HelperViews */,
+				33C87E362408488D00DB04CF /* CircleImage.swift */,
+				33C87E3824084CED00DB04CF /* MapView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -447,8 +453,8 @@
 				33CA31C323E9F060009AA3DF /* OnboardingVC.swift */,
 				334ED2F823EC8BC1002B5FF4 /* LoginVC.swift */,
 				33A8BFCA23ECAA7500056A0F /* HomeVC.swift */,
-				33C87E312408462A00DB04CF /* PastBoxesDetailVC.swift */,
 				33C87E302408462A00DB04CF /* PastBoxesVC.swift */,
+				33C87E312408462A00DB04CF /* PastBoxesDetailVC.swift */,
 				33C87E2E2408460900DB04CF /* ProfileVC.swift */,
 				33B2A17F23F52B6300AF03CA /* NewBoxVC.swift */,
 				33C87E2D2408450200DB04CF /* PastBoxesVC */,
@@ -675,6 +681,7 @@
 				33459A2923FA0BFF002C13D5 /* UIImageView+extensions.swift in Sources */,
 				33EF5835240125B6007803D1 /* TransitioningObject.swift in Sources */,
 				338CF14123FA79210074A6FE /* TitleCell.swift in Sources */,
+				33C87E3924084CED00DB04CF /* MapView.swift in Sources */,
 				334599E823F7B099002C13D5 /* UnderlinedTextField.swift in Sources */,
 				3397D76323E0AB62000C59D4 /* CodingConstraintVC.swift in Sources */,
 				33C87E2F2408460900DB04CF /* ProfileVC.swift in Sources */,
@@ -691,6 +698,7 @@
 				33CA31A223E56A6F009AA3DF /* CollectionVC.swift in Sources */,
 				3309913523E277E100880CC5 /* UILayoutGuide+extensions.swift in Sources */,
 				33CA31B623E79FAD009AA3DF /* Constants.swift in Sources */,
+				33C87E372408488D00DB04CF /* CircleImage.swift in Sources */,
 				33A8BFCD23ECABBC00056A0F /* UIButton+extensions.swift in Sources */,
 				33A8BFC623ECA0BD00056A0F /* UINavigtaionController+extensions.swift in Sources */,
 				33EF582A2400E3BD007803D1 /* Date+extensions.swift in Sources */,
