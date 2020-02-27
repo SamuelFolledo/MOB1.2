@@ -44,7 +44,7 @@
             <size key="customSize" width="274" height="53"/>
             <connections>
                 <outlet property="imgView" destination="mFw-5g-GVJ" id="eJh-8O-FfK"/>
-                <outlet property="nameLabel" destination="t0t-tT-kBl" id="VmY-Cd-g92"/>
+                <outlet property="nameLabel" destination="t0t-tT-kBl" id="WO0-rx-tnb"/>
             </connections>
             <point key="canvasLocation" x="286.95652173913044" y="89.397321428571431"/>
         </collectionViewCell>
