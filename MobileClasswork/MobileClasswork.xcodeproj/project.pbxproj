@@ -159,7 +159,7 @@
 		33EF58292400E3BD007803D1 /* Date+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+extensions.swift"; sourceTree = "<group>"; };
 		33EF582B2400E43B007803D1 /* PersistenceLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceLayer.swift; sourceTree = "<group>"; };
 		33EF582E2400F200007803D1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabBarController.swift; path = MobileClasswork/Helper/TabBarController.swift; sourceTree = SOURCE_ROOT; };
-		33EF58302400F2EF007803D1 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		33EF58302400F2EF007803D1 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileVC.swift; path = "../New Group1/ProfileVC.swift"; sourceTree = "<group>"; };
 		33EF58322400F4F0007803D1 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33EF5834240125B6007803D1 /* TransitioningObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TransitioningObject.swift; path = "MobileClasswork/Onboarding-Project/Controllers/TransitioningObject.swift"; sourceTree = SOURCE_ROOT; };
 		33EF58362401BE2A007803D1 /* UITabBarController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarController+extensions.swift"; sourceTree = "<group>"; };
@@ -444,17 +444,25 @@
 		33A8BFC923ECA22800056A0F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				33EF582D2400F1D3007803D1 /* New Group */,
+				33EF582D2400F1D3007803D1 /* TabBar */,
 				33CA31C323E9F060009AA3DF /* OnboardingVC.swift */,
 				334ED2F823EC8BC1002B5FF4 /* LoginVC.swift */,
 				33A8BFCA23ECAA7500056A0F /* HomeVC.swift */,
 				334ED2F623EC8BB7002B5FF4 /* PastBoxesVC.swift */,
 				33232DBD23F29D5500CF722D /* PastBoxesDetailVC.swift */,
 				33B2A17F23F52B6300AF03CA /* NewBoxVC.swift */,
-				33EF58302400F2EF007803D1 /* ProfileVC.swift */,
+				33C87E2C240843C500DB04CF /* ProfileVC */,
 				33704B0D240839A1001C6F1C /* UserProfileVC.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		33C87E2C240843C500DB04CF /* ProfileVC */ = {
+			isa = PBXGroup;
+			children = (
+				33EF58302400F2EF007803D1 /* ProfileVC.swift */,
+			);
+			path = ProfileVC;
 			sourceTree = "<group>";
 		};
 		33CA319E23E565AD009AA3DF /* Xib-Cell */ = {
@@ -504,13 +512,13 @@
 			path = "Day5-Onboarding";
 			sourceTree = "<group>";
 		};
-		33EF582D2400F1D3007803D1 /* New Group */ = {
+		33EF582D2400F1D3007803D1 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
 				33EF582E2400F200007803D1 /* TabBarController.swift */,
 				33EF5834240125B6007803D1 /* TransitioningObject.swift */,
 			);
-			path = "New Group";
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		DFA0A6888436AECE8A78421D /* Pods */ = {
