@@ -8,10 +8,17 @@
 
 import UIKit
 
+protocol PopupProtocol {
+    ///Switching the darkSwitch will update the colors of the VC that pushed this PopupVC
+    func didUpdateColor()
+}
+
 class PopupVC: UIViewController {
 //MARK: Properties
     let isDarkMode: Bool = UserDefaults.standard.bool(forKey: "isDarkMode")
-//MARK: IBOutlets
+    var delegate: PopupProtocol!
+    
+//MARK: View Properties
     lazy var popUpView: UIView = {
         let view: UIView = UIView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -233,8 +240,12 @@ class PopupVC: UIViewController {
     fileprivate func saveSettingDarkMode(didSave: Bool) {
         if isDarkMode != darkSwitch.isOn && didSave { //if first dark mode didnt change and user saved
             SettingsService.saveIsDarkMode()
+            guard let delegate = delegate else { return }
+            delegate.didUpdateColor() //save it
         } else { //reset isDarkMode
             SettingsService.isDarkMode = isDarkMode
+            guard let delegate = delegate else { return }
+            delegate.didUpdateColor()//don't save it
         }
     }
     
@@ -259,6 +270,8 @@ class PopupVC: UIViewController {
     @objc func switchChanged() {
         SettingsService.isDarkMode = darkSwitch.isOn ? true : false
         updateColors()
+        guard let delegate = delegate else { return }
+        delegate.didUpdateColor()
     }
 }
 

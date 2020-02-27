@@ -129,6 +129,7 @@ class NewBoxVC: UIViewController {
     @objc func settingsButtonTapped() {
         let vc: PopupVC = PopupVC()
         vc.modalPresentationStyle = .overFullScreen //fullscreen will have a black background, overFullScreen can have a clear
+        vc.delegate = self
         //        navigationController?.pushViewController(vc, animated: false) //push
         navigationController?.present(vc, animated: false, completion: nil)
     }
@@ -164,3 +165,8 @@ extension NewBoxVC: UICollectionViewDelegate {
     }
 }
 
+extension NewBoxVC: PopupProtocol {
+    func didUpdateColor() {
+        updateColors()
+    }
+}

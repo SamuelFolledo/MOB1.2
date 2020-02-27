@@ -84,6 +84,7 @@ class PastBoxesVC: UIViewController {
     @objc func settingsButtonTapped() {
         let vc: PopupVC = PopupVC()
         vc.modalPresentationStyle = .overFullScreen
+        vc.delegate = self
         navigationController?.present(vc, animated: false, completion: nil)
     }
 }
@@ -110,5 +111,11 @@ extension PastBoxesVC: UITableViewDataSource {
         cell.boxImageView.image = kMIGRAINEIMAGE.tint(with: SettingsService.darkGrayColor)
         cell.selectionStyle = .none
         return cell
+    }
+}
+
+extension PastBoxesVC: PopupProtocol {
+    func didUpdateColor(<#name#>: <#type#>) {
+        updateColors()
     }
 }
