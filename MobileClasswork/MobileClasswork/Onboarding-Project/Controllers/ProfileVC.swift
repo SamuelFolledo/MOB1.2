@@ -10,25 +10,34 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack(alignment: .center) {
-            Text("Hello Party People in the House!!!")
-                .font(.title)
-                .foregroundColor(Color(SettingsService.mainColor))
-                .fontWeight(.heavy)
-                .multilineTextAlignment(.center)
+        VStack {
+            MapView()
+            .frame(height: 300)
+            CircleImage(imageName: "migraine", width: 225, height: 225) //with initialization
             
-            HStack {
-                Text("Samuel Folledo")
-                .font(.subheadline)
-                .foregroundColor(Color.black)
-                    .multilineTextAlignment(.leading)
-                Spacer() //make them stretch as far away as possible
-                Text("Subscriptions")
-                .font(.subheadline)
-                .foregroundColor(Color.black)
-                    .multilineTextAlignment(.trailing)
+            .offset(y: -150)
+                .padding(.bottom, -130)
+            VStack(alignment: .center) {
+                Text("Hello Party People in the House!!!")
+                    .font(.title)
+                    .foregroundColor(Color(SettingsService.mainColor))
+                    .fontWeight(.heavy)
+                    .multilineTextAlignment(.center)
+                
+                HStack {
+                    Text("Samuel Folledo")
+                    .font(.subheadline)
+                    .foregroundColor(Color.black)
+                        .multilineTextAlignment(.leading)
+                    Spacer() //make them stretch as far away as possible
+                    Text("Subscriptions")
+                    .font(.subheadline)
+                    .foregroundColor(Color.black)
+                        .multilineTextAlignment(.trailing)
+                }
+                .padding(.all, 10) //add padding to all sides
+                Spacer()
             }
-            .padding(.all, 10) //add padding to all sides
         }
             
             
