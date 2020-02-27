@@ -115,7 +115,7 @@ extension PastBoxesVC: UITableViewDataSource {
 }
 
 extension PastBoxesVC: PopupProtocol {
-    func didUpdateColor(<#name#>: <#type#>) {
+    func didUpdateColor() {
         updateColors()
     }
 }

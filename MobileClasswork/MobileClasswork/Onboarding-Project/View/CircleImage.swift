@@ -25,9 +25,9 @@ struct CircleImage: View {
         .overlay(
             Circle().stroke(Color.gray, lineWidth: 4)
                 .padding(.all, -10) //makes the circle stroke bigger than the imge
+            .background(Color.white)
         )
         .shadow(radius: 10)
-        
     }
 }
 
