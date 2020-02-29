@@ -19,21 +19,15 @@ struct ContentView: View {
 //                    .padding(.bottom, -130)
 //                    .offset(y: -150)
 //                    .zIndex(-10)
-                
                 CircleImage(imageName: "appLogo", width: 225, height: 225) //with initialization
-                
                 .offset(y: -150)
                 .padding(.bottom, -130)
-                    
                 .zIndex(10)
-                
-                
 //                Text("Text on Image")
 //                    .font(.largeTitle)
 //                    .background(Color.black)
 //                    .foregroundColor(.white)
             }
-            
             VStack(alignment: .center) {
                 Text("Samuel Folledo")
                     .font(.title)
@@ -67,6 +61,9 @@ struct ContentView: View {
         .navigationBarTitle("Profile")
         }
         .background(Color(SettingsService.whiteColor))
+//        .onAppear { //viewWillAppear
+//
+//        }
     }
 }
 
