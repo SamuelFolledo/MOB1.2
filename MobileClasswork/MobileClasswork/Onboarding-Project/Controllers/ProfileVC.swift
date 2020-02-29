@@ -41,7 +41,7 @@ struct ContentView: View {
                     .foregroundColor(Color(SettingsService.darkGrayColor))
                         .multilineTextAlignment(.center)
                     Spacer() //make them stretch as far away as possible
-                    Text("Samuel Folledo, the future Apple Inc. owner, loves being surrounded by more knowledgeable programmers beyond his reach. He strives to be the Elon Musk/Steve Wozniak in the tech world, primarily in software developer and plans to develop two of the next technological evolution every humans need.")
+                    Text("Samuel Folledo, the future Apple Inc. owner, loves being surrounded by more knowledgeable programmers beyond his reach. He strives to be the Elon Musk/Steve Wozniak in the tech world, primarily in software development and plans to develop two of the next technological evolution every humans need.")
                     .font(.subheadline)
                         .foregroundColor(Color(SettingsService.darkGrayColor))
                         .multilineTextAlignment(.center)
