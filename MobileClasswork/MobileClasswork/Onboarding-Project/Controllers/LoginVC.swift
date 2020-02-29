@@ -285,6 +285,7 @@ class LoginVC: UIViewController {
     
     @objc func switchChanged() {
         SettingsService.isDarkMode = darkSwitch.isOn ? true : false
+        SettingsService.saveIsDarkMode()
         updateColors()
     }
 }
