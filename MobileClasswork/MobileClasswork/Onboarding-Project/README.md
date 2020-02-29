@@ -5,9 +5,10 @@ Medicine subscription app as final project for my [MOB1.2](https://make-school-c
 - Dark Mode/Migraine Mode
 - Persistent Storage
 - UIKit + SwiftUI
+- Animations
 
 ### Demo
-<img src="https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/static/gif/day10demo.gif" width="274" height="480">
+<img src="https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/static/gif/onboardingDemo.gif" width="548" height="960">
 
 #### Links
 - For day to day development [click here]()
