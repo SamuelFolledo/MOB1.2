@@ -14,12 +14,12 @@ struct CircleImage: View {
     let height: CGFloat
     
     var body: some View {
-        Image("migraine")
+        Image(uiImage: UIImage(named: imageName)!)
             .resizable() //make the image resizable and accept aspect fit
 //        .scaledToFill()
             .aspectRatio(1, contentMode: .fit)
             .frame(width: width, height: height, alignment: .top) //size of image
-        
+//        .colorMultiply(Color(SettingsService.darkGrayColor))
         
         .overlay(
             Circle().stroke(Color.gray, lineWidth: 4)
@@ -35,6 +35,6 @@ struct CircleImage: View {
 
 struct CircleImage_Previews: PreviewProvider {
     static var previews: some View {
-        CircleImage(imageName: "migraine", width: 225, height: 225)
+        CircleImage(imageName: "appLogo", width: 225, height: 225)
     }
 }
