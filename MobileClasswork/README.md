@@ -9,9 +9,9 @@
 6. [Table Views](#day6)
 7. [Collection Views](#day7)
 8. [Compositional Layouts](#day8)
-9. [UITabBarController](#day9)
-10. [Generics](#day10)
-11. [Lab](#day11)
+9. [Lab](#day9)
+10. [UITabBarController](#day10)
+11. [Animations](#day11)
 12. [Exploring SwiftUI](#day12)
 13. [Final Exam](#day13)
 14. [Presentations](#day14)
@@ -146,7 +146,7 @@ __Regular/Light Mode__             |  __Migraine/Dark Mode__
 <img src="https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/static/gif/day8DemoLight.gif" width="238" height="480">  |  <img src="https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/static/gif/day8DemoDark.gif" width="238" height="480">
 
 <a name="day9"></a>
-## Day 9. [UITabBarController](#day9)
+## Day 9. [Lab](#lab)
 ### Topics
 
 ### CW:
@@ -156,7 +156,7 @@ __Regular/Light Mode__             |  __Migraine/Dark Mode__
 ---
 
 <a name="day10"></a>
-## Day 10. [](#day10)
+## Day 10. [TabBarController](#tabbarcontroller)
 ### Topics
 
 ### CW: 
