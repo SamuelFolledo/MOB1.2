@@ -13,7 +13,7 @@ https://make-school-courses.github.io/MOB-1.2-Introduction-to-iOS-Development/#/
 - Animations
 
 ### Final Demo
-<img src="https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/static/gif/onboardingDemo.gif" width="548" height="960">
+<img src="https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/static/gif/finalDemo.gif" width="548" height="960">
 
 ### Day 8 Progress on Onboarding Project
 __Regular/Light Mode__             |  __Migraine/Dark Mode__

@@ -8,7 +8,7 @@ Medicine subscription app as final project for my [MOB1.2](https://make-school-c
 - Animations
 
 ### Demo
-<img src="https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/static/gif/onboardingDemo.gif" width="548" height="960">
+<img src="https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/static/gif/finalDemo.gif" width="548" height="960">
 
 #### Links
 - For day to day development [click here]()
