@@ -12,32 +12,58 @@ struct ContentView: View {
     var body: some View {
         VStack {
             MapView()
-            .frame(height: 300)
-            CircleImage(imageName: "migraine", width: 225, height: 225) //with initialization
-            
-            .offset(y: -150)
+            .frame(height: 200)
+            ZStack(alignment: .center) {
+//                Circle()
+//                .background(/*@START_MENU_TOKEN@*/Color.orange/*@END_MENU_TOKEN@*/)
+//                    .padding(.bottom, -130)
+//                    .offset(y: -150)
+//                    .zIndex(-10)
+                
+                CircleImage(imageName: "migraine", width: 225, height: 225) //with initialization
+                
+                .offset(y: -150)
                 .padding(.bottom, -130)
+                .zIndex(10)
+                
+                
+//                Text("Hacking with Swift")
+//                    .font(.largeTitle)
+//                    .background(Color.black)
+//                    .foregroundColor(.white)
+            }
+            
             VStack(alignment: .center) {
-                Text("Hello Party People in the House!!!")
+                Text("Samuel Folledo")
                     .font(.title)
                     .foregroundColor(Color(SettingsService.mainColor))
                     .fontWeight(.heavy)
                     .multilineTextAlignment(.center)
                 
-                HStack {
-                    Text("Samuel Folledo")
+                VStack {
+                    Text("2 years")
                     .font(.subheadline)
                     .foregroundColor(Color.black)
-                        .multilineTextAlignment(.leading)
+                        .multilineTextAlignment(.center)
                     Spacer() //make them stretch as far away as possible
-                    Text("Subscriptions")
+                    Text("Samuel Folledo, the future Apple Inc. owner, loves being surrounded by more knowledgeable programmers beyond his reach. He strives to be the Elon Musk/Steve Wozniak in the tech world, primarily in software developer and plans to develop two of the next technological evolution every humans need.")
                     .font(.subheadline)
                     .foregroundColor(Color.black)
-                        .multilineTextAlignment(.trailing)
+                        .multilineTextAlignment(.center)
+//                Button(action: {
+////                    self.showingDetail.toggle()
+//                }) {
+//                    Text("Logout").foregroundColor(Color(SettingsService.blackColor)).bold()
+//                        .background(Color(SettingsService.whiteColor))
+//                    }
+////                .sheet(isPresented: $showingDetail) {
+////                    DetailView()
+////                }
                 }
                 .padding(.all, 10) //add padding to all sides
                 Spacer()
             }
+        .navigationBarTitle("Profile")
         }
     }
 }

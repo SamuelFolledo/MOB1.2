@@ -43,8 +43,6 @@ class TabBarController: UITabBarController {
         profileNav.tabBarItem = UITabBarItem(title: "Profile", image: kPROFILEIMAGE, tag: 3)
         profileNav.navigationBar.prefersLargeTitles = true
         profileNav.setStatusBarColor(backgroundColor: SettingsService.mainColor)
-        profileNav.title = "Profile"
-//        profileVC.title = "Profile"
         let navArray: [UINavigationController] = [homeNav, newNav, historyNav, profileNav]
         viewControllers = navArray
     }
