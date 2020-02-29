@@ -1,0 +1,14 @@
+# Medicine Subscription App
+Medicine subscription app as final project for my [MOB1.2](https://make-school-courses.github.io/MOB-1.2-Introduction-to-iOS-Development/#/) course in [Make School](makeschool.com)
+
+### Features
+- Dark Mode/Migraine Mode
+- Persistent Storage
+- UIKit + SwiftUI
+
+### Demo
+<img src="https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/static/gif/day10demo.gif" width="274" height="480">
+
+#### Links
+- For day to day development [click here]()
+- Instructor's [Digital Mockup](https://scene.zeplin.io/project/5e3b505d29276dd08ba41cc1)
