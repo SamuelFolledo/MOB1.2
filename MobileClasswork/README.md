@@ -149,38 +149,56 @@ __Regular/Light Mode__             |  __Migraine/Dark Mode__
 ## Day 9. [Lab](#lab)
 ### Topics
 
-### CW:
-
-### HW:
-
 ---
 
 <a name="day10"></a>
 ## Day 10. [TabBarController](#tabbarcontroller)
 ### Topics
+- __UITabBarController__ is a UIViewController subclass.
+- __UITabBarController__ manages an __array of view controllers__ that may not have direct relation to one another.
+- Understand the view hierarchy when using a tab bar controller with a navigation controller
+- Implement a TabBar Controller in an Xcode project
 
-### CW: 
+### HW:
+- Implement UITabBarController programmatically to Subscription Box app.
+- __Animations__ on switching between UITabBarController's viewcontrollers and BarItems
+<img src="https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/static/gif/day10demo.gif" width="274" height="480">
 
-### HW: 
+link to tabbarcontroller.swift
+
 
 ---
 <a name="day11"></a>
-## Day 11. [Lab](#day11)
+## Day 11. [Animations](#day11)
 ### Topics
-
-### CW:
+- Basics of UIKit animation and different options available to create special effects.
+- Identify properties that can be animated.
+- Animate views with the frame approach.
+- Animate views with Auto Layout.
 
 ### HW:
+- Animate LoginVC's app title and login button
+<img src="https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/static/gif/day11demo.gif" width="274" height="480">
+link to loginVC animation
+
+#### Links
+- [Login Animation Instructions](https://github.com/Make-School-Courses/MOB-1.2-Introduction-to-iOS-Development/blob/master/Lessons/10-Animations/assignments/login.md)
+- [UIKit Dynamics]( https://medium.com/@raulriera/uikit-dynamics-in-the-real-world-ef0dfd924260)
 
 ---
 
 <a name="day12"></a>
 ## Day 12. [Exploring SwiftUI](#day12)
 ### Topics
-
-### CW: 
+- Explain what is SwiftUI and how it works with Declarative syntax
+    - Declarative programming is a non-imperative style of programming in which _programs describe their desired results without explicitly listing commands or steps that must be performed_
+    - Telling SwiftUI what we want the UI to look like and work, then it figures out how to make that happen.
+- Familiarize with creating views following a [Apple's tutorial](https://developer.apple.com/tutorials/swiftui/creating-and-combining-views)
+- Combine SwiftUI and UIKit in a project
 
 ### HW: 
+- Create ProfileVC in SwiftUI using [Apple's SwiftUI Tutorial](https://developer.apple.com/tutorials/swiftui/creating-and-combining-views)
+<img src="https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/static/gif/day12demo.gif" width="274" height="480">
 
 ---
 <a name="day13"></a>
