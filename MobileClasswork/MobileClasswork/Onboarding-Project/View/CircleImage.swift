@@ -14,19 +14,21 @@ struct CircleImage: View {
     let height: CGFloat
     
     var body: some View {
-        Image(imageName)
+        Image("migraine")
             .resizable() //make the image resizable and accept aspect fit
 //        .scaledToFill()
             .aspectRatio(1, contentMode: .fit)
-            .frame(width: width, height: height) //size of image
-        .clipShape(
-            Circle()
-        ) //clips the shape
+            .frame(width: width, height: height, alignment: .top) //size of image
+        
+        
         .overlay(
             Circle().stroke(Color.gray, lineWidth: 4)
-                .padding(.all, -10) //makes the circle stroke bigger than the imge
-            .background(Color.white)
+                .padding(.all, 0.0) //makes the circle stroke bigger than the imge
+                .background(Color.clear, alignment: .bottom)
         )
+            .clipShape(
+                Circle()
+            ) //clips the image in shape
         .shadow(radius: 10)
     }
 }

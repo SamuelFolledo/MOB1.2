@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 extension UIViewController {
     /// method that instantiate a xib file given a string name using Generic
@@ -22,3 +23,5 @@ extension UIViewController {
       return self.init(nibName: String(describing: self), bundle: nil)
     }
 }
+
+///MARK SwiftUI stuffs
