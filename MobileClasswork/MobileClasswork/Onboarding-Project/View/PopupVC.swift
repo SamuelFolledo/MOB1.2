@@ -250,11 +250,13 @@ class PopupVC: UIViewController {
     }
     
 //MARK: Helpers
-    @objc func logoutButtonTap(_ gesture: UITapGestureRecognizer) { //go to imageDetailVC
+    @objc func logoutButtonTap(_ gesture: UITapGestureRecognizer) {
         saveSettingDarkMode(didSave: true)
         let vc: LoginVC = LoginVC()
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: false, completion: nil)
 //        self.navigationController?.initRootVC(vc: vc, fromRight: false)
-        self.tabBarController?.navigationController?.initRootVC(vc: vc)
+//        self.navigationController?.initRootVC(vc: vc) //if popup was pushed, use this instead tabBarController?.navigationController?.initRootVC(vc: vc)
     }
     @objc func cancelButtonTap(_ gesture: UITapGestureRecognizer) { //go to imageDetailVC
         saveSettingDarkMode(didSave: false)

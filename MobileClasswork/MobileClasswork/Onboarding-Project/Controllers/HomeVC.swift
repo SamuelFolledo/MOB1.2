@@ -99,18 +99,18 @@ class HomeVC: UIViewController {
     }
     
 //MARK: Helpers
-    @objc func newButtonTapped() {
-        let vc: NewBoxVC = NewBoxVC()
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-    @objc func pastButtonTapped() {
-        let vc: PastBoxesVC = PastBoxesVC()
-        navigationController?.pushViewController(vc, animated: true) //push
-    }
-    @objc func profileButtonTapped() {
-        let vc: Day8VC = Day8VC()
-        navigationController?.pushViewController(vc, animated: true) //push
-    }
+//    @objc func newButtonTapped() {
+//        let vc: NewBoxVC = NewBoxVC()
+//        self.navigationController?.pushViewController(vc, animated: true)
+//    }
+//    @objc func pastButtonTapped() {
+//        let vc: PastBoxesVC = PastBoxesVC()
+//        navigationController?.pushViewController(vc, animated: true) //push
+//    }
+//    @objc func profileButtonTapped() {
+//        let vc: Day8VC = Day8VC()
+//        navigationController?.pushViewController(vc, animated: true) //push
+//    }
     @objc func settingsButtonTapped() {
         let vc: PopupVC = PopupVC()
         vc.delegate = self
