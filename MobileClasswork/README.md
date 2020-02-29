@@ -212,11 +212,8 @@ __Regular/Light Mode__             |  __Migraine/Dark Mode__
 
 <a name="day14"></a>
 ## Day 14. [Presentations](#day14)
-### Topics
-
-### CW: 
-
-### HW: 
+### Final Demo
+<img src="https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/static/gif/onboardingDemo.gif" width="548" height="960">
 
 ---
 
