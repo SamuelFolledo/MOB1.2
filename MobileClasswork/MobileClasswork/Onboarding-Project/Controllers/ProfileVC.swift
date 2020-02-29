@@ -20,14 +20,15 @@ struct ContentView: View {
 //                    .offset(y: -150)
 //                    .zIndex(-10)
                 
-                CircleImage(imageName: "migraine", width: 225, height: 225) //with initialization
+                CircleImage(imageName: "appLogo", width: 225, height: 225) //with initialization
                 
                 .offset(y: -150)
                 .padding(.bottom, -130)
+                    
                 .zIndex(10)
                 
                 
-//                Text("Hacking with Swift")
+//                Text("Text on Image")
 //                    .font(.largeTitle)
 //                    .background(Color.black)
 //                    .foregroundColor(.white)
@@ -41,14 +42,14 @@ struct ContentView: View {
                     .multilineTextAlignment(.center)
                 
                 VStack {
-                    Text("2 years")
+                    Text("5 years")
                     .font(.subheadline)
-                    .foregroundColor(Color.black)
+                    .foregroundColor(Color(SettingsService.darkGrayColor))
                         .multilineTextAlignment(.center)
                     Spacer() //make them stretch as far away as possible
                     Text("Samuel Folledo, the future Apple Inc. owner, loves being surrounded by more knowledgeable programmers beyond his reach. He strives to be the Elon Musk/Steve Wozniak in the tech world, primarily in software developer and plans to develop two of the next technological evolution every humans need.")
                     .font(.subheadline)
-                    .foregroundColor(Color.black)
+                        .foregroundColor(Color(SettingsService.darkGrayColor))
                         .multilineTextAlignment(.center)
 //                Button(action: {
 ////                    self.showingDetail.toggle()
@@ -65,6 +66,7 @@ struct ContentView: View {
             }
         .navigationBarTitle("Profile")
         }
+        .background(Color(SettingsService.whiteColor))
     }
 }
 
