@@ -32,6 +32,8 @@ let kSAMPLEPRODUCTS: [Product] = [acetaminophen, ibuprofen, excedrin, aspirin, p
 
 //images
 let kMAKESCHOOLIMAGE: UIImage = UIImage(named: "makeschoolLogo")!
+let kAPPLOGO: UIImage = UIImage(named: "appLogo")!
+let kAPPLOGOCLEAR: UIImage = UIImage(named: "clearAppLogo")!
 let kSTARIMAGE: UIImage = UIImage(named: "star")!
 let kSTARFILLEDIMAGE: UIImage = UIImage(named: "starFilled")!
 let kMIGRAINEIMAGE: UIImage = UIImage(named: "migraine")!
