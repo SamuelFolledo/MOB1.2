@@ -152,7 +152,7 @@ __Regular/Light Mode__             |  __Migraine/Dark Mode__
 ---
 
 <a name="day10"></a>
-## Day 10. [TabBarController](#tabbarcontroller)
+## Day 10. [TabBarController](https://github.com/Make-School-Courses/MOB-1.2-Introduction-to-iOS-Development)
 ### Topics
 - __UITabBarController__ is a UIViewController subclass.
 - __UITabBarController__ manages an __array of view controllers__ that may not have direct relation to one another.
@@ -162,14 +162,12 @@ __Regular/Light Mode__             |  __Migraine/Dark Mode__
 ### HW:
 - Implement UITabBarController programmatically to Subscription Box app.
 - __Animations__ on switching between UITabBarController's viewcontrollers and BarItems
+- [TabBarController.swift](https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/MobileClasswork/Onboarding-Project/Controllers/TabBarController.swift) with sliding animations
 <img src="https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/static/gif/day10demo.gif" width="274" height="480">
-
-link to tabbarcontroller.swift
-
 
 ---
 <a name="day11"></a>
-## Day 11. [Animations](#day11)
+## Day 11. [Animations](https://make-school-courses.github.io/MOB-1.2-Introduction-to-iOS-Development/#/Lessons/10-Animations/README)
 ### Topics
 - Basics of UIKit animation and different options available to create special effects.
 - Identify properties that can be animated.
@@ -178,8 +176,8 @@ link to tabbarcontroller.swift
 
 ### HW:
 - Animate LoginVC's app title and login button
+- [LoginVC.swift](https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/MobileClasswork/Onboarding-Project/Controllers/LoginVC.swift)
 <img src="https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/static/gif/day11demo.gif" width="274" height="480">
-link to loginVC animation
 
 #### Links
 - [Login Animation Instructions](https://github.com/Make-School-Courses/MOB-1.2-Introduction-to-iOS-Development/blob/master/Lessons/10-Animations/assignments/login.md)
@@ -188,7 +186,7 @@ link to loginVC animation
 ---
 
 <a name="day12"></a>
-## Day 12. [Exploring SwiftUI](#day12)
+## Day 12. [Exploring SwiftUI](https://make-school-courses.github.io/MOB-1.2-Introduction-to-iOS-Development/#/Lessons/11-SwiftUI/README)
 ### Topics
 - Explain what is SwiftUI and how it works with Declarative syntax
     - Declarative programming is a non-imperative style of programming in which _programs describe their desired results without explicitly listing commands or steps that must be performed_
@@ -198,6 +196,7 @@ link to loginVC animation
 
 ### HW: 
 - Create ProfileVC in SwiftUI using [Apple's SwiftUI Tutorial](https://developer.apple.com/tutorials/swiftui/creating-and-combining-views)
+- [ProfileVC.swift](https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/MobileClasswork/Onboarding-Project/Controllers/ProfileVC.swift)
 <img src="https://github.com/SamuelFolledo/MOB1.2/blob/master/MobileClasswork/static/gif/day12demo.gif" width="274" height="480">
 
 ---
