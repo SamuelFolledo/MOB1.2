@@ -138,6 +138,11 @@ extension HomeVC: UICollectionViewDataSource {
 extension HomeVC: UICollectionViewDelegate {}
 
 extension HomeVC: PopupProtocol {
+    func didLogout() {
+        let vc: LoginVC = LoginVC()
+        self.tabBarController?.navigationController?.initRootVC(vc: vc)
+    }
+    
     func didUpdateColor() {
         updateColors()
     }

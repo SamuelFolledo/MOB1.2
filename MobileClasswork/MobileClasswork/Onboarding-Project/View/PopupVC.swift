@@ -11,6 +11,7 @@ import UIKit
 protocol PopupProtocol {
     ///Switching the darkSwitch will update the colors of the VC that pushed this PopupVC
     func didUpdateColor()
+    func didLogout()
 }
 
 class PopupVC: UIViewController {
@@ -254,7 +255,9 @@ class PopupVC: UIViewController {
         saveSettingDarkMode(didSave: true)
         let vc: LoginVC = LoginVC()
         vc.modalPresentationStyle = .overFullScreen
-        self.present(vc, animated: false, completion: nil)
+        guard let delegate = delegate else { return }
+        delegate.didLogout()
+        self.dismiss(animated: false, completion: nil)
 //        self.navigationController?.initRootVC(vc: vc, fromRight: false)
 //        self.navigationController?.initRootVC(vc: vc) //if popup was pushed, use this instead tabBarController?.navigationController?.initRootVC(vc: vc)
     }

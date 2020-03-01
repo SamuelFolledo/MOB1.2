@@ -166,6 +166,11 @@ extension NewBoxVC: UICollectionViewDelegate {
 }
 
 extension NewBoxVC: PopupProtocol {
+    func didLogout() {
+        let vc: LoginVC = LoginVC()
+        self.tabBarController?.navigationController?.initRootVC(vc: vc)
+    }
+    
     func didUpdateColor() {
         updateColors()
     }

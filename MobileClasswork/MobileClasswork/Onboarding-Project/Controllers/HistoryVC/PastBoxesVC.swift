@@ -115,6 +115,11 @@ extension PastBoxesVC: UITableViewDataSource {
 }
 
 extension PastBoxesVC: PopupProtocol {
+    func didLogout() {
+        let vc: LoginVC = LoginVC()
+        self.tabBarController?.navigationController?.initRootVC(vc: vc)
+    }
+    
     func didUpdateColor() {
         updateColors()
     }
