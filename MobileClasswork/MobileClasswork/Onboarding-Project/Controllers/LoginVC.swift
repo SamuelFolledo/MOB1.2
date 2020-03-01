@@ -132,19 +132,6 @@ class LoginVC: UIViewController {
         animateTitleAndButton()
     }
     
-    fileprivate func animateTitleAndButton() {
-        titleConstraintStart.isActive = false
-        titleConstraintEnd.isActive = true //makes a going up animation
-        UIView.animate(withDuration: 1.0, delay: 0.0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0, options: [.curveEaseOut], animations: { //create a bounce effect as we are setting titleLabel's original size
-            self.titleLabel.transform = CGAffineTransform(scaleX: 1, y: 1)
-            self.view.layoutIfNeeded()
-        }) { (_) in
-            UIView.animate(withDuration: 0.25, delay: 0.0, options: [.curveEaseOut], animations: {
-                self.loginButton.alpha = 1.0
-            },completion: nil)
-        }
-    }
-    
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         self.tabBarController?.tabBar.isHidden = false
@@ -262,6 +249,19 @@ class LoginVC: UIViewController {
         ])
     }
     
+    fileprivate func animateTitleAndButton() {
+        titleConstraintStart.isActive = false
+        titleConstraintEnd.isActive = true //makes a going up animation
+        UIView.animate(withDuration: 1.0, delay: 0.0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0, options: [.curveEaseOut], animations: { //create a bounce effect as we are setting titleLabel's original size
+            self.titleLabel.transform = CGAffineTransform(scaleX: 1, y: 1)
+            self.view.layoutIfNeeded()
+        }) { (_) in
+            UIView.animate(withDuration: 0.25, delay: 0.0, options: [.curveEaseOut], animations: {
+                self.loginButton.alpha = 1.0
+            },completion: nil)
+        }
+    }
+    
 //MARK: Helpers
     @objc func backButtonTapped() {
         self.navigationController?.popViewController(animated: true)
@@ -302,6 +302,7 @@ extension LoginVC {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
     }
+    
     @objc func keyboardWillShow(notification: NSNotification) { //makes the view go up by keyboard's height
         hasKeyboard = true
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
