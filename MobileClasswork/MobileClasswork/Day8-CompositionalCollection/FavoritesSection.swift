@@ -9,6 +9,7 @@
 import UIKit
 
 struct FavoritesSection: Section {
+    var products: [Product]
     let numberOfItems = 14
     
     func layoutSection() -> NSCollectionLayoutSection? {
@@ -34,9 +35,10 @@ struct FavoritesSection: Section {
     
     func configureCell(collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: FavoritesCell.self), for: indexPath) as! FavoritesCell
-        cell.image = kPILLIMAGE.tint(with: SettingsService.shared.darkGrayColor)
+        let product: Product = products[indexPath.row]
+        cell.image = product.image.tint(with: SettingsService.shared.darkGrayColor)
+        cell.name = product.name
         cell.updateCellColors()
-        cell.name = "Advil"
         return cell
     }
 }

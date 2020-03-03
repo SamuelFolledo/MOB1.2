@@ -13,12 +13,12 @@ class Day8VC: UIViewController {
     var collectionView: UICollectionView!
     
     lazy var sections: [Section] = [
-        TitleSection(title: "Grid Example"),
-        BasicGridSection(),
-        TitleSection(title: "Featured Categories"),
-        FeaturedSection(),
-        TitleSection(title: "Last Month's Favorites"),
-        FavoritesSection()
+        TitleSection(products: [], title: "Grid Example"),
+        BasicGridSection(products: kSAMPLEPRODUCTS),
+        TitleSection(products: [], title: "Featured Categories"),
+        FeaturedSection(products: kSAMPLEPRODUCTS),
+        TitleSection(products: [], title: "Last Month's Favorites"),
+        FavoritesSection(products: kSAMPLEPRODUCTS)
     ]
     
 //    lazy var sections: [Section] = [

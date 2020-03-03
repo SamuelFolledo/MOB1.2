@@ -11,10 +11,10 @@ import UIKit
 class HomeVC: UIViewController {
 //MARK: Properties
     lazy var sections: [Section] = [
-        TitleSection(title: "Featured Boxes"),
-        FeaturedSection(),
-        TitleSection(title: "Favorite Boxes"),
-        FavoritesSection()
+        TitleSection(products: [], title: "Featured Boxes"),
+        FeaturedSection(products: kSAMPLEPRODUCTS.shuffled()),
+        TitleSection(products: [], title: "Favorite Boxes"),
+        FavoritesSection(products: kSAMPLEPRODUCTS.shuffled())
     ]
 //MARK: Properties Views
     lazy var collectionView: UICollectionView = {
@@ -115,7 +115,15 @@ extension HomeVC: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        sections[section].numberOfItems
+        switch section {
+        case 0, 2: //if Section is titleSection
+            return 1
+        case 1, 3:
+            return sections[section].products.count
+        default:
+            break
+        }
+        return 0
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

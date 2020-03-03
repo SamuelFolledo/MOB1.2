@@ -9,7 +9,7 @@
 import UIKit
 
 struct TitleSection: Section {
-    
+    var products: [Product]
     // TODO: Set a constant numberOfItems to 1
     let numberOfItems: Int = 1
     

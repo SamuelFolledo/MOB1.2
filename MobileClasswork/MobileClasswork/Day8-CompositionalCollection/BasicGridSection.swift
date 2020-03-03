@@ -9,8 +9,8 @@
 import UIKit
 
 struct BasicGridSection: Section {
+    var products: [Product]
     let numberOfItems = 100
-
     func layoutSection() -> NSCollectionLayoutSection? {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(0.25))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)

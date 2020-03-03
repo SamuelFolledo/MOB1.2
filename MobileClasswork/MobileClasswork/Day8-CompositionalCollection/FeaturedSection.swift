@@ -9,6 +9,8 @@
 import UIKit
 
 struct FeaturedSection: Section {
+    var products: [Product]
+    
     let numberOfItems = 8
     
     func layoutSection() -> NSCollectionLayoutSection? {
@@ -32,7 +34,8 @@ struct FeaturedSection: Section {
     
     func configureCell(collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: FeaturedCell.self), for: indexPath) as! FeaturedCell
-        cell.image = kMIGRAINEIMAGE.tint(with: SettingsService.shared.darkGrayColor)
+        let product: Product = products[indexPath.row]
+        cell.image = product.image.tint(with: SettingsService.shared.darkGrayColor)
         cell.updateCellColors()
         return cell
     }
