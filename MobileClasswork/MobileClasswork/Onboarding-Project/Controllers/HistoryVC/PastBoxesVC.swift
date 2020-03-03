@@ -10,7 +10,6 @@ import UIKit
 
 class PastBoxesVC: UIViewController {
 //MARK: Properties
-//    let alienArray = [String](repeating: "👽 invading  🌎", count: 100)
     let months: [String] = ["February 2020", "January 2020", "December 2019", "November 2019", "October 2019", "September 2019", "August 2019", "July 2019", "June 2019", "May 2019", "April 2019", "March 2019", "February 2019", "January 2019"]
     
 //MARK: Properties Views

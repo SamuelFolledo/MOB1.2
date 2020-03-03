@@ -99,18 +99,6 @@ class HomeVC: UIViewController {
     }
     
 //MARK: Helpers
-//    @objc func newButtonTapped() {
-//        let vc: NewBoxVC = NewBoxVC()
-//        self.navigationController?.pushViewController(vc, animated: true)
-//    }
-//    @objc func pastButtonTapped() {
-//        let vc: PastBoxesVC = PastBoxesVC()
-//        navigationController?.pushViewController(vc, animated: true) //push
-//    }
-//    @objc func profileButtonTapped() {
-//        let vc: Day8VC = Day8VC()
-//        navigationController?.pushViewController(vc, animated: true) //push
-//    }
     @objc func settingsButtonTapped() {
         let vc: PopupVC = PopupVC()
         vc.delegate = self
@@ -140,7 +128,13 @@ extension HomeVC: UICollectionViewDelegate {}
 extension HomeVC: PopupProtocol {
     func didLogout() {
         let vc: LoginVC = LoginVC()
-        self.tabBarController?.navigationController?.initRootVC(vc: vc)
+//        self.tabBarController?.navigationController?.initRootVC(vc: vc)
+        UIView.transition(with: self.view.window!, duration: 0.3, options: [.transitionCrossDissolve], animations: {
+            
+        }) { (_) in
+            let nav = UINavigationController(rootViewController: vc)
+            self.view.window!.rootViewController = nav
+        }
     }
     
     func didUpdateColor() {

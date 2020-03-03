@@ -29,10 +29,13 @@ class FeaturedCell: UICollectionViewCell {
     }
 
     func setup(){ //featured has layer on image
-//        self.contentView.layer.cornerRadius = 10
-//        self.contentView.layer.borderWidth = 1
         imgView.layer.cornerRadius = 10
         imgView.layer.borderWidth = 1.5
         imgView.image = image
+    }
+    
+    func updateCellColors() {
+        imgView.backgroundColor = SettingsService.whiteColor
+        imgView.layer.borderColor = SettingsService.darkGrayColor.cgColor
     }
 }

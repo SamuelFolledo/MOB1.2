@@ -19,6 +19,10 @@ class TitleCell: UICollectionViewCell {
     
     func set(title: String) {
         lblTitle.text = title
+        updateCellColors()
+    }
+    
+    func updateCellColors() {
         lblTitle.textColor = SettingsService.darkGrayColor
     }
 }

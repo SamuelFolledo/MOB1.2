@@ -117,9 +117,6 @@ class LoginVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.prefersLargeTitles = false
-        if self == self.navigationController?.viewControllers[0] { //if loginVC is the rootVC, hide the backButton
-            backButton.isHidden = true
-        }
         self.tabBarController?.tabBar.isHidden = true
         let isDarkMode = UserDefaults.standard.bool(forKey: "isDarkMode")
         darkSwitch.isOn = isDarkMode
@@ -129,6 +126,9 @@ class LoginVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        if self == self.navigationController?.viewControllers[0] { //if loginVC is the rootVC, hide the backButton
+            backButton.isHidden = true
+        }
         animateTitleAndButton()
     }
     
@@ -253,8 +253,8 @@ class LoginVC: UIViewController {
         titleConstraintStart.isActive = false
         titleConstraintEnd.isActive = true //makes a going up animation
         UIView.animate(withDuration: 1.0, delay: 0.0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0, options: [.curveEaseOut], animations: { //create a bounce effect as we are setting titleLabel's original size
-            self.titleLabel.transform = CGAffineTransform(scaleX: 1, y: 1)
             self.view.layoutIfNeeded()
+            self.titleLabel.transform = CGAffineTransform(scaleX: 1, y: 1)
         }) { (_) in
             UIView.animate(withDuration: 0.25, delay: 0.0, options: [.curveEaseOut], animations: {
                 self.loginButton.alpha = 1.0

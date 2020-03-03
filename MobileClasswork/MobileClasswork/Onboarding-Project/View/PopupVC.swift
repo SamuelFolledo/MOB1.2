@@ -9,7 +9,7 @@
 import UIKit
 
 protocol PopupProtocol {
-    ///Switching the darkSwitch will update the colors of the VC that pushed this PopupVC
+///Switching the darkSwitch will update the colors of the VC that pushed this PopupVC
     func didUpdateColor()
     func didLogout()
 }
@@ -117,8 +117,6 @@ class PopupVC: UIViewController {
         darkSwitch.isOn = isDarkMode
 //        darkSwitch.onTintColor = SettingsService.mainColor //default to green
         darkSwitch.thumbTintColor = SettingsService.mainColor
-//        darkSwitch.backgroundColor = .yellow
-//        darkSwitch.tintColor = .red
         darkSwitch.addTarget(self, action: #selector(switchChanged), for: .touchUpInside)
         return darkSwitch
     }()
@@ -232,7 +230,6 @@ class PopupVC: UIViewController {
         }, completion:{(finished : Bool)  in
             if (finished) {
                 self.view.removeFromSuperview() //was causing bug before
-//                self.navigationController?.popViewController(animated: false)
                 self.dismiss(animated: false, completion: nil)
             }
         });
@@ -253,8 +250,8 @@ class PopupVC: UIViewController {
 //MARK: Helpers
     @objc func logoutButtonTap(_ gesture: UITapGestureRecognizer) {
         saveSettingDarkMode(didSave: true)
-        let vc: LoginVC = LoginVC()
-        vc.modalPresentationStyle = .overFullScreen
+//        let vc: LoginVC = LoginVC()
+//        vc.modalPresentationStyle = .overFullScreen
         guard let delegate = delegate else { return }
         delegate.didLogout()
         self.dismiss(animated: false, completion: nil)

@@ -28,16 +28,17 @@ class FavoritesCell: UICollectionViewCell {
         setup()
     }
     
-    func setup(){
+    func setup() {
         imgView.layer.cornerRadius = 10
         imgView.layer.borderWidth = 1.5
         self.contentView.layer.cornerRadius = 10
         self.contentView.layer.borderWidth = 1
     }
     
-//    override func prepareForReuse() {
-//        self.backgroundColor = SettingsService.grayColor
-//        self.imgView.image?.withTintColor(SettingsService.darkGrayColor)
-//        self.nameLabel.textColor = SettingsService.darkGrayColor
-//    }
+    func updateCellColors() {
+        nameLabel.textColor = SettingsService.darkGrayColor
+        imgView.backgroundColor = SettingsService.whiteColor
+        imgView.layer.borderColor = SettingsService.darkGrayColor.cgColor
+        contentView.layer.borderColor = SettingsService.darkGrayColor.cgColor
+    }
 }

@@ -160,8 +160,6 @@ extension NewBoxVC: UICollectionViewDelegate {
         print(indexPath.row)
         let cell: NewBoxCell = collectionView.cellForItem(at: indexPath) as! NewBoxCell
         cell.containerView.backgroundColor = .purple
-//        cell.starImageView.image = cell.starImageView.image == kSTARIMAGE ? kSTARFILLEDIMAGE : kSTARIMAGE //if star is filled, then unfill it
-//        boxes[indexPath.row].1 = !boxes[indexPath.row].1
     }
 }
 

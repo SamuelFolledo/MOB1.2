@@ -92,7 +92,7 @@ class OnboardingVC: UIViewController {
     }
     
     fileprivate func applyPageConstraints() { //apply constraints to all pages
-        pages.enumerated().forEach { tuple in //this tuple only have offset and element
+       self.pages.enumerated().forEach { tuple in //this tuple only have offset and element
             let index = tuple.offset //index of page
             let page = tuple.element //page
             contentView.addSubview(page) //add page to contentView
