@@ -36,6 +36,7 @@ class PastBoxesDetailVC: UIViewController {
     fileprivate func updateColors() {
         view.backgroundColor = SettingsService.shared.whiteColor
         table.backgroundColor = SettingsService.shared.whiteColor
+        table.reloadData()
     }
     
     fileprivate func setupViews() {
@@ -86,6 +87,7 @@ extension PastBoxesDetailVC: UITableViewDataSource {
         cell.boxImageView.image = product.image.tint(with: SettingsService.shared.grayColor) //product's image
         cell.titleLabel.text = product.name
         cell.descriptionLabel.text = product.description
+        cell.updateCellColors()
         return cell
     }
 }

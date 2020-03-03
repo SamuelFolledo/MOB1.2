@@ -57,6 +57,7 @@ class NewBoxVC: UIViewController {
     fileprivate func updateColors() {
         view.backgroundColor = SettingsService.shared.whiteColor
         collectionView.backgroundColor = SettingsService.shared.whiteColor
+        collectionView.reloadData()
         self.tabBarController?.isMainTabBar()
     }
     
