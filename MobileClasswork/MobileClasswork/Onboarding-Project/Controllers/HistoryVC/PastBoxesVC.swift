@@ -29,13 +29,9 @@ class PastBoxesVC: UIViewController {
 //MARK: App Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupViews()
-    }
-    
-    override func loadView() {
-        super.loadView()
         title = "History"
         setupNavigationBar()
+        setupViews()
     }
     
     override func viewWillAppear(_ animated: Bool) {

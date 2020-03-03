@@ -68,7 +68,7 @@ class NewBoxVC: UIViewController {
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.tintColor = SettingsService.shared.grayColor //button color
-        navigationController?.setStatusBarColor(backgroundColor: kMAINCOLOR)
+        navigationController?.setStatusBarColor()
         settingsButton = UIBarButtonItem.navButton(self, action: #selector(settingsButtonTapped), image: kSETTINGSIMAGE)
         navigationItem.rightBarButtonItem = settingsButton
     }

@@ -10,7 +10,6 @@ import UIKit
 
 class PastBoxesDetailVC: UIViewController {
 //MARK: Properties
-//    var boxes: [(Product, Bool)] = [(Product, Bool)](repeating: (kSAMPLEPRODUCT,false), count: 100)
     var boxes: [(Product, Bool)] = []
     var month: String = ""
     

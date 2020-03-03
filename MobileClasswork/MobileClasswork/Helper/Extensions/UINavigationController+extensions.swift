@@ -57,7 +57,7 @@ extension UINavigationController {
     }
     
 ///Change the background color of the status bar and if isLightContent
-    func setStatusBarColor(backgroundColor: UIColor, isLightContent: Bool = true) {
+    func setStatusBarColor(backgroundColor: UIColor = SettingsService.shared.mainColor, isLightContent: Bool = true) {
         if #available(iOS 13, *) {
             let navBarAppearance = UINavigationBarAppearance()
             navBarAppearance.configureWithOpaqueBackground()
