@@ -460,25 +460,8 @@
 				33C87E312408462A00DB04CF /* PastBoxesDetailVC.swift */,
 				33C87E2E2408460900DB04CF /* ProfileVC.swift */,
 				33B2A17F23F52B6300AF03CA /* NewBoxVC.swift */,
-				33C87E2D2408450200DB04CF /* PastBoxesVC */,
-				33EF582D2400F1D3007803D1 /* TabBarController */,
-				33C87E2C240843C500DB04CF /* ProfileVC */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		33C87E2C240843C500DB04CF /* ProfileVC */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ProfileVC;
-			sourceTree = "<group>";
-		};
-		33C87E2D2408450200DB04CF /* PastBoxesVC */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = PastBoxesVC;
 			sourceTree = "<group>";
 		};
 		33CA319E23E565AD009AA3DF /* Xib-Cell */ = {
@@ -526,13 +509,6 @@
 				334ED2F523EC89A6002B5FF4 /* Model */,
 			);
 			path = "Day5-Onboarding";
-			sourceTree = "<group>";
-		};
-		33EF582D2400F1D3007803D1 /* TabBarController */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TabBarController;
 			sourceTree = "<group>";
 		};
 		DFA0A6888436AECE8A78421D /* Pods */ = {

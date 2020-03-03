@@ -10,7 +10,8 @@ import UIKit
 
 class PastBoxesDetailVC: UIViewController {
 //MARK: Properties
-    var boxes: [(Product, Bool)] = [(Product, Bool)](repeating: (kSAMPLEPRODUCT,false), count: 100)
+//    var boxes: [(Product, Bool)] = [(Product, Bool)](repeating: (kSAMPLEPRODUCT,false), count: 100)
+    var boxes: [(Product, Bool)] = []
     var month: String = ""
     
 //MARK: Properties Views
@@ -42,6 +43,9 @@ class PastBoxesDetailVC: UIViewController {
     fileprivate func setupViews() {
         view.backgroundColor = .white
         title = month
+        for product in kSAMPLEPRODUCTS { //populate boxes with default not selected
+            boxes.append((product, false))
+        }
         setupTableView()
     }
     
