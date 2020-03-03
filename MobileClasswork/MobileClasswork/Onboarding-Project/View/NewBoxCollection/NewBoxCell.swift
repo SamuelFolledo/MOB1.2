@@ -86,4 +86,9 @@ class NewBoxCell: UICollectionViewCell {
         textLabel.widthAnchor.constraint(equalTo: stackView.widthAnchor).isActive = true
         textLabel.heightAnchor.constraint(equalToConstant: 60).isActive = true
     }
+    
+    func updateCellColors() {
+        textLabel.textColor = SettingsService.shared.grayColor
+        containerView.backgroundColor = .darkGray
+    }
 }
