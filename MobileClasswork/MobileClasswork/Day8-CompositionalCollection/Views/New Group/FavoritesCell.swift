@@ -36,9 +36,9 @@ class FavoritesCell: UICollectionViewCell {
     }
     
     func updateCellColors() {
-        nameLabel.textColor = SettingsService.darkGrayColor
-        imgView.backgroundColor = SettingsService.whiteColor
-        imgView.layer.borderColor = SettingsService.darkGrayColor.cgColor
-        contentView.layer.borderColor = SettingsService.darkGrayColor.cgColor
+        nameLabel.textColor = SettingsService.shared.darkGrayColor
+        imgView.backgroundColor = SettingsService.shared.whiteColor
+        imgView.layer.borderColor = SettingsService.shared.darkGrayColor.cgColor
+        contentView.layer.borderColor = SettingsService.shared.darkGrayColor.cgColor
     }
 }

@@ -34,8 +34,8 @@ class PastBoxesDetailVC: UIViewController {
     
 //MARK: Private Methods
     fileprivate func updateColors() {
-        view.backgroundColor = SettingsService.whiteColor
-        table.backgroundColor = SettingsService.whiteColor
+        view.backgroundColor = SettingsService.shared.whiteColor
+        table.backgroundColor = SettingsService.shared.whiteColor
     }
     
     fileprivate func setupViews() {
@@ -83,11 +83,8 @@ extension PastBoxesDetailVC: UITableViewDataSource {
             cell.starImageView.image = kSTARIMAGE
         }
         let product = boxes[indexPath.row].0
-        cell.boxImageView.image = product.image.tint(with: SettingsService.grayColor) //product's image
-        cell.backgroundColor = SettingsService.whiteColor
-        cell.titleLabel.textColor = SettingsService.grayColor
+        cell.boxImageView.image = product.image.tint(with: SettingsService.shared.grayColor) //product's image
         cell.titleLabel.text = product.name
-        cell.descriptionLabel.textColor = SettingsService.grayColor
         cell.descriptionLabel.text = product.description
         return cell
     }

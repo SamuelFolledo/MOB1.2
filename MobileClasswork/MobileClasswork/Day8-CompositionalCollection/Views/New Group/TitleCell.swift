@@ -23,6 +23,6 @@ class TitleCell: UICollectionViewCell {
     }
     
     func updateCellColors() {
-        lblTitle.textColor = SettingsService.darkGrayColor
+        lblTitle.textColor = SettingsService.shared.darkGrayColor
     }
 }

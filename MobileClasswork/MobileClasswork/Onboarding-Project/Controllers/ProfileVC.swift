@@ -31,25 +31,25 @@ struct ContentView: View {
             VStack(alignment: .center) {
                 Text("Samuel Folledo")
                     .font(.title)
-                    .foregroundColor(Color(SettingsService.mainColor))
+                    .foregroundColor(Color(SettingsService.shared.mainColor))
                     .fontWeight(.heavy)
                     .multilineTextAlignment(.center)
                 
                 VStack {
                     Text("5 years")
                     .font(.subheadline)
-                    .foregroundColor(Color(SettingsService.darkGrayColor))
+                    .foregroundColor(Color(SettingsService.shared.darkGrayColor))
                         .multilineTextAlignment(.center)
                     Spacer() //make them stretch as far away as possible
                     Text("Samuel Folledo, the future Apple Inc. owner, loves being surrounded by more knowledgeable programmers beyond his reach. He strives to be the Elon Musk/Steve Wozniak in the tech world, primarily in software development and plans to develop two of the next technological evolution every humans need.")
                     .font(.subheadline)
-                        .foregroundColor(Color(SettingsService.darkGrayColor))
+                        .foregroundColor(Color(SettingsService.shared.darkGrayColor))
                         .multilineTextAlignment(.center)
 //                Button(action: {
 ////                    self.showingDetail.toggle()
 //                }) {
-//                    Text("Logout").foregroundColor(Color(SettingsService.blackColor)).bold()
-//                        .background(Color(SettingsService.whiteColor))
+//                    Text("Logout").foregroundColor(Color(SettingsService.shared.blackColor)).bold()
+//                        .background(Color(SettingsService.shared.whiteColor))
 //                    }
 ////                .sheet(isPresented: $showingDetail) {
 ////                    DetailView()
@@ -60,7 +60,7 @@ struct ContentView: View {
             }
         .navigationBarTitle("Profile")
         }
-        .background(Color(SettingsService.whiteColor))
+        .background(Color(SettingsService.shared.whiteColor))
 //        .onAppear { //viewWillAppear
 //
 //        }

@@ -67,8 +67,8 @@ class LoginVC: UIViewController {
         let button: UIButton = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .regular)
-        button.setTitleColor(SettingsService.darkGrayColor, for: .normal)
-        button.setImage(kBACKBUTTONIMAGE.withTintColor(SettingsService.darkGrayColor), for: .normal)
+        button.setTitleColor(SettingsService.shared.darkGrayColor, for: .normal)
+        button.setImage(kBACKBUTTONIMAGE.withTintColor(SettingsService.shared.darkGrayColor), for: .normal)
         button.imageView?.contentMode = .scaleAspectFill //contentMode for buttons
         button.contentMode = .left
 //        button.contentEdgeInsets = UIEdgeInsets(top: 0, left: -20, bottom: 0, right: 0)
@@ -99,7 +99,7 @@ class LoginVC: UIViewController {
         darkSwitch.translatesAutoresizingMaskIntoConstraints = false
         let isDarkMode = UserDefaults.standard.bool(forKey: "isDarkMode")
         darkSwitch.isOn = isDarkMode
-        darkSwitch.thumbTintColor = SettingsService.mainColor
+        darkSwitch.thumbTintColor = SettingsService.shared.mainColor
         darkSwitch.addTarget(self, action: #selector(self.switchChanged), for: .touchUpInside)
         return darkSwitch
     }()
@@ -147,17 +147,17 @@ class LoginVC: UIViewController {
     fileprivate func updateColors() {
         loginButton.isMainButton() //since isMainButton() extension has corner radius which needs height for customization, need to call it in viewDidLayoutSubviews
         skipButton.isClearButton()
-        darkModeLabel.textColor = SettingsService.darkGrayColor
-        titleLabel.textColor = SettingsService.darkGrayColor
-        view.backgroundColor = SettingsService.whiteColor
-        emailTextField.setUnderlineColor(color: SettingsService.darkGrayColor)
-        emailTextField.tintColor = SettingsService.darkGrayColor
-        emailTextField.textColor = SettingsService.darkGrayColor
-        passwordTextField.setUnderlineColor(color: SettingsService.darkGrayColor)
-        passwordTextField.tintColor = SettingsService.darkGrayColor
-        passwordTextField.textColor = SettingsService.darkGrayColor
-        imageView.image = kMIGRAINEIMAGE.tint(with: SettingsService.darkGrayColor)
-        backButton.setImage(kBACKBUTTONIMAGE.withTintColor(SettingsService.darkGrayColor), for: .normal)
+        darkModeLabel.textColor = SettingsService.shared.darkGrayColor
+        titleLabel.textColor = SettingsService.shared.darkGrayColor
+        view.backgroundColor = SettingsService.shared.whiteColor
+        emailTextField.setUnderlineColor(color: SettingsService.shared.darkGrayColor)
+        emailTextField.tintColor = SettingsService.shared.darkGrayColor
+        emailTextField.textColor = SettingsService.shared.darkGrayColor
+        passwordTextField.setUnderlineColor(color: SettingsService.shared.darkGrayColor)
+        passwordTextField.tintColor = SettingsService.shared.darkGrayColor
+        passwordTextField.textColor = SettingsService.shared.darkGrayColor
+        imageView.image = kMIGRAINEIMAGE.tint(with: SettingsService.shared.darkGrayColor)
+        backButton.setImage(kBACKBUTTONIMAGE.withTintColor(SettingsService.shared.darkGrayColor), for: .normal)
     }
     
     fileprivate func setupViews() {
@@ -268,13 +268,13 @@ class LoginVC: UIViewController {
     }
     
     @objc func loginButtonTapped() {
-        SettingsService.saveIsDarkMode()
+        SettingsService.shared.saveIsDarkMode()
         let vc: TabBarController = TabBarController()
         self.navigationController?.initRootVC(vc: vc, fromRight: true)
     }
     
     @objc func skipButtonTapped() {
-        SettingsService.saveIsDarkMode()
+        SettingsService.shared.saveIsDarkMode()
         let vc: TabBarController = TabBarController()
         self.navigationController?.initRootVC(vc: vc, fromRight: true)
     }
@@ -284,8 +284,8 @@ class LoginVC: UIViewController {
     }
     
     @objc func switchChanged() {
-        SettingsService.isDarkMode = darkSwitch.isOn ? true : false
-        SettingsService.saveIsDarkMode()
+        SettingsService.shared.isDarkMode = darkSwitch.isOn ? true : false
+        SettingsService.shared.saveIsDarkMode()
         updateColors()
     }
 }

@@ -61,9 +61,9 @@ extension UINavigationController {
         if #available(iOS 13, *) {
             let navBarAppearance = UINavigationBarAppearance()
             navBarAppearance.configureWithOpaqueBackground()
-            navBarAppearance.titleTextAttributes = [.foregroundColor: SettingsService.grayColor]
+            navBarAppearance.titleTextAttributes = [.foregroundColor: SettingsService.shared.grayColor]
             let titleAttributes = [
-                NSAttributedString.Key.foregroundColor: SettingsService.grayColor,
+                NSAttributedString.Key.foregroundColor: SettingsService.shared.grayColor,
 //            NSAttributedString.Key.font: UIFont(name: "Georgia-Bold", size: 24)!
             ]
             navBarAppearance.largeTitleTextAttributes = titleAttributes

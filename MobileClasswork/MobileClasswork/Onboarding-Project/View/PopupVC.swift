@@ -23,7 +23,7 @@ class PopupVC: UIViewController {
     lazy var popUpView: UIView = {
         let view: UIView = UIView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
-//        view.backgroundColor = SettingsService.whiteColor
+//        view.backgroundColor = SettingsService.shared.whiteColor
         view.layer.cornerRadius = 10
         view.clipsToBounds = true
         let tap = UITapGestureRecognizer(target: self, action: #selector(popupViewTap(_:)))
@@ -46,8 +46,8 @@ class PopupVC: UIViewController {
         label.sizeToFit()
         label.numberOfLines = 1
         label.text = "Settings"
-        label.backgroundColor = SettingsService.mainColor
-//        label.textColor = SettingsService.whiteColor
+        label.backgroundColor = SettingsService.shared.mainColor
+//        label.textColor = SettingsService.shared.whiteColor
         label.textAlignment = .center
         return label
     }()
@@ -105,7 +105,7 @@ class PopupVC: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 18, weight: .regular)
         label.numberOfLines = 1
-//        label.textColor = SettingsService.blackColor
+//        label.textColor = SettingsService.shared.blackColor
         label.text = "Dark Mode: "
         label.textAlignment = .left
         return label
@@ -115,8 +115,8 @@ class PopupVC: UIViewController {
         darkSwitch.translatesAutoresizingMaskIntoConstraints = false
         let isDarkMode = UserDefaults.standard.bool(forKey: "isDarkMode")
         darkSwitch.isOn = isDarkMode
-//        darkSwitch.onTintColor = SettingsService.mainColor //default to green
-        darkSwitch.thumbTintColor = SettingsService.mainColor
+//        darkSwitch.onTintColor = SettingsService.shared.mainColor //default to green
+        darkSwitch.thumbTintColor = SettingsService.shared.mainColor
         darkSwitch.addTarget(self, action: #selector(switchChanged), for: .touchUpInside)
         return darkSwitch
     }()
@@ -147,10 +147,10 @@ class PopupVC: UIViewController {
     
 //MARK: Private Methods
     fileprivate func updateColors() {
-        popUpView.backgroundColor = SettingsService.whiteColor
-        titleLabel.textColor = SettingsService.grayColor
-        darkModeLabel.textColor = SettingsService.darkGrayColor
-        settingLabel.textColor = SettingsService.darkGrayColor
+        popUpView.backgroundColor = SettingsService.shared.whiteColor
+        titleLabel.textColor = SettingsService.shared.grayColor
+        darkModeLabel.textColor = SettingsService.shared.darkGrayColor
+        settingLabel.textColor = SettingsService.shared.darkGrayColor
         logoutButton.isBlackButton()
         cancelButton.isClearButton()
         saveButton.isMainButton()
@@ -237,11 +237,11 @@ class PopupVC: UIViewController {
     
     fileprivate func saveSettingDarkMode(didSave: Bool) {
         if isDarkMode != darkSwitch.isOn && didSave { //if first dark mode didnt change and user saved
-            SettingsService.saveIsDarkMode()
+            SettingsService.shared.saveIsDarkMode()
             guard let delegate = delegate else { return }
             delegate.didUpdateColor() //save it
         } else { //reset isDarkMode
-            SettingsService.isDarkMode = isDarkMode
+            SettingsService.shared.isDarkMode = isDarkMode
             guard let delegate = delegate else { return }
             delegate.didUpdateColor()//don't save it
         }
@@ -270,7 +270,7 @@ class PopupVC: UIViewController {
         print("Do nothing")
     }
     @objc func switchChanged() {
-        SettingsService.isDarkMode = darkSwitch.isOn ? true : false
+        SettingsService.shared.isDarkMode = darkSwitch.isOn ? true : false
         updateColors()
         guard let delegate = delegate else { return }
         delegate.didUpdateColor()

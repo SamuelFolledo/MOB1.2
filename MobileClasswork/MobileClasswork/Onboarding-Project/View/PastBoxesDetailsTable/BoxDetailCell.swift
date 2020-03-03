@@ -66,7 +66,7 @@ class BoxDetailCell: UITableViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.layer.cornerRadius = 5
         imageView.layer.masksToBounds = true
-//        imageView.image = kSTARIMAGE.tint(with: SettingsService.mainColor)
+//        imageView.image = kSTARIMAGE.tint(with: SettingsService.shared.mainColor)
         return imageView
     }()
     
@@ -125,7 +125,13 @@ class BoxDetailCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-//        starImageView.image = kSTARIMAGE.tint(with: SettingsService.mainColor)
+//        starImageView.image = kSTARIMAGE.tint(with: SettingsService.shared.mainColor)
+    }
+    
+    func updateCellColors() {
+        backgroundColor = SettingsService.shared.whiteColor
+        titleLabel.textColor = SettingsService.shared.grayColor
+        descriptionLabel.textColor = SettingsService.shared.grayColor
     }
 }
 

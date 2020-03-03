@@ -16,7 +16,7 @@ extension UITabBarController {
         //MARK: Color customization
         tabBar.backgroundColor = .clear
         tabBar.backgroundImage = UIImage()
-        tabBar.barTintColor = SettingsService.whiteColor //bar color
+        tabBar.barTintColor = SettingsService.shared.whiteColor //bar color
         tabBar.tintColor = kMAINCOLOR //selected tab
         tabBar.unselectedItemTintColor = .gray
         //MARK: Tab Bar Size Customization

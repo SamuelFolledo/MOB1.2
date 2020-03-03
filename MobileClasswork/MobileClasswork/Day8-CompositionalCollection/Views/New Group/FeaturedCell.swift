@@ -35,7 +35,7 @@ class FeaturedCell: UICollectionViewCell {
     }
     
     func updateCellColors() {
-        imgView.backgroundColor = SettingsService.whiteColor
-        imgView.layer.borderColor = SettingsService.darkGrayColor.cgColor
+        imgView.backgroundColor = SettingsService.shared.whiteColor
+        imgView.layer.borderColor = SettingsService.shared.darkGrayColor.cgColor
     }
 }

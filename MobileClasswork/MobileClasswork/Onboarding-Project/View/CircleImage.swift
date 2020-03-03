@@ -19,7 +19,7 @@ struct CircleImage: View {
 //        .scaledToFill()
             .aspectRatio(1, contentMode: .fit)
             .frame(width: width, height: height, alignment: .top) //size of image
-//        .colorMultiply(Color(SettingsService.darkGrayColor))
+//        .colorMultiply(Color(SettingsService.shared.darkGrayColor))
         
         .overlay(
             Circle().stroke(Color.gray, lineWidth: 4)

@@ -46,8 +46,8 @@ class PastBoxesVC: UIViewController {
     
 //MARK: Private Methods
     fileprivate func updateColors() {
-        view.backgroundColor = SettingsService.whiteColor
-        table.backgroundColor = SettingsService.whiteColor
+        view.backgroundColor = SettingsService.shared.whiteColor
+        table.backgroundColor = SettingsService.shared.whiteColor
         table.reloadData() //update cell colors
         self.tabBarController?.isMainTabBar()
     }
@@ -72,7 +72,7 @@ class PastBoxesVC: UIViewController {
     fileprivate func setupNavigationBar() {
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.tintColor = SettingsService.grayColor //button color
+        navigationController?.navigationBar.tintColor = SettingsService.shared.grayColor //button color
         self.navigationItem.largeTitleDisplayMode = .always
         navigationController?.setStatusBarColor(backgroundColor: kMAINCOLOR)
         settingsButton = UIBarButtonItem.navButton(self, action: #selector(settingsButtonTapped), image: kSETTINGSIMAGE)
@@ -105,10 +105,9 @@ extension PastBoxesVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: BoxCell = tableView.dequeueReusableCell(withIdentifier: BoxCell.identifier, for: indexPath) as! BoxCell
         cell.boxLabel.text = months[indexPath.row]
-        cell.backgroundColor = SettingsService.whiteColor
-        cell.boxLabel.textColor = SettingsService.darkGrayColor
-        cell.boxImageView.image = kMIGRAINEIMAGE.tint(with: SettingsService.darkGrayColor)
+        cell.boxImageView.image = kMIGRAINEIMAGE.tint(with: SettingsService.shared.darkGrayColor)
         cell.selectionStyle = .none
+        cell.updateCellColors()
         return cell
     }
 }

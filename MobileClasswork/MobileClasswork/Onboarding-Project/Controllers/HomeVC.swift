@@ -64,9 +64,9 @@ class HomeVC: UIViewController {
     
 //MARK: Private Methods
     fileprivate func updateColors() {
-        view.backgroundColor = SettingsService.whiteColor
+        view.backgroundColor = SettingsService.shared.whiteColor
         self.tabBarController?.isMainTabBar()
-        collectionView.backgroundColor = SettingsService.whiteColor
+        collectionView.backgroundColor = SettingsService.shared.whiteColor
         collectionView.reloadData()
     }
     
@@ -76,7 +76,7 @@ class HomeVC: UIViewController {
     
     fileprivate func setupCollectionView() {
         self.view.addSubview(collectionView)
-        collectionView.backgroundColor =  SettingsService.whiteColor
+        collectionView.backgroundColor =  SettingsService.shared.whiteColor
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
@@ -88,7 +88,7 @@ class HomeVC: UIViewController {
     fileprivate func setupNavigationBar() {
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.tintColor = SettingsService.grayColor //button color
+        navigationController?.navigationBar.tintColor = SettingsService.shared.grayColor //button color
         navigationController?.setStatusBarColor(backgroundColor: kMAINCOLOR)
         settingsButton = UIBarButtonItem.navButton(self, action: #selector(settingsButtonTapped), image: kSETTINGSIMAGE)
         navigationItem.rightBarButtonItem = settingsButton

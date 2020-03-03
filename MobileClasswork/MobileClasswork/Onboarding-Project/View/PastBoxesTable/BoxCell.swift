@@ -77,4 +77,9 @@ class BoxCell: UITableViewCell {
         boxLabel.leadingAnchor.constraint(equalTo: boxImageView.trailingAnchor, constant: 10).isActive = true
         boxLabel.trailingAnchor.constraint(equalTo: background.trailingAnchor, constant: -10).isActive = true
     }
+    
+    func updateCellColors() {
+        backgroundColor = SettingsService.shared.whiteColor
+        boxLabel.textColor = SettingsService.shared.darkGrayColor
+    }
 }

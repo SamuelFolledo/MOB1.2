@@ -10,7 +10,7 @@ import UIKit
 
 extension UIButton {
 /// applied main color and rounded corners
-    func isMainButton(color: UIColor = SettingsService.mainColor, titleColor: UIColor = SettingsService.grayColor) {
+    func isMainButton(color: UIColor = SettingsService.shared.mainColor, titleColor: UIColor = SettingsService.shared.grayColor) {
 //        self.layer.borderWidth = 2
 //        self.layer.borderColor = UIColor.white.cgColor
         self.backgroundColor = color
@@ -30,17 +30,17 @@ extension UIButton {
         self.clipsToBounds = true
     }
     
-    func isBlackButton(titleColor: UIColor = SettingsService.grayColor) {
+    func isBlackButton(titleColor: UIColor = SettingsService.shared.grayColor) {
         self.backgroundColor = kOFFBLACKCOLOR
         self.titleLabel?.font = .systemFont(ofSize: 24, weight: .medium)
         self.setTitleColor(titleColor, for: .normal)
         self.layer.cornerRadius = 10
         self.clipsToBounds = true
         self.layer.borderWidth = 2 //add a border
-        self.layer.borderColor = SettingsService.isDarkMode ? titleColor.cgColor : UIColor.clear.cgColor
+        self.layer.borderColor = SettingsService.shared.isDarkMode ? titleColor.cgColor : UIColor.clear.cgColor
     }
     
-    func isClearButton(titleColor: UIColor = SettingsService.mainColor) {
+    func isClearButton(titleColor: UIColor = SettingsService.shared.mainColor) {
         self.backgroundColor = .clear
         self.setTitleColor(titleColor, for: .normal)
         self.titleLabel?.font = .systemFont(ofSize: 24, weight: .medium)

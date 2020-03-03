@@ -55,8 +55,8 @@ class NewBoxVC: UIViewController {
     
 //MARK: Private Methods
     fileprivate func updateColors() {
-        view.backgroundColor = SettingsService.whiteColor
-        collectionView.backgroundColor = SettingsService.whiteColor
+        view.backgroundColor = SettingsService.shared.whiteColor
+        collectionView.backgroundColor = SettingsService.shared.whiteColor
         self.tabBarController?.isMainTabBar()
     }
     
@@ -69,7 +69,7 @@ class NewBoxVC: UIViewController {
     fileprivate func setupNavigationBar() {
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.tintColor = SettingsService.grayColor //button color
+        navigationController?.navigationBar.tintColor = SettingsService.shared.grayColor //button color
         navigationController?.setStatusBarColor(backgroundColor: kMAINCOLOR)
         settingsButton = UIBarButtonItem.navButton(self, action: #selector(settingsButtonTapped), image: kSETTINGSIMAGE)
         navigationItem.rightBarButtonItem = settingsButton
@@ -147,9 +147,9 @@ extension NewBoxVC: UICollectionViewDataSource {
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NewBoxCell.identifier, for: indexPath) as! NewBoxCell
         let data = self.data[indexPath.item]
-        cell.imageView.image = data.image.withTintColor(SettingsService.grayColor)
+        cell.imageView.image = data.image.withTintColor(SettingsService.shared.grayColor)
         cell.textLabel.text = data.name
-        cell.textLabel.textColor = SettingsService.grayColor
+        cell.textLabel.textColor = SettingsService.shared.grayColor
         cell.containerView.backgroundColor = .darkGray
         return cell
     }

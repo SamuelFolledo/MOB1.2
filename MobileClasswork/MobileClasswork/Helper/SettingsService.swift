@@ -9,23 +9,29 @@
 import UIKit
 
 class SettingsService {
-    static var isDarkMode: Bool = false
-    static var mainColor: UIColor = kMAINCOLOR
-    static var blackColor: UIColor { //get only property
+    static let shared = SettingsService() //Singleton
+    var isDarkMode: Bool = false
+    var mainColor: UIColor = kMAINCOLOR
+    var blackColor: UIColor { //get only property
         return isDarkMode ? kOFFWHITECOLOR : kOFFBLACKCOLOR
     }
-    static var whiteColor: UIColor  {
+    var whiteColor: UIColor  {
         return isDarkMode ? kOFFBLACKCOLOR : kOFFWHITECOLOR
     }
 ///whites that will turn gray on dark mode
-    static var grayColor: UIColor {
+    var grayColor: UIColor {
         return isDarkMode ? .lightGray : kOFFWHITECOLOR
     }
 /// black that will turn gray on darkmode
-    static var darkGrayColor: UIColor {
+    var darkGrayColor: UIColor {
         return isDarkMode ? .lightGray : kOFFBLACKCOLOR
     }
-    static func saveIsDarkMode() {
+    
+    private init() {
+        // don't forget to make this private
+    }
+    
+    func saveIsDarkMode() {
         UserDefaults.standard.set(isDarkMode, forKey: "isDarkMode")
         UserDefaults.standard.synchronize()
     }

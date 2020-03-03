@@ -14,7 +14,7 @@ class NewBoxCell: UICollectionViewCell {
     let containerView : UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = SettingsService.grayColor
+        view.backgroundColor = SettingsService.shared.grayColor
         return view
     }()
     let stackView: UIStackView = {

@@ -34,7 +34,7 @@ struct FavoritesSection: Section {
     
     func configureCell(collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: FavoritesCell.self), for: indexPath) as! FavoritesCell
-        cell.image = kPILLIMAGE.tint(with: SettingsService.darkGrayColor)
+        cell.image = kPILLIMAGE.tint(with: SettingsService.shared.darkGrayColor)
         cell.updateCellColors()
         cell.name = "Advil"
         return cell
