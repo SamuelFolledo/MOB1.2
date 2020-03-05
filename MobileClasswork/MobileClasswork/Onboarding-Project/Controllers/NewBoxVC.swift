@@ -106,7 +106,7 @@ extension NewBoxVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.row)
         let cell: NewBoxCell = collectionView.cellForItem(at: indexPath) as! NewBoxCell
-        cell.containerView.backgroundColor = SettingsService.shared.mainColor
+        cell.containerView.backgroundColor = cell.containerView.backgroundColor == SettingsService.shared.mainColor ? .darkGray : SettingsService.shared.mainColor
     }
 }
 
