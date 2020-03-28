@@ -44,6 +44,8 @@
 		334ED2F923EC8BC1002B5FF4 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334ED2F823EC8BC1002B5FF4 /* LoginVC.swift */; };
 		334ED2FB23EC90A5002B5FF4 /* BoxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334ED2FA23EC90A5002B5FF4 /* BoxCell.swift */; };
 		3361AB30240994B6004E9817 /* Navigation-SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3361AB2F240994B6004E9817 /* Navigation-SwiftUI.swift */; };
+		33697BDC242FDC3A00F2F9F2 /* UIStackView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33697BDB242FDC3A00F2F9F2 /* UIStackView+extensions.swift */; };
+		33697BDE242FDCBC00F2F9F2 /* NSObject+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33697BDD242FDCBC00F2F9F2 /* NSObject+extensions.swift */; };
 		3385A04623FE622500879E19 /* FlipAnimationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3385A04523FE622500879E19 /* FlipAnimationVC.swift */; };
 		338CF12B23FA772A0074A6FE /* FeaturedSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338CF12723FA77290074A6FE /* FeaturedSection.swift */; };
 		338CF12C23FA772A0074A6FE /* BasicGridSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338CF12823FA772A0074A6FE /* BasicGridSection.swift */; };
@@ -127,6 +129,8 @@
 		334ED2F823EC8BC1002B5FF4 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		334ED2FA23EC90A5002B5FF4 /* BoxCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxCell.swift; sourceTree = "<group>"; };
 		3361AB2F240994B6004E9817 /* Navigation-SwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Navigation-SwiftUI.swift"; sourceTree = "<group>"; };
+		33697BDB242FDC3A00F2F9F2 /* UIStackView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+extensions.swift"; sourceTree = "<group>"; };
+		33697BDD242FDCBC00F2F9F2 /* NSObject+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+extensions.swift"; sourceTree = "<group>"; };
 		3385A04523FE622500879E19 /* FlipAnimationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipAnimationVC.swift; sourceTree = "<group>"; };
 		338CF12723FA77290074A6FE /* FeaturedSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeaturedSection.swift; path = ../FeaturedSection.swift; sourceTree = "<group>"; };
 		338CF12823FA772A0074A6FE /* BasicGridSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BasicGridSection.swift; path = ../BasicGridSection.swift; sourceTree = "<group>"; };
@@ -488,17 +492,19 @@
 			isa = PBXGroup;
 			children = (
 				3300544523DA217300673C81 /* UIViewController+extensions.swift */,
+				334599F623F7D615002C13D5 /* UIView+extensions.swift */,
+				33697BDB242FDC3A00F2F9F2 /* UIStackView+extensions.swift */,
 				3300544923DA314100673C81 /* UIScrollView+extensions.swift */,
 				3309913423E277E100880CC5 /* UILayoutGuide+extensions.swift */,
 				33A8BFC523ECA0BD00056A0F /* UINavigationController+extensions.swift */,
 				33A8BFCC23ECABBC00056A0F /* UIButton+extensions.swift */,
 				334599EE23F7C32F002C13D5 /* UITextField+extensions.swift */,
-				334599F623F7D615002C13D5 /* UIView+extensions.swift */,
 				334599F823F8AC3B002C13D5 /* UIColor+extensions.swift */,
 				33459A2223F920CD002C13D5 /* UIBarButton+extensions.swift */,
 				33459A2823FA0BFF002C13D5 /* UIImageView+extensions.swift */,
 				33EF58292400E3BD007803D1 /* Date+extensions.swift */,
 				33EF58362401BE2A007803D1 /* UITabBarController+extensions.swift */,
+				33697BDD242FDCBC00F2F9F2 /* NSObject+extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -658,6 +664,7 @@
 				33EF58332400F4F0007803D1 /* AppDelegate.swift in Sources */,
 				33CA31B323E75772009AA3DF /* ChartsVC.swift in Sources */,
 				3329A61723E365A300A8FDB5 /* MyXibView.swift in Sources */,
+				33697BDC242FDC3A00F2F9F2 /* UIStackView+extensions.swift in Sources */,
 				33459A2923FA0BFF002C13D5 /* UIImageView+extensions.swift in Sources */,
 				33EF5835240125B6007803D1 /* TransitioningObject.swift in Sources */,
 				338CF14123FA79210074A6FE /* TitleCell.swift in Sources */,
@@ -697,6 +704,7 @@
 				33232DC023F2A3B900CF722D /* BoxDetailCell.swift in Sources */,
 				33CA31C723E9F090009AA3DF /* OnboardingModel.swift in Sources */,
 				338CF12B23FA772A0074A6FE /* FeaturedSection.swift in Sources */,
+				33697BDE242FDCBC00F2F9F2 /* NSObject+extensions.swift in Sources */,
 				338CF13E23FA79210074A6FE /* GridCell.swift in Sources */,
 				3300544323DA188F00673C81 /* ScrollVC.swift in Sources */,
 				334599EF23F7C32F002C13D5 /* UITextField+extensions.swift in Sources */,

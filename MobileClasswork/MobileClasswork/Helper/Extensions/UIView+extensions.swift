@@ -9,6 +9,26 @@
 import UIKit
 
 extension UIView {
+    
+/// Constraint view to its superview
+    func fitInSuperview() {
+        guard let sv = self.superview else { return }
+        self.translatesAutoresizingMaskIntoConstraints = false
+        topAnchor.constraint(equalTo: sv.topAnchor).isActive = true
+        bottomAnchor.constraint(equalTo: sv.bottomAnchor).isActive = true
+        leftAnchor.constraint(equalTo: sv.leftAnchor).isActive = true
+        rightAnchor.constraint(equalTo: sv.rightAnchor).isActive = true
+    }
+    
+/// Constraint view to its superview's margin
+    func fitInSuperviewMargins() {
+        guard let sv = self.superview else { return }
+        self.translatesAutoresizingMaskIntoConstraints = false
+        topAnchor.constraint(equalTo: sv.topAnchor, constant: sv.layoutMargins.top).isActive = true
+        bottomAnchor.constraint(equalTo: sv.bottomAnchor,constant: -sv.layoutMargins.bottom).isActive = true
+        leftAnchor.constraint(equalTo: sv.leftAnchor,constant: sv.layoutMargins.left).isActive = true
+        rightAnchor.constraint(equalTo: sv.rightAnchor,constant: -sv.layoutMargins.right).isActive = true
+    }
 
 /// Returns a collection of constraints to anchor the bounds of the current view to the given view.
 /// https://medium.com/better-programming/auto-layout-in-swift-ffd918d4ec06
